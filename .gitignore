@@ -30,3 +30,10 @@ publish
 
 # Files to ignore
 build/buildinfo.properties
+
+# symfony files and folders
+web/uploads
+cache/
+log/
+config/databases.yml
+config/properties.ini

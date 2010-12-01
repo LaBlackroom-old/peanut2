@@ -1,0 +1,32 @@
+# Thx to html5-boilerplate!
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.module.xml
+*.xml.tmpl
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+nbproject
+thumbs.db
+.ormdesigner
+.esproj
+
+# Folders to ignore
+.hg
+.svn
+publish
+.idea
+
+# Files to ignore
+build/buildinfo.properties

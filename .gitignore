@@ -17,16 +17,16 @@
 .cache
 .project
 .settings
-nbproject
-thumbs.db
 .ormdesigner
 .esproj
+nbproject
+thumbs.db
 
 # Folders to ignore
 .hg
 .svn
-publish
 .idea
+publish
 
 # Files to ignore
 build/buildinfo.properties

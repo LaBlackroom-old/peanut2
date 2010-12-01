@@ -1,0 +1,4 @@
+[symfony]
+  name=peanut
+  author=Your name here
+  orm=Doctrine

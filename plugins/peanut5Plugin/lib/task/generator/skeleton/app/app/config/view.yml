@@ -3,7 +3,6 @@
 
 default:
   http_metas:
-    X-UA-Compatible: IE=edge,chrome=1
 
   metas:
     #title:        symfony project
@@ -11,10 +10,13 @@ default:
     #keywords:     symfony, project
     #language:     en
     #robots:       index, follow
+    viewport:      width=device-width, initial-scale=1.0
 
-  stylesheets:    [main.css]
+  stylesheets:
+    - main.css?v=2:   { media: 'screen, projection' }
 
-  javascripts:    []
+  javascripts:
+    - /peanut5Plugin/js/dd_belatedpng.js:     { condition: lt IE 7 }
 
-  has_layout:     true
-  layout:         layout
+  has_layout:      true
+  layout:          layout

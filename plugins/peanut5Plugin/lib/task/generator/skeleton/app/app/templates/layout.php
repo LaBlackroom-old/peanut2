@@ -17,7 +17,7 @@
 
     <?php include_stylesheets() ?>
 
-    <?php echo javascript_include_tag('/peanut5Plugin/js/modernizr-1.6.min.js') ?>
+    <?php echo javascript_include_tag('/js/modernizr-1.6.min.js') ?>
 
   </head>
 

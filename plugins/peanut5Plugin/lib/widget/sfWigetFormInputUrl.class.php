@@ -2,6 +2,7 @@
 
 /**
  * Generate an html5 input type="url"
+ * Use this widget with sfValidatorUrl
  *
  * @package peanut5Plugin
  * @subpackage widget

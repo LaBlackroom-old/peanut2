@@ -8,7 +8,7 @@
  * @author     Alexandre 'pocky' Balmes <albalmes@gmail.com>
  * @version    SVN: $Id$
  */
-class peanutGenerateAppTask extends sfBaseTask
+class peanutGenerateAppTask extends peanutBaseTask
 {
   /**
    * @see sfTask
@@ -145,6 +145,9 @@ EOF;
     $this->getFilesystem()->rename($appDir.'/config/ApplicationConfiguration.class.php', $appDir.'/config/'.$app.'Configuration.class.php');
 
     $this->getFilesystem()->replaceTokens($appDir.'/config/'.$app.'Configuration.class.php', '##', '##', array('APP_NAME' => $app));
+
+    // copy javascripts files
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/js/', sfConfig::get('sf_web_dir') . '/js/');
 
     $fixPerms = new sfProjectPermissionsTask($this->dispatcher, $this->formatter);
     $fixPerms->setCommandApplication($this->commandApplication);

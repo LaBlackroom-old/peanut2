@@ -16,7 +16,7 @@ default:
     - main.css?v=2:   { media: 'screen, projection' }
 
   javascripts:
-    - /peanut5Plugin/js/dd_belatedpng.js:     { condition: lt IE 7 }
+    - dd_belatedpng.js:     { condition: lt IE 7 }
 
   has_layout:      true
   layout:          layout

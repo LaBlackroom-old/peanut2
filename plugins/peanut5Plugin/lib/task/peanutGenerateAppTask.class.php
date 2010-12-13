@@ -149,6 +149,17 @@ EOF;
     // copy javascripts files
     $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/js/', sfConfig::get('sf_web_dir') . '/js/');
 
+    // copy stylesheets files
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/css/', sfConfig::get('sf_web_dir') . '/css/');
+
+    // copy favicon files
+    $this->getFilesystem()->copy($skeletonDir.'/web/favicon.ico', sfConfig::get('sf_web_dir').'/favicon.ico');
+    $this->getFilesystem()->copy($skeletonDir.'/web/apple-touch-icon.png', sfConfig::get('sf_web_dir').'/apple-touch-icon.png');
+
+    // copy robots and htaccess
+    $this->getFilesystem()->copy($skeletonDir.'/web/robots.txt', sfConfig::get('sf_web_dir').'/robots.txt');
+    $this->getFilesystem()->copy($skeletonDir.'/web/.htaccess', sfConfig::get('sf_web_dir').'/.htaccess');
+
     $fixPerms = new sfProjectPermissionsTask($this->dispatcher, $this->formatter);
     $fixPerms->setCommandApplication($this->commandApplication);
     $fixPerms->setConfiguration($this->configuration);

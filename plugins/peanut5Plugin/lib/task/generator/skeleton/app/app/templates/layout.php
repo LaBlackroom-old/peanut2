@@ -12,8 +12,8 @@
 
     <?php include_title() ?>
 
-    <link rel="shortcut icon" href="/peanut5Plugin/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" href="/peanut5Plugin/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <?php include_stylesheets() ?>
 
@@ -23,13 +23,22 @@
 
   <body>
     <div id="container">
-
-      <div id="main" role="main">
         <?php echo $sf_content ?>
-      </div>
-
     </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+    <script>
+      !window.jQuery && document.write(
+        unescape('%3Cscript src="<?php echo javascript_include_tag('/js/jquery-1.4.4.min.js') ?>"%3E%3C/script%3E')
+      )
+    </script>
+
+    <!--[if lt IE 7 ]>
+    <script>
+      $.getScript("<?php echo javascript_include_tag('/js/dd_belatedpng.js') ?>",function(){ DD_belatedPNG.fix('img, .png_bg'); });
+    </script>
+    <![endif]-->
+    
     <?php include_javascripts() ?>
   </body>
 </html>

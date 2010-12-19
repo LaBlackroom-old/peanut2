@@ -2,6 +2,7 @@
 
 /**
  * Generate an html5 input type="color"
+ * Use this widget with sfValidatorColor
  *
  * @package peanut5Plugin
  * @subpackage widget

@@ -34,7 +34,7 @@ AddType font/opentype                  otf
 AddType font/woff                      woff
 
 # assorted types
-AddType image/vnd.microsoft.icon       ico
+AddType image/x-icon                   ico
 AddType image/webp                     webp
 AddType text/cache-manifest            manifest
 AddType text/x-component               htc
@@ -44,6 +44,11 @@ AddType application/octet-stream       safariextz
 
 # gzip compression.
 <IfModule mod_deflate.c>
+  
+  <IfModule mod_setenvif.c>
+    SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s,?\s(gzip|deflate)?|X{4,13}|~{4,13}|-{4,13})$ HAVE_Accept-Encoding
+    RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+  </IfModule>
 
   # html, txt, css, js, json, xml, htc:
   <IfModule filter_module>

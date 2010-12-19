@@ -34,9 +34,8 @@
     </script>
 
     <!--[if lt IE 7 ]>
-    <script>
-      $.getScript("<?php echo javascript_include_tag('/js/dd_belatedpng.js') ?>",function(){ DD_belatedPNG.fix('img, .png_bg'); });
-    </script>
+      <script src="js/libs/dd_belatedpng.js"></script>
+      <script>DD_belatedPNG.fix('img, .png_bg');</script>
     <![endif]-->
     
     <?php include_javascripts() ?>

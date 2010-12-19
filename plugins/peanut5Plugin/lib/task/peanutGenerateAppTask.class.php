@@ -152,6 +152,9 @@ EOF;
     // copy stylesheets files
     $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/css/', sfConfig::get('sf_web_dir') . '/css/');
 
+    // copy images files
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/images/', sfConfig::get('sf_web_dir') . '/images/');
+
     // copy favicon files
     $this->getFilesystem()->copy($skeletonDir.'/web/favicon.ico', sfConfig::get('sf_web_dir').'/favicon.ico');
     $this->getFilesystem()->copy($skeletonDir.'/web/apple-touch-icon.png', sfConfig::get('sf_web_dir').'/apple-touch-icon.png');

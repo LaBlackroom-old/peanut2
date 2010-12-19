@@ -28,6 +28,25 @@ class sfWidgetFormInputColor extends sfWidgetFormInput
     $this->setOption('type', 'color');
   }
 
+  /**
+   *
+   * @see www.eyecon.ro/colorpicker/
+   */
+  public function getJavaScripts()
+  {
+    return array(
+      '/js/widget/colorpicker.js',
+      '/js/widget/color.js'
+    );
+  }
+
+  public function getStylesheets()
+  {
+    return array(
+      '/css/widget/colorpicker.css' => 'all'
+    );
+  }
+
 }
 
 ?>

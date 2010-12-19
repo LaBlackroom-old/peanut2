@@ -27,11 +27,7 @@
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
-    <script>
-      !window.jQuery && document.write(
-        unescape('%3Cscript src="<?php echo javascript_include_tag('/js/jquery-1.4.4.min.js') ?>"%3E%3C/script%3E')
-      )
-    </script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
 
     <!--[if lt IE 7 ]>
       <script src="js/libs/dd_belatedpng.js"></script>

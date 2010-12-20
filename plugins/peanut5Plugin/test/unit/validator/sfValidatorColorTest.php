@@ -5,6 +5,7 @@ include(dirname(__FILE__).'/../../bootstrap/unit.php');
 $t = new lime_test(3);
 $v = new sfValidatorColor();
 
+// Test avec une valeur #rrggbb
 try
 {
   $v->clean('#ff017d');
@@ -15,6 +16,7 @@ catch (sfValidatorError $e)
   $t->fail('Pass on valid data');
 }
 
+// Test avec une valeur 'texte'
 try
 {
   $v->clean('text');
@@ -25,6 +27,7 @@ catch (sfValidatorError $e)
   $t->pass('Fail on invalid data');
 }
 
+// Test avec une valeur #rrggbb raccourci
 try
 {
   $v->clean('#fff');

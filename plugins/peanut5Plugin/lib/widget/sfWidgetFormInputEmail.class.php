@@ -29,5 +29,3 @@ class sfWidgetFormInputEmail extends sfWidgetFormInput
   }
 
 }
-
-?>

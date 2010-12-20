@@ -48,5 +48,3 @@ class sfWidgetFormInputColor extends sfWidgetFormInput
   }
 
 }
-
-?>

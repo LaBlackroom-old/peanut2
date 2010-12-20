@@ -38,5 +38,3 @@ class sfWidgetFormInputNumber extends sfWidgetFormInput
   }
 
 }
-
-?>

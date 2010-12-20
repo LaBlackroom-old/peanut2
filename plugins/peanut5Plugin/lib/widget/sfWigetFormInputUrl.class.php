@@ -29,5 +29,3 @@ class sfWidgetFormInputUrl extends sfWidgetFormInput
   }
 
 }
-
-?>

@@ -29,5 +29,3 @@ class sfWidgetFormInputRange extends sfWidgetFormInputNumber
   }
 
 }
-
-?>

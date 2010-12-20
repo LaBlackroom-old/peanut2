@@ -10,7 +10,7 @@
  */
 
 
-class sfWidgetFormInputColor extends sfWidgetFormInput
+class sfWidgetFormHtml5InputColor extends sfWidgetFormInput
 {
 
   /**

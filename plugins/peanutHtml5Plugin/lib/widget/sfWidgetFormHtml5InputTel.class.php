@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Generate an html5 input type="number"
+ * Generate an html5 input type="tel"
  *
  * @package peanut5Plugin
  * @subpackage widget
@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormInputNumber extends sfWidgetFormInput
+class sfWidgetFormHtml5InputTel extends sfWidgetFormInput
 {
 
   /**
@@ -17,9 +17,7 @@ class sfWidgetFormInputNumber extends sfWidgetFormInput
    *
    * Available options:
    *
-   *  * min: Minimum acceptable value for this field
-   *  * max: Maximum acceptable value
-   *  * step: Combined with the min value, define the acceptable numbers in the range up to the max value
+   *  * type: The widget type
    *
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
@@ -30,11 +28,7 @@ class sfWidgetFormInputNumber extends sfWidgetFormInput
   {
     parent::configure($options, $attributes);
 
-    $this->setOption('type', 'number');
-    
-    $this->addOption('min', null);
-    $this->addOption('max', null);
-    $this->addOption('step', null);
+    $this->setOption('type', 'tel');
   }
 
 }

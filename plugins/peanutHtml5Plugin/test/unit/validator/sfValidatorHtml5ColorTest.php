@@ -3,7 +3,7 @@
 include(dirname(__FILE__).'/../../bootstrap/unit.php');
 
 $t = new lime_test(3);
-$v = new sfValidatorColor();
+$v = new sfValidatorHtml5Color();
 
 // Test avec une valeur #rrggbb
 try

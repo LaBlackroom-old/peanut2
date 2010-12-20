@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Generate an html5 input type="range"
+ * Generate an html5 input type="url"
+ * Use this widget with sfValidatorUrl
  *
  * @package peanut5Plugin
  * @subpackage widget
@@ -9,12 +10,11 @@
  */
 
 
-class sfWidgetFormInputRange extends sfWidgetFormInputNumber
+class sfWidgetFormHtml5InputUrl extends sfWidgetFormInput
 {
 
   /**
    * Constructor.
-   *
    *
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
@@ -25,7 +25,7 @@ class sfWidgetFormInputRange extends sfWidgetFormInputNumber
   {
     parent::configure($options, $attributes);
 
-    $this->setOption('type', 'range');
+    $this->setOption('type', 'url');
   }
 
 }

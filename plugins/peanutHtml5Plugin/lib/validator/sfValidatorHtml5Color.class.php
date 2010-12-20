@@ -10,7 +10,7 @@
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
 
-class sfValidatorColor extends sfValidatorBase
+class sfValidatorHtml5Color extends sfValidatorBase
 {
   /**
    * Configures the current validator.

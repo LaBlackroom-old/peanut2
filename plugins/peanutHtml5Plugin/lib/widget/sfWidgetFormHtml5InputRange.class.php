@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Generate an html5 input type="search"
+ * Generate an html5 input type="range"
  *
  * @package peanut5Plugin
  * @subpackage widget
@@ -9,11 +9,12 @@
  */
 
 
-class sfWidgetFormInputSearch extends sfWidgetFormInput
+class sfWidgetFormHtml5InputRange extends sfWidgetFormInputNumber
 {
 
   /**
    * Constructor.
+   *
    *
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
@@ -24,7 +25,7 @@ class sfWidgetFormInputSearch extends sfWidgetFormInput
   {
     parent::configure($options, $attributes);
 
-    $this->setOption('type', 'search');
+    $this->setOption('type', 'range');
   }
 
 }

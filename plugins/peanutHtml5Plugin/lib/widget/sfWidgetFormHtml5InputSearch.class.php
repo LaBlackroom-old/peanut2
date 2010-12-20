@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Generate an html5 input type="url"
- * Use this widget with sfValidatorUrl
+ * Generate an html5 input type="search"
  *
  * @package peanut5Plugin
  * @subpackage widget
@@ -10,7 +9,7 @@
  */
 
 
-class sfWidgetFormInputUrl extends sfWidgetFormInput
+class sfWidgetFormHtml5InputSearch extends sfWidgetFormInput
 {
 
   /**
@@ -25,7 +24,7 @@ class sfWidgetFormInputUrl extends sfWidgetFormInput
   {
     parent::configure($options, $attributes);
 
-    $this->setOption('type', 'url');
+    $this->setOption('type', 'search');
   }
 
 }

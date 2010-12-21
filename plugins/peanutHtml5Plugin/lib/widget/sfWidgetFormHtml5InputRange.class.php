@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputRange extends sfWidgetFormInputNumber
+class sfWidgetFormHtml5InputRange extends sfWidgetFormHtml5InputNumber
 {
 
   /**

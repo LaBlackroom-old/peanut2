@@ -2,7 +2,7 @@
 
 /**
  * Generate an html5 input type="email"
- * Use this widget with sfValidatorEmail
+ * Use this widget with sfValidatorHtml5Email
  *
  * @package peanut5Plugin
  * @subpackage widget

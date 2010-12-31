@@ -18,6 +18,7 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
    *
+   * @see http://www.w3.org/TR/web-forms-2/
    * @see sfWidgetForm
    */
   protected function configure($options = array(), $attributes = array())

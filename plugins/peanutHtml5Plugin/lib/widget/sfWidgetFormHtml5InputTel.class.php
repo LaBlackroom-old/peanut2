@@ -29,6 +29,9 @@ class sfWidgetFormHtml5InputTel extends sfWidgetFormHtml5Input
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'tel');
+
+    $this->addOption('pattern', null);
+    $this->addOption('size', false);
   }
 
 }

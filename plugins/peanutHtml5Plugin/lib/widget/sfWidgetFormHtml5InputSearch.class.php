@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputSearch extends sfWidgetFormInput
+class sfWidgetFormHtml5InputSearch extends sfWidgetFormHtml5Input
 {
 
   /**

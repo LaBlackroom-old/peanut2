@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputTel extends sfWidgetFormInput
+class sfWidgetFormHtml5InputTel extends sfWidgetFormHtml5Input
 {
 
   /**

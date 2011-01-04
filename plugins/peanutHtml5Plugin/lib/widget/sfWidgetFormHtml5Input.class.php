@@ -30,6 +30,15 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
     $this->addOption('autofocus', false);
     $this->addOption('readonly', false);
     $this->addOption('required', false);
+  }
+
+
+  public function getJavaScripts() {
+
+    return array(
+      '/js/widget/input.js',
+      '/js/widget/jquery.html5support.min.js'
+    );
 
   }
 

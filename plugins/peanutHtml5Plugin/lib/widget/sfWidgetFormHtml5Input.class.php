@@ -54,10 +54,31 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    foreach($this->getOptions() as $key => $val)
+    if($this->getOption('disabled'))
     {
-      $attributes[$key] = $val;
+      $attributes['disabled'] = $this->getOption('disabled');
     }
+
+    if($this->getOption('autocomplete'))
+    {
+      $attributes['autocomplete'] = $this->getOption('autocomplete');
+    }
+
+    if($this->getOption('autofocus'))
+    {
+      $attributes['autofocus'] = $this->getOption('autofocus');
+    }
+
+    if($this->getOption('readonly'))
+    {
+      $attributes['readonly'] = $this->getOption('readonly');
+    }
+
+    if($this->getOption('required'))
+    {
+      $attributes['required'] = $this->getOption('required');
+    }
+
 
     return parent::render($name, $value, $attributes, $errors);
   }

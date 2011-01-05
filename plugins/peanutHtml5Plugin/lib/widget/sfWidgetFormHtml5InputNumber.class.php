@@ -80,9 +80,9 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
       {
         if(($this->getOption('step') <= $this->getOption('max')) || $this->getOption('step') == 'any')
         {
-          if(preg_match('/,/', $this->getOption('step')))
+          if(false !== strpos($this->getOption('step'), ','))
           {
-            $attributes['step'] = preg_replace('/,/', '.', $this->getOption('step'));
+            $attributes['step'] = str_replace(',', '.', $this->getOption('step'));
           }
           else
           {

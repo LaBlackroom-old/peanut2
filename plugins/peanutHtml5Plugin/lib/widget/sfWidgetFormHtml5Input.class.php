@@ -30,12 +30,12 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
     $this->addOption('autofocus', false);
     $this->addOption('readonly', false);
     $this->addOption('required', false);
-    $this->addOption('form', false);
+    $this->addOption('form', null);
   }
 
 
-  public function getJavaScripts() {
-
+  public function getJavaScripts()
+  {
     return array(
       '/js/widget/input.js',
       '/js/widget/jquery.html5support.min.js'
@@ -55,31 +55,56 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if($this->getOption('disabled'))
+
+    if($this->getOption('disabled') === true)
     {
-      $attributes['disabled'] = $this->getOption('disabled');
+      $attributes['disabled'] = 'disabled';
+    }
+    elseif($this->getOption('disabled') !== false)
+    {
+      throw new sfRenderException('disabled must be true or false');
     }
 
-    if($this->getOption('autocomplete'))
+    if($this->getOption('autocomplete') === true)
     {
-      $attributes['autocomplete'] = $this->getOption('autocomplete');
+      $attributes['autocomplete'] = 'autocomplete';
+    }
+    elseif($this->getOption('autocomplete') !== false)
+    {
+      throw new sfRenderException('autocomplete must be true or false');
     }
 
-    if($this->getOption('autofocus'))
+    if($this->getOption('autofocus') === true)
     {
-      $attributes['autofocus'] = $this->getOption('autofocus');
+      $attributes['autofocus'] = 'autofocus';
+    }
+    elseif($this->getOption('autofocus') !== false)
+    {
+      throw new sfRenderException('autofocus must be true or false');
     }
 
-    if($this->getOption('readonly'))
+    if($this->getOption('readonly') === true)
     {
-      $attributes['readonly'] = $this->getOption('readonly');
+      $attributes['readonly'] = 'readonly';
+    }
+    elseif($this->getOption('readonly') !== false)
+    {
+      throw new sfRenderException('readonly must be true or false');
     }
 
-    if($this->getOption('required'))
+    if($this->getOption('required') === true)
     {
-      $attributes['required'] = $this->getOption('required');
+      $attributes['required'] = 'required';
+    }
+    elseif($this->getOption('required') !== false)
+    {
+      throw new sfRenderException('required must be true or false');
     }
 
+    if(!is_null($this->getOption('form')))
+    {
+      $attributes['form'] = $this->getOption('form');
+    }
 
     return parent::render($name, $value, $attributes, $errors);
   }

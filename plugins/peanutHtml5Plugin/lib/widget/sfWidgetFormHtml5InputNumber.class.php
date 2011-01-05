@@ -78,34 +78,36 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
 
       if($this->getOption('step'))
       {
-        if(($this->getOption('step') > $this->getOption('min') && $this->getOption('step') < $this->getOption('max'))
-              || $this->getOption('step') == 'any')
+        if(($this->getOption('step') <= $this->getOption('max')) || $this->getOption('step') == 'any')
         {
-          $attributes['step'] = $this->getOption('step');
+          if(preg_match('/,/', $this->getOption('step')))
+          {
+            $attributes['step'] = preg_replace('/,/', '.', $this->getOption('step'));
+          }
+          else
+          {
+            $attributes['step'] = $this->getOption('step');
+          }
+        }
+        elseif(is_numeric($this->getOption('step')))
+        {
+          throw new sfRenderException('step option must be inferior of max option');
         }
         else
         {
-          throw new sfRenderException('step option must be in the range of min and max option');
+          throw new sfRenderException('step option must be a numeric value or "any"');
         }
       }
     }
 
-    foreach($attributes as $key => $val)
+    elseif(!is_null($this->getOption('min')))
     {
-      if(preg_match('/,/', $val))
-      {
-        $attributes[$key] = preg_replace('/,/', '.', $val);
-      }
+        $attributes['min'] = $this->getOption('min');
+    }
 
-      if(is_numeric($val) || $this->getOption('step') == 'any')
-      {
-        $attrinutes[$key] = $val;
-      }
-      else
-      {
-        throw new sfRenderException(sprintf('Option %s must be a numeric value', $key));
-      }
-
+    elseif(!is_null($this->getOption('max')))
+    {
+        $attributes['max'] = $this->getOption('max');
     }
 
     return parent::render($name, $value, $attributes, $errors);

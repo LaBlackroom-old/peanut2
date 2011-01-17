@@ -28,4 +28,15 @@ class sfWidgetFormHtml5InputDateTime extends sfWidgetFormHtml5InputDate
     $this->setOption('type', 'datetime');
   }
 
+  /**
+   * Get the date format to render a valid string
+   *
+   * @return string
+   */
+  protected static function _getDateFormat()
+  {
+    date_default_timezone_set('UTC');
+    return 'Y-m-d\TH:i:s\Z';
+  }
+  
 }

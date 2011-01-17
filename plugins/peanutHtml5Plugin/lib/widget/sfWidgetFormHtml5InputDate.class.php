@@ -11,11 +11,9 @@
  */
 
 
-class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
+class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
 {
 
-  private $regexp = array();
-  
   /**
    * Constructor.
    *
@@ -29,6 +27,10 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'date');
+
+    $this->addOption('min', null);
+    $this->addOption('max', null);
+    $this->addOption('step', false);
   }
 
   /**
@@ -43,14 +45,49 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if($this->getOption('min'))
+    $min = $this->_convertDate($this->getOption('min'));
+    $max = $this->_convertDate($this->getOption('max'));
+
+    if(!is_null($min) && !is_null($max))
+    {
+      if(!is_null($min))
+      {
+        if($min < $max)
+        {
+          $attributes['min'] = $this->formatDate($this->getOption('min'));
+        }
+        else
+        {
+          throw new sfRenderException('min option must be inferior of max option');
+        }
+      }
+
+      if(!is_null($max))
+      {
+        if($max > $min)
+        {
+          $attributes['max'] = $this->formatDate($this->getOption('max'));
+        }
+        else
+        {
+          throw new sfRenderException('max option must be superior of min option');
+        }
+      } 
+    }
+
+    elseif(!is_null($this->getOption('min')))
     {
       $attributes['min'] = $this->formatDate($this->getOption('min'));
     }
 
-    if($this->getOption('max'))
+    elseif(!is_null($this->getOption('max')))
     {
       $attributes['max'] = $this->formatDate($this->getOption('max'));
+    }
+
+    elseif(!is_null($this->getOption('step')))
+    {
+      $attributes['step'] = $this->getOption('step');
     }
 
     return parent::render($name, $value, $attributes, $errors);
@@ -60,25 +97,27 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
   /**
    * Format input value to a valid output value
    *
+   * @param  string|DateTime|int $date
    * @return string
    */
-  public function formatDate($date)
+  protected function formatDate($date)
   {
-    if(preg_match($this->getRegexp(), $date))
+    if(is_string($date) && strtotime($date) !== false)
     {
-      return $date;
+      return date($this->_getDateFormat(), strtotime($date));
     }
-  }
 
-  
-  /**
-   * Get the regexp date to match a valid value
-   *
-   * @return string
-   */
-  protected static function getRegexp()
-  {
-    return '//';
+    if(is_integer($date))
+    {
+      return date($this->_getDateFormat(), $date);
+    }
+
+    if(is_object($date) && $date instanceof DateTime)
+    {
+      return $date->format($this->_getDateFormat());
+    }
+
+    throw new sfRenderException(sprintf('The value must be a string in %s format, a timestamp or a DateTime object', $this->_getDateFormat()));
   }
 
 
@@ -87,9 +126,31 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
    *
    * @return string
    */
-  protected static function getDateFormat()
+  protected static function _getDateFormat()
   {
     return 'Y-m-d';
+  }
+
+  /**
+   * Convert date into timestamp
+   *
+   * @return int
+   */
+  protected static function _convertDate($date)
+  {
+    if($date instanceof DateTime)
+    {
+      $date = $date->format('Y-m-d');
+      return strtotime($date);
+    }
+    elseif(strtotime($date) !== false)
+    {
+      return strtotime($date);
+    }
+    else
+    {
+      return $date;
+    }
   }
 
 }

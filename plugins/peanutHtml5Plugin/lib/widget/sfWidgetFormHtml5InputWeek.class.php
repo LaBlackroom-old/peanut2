@@ -28,4 +28,14 @@ class sfWidgetFormHtml5InputWeek extends sfWidgetFormHtml5InputDate
     $this->setOption('type', 'week');
   }
 
+  /**
+   * Get the date format to render a valid string
+   *
+   * @return string
+   */
+  protected static function _getDateFormat()
+  {
+    return 'Y-\WW';
+  }
+
 }

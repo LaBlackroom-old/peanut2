@@ -28,4 +28,14 @@ class sfWidgetFormHtml5InputMonth extends sfWidgetFormHtml5InputDate
     $this->setOption('type', 'month');
   }
 
+  /**
+   * Get the date format to render a valid string
+   *
+   * @return string
+   */
+  protected static function _getDateFormat()
+  {
+    return 'Y-m';
+  }
+
 }

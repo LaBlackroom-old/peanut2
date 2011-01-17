@@ -28,4 +28,14 @@ class sfWidgetFormHtml5InputDateTimeLocal extends sfWidgetFormHtml5InputDate
     $this->setOption('type', 'datetime-local');
   }
 
+  /**
+   * Get the date format to render a valid string
+   *
+   * @return string
+   */
+  protected static function _getDateFormat()
+  {
+    return 'Y-m-d\TH:i:s';
+  }
+
 }

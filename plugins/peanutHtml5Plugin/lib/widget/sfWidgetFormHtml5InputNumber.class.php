@@ -102,12 +102,17 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
 
     elseif(!is_null($this->getOption('min')))
     {
-        $attributes['min'] = $this->getOption('min');
+      $attributes['min'] = $this->getOption('min');
     }
 
     elseif(!is_null($this->getOption('max')))
     {
-        $attributes['max'] = $this->getOption('max');
+      $attributes['max'] = $this->getOption('max');
+    }
+
+    elseif(!is_null($this->getOption('step')))
+    {
+      $attributes['step'] = $this->getOption('step');
     }
 
     return parent::render($name, $value, $attributes, $errors);

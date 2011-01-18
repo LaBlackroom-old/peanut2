@@ -143,14 +143,13 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
       $date = $date->format('Y-m-d');
       return strtotime($date);
     }
-    elseif(strtotime($date) !== false)
+
+    if(strtotime($date) !== false)
     {
       return strtotime($date);
     }
-    else
-    {
-      return $date;
-    }
+
+    return $date;
   }
 
 }

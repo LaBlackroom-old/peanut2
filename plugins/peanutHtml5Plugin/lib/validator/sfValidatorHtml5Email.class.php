@@ -24,13 +24,15 @@ class sfValidatorHtml5Email extends sfValidatorEmail
    *
    * @see sfValidatorBase
    */
-  public function configure($options = array(), $messages = array()) {
+  public function configure($options = array(), $messages = array())
+  {
     parent::configure($options, $messages);
     
     $this->addOption('multiple', false);
   }
 
-  public function doClean($value) {
+  public function doClean($value)
+  {
     if($this->getOption('multiple') === false)
     {
       return parent::doClean($value);

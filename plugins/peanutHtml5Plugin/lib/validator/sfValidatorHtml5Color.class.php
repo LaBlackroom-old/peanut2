@@ -20,11 +20,13 @@ class sfValidatorHtml5Color extends sfValidatorBase
    *
    * @see sfValidatorBase
    */
-  public function configure($options = array(), $messages = array()) {    
+  public function configure($options = array(), $messages = array())
+  {
     $this->setMessage('invalid', 'The color is not valid because she not use the #rrggbb format');
   }
 
-  public function doClean($value) {
+  public function doClean($value)
+  {
     if(preg_match('/^#[0-9A-Fa-f]{6}$/i', $value) == 0)
     {
       throw new sfValidatorError($this, 'invalid');

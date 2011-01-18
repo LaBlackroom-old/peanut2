@@ -38,11 +38,11 @@ Voici la liste des widgets :
 - sfWidgetFormHtml5InputPassword
 - sfWidgetFormHtml5InputRange
 - sfWidgetFormHtml5InputSearch
-- sfWidgetFormHtmlInputTel
-- sfWidgetFormHtmlInputText
-- sfWidgetFormHtmlInputTime
-- sfWidgetFormHtmlInputWeek
-- sfWidgetFormHtmlInputUrl
+- sfWidgetFormHtml5InputTel
+- sfWidgetFormHtml5InputText
+- sfWidgetFormHtml5InputTime
+- sfWidgetFormHtml5InputWeek
+- sfWidgetFormHtml5InputUrl
 
 
 ## Liste des validateurs ##

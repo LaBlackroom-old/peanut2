@@ -1,6 +1,12 @@
 # About #
 Ce plugin à pour but de permettre l'utilisation de html5 dans symfony.
 
+## Todo ##
+- Ajouter tous les validateurs pour les widgets actuels (au 18 Janvier 2011)
+- Ajouter les alternatives JS (calendriers par exemple) afin d'offrir un support le plus large possible
+- Faire un check des options qui ne pourraient pas être utilisées pour un type de widget et les désactiver.
+- S'éclater un peu avec les nouvelles API html5
+
 ## Création d'une application html5 ##
 L'opération pour créer une application html5 n'est pas complexe, il suffit d'activer le plugin puis d'utiliser la tache dédiée,
  reprenant celle créée initialement par symfony avec la ligne de commande suivante :
@@ -16,4 +22,31 @@ copy de la classe `plugins/peanut5plugin/lib/task/appeanutGenerateAppTask.class.
 
     160. $this->getFilesystem()->copy($skeletonDir.'/web/robots.txt', sfConfig::get('sf_web_dir').'/robots.txt', $options = array('override' => true);
 
+
+## Liste des widgets ##
+Voici la liste des widgets :
+
+- sfWidgetFormHtml5Input
+- sfWidgetFormHtml5InputColor
+- sfWidgetFormHtml5InputDate
+- sfWidgetFormHtml5InputDateTime
+- sfWidgetFormHtml5InputDateTimeLocal
+- sfWidgetFormHtml5InputEmail
+- sfWidgetFormHtml5InputFile
+- sfWidgetFormHtml5InputMonth
+- sfWidgetFormHtml5InputNumber
+- sfWidgetFormHtml5InputPassword
+- sfWidgetFormHtml5InputRange
+- sfWidgetFormHtml5InputSearch
+- sfWidgetFormHtmlInputTel
+- sfWidgetFormHtmlInputText
+- sfWidgetFormHtmlInputTime
+- sfWidgetFormHtmlInputWeek
+- sfWidgetFormHtmlInputUrl
+
+
+## Liste des validateurs ##
+
+- sfValidatorHtml5Color
+- sfValidatorHtml5Email
 

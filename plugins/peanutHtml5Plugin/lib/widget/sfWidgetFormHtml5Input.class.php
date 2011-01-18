@@ -11,7 +11,7 @@
 
 class sfWidgetFormHtml5Input extends sfWidgetFormInput
 {
-
+  
   /**
    * Constructor.
    *
@@ -67,7 +67,7 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
 
     if($this->getOption('autocomplete') === true)
     {
-      $attributes['autocomplete'] = 'autocomplete';
+      $attributes['autocomplete'] = 'on';
     }
     elseif($this->getOption('autocomplete') !== false)
     {

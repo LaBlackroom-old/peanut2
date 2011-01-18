@@ -21,7 +21,7 @@ $datetime = new DateTime('2010-10-10');
 $w->setOption('min', $datetime);
 $t->like($w->render('date'), '/min="2010-10-10"/', 'render Y-m-d with DateTime Object');
 
-$datetime = "salut";
+$datetime = 'salut';
 $w->setOption('min', $datetime);
 
 try

@@ -47,8 +47,8 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
   {
     $min = $this->_convertDate($this->getOption('min'));
     $max = $this->_convertDate($this->getOption('max'));
-
-    if(!is_null($min) && !is_null($max))
+    
+    if($min && $max)
     {
       if($min < $max)
       {

@@ -12,7 +12,7 @@ $w->setOption('disabled', true);
 $t->like($w->render('test'), '/disabled="disabled"/', 'render disabled');
 
 $w->setOption('autocomplete', true);
-$t->like($w->render('test'), '/autocomplete="autocomplete"/', 'render autocomplete');
+$t->like($w->render('test'), '/autocomplete="on"/', 'render autocomplete');
 
 $w->setOption('autofocus', true);
 $t->like($w->render('test'), '/autofocus="autofocus"/', 'render autofocus');

@@ -50,29 +50,15 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
 
     if(!is_null($min) && !is_null($max))
     {
-      if(!is_null($min))
+      if($min < $max)
       {
-        if($min < $max)
-        {
-          $attributes['min'] = $this->formatDate($this->getOption('min'));
-        }
-        else
-        {
-          throw new sfRenderException('min option must be inferior of max option');
-        }
+        $attributes['min'] = $this->formatDate($this->getOption('min'));
+        $attributes['max'] = $this->formatDate($this->getOption('max'));
       }
-
-      if(!is_null($max))
+      else
       {
-        if($max > $min)
-        {
-          $attributes['max'] = $this->formatDate($this->getOption('max'));
-        }
-        else
-        {
-          throw new sfRenderException('max option must be superior of min option');
-        }
-      } 
+        throw new sfRenderException('min option must be inferior of max option');
+      }
     }
 
     elseif(!is_null($this->getOption('min')))
@@ -104,20 +90,20 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
   {
     if(is_string($date) && strtotime($date) !== false)
     {
-      return date($this->_getDateFormat(), strtotime($date));
+      return date(self::_getDateFormat(), strtotime($date));
     }
 
     if(is_integer($date))
     {
-      return date($this->_getDateFormat(), $date);
+      return date(self::_getDateFormat(), $date);
     }
 
     if(is_object($date) && $date instanceof DateTime)
     {
-      return $date->format($this->_getDateFormat());
+      return $date->format(self::_getDateFormat());
     }
 
-    throw new sfRenderException(sprintf('The value must be a string in %s format, a timestamp or a DateTime object', $this->_getDateFormat()));
+    throw new sfRenderException(sprintf('The value must be a string in %s format, a timestamp or a DateTime object', self::_getDateFormat()));
   }
 
 
@@ -140,13 +126,13 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
   {
     if($date instanceof DateTime)
     {
-      $date = $date->format('Y-m-d');
+      $date = $date->format(self::_getDateFormat());
       return strtotime($date);
     }
 
-    if(strtotime($date) !== false)
+    if(($date = strtotime($date)) !== false)
     {
-      return strtotime($date);
+      return $date;
     }
 
     return $date;

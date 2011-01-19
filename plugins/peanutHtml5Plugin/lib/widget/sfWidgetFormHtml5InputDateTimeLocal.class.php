@@ -33,7 +33,7 @@ class sfWidgetFormHtml5InputDateTimeLocal extends sfWidgetFormHtml5InputDate
    *
    * @return string
    */
-  protected static function _getDateFormat()
+  protected function _getDateFormat()
   {
     return 'Y-m-d\TH:i:s';
   }

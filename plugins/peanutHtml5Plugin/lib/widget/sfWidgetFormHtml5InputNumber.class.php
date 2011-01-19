@@ -50,43 +50,29 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if(!is_null($this->getOption('min')) && !is_null($this->getOption('max')))
+    if(null !== $this->getOption('min') && null !== $this->getOption('max'))
     {
-      if(!is_null($this->getOption('min')))
+      if($this->getOption('min') < $this->getOption('max'))
       {
-        if($this->getOption('min') < $this->getOption('max'))
-        {
-          $attributes['min'] = $this->getOption('min');
-        }
-        else
-        {
-          throw new sfRenderException('min option must be inferior of max option');
-        }
+        $this->setAttribute('min', $this->getOption('min'));
+        $this->setAttribute('max', $this->getOption('max'));
       }
-
-      if(!is_null($this->getOption('max')))
+      else
       {
-        if($this->getOption('max') > $this->getOption('min'))
-        {
-          $attributes['max'] = $this->getOption('max');
-        }
-        else
-        {
-          throw new sfRenderException('max option must be superior of min option');
-        }
+        throw new sfRenderException('min option must be inferior of max option');
       }
-
+      
       if($this->getOption('step'))
       {
-        if(($this->getOption('step') <= $this->getOption('max')) || $this->getOption('step') == 'any')
+        if($this->getOption('step') <= $this->getOption('max') || $this->getOption('step') == 'any')
         {
           if(false !== strpos($this->getOption('step'), ','))
           {
-            $attributes['step'] = str_replace(',', '.', $this->getOption('step'));
+            $this->setAttribute('step', str_replace(',', '.', $this->getOption('step')));
           }
           else
           {
-            $attributes['step'] = $this->getOption('step');
+            $this->setAttribute('step', $this->getOption('step'));
           }
         }
         elseif(is_numeric($this->getOption('step')))
@@ -99,22 +85,19 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
         }
       }
     }
-
-    elseif(!is_null($this->getOption('min')))
+    elseif(null !== $this->getOption('min'))
     {
-      $attributes['min'] = $this->getOption('min');
+      $this->setAttribute('min', $this->getOption('min'));
     }
-
-    elseif(!is_null($this->getOption('max')))
+    elseif(null !== $this->getOption('max'))
     {
-      $attributes['max'] = $this->getOption('max');
+      $this->setAttribute('max', $this->getOption('max'));
     }
-
-    elseif(!is_null($this->getOption('step')))
+    elseif($this->getOption('step'))
     {
-      $attributes['step'] = $this->getOption('step');
+      $this->setAttribute('step', $this->getOption('step'));
     }
-
+    
     return parent::render($name, $value, $attributes, $errors);
   }
 

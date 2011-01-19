@@ -11,9 +11,8 @@
  */
 
 
-class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
 {
-
   /**
    * Constructor.
    *
@@ -25,14 +24,11 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-
+    
     $this->setOption('type', 'date');
-
-    $this->addOption('min', null);
-    $this->addOption('max', null);
-    $this->addOption('step', false);
   }
-
+  
+  
   /**
    * @param  string $name        The element name
    * @param  string $value       The value displayed in this widget
@@ -45,97 +41,52 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $min = $this->_convertDate($this->getOption('min'));
-    $max = $this->_convertDate($this->getOption('max'));
+    $this->setOption('min', $this->_convertDate($this->getOption('min')));
+    $this->setOption('max', $this->_convertDate($this->getOption('max')));
     
-    if($min && $max)
-    {
-      if($min < $max)
-      {
-        $attributes['min'] = $this->formatDate($this->getOption('min'));
-        $attributes['max'] = $this->formatDate($this->getOption('max'));
-      }
-      else
-      {
-        throw new sfRenderException('min option must be inferior of max option');
-      }
-    }
-
-    elseif(!is_null($this->getOption('min')))
-    {
-      $attributes['min'] = $this->formatDate($this->getOption('min'));
-    }
-
-    elseif(!is_null($this->getOption('max')))
-    {
-      $attributes['max'] = $this->formatDate($this->getOption('max'));
-    }
-
-    elseif(!is_null($this->getOption('step')))
-    {
-      $attributes['step'] = $this->getOption('step');
-    }
-
     return parent::render($name, $value, $attributes, $errors);
   }
-
   
-  /**
-   * Format input value to a valid output value
-   *
-   * @param  string|DateTime|int $date
-   * @return string
-   */
-  protected function formatDate($date)
-  {
-    if(is_string($date) && strtotime($date) !== false)
-    {
-      return date(self::_getDateFormat(), strtotime($date));
-    }
-
-    if(is_integer($date))
-    {
-      return date(self::_getDateFormat(), $date);
-    }
-
-    if(is_object($date) && $date instanceof DateTime)
-    {
-      return $date->format(self::_getDateFormat());
-    }
-
-    throw new sfRenderException(sprintf('The value must be a string in %s format, a timestamp or a DateTime object', self::_getDateFormat()));
-  }
-
-
+  
   /**
    * Get the date format to render a valid string
    *
    * @return string
    */
-  protected static function _getDateFormat()
+  protected function _getDateFormat()
   {
     return 'Y-m-d';
   }
-
+  
+  
   /**
    * Convert date into timestamp
    *
-   * @return int
+   * @return null|int
+   * @throws sfRenderException If the value is not valid string value
    */
-  protected static function _convertDate($date)
+  protected function _convertDate($date)
   {
+    if (null === $date)
+    {
+      return null;
+    }
+    
     if($date instanceof DateTime)
     {
-      $date = $date->format(self::_getDateFormat());
-      return strtotime($date);
+      return $date->format($this->_getDateFormat());
     }
-
-    if(($date = strtotime($date)) !== false)
+    
+    if(is_string($date) && strtotime($date) !== false)
     {
-      return $date;
+      $date = strtotime($date);
     }
-
-    return $date;
+    
+    if (is_numeric($date))
+    {
+      return date($this->_getDateFormat(), $date);
+    }
+    
+    throw new sfRenderException(sprintf('%s is not a valid value.', $date));
   }
-
 }

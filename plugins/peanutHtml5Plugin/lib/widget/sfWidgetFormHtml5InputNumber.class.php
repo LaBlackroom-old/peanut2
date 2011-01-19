@@ -3,7 +3,7 @@
 /**
  * Generate an html5 input type="number"
  *
- * @package peanutHtml5Plugin
+ * @package peanut5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -25,24 +25,19 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    * @param array $attributes  An array of default HTML attributes
    *
    * @see http://dev.w3.org/html5/markup/input.number.html
-   * @see sfWidgetFormHtml5Input
+   * @see sfWidgetForm
    */
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-
+    
     $this->setOption('type', 'number');
     
     $this->addOption('min', null);
     $this->addOption('max', null);
     $this->addOption('step', false);
-
-    $this->setAttribute('maxlength', null);
-    $this->setAttribute('size', null);
-    $this->setAttribute('pattern', null);
-    $this->setAttribute('placeholder', null);
   }
-
+  
   /**
    * @param  string $name        The element name
    * @param  string $value       The value displayed in this widget
@@ -55,21 +50,18 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    
     if(!is_null($this->getOption('min')) && !is_null($this->getOption('max')))
     {
-
       if($this->getOption('min') < $this->getOption('max'))
       {
         $attributes['min'] = $this->getOption('min');
         $attributes['max'] = $this->getOption('max');
       }
-
+      
       if($this->getOption('step'))
       {
         $attributes['step'] = $this->_checkStep($this->getOption('step'));
       }
-
     }
     else
     {
@@ -77,22 +69,23 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
       {
         $attributes['min'] = $this->getOption('min');
       }
-
+      
       if(!is_null($this->getOption('max')))
       {
         $attributes['max'] = $this->getOption('max');
       }
-
+      
       if($this->getOption('step'))
       {
         $attributes['step'] = $this->_checkStep($this->getOption('step'));
       }
-      
     }
     
     return parent::render($name, $value, $attributes, $errors);
   }
-
+  
+  
+  
   /**
    * Check if step is a valid value
    *
@@ -115,7 +108,7 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
         }
       }
     }
-
+    
     if(is_numeric($step))
     {
       if(!is_null($this->getOption('max')) && $step <= $this->getOption('max'))
@@ -131,8 +124,7 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
         throw new sfRenderException('step option must be inferior or equal of max option');
       }
     }
-
+    
     throw new sfRenderException('step option must be a numeric value or "any"');
   }
-
 }

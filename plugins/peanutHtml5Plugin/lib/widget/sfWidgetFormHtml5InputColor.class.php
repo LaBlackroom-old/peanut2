@@ -4,7 +4,7 @@
  * Generate an html5 input type="color"
  * Use this widget with sfValidatorColor
  *
- * @package peanut5Plugin
+ * @package peanutHtml5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -19,13 +19,21 @@ class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5Input
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
    *
-   * @see sfWidgetForm
+   * @see http://dev.w3.org/html5/markup/input.color.html
+   * @see sfWidgetFormHtml5Input
    */
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'color');
+    
+    $this->setAttribute('maxlength', null);
+    $this->setAttribute('readonly', false);
+    $this->setAttribute('size', null);
+    $this->setAttribute('pattern', null);
+    $this->setOption('required', false);
+    $this->setAttribute('placeholder', null);
   }
 
   /**

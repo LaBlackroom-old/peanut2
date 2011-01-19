@@ -3,26 +3,22 @@
 /**
  * Generate an html5 input type="password"
  *
- * @package peanut5Plugin
+ * @package peanutHtml5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
 
 
-class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5InputTel
+class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5Input
 {
 
   /**
    * Constructor.
    *
-   * Available options:
-   *
-   *  * type: The widget type
-   *
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
    *
-   * @see sfWidgetForm
+   * @see sfWidgetFormHtml5InputTel
    */
   protected function configure($options = array(), $attributes = array())
   {
@@ -31,6 +27,8 @@ class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5InputTel
     $this->setOption('type', 'password');
 
     $this->addOption('always_render_empty', true);
+
+    $this->setAttribute('list', null);
   }
 
   /**

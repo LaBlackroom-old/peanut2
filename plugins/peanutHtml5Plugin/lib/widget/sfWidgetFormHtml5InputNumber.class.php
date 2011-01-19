@@ -3,7 +3,7 @@
 /**
  * Generate an html5 input type="number"
  *
- * @package peanut5Plugin
+ * @package peanutHtml5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -25,7 +25,7 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    * @param array $attributes  An array of default HTML attributes
    *
    * @see http://dev.w3.org/html5/markup/input.number.html
-   * @see sfWidgetForm
+   * @see sfWidgetFormHtml5Input
    */
   protected function configure($options = array(), $attributes = array())
   {
@@ -36,6 +36,11 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
     $this->addOption('min', null);
     $this->addOption('max', null);
     $this->addOption('step', false);
+
+    $this->setAttribute('maxlength', null);
+    $this->setAttribute('size', null);
+    $this->setAttribute('pattern', null);
+    $this->setAttribute('placeholder', null);
   }
 
   /**
@@ -52,28 +57,14 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
   {
     if(!is_null($this->getOption('min')) && !is_null($this->getOption('max')))
     {
-      if(!is_null($this->getOption('min')))
+      if($this->getOption('min') < $this->getOption('max'))
       {
-        if($this->getOption('min') < $this->getOption('max'))
-        {
-          $attributes['min'] = $this->getOption('min');
-        }
-        else
-        {
-          throw new sfRenderException('min option must be inferior of max option');
-        }
+        $attributes['min'] = $this->getOption('min');
+        $attributes['max'] = $this->getOption('max');
       }
-
-      if(!is_null($this->getOption('max')))
+      else
       {
-        if($this->getOption('max') > $this->getOption('min'))
-        {
-          $attributes['max'] = $this->getOption('max');
-        }
-        else
-        {
-          throw new sfRenderException('max option must be superior of min option');
-        }
+        throw new sfRenderException('min option must be inferior of max option');
       }
 
       if($this->getOption('step'))
@@ -100,17 +91,17 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
       }
     }
 
-    elseif(!is_null($this->getOption('min')))
+    if(!is_null($this->getOption('min')))
     {
       $attributes['min'] = $this->getOption('min');
     }
 
-    elseif(!is_null($this->getOption('max')))
+    if(!is_null($this->getOption('max')))
     {
       $attributes['max'] = $this->getOption('max');
     }
 
-    elseif(!is_null($this->getOption('step')))
+    if(!is_null($this->getOption('step')))
     {
       $attributes['step'] = $this->getOption('step');
     }

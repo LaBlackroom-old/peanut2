@@ -5,6 +5,7 @@ Ce plugin à pour but de permettre l'utilisation de html5 dans symfony.
 - Ajouter tous les validateurs pour les widgets actuels (au 18 Janvier 2011)
 - Ajouter les alternatives JS (calendriers par exemple) afin d'offrir un support le plus large possible
 - Faire un check des options qui ne pourraient pas être utilisées pour un type de widget et les désactiver.
+- Refacto de la partie helper/task
 - S'éclater un peu avec les nouvelles API html5
 
 ## Création d'une application html5 ##

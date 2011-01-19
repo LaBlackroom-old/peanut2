@@ -2,14 +2,30 @@
 
 include(dirname(__FILE__).'/../../bootstrap/unit.php');
 
-$t = new lime_test(12);
+$t = new lime_test(17);
 $w = new sfWidgetFormHtml5Input();
 
 $t->is($w->render('test'), '<input type="text" name="test" id="test" />', 'render tag ok');
 
 $t->comment('Simple render tests');
+
+$w->setOption('pattern', '[0-9]*');
+$t->is($w->render('test'), '<input type="text" name="test" pattern="[0-9]*" id="test" />', 'render pattern [0-9]*');
+
 $w->setOption('disabled', true);
 $t->like($w->render('test'), '/disabled="disabled"/', 'render disabled');
+
+$w->setOption('form', 'testForm');
+$t->like($w->render('test'), '/form="testForm"/', 'render form');
+
+$w->setOption('maxlength', '12');
+$t->like($w->render('test'), '/maxlength="12"/', 'render maxlength');
+
+$w->setOption('readonly', true);
+$t->like($w->render('test'), '/readonly="readonly"/', 'render readonly');
+
+$w->setOption('size', '12');
+$t->like($w->render('test'), '/size="12"/', 'render maxlength');
 
 $w->setOption('autocomplete', true);
 $t->like($w->render('test'), '/autocomplete="on"/', 'render autocomplete');
@@ -17,14 +33,14 @@ $t->like($w->render('test'), '/autocomplete="on"/', 'render autocomplete');
 $w->setOption('autofocus', true);
 $t->like($w->render('test'), '/autofocus="autofocus"/', 'render autofocus');
 
-$w->setOption('readonly', true);
-$t->like($w->render('test'), '/readonly="readonly"/', 'render readonly');
+$w->setOption('list', 'myList');
+$t->like($w->render('test'), '/list="myList"/', 'render list');
 
 $w->setOption('required', true);
 $t->like($w->render('test'), '/required="required"/', 'render required');
 
-$w->setOption('form', 'testForm');
-$t->like($w->render('test'), '/form="testForm"/', 'render form');
+$w->setOption('placeholder', 'salut');
+$t->like($w->render('test'), '/placeholder="salut"/', 'render placeholder');
 
 
 $t->comment('exception test');

@@ -2,10 +2,8 @@
 
 /**
  * Generate an html5 input type="date"
- *
- * @todo Check the value granularity for step
  * 
- * @package peanut5Plugin
+ * @package peanutHtml5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -17,10 +15,16 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
   /**
    * Constructor.
    *
+   * Available options:
+   *  * min:  The expected lower bound for the element’s value.
+   *  * max:  The expected upper bound for the element’s value.
+   *  * step: Specifies the value granularity of the element’s value.
+   * 
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
    *
-   * @see sfWidgetForm
+   * @see http://dev.w3.org/html5/markup/input.date.html
+   * @see sfWidgetFormHtml5Input
    */
   protected function configure($options = array(), $attributes = array())
   {
@@ -31,6 +35,11 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
     $this->addOption('min', null);
     $this->addOption('max', null);
     $this->addOption('step', false);
+
+    $this->setAttribute('maxlength', null);
+    $this->setAttribute('size', null);
+    $this->setAttribute('pattern', null);
+    $this->setAttribute('placeholder', null);
   }
 
   /**

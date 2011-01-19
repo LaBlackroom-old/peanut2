@@ -75,7 +75,7 @@ $w->setOption('max', strtotime('42 october 2010'));
 try
 {
   $w->render('date');
-  $t->fail('Invalid value should throw and exception');
+  $t->fail('Invalid value should throw an exception');
 }
 catch(Exception $e)
 {

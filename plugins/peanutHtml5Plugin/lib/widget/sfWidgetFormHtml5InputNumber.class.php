@@ -3,9 +3,10 @@
 /**
  * Generate an html5 input type="number"
  *
- * @package peanut5Plugin
+ * @package peanutHtml5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author Xav 'xavismeh'<xav.is@2cool4school.fr>
  */
 
 
@@ -25,7 +26,7 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    * @param array $attributes  An array of default HTML attributes
    *
    * @see http://dev.w3.org/html5/markup/input.number.html
-   * @see sfWidgetForm
+   * @see sfWidgetFormHtml5Input
    */
   protected function configure($options = array(), $attributes = array())
   {

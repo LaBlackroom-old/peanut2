@@ -33,7 +33,7 @@ class sfWidgetFormHtml5InputDateTime extends sfWidgetFormHtml5InputDate
    *
    * @return string
    */
-  protected static function _getDateFormat()
+  protected function _getDateFormat()
   {
     date_default_timezone_set('UTC');
     return 'Y-m-d\TH:i:s\Z';

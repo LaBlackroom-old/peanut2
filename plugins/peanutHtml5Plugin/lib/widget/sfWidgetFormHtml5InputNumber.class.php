@@ -3,7 +3,7 @@
 /**
  * Generate an html5 input type="number"
  *
- * @package peanutHtml5Plugin
+ * @package peanut5Plugin
  * @subpackage widget
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -25,24 +25,19 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    * @param array $attributes  An array of default HTML attributes
    *
    * @see http://dev.w3.org/html5/markup/input.number.html
-   * @see sfWidgetFormHtml5Input
+   * @see sfWidgetForm
    */
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-
+    
     $this->setOption('type', 'number');
     
     $this->addOption('min', null);
     $this->addOption('max', null);
     $this->addOption('step', false);
-
-    $this->setAttribute('maxlength', null);
-    $this->setAttribute('size', null);
-    $this->setAttribute('pattern', null);
-    $this->setAttribute('placeholder', null);
   }
-
+  
   /**
    * @param  string $name        The element name
    * @param  string $value       The value displayed in this widget
@@ -62,51 +57,74 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
         $attributes['min'] = $this->getOption('min');
         $attributes['max'] = $this->getOption('max');
       }
-      else
-      {
-        throw new sfRenderException('min option must be inferior of max option');
-      }
-
+      
       if($this->getOption('step'))
       {
-        if(($this->getOption('step') <= $this->getOption('max')) || $this->getOption('step') == 'any')
+        $attributes['step'] = $this->_checkStep($this->getOption('step'));
+      }
+    }
+    else
+    {
+      if(!is_null($this->getOption('min')))
+      {
+        $attributes['min'] = $this->getOption('min');
+      }
+      
+      if(!is_null($this->getOption('max')))
+      {
+        $attributes['max'] = $this->getOption('max');
+      }
+      
+      if($this->getOption('step'))
+      {
+        $attributes['step'] = $this->_checkStep($this->getOption('step'));
+      }
+    }
+    
+    return parent::render($name, $value, $attributes, $errors);
+  }
+  
+  
+  
+  /**
+   * Check if step is a valid value
+   *
+   * @param  string|numeric $step Sometimes a string, sometimes a numeric value
+   * @return string
+   */
+  protected function _checkStep($step)
+  {
+    if(is_string($step))
+    {
+      if($step == 'any')
+      {
+        return $step;
+      }
+      else
+      {
+        if(false !== strpos($step, ','))
         {
-          if(false !== strpos($this->getOption('step'), ','))
-          {
-            $attributes['step'] = str_replace(',', '.', $this->getOption('step'));
-          }
-          else
-          {
-            $attributes['step'] = $this->getOption('step');
-          }
-        }
-        elseif(is_numeric($this->getOption('step')))
-        {
-          throw new sfRenderException('step option must be inferior of max option');
-        }
-        else
-        {
-          throw new sfRenderException('step option must be a numeric value or "any"');
+         $step = str_replace(',', '.', $step);
         }
       }
     }
-
-    if(!is_null($this->getOption('min')))
+    
+    if(is_numeric($step))
     {
-      $attributes['min'] = $this->getOption('min');
+      if(!is_null($this->getOption('max')) && $step <= $this->getOption('max'))
+      {
+        return (string) $step;
+      }
+      elseif(is_null($this->getOption('max')))
+      {
+        return (string) $step;
+      }
+      else
+      {
+        throw new sfRenderException('step option must be inferior or equal of max option');
+      }
     }
-
-    if(!is_null($this->getOption('max')))
-    {
-      $attributes['max'] = $this->getOption('max');
-    }
-
-    if(!is_null($this->getOption('step')))
-    {
-      $attributes['step'] = $this->getOption('step');
-    }
-
-    return parent::render($name, $value, $attributes, $errors);
+    
+    throw new sfRenderException('step option must be a numeric value or "any"');
   }
-
 }

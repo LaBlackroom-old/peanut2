@@ -90,22 +90,24 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
         }
       }
     }
-
-    if(!is_null($this->getOption('min')))
+    else
     {
-      $attributes['min'] = $this->getOption('min');
-    }
+      if(!is_null($this->getOption('min')))
+      {
+        $attributes['min'] = $this->getOption('min');
+      }
 
-    if(!is_null($this->getOption('max')))
-    {
-      $attributes['max'] = $this->getOption('max');
-    }
+      if(!is_null($this->getOption('max')))
+      {
+        $attributes['max'] = $this->getOption('max');
+      }
 
-    if(!is_null($this->getOption('step')))
-    {
-      $attributes['step'] = $this->getOption('step');
+      if(!is_null($this->getOption('step')))
+      {
+        $attributes['step'] = $this->getOption('step');
+      }
     }
-
+    
     return parent::render($name, $value, $attributes, $errors);
   }
 

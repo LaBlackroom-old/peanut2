@@ -57,7 +57,7 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
     $min = $this->_convertDate($this->getOption('min'));
     $max = $this->_convertDate($this->getOption('max'));
 
-    if(!is_null($min) && !is_null($max))
+    if($min && $max)
     {
       if($min < $max)
       {
@@ -69,22 +69,24 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5Input
         throw new sfRenderException('min option must be inferior of max option');
       }
     }
-
-    elseif(!is_null($this->getOption('min')))
+    else
     {
-      $attributes['min'] = $this->formatDate($this->getOption('min'));
-    }
+      if(!is_null($this->getOption('min')))
+      {
+        $attributes['min'] = $this->formatDate($this->getOption('min'));
+      }
 
-    elseif(!is_null($this->getOption('max')))
-    {
-      $attributes['max'] = $this->formatDate($this->getOption('max'));
-    }
+      if(!is_null($this->getOption('max')))
+      {
+        $attributes['max'] = $this->formatDate($this->getOption('max'));
+      }
 
-    elseif(!is_null($this->getOption('step')))
-    {
-      $attributes['step'] = $this->getOption('step');
+      if(!is_null($this->getOption('step')))
+      {
+        $attributes['step'] = $this->getOption('step');
+      }
     }
-
+    
     return parent::render($name, $value, $attributes, $errors);
   }
 

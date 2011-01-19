@@ -10,12 +10,12 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins(array(
         'sfDoctrinePlugin',
         'sfTaskExtraPlugin',
-        'peanut5Plugin'
+        'peanutHtml5Plugin'
     ));
   }
 
   public function setupPlugins()
   {
-    $this->pluginConfigurations['peanut5Plugin']->connectTests();
+    $this->pluginConfigurations['peanutHtml5Plugin']->connectTests();
   }
 }

@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -28,7 +28,7 @@ class sfWidgetFormHtml5InputPassword extends sfWidgetFormHtml5Input
 
     $this->addOption('always_render_empty', true);
 
-    $this->setAttribute('list', null);
+    $this->disableAttribute('list');
   }
 
   /**

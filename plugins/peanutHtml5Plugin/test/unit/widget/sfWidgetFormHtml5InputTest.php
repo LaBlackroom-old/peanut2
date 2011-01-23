@@ -2,102 +2,52 @@
 
 include(dirname(__FILE__).'/../../bootstrap/unit.php');
 
-$t = new lime_test(17);
-$w = new sfWidgetFormHtml5Input();
+$t = new lime_test();
 
+$t->comment('render default input');
+$w = new sfWidgetFormHtml5Input();
 $t->is($w->render('test'), '<input type="text" name="test" id="test" />', 'render tag ok');
 
-$t->comment('Simple render tests');
-
-$w->setOption('pattern', '[0-9]*');
-$t->is($w->render('test'), '<input type="text" name="test" pattern="[0-9]*" id="test" />', 'render pattern [0-9]*');
-
-$w->setOption('disabled', true);
-$t->like($w->render('test'), '/disabled="disabled"/', 'render disabled');
-
-$w->setOption('form', 'testForm');
-$t->like($w->render('test'), '/form="testForm"/', 'render form');
-
-$w->setOption('maxlength', '12');
-$t->like($w->render('test'), '/maxlength="12"/', 'render maxlength');
-
-$w->setOption('readonly', true);
-$t->like($w->render('test'), '/readonly="readonly"/', 'render readonly');
-
-$w->setOption('size', '12');
-$t->like($w->render('test'), '/size="12"/', 'render maxlength');
-
-$w->setOption('autocomplete', true);
-$t->like($w->render('test'), '/autocomplete="on"/', 'render autocomplete');
-
-$w->setOption('autofocus', true);
-$t->like($w->render('test'), '/autofocus="autofocus"/', 'render autofocus');
-
-$w->setOption('list', 'myList');
-$t->like($w->render('test'), '/list="myList"/', 'render list');
-
-$w->setOption('required', true);
-$t->like($w->render('test'), '/required="required"/', 'render required');
-
-$w->setOption('placeholder', 'salut');
-$t->like($w->render('test'), '/placeholder="salut"/', 'render placeholder');
 
 
-$t->comment('exception test');
 
-$w->setOption('disabled', 'true');
-try
-{
-  $w->render('test');
-  $t->fail('disabled must be true or false (but not string "true")');
-}
-catch(Exception $e)
-{
-  $t->pass('exception required caught successfully');
-}
+$t->comment('simple test with html5 attributes');
 
+$w->setAttribute('accesskey', 'test');
+$t->like($w->render('test'), '/accesskey="test"/', 'render accesskey');
 
-$w->setOption('autocomplete', 'true');
-try
-{
-  $w->render('test');
-  $t->fail('autocomplete must be true or false (but not string "true")');
-}
-catch(Exception $e)
-{
-  $t->pass('exception autocomplete caught successfully');
-}
+$w->setAttribute('class', 'myClass');
+$t->like($w->render('test'), '/class="myClass"/', 'render class');
 
+$w->setAttribute('contenteditable', true);
+$t->like($w->render('test'), '/contenteditable="true"/', 'render contenteditable');
 
-$w->setOption('autofocus', 'true');
-try
-{
-  $w->render('test');
-  $t->fail('autofocus must be true or false (but not string "true")');
-}
-catch(Exception $e)
-{
-  $t->pass('exception autocofocus caught successfully');
-}
+$w->setAttribute('contextmenu', 'myContext');
+$t->like($w->render('test'), '/contextmenu="myContext"/', 'render contextmenu');
 
-$w->setOption('readonly', 'true');
-try
-{
-  $w->render('test');
-  $t->fail('readonly must be true or false (but not string "true")');
-}
-catch(Exception $e)
-{
-  $t->pass('exception readonly caught successfully');
-}
+$w->setAttribute('dir', 'ltr');
+$t->like($w->render('test'), '/dir="ltr"/', 'render dir');
 
-$w->setOption('required', 'true');
-try
-{
-  $w->render('test');
-  $t->fail('required must be true or false (but not string "true")');
-}
-catch(Exception $e)
-{
-  $t->pass('exception required caught successfully');
-}
+$w->setAttribute('draggable', true);
+$t->like($w->render('test'), '/draggable="true"/', 'render draggable');
+
+$w->setAttribute('dropzone', 'copy');
+$t->like($w->render('test'), '/dropzone="copy"/', 'render dropzone');
+
+$w->setAttribute('hidden', true);
+$t->like($w->render('test'), '/hidden="hidden"/', 'render hidden');
+
+$w->setAttribute('lang', 'fr_FR');
+$t->like($w->render('test'), '/lang="fr_FR"/', 'render lang');
+
+$w->setAttribute('spellcheck', true);
+$t->like($w->render('test'), '/spellcheck="true"/', 'render spellcheck');
+
+$w->setAttribute('style', 'myStyle');
+$t->like($w->render('test'), '/style="myStyle"/', 'render style');
+
+$w->setAttribute('tabindex', 1);
+$t->like($w->render('test'), '/tabindex="1"/', 'render tabindex');
+
+$w->setAttribute('title', 'myTitle');
+$t->like($w->render('test'), '/title="myTitle"/', 'render title');

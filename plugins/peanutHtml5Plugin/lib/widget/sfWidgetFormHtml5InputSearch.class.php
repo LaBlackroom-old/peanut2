@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputSearch extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputSearch extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -26,7 +26,6 @@ class sfWidgetFormHtml5InputSearch extends sfWidgetFormHtml5Input
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'search');
-
   }
 
 }

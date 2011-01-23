@@ -27,8 +27,8 @@ class sfWidgetFormHtml5InputRange extends sfWidgetFormHtml5InputNumber
 
     $this->setOption('type', 'range');
 
-    $this->setAttribute('readonly', false);
-    $this->setAttribute('required', false);
+    $this->disableAttribute('readonly');
+    $this->disableAttribute('required');
   }
 
 }

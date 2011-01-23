@@ -9,19 +9,19 @@ $t->is($w->render('number'), '<input type="number" name="number" id="number" />'
 
 $t->comment('Simple test with options');
 
-$w->setOption('min', '1');
+$w->setAttribute('min', '1');
 $t->like($w->render('number'), '/min="1"/', 'render min 1');
 
-$w->setOption('max', '100');
+$w->setAttribute('max', '100');
 $t->like($w->render('number'), '/max="100"/', 'render max 100');
 
-$w->setOption('step', '2');
+$w->setAttribute('step', '2');
 $t->like($w->render('number'), '/step="2"/', 'render step 2');
 
 
 $t->comment('Test min and max options');
-$w->setOption('min', '1');
-$w->setOption('max', '-1');
+$w->setAttribute('min', '1');
+$w->setAttribute('max', '-1');
 
 try
 {
@@ -33,8 +33,8 @@ catch(Exception $e)
   $t->pass('exception min caught successfully');
 }
 
-$w->setOption('min', '-1');
-$w->setOption('max', '-2');
+$w->setAttribute('min', '-1');
+$w->setAttribute('max', '-2');
 
 try
 {
@@ -46,9 +46,9 @@ catch(Exception $e)
   $t->pass('exception max caught successfully');
 }
 
-$w->setOption('min', '1');
-$w->setOption('max', '10');
-$w->setOption('step', '11');
+$w->setAttribute('min', '1');
+$w->setAttribute('max', '10');
+$w->setAttribute('step', '11');
 
 try
 {
@@ -60,16 +60,16 @@ catch(Exception $e)
   $t->pass('exception step caught successfully');
 }
 
-$w->setOption('step', '10');
+$w->setAttribute('step', '10');
 $w->render('number');
 $t->pass( '10 and max option are equal');
 
 
-$w->setOption('step', 'any');
+$w->setAttribute('step', 'any');
 $w->render('number');
 $t->pass('any is a valid value for step');
 
-$w->setOption('step', 'salut');
+$w->setAttribute('step', 'salut');
 try
 {
   $w->render('number');
@@ -82,8 +82,8 @@ catch(Exception $e)
 
 
 $t->comment('Replace float , for .');
-$w->setOption('min', '1');
-$w->setOption('max', '10');
-$w->setOption('step', '0,1');
+$w->setAttribute('min', '1');
+$w->setAttribute('max', '10');
+$w->setAttribute('step', '0,1');
 
 $t->like($w->render('number'), '/step="0.1"/', 'render step 0.1');

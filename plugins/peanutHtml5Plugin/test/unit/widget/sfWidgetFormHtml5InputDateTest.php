@@ -10,9 +10,9 @@ $t->is($w->render('date'), '<input type="date" name="date" id="date" />', 'rende
 
 $t->comment('->render() with a min option');
 $t->info('Using a string');
-$w->setOption('min', '2010-10-10');
+$w->setAttribute('min', '2010-10-10');
 $t->like($w->render('date'), '/min="2010-10-10"/', 'render Y-m-d with string');
-$w->setOption('min', 'salut');
+$w->setAttribute('min', 'salut');
 try
 {
   $w->render('date');
@@ -26,10 +26,10 @@ catch(Exception $e)
 
 
 $t->info('Using an integer');
-$w->setOption('min', strtotime('10 october 2010'));
+$w->setAttribute('min', strtotime('10 october 2010'));
 $t->like($w->render('date'), '/min="2010-10-10"/', 'render Y-m-d with integer');
 
-$w->setOption('min', strtotime('42 october 2010'));
+$w->setAttribute('min', strtotime('42 october 2010'));
 try
 {
   $w->render('date');
@@ -42,7 +42,7 @@ catch(Exception $e)
 
 
 $t->info('Using a DateTime object');
-$w->setOption('min', new DateTime('2010-10-10'));
+$w->setAttribute('min', new DateTime('2010-10-10'));
 $t->like($w->render('date'), '/min="2010-10-10"/', 'render Y-m-d with DateTime Object');
 
 
@@ -52,9 +52,9 @@ $t->comment('->render() with a max option');
 $w = new sfWidgetFormHtml5InputDate();
 
 $t->info('Using a string');
-$w->setOption('max', '2010-10-10');
+$w->setAttribute('max', '2010-10-10');
 $t->like($w->render('date'), '/max="2010-10-10"/', 'render Y-m-d with string');
-$w->setOption('max', 'salut');
+$w->setAttribute('max', 'salut');
 try
 {
   $w->render('date');
@@ -68,10 +68,10 @@ catch(Exception $e)
 
 
 $t->info('Using an integer');
-$w->setOption('max', strtotime('10 october 2010'));
+$w->setAttribute('max', strtotime('10 october 2010'));
 $t->like($w->render('date'), '/max="2010-10-10"/', 'render Y-m-d with integer');
 
-$w->setOption('max', strtotime('42 october 2010'));
+$w->setAttribute('max', strtotime('42 october 2010'));
 try
 {
   $w->render('date');
@@ -84,12 +84,12 @@ catch(Exception $e)
 
 
 $t->info('Using a DateTime object');
-$w->setOption('max', new DateTime('2010-10-10'));
+$w->setAttribute('max', new DateTime('2010-10-10'));
 $t->like($w->render('date'), '/max="2010-10-10"/', 'render Y-m-d with DateTime Object');
 
 
 
 $t->comment('->render() with a step option');
 $w = new sfWidgetFormHtml5InputDate();
-$w->setOption('step', '2');
+$w->setAttribute('step', '2');
 $t->like($w->render('number'), '/step="2"/', 'render step 2');

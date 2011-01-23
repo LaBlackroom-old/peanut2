@@ -10,7 +10,7 @@
  */
 
 
-class sfWidgetFormHtml5InputEmail extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputEmail extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -31,12 +31,22 @@ class sfWidgetFormHtml5InputEmail extends sfWidgetFormHtml5Input
 
     $this->setOption('type', 'email');
 
-    $this->addOption('multiple', false);
+    $this->addAttribute('multiple', false);
   }
 
+  /**
+   * @param  string $name        The element name
+   * @param  string $value       The value displayed in this widget
+   * @param  array  $attributes  An array of HTML attributes to be merged with the default HTML attributes
+   * @param  array  $errors      An array of errors for the field
+   *
+   * @return string An HTML tag string
+   *
+   * @see sfWidgetForm
+   */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if($this->getOption('multiple'))
+    if($this->getAttribute('multiple'))
     {
       $attributes['multiple'] = 'multiple';
       if(is_array($value))

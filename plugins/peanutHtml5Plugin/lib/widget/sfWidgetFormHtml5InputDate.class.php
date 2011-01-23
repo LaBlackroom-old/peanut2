@@ -42,8 +42,8 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $this->setOption('min', $this->_convertDate($this->getOption('min')));
-    $this->setOption('max', $this->_convertDate($this->getOption('max')));
+    $this->setAttribute('min', $this->_convertDate($this->getAttribute('min')));
+    $this->setAttribute('max', $this->_convertDate($this->getAttribute('max')));
     
     return parent::render($name, $value, $attributes, $errors);
   }

@@ -11,25 +11,58 @@
 
 class sfWidgetFormHtml5Input extends sfWidgetFormInput
 {
-  
+
   /**
    * Constructor.
    *
-   * Available options :
-   *  * disabled:     Specifies that the element represents a disabled control.
-   *  * form:         The value of the id attribute on the form with which to associate the element.
-   *  * readonly:     Specifies that element represents a control whose value is not meant to be edited.
-   *  * size:         The number of options meant to be shown by the control represented by its element.
-   *  * autocomplete: Specifies whether the element represents an input control for which a UA is meant to store the value entered by the
-   *                  user (so that the UA can prefill the form later).
-   *  * autofocus:    Specifies that the element represents a control to which a UA is meant to give focus as soon as the document is
-   *                  loaded.
-   *  * list:         The value of the id attribute on the datalist with which to associate the element.
-   *  * pattern:      Specifies a regular expression against which a UA is meant to check the value of the control represented by its
-   *                  element.
-   *  * required:     Specifies that the element is a required part of form submission.
-   *  * placeholder:  A short hint (one word or a short phrase) intended to aid the user when entering data into the control represented by
-   *                  its element.
+   * @param array $options     An array of options
+   * @param array $attributes  An array of default HTML attributes
+   *
+   * @throws InvalidArgumentException when a option is not supported
+   * @throws RuntimeException         when a required option is not given
+   */
+  public function __construct($options = array(), $attributes = array())
+  {
+    $this->configure($options, $attributes);
+
+    $currentAttributesKeys = array_keys($this->attributes);
+    $attributeKeys = array_keys($attributes);
+
+    // check attributes names
+    if ($diff = array_diff($attributeKeys, $currentAttributesKeys))
+    {
+      throw new InvalidArgumentException(sprintf('%s does not support the following attribute: \'%s\'.',get_class($this), implode('\', \'', $diff)));
+    }
+
+    $this->attributes = array_merge($this->attributes, $attributes);
+
+    return parent::__construct($options, $attributes);
+  }
+
+
+  /**
+   * Constructor.
+   *
+   * Available attributes :
+   *  * accesskey:        A key label or list of key labels with which to associate the element; each key label represents a keyboard
+   *                      shortcut which UAs can use to activate the element or give focus to the element.
+   *  * class:            A name of a classification, or list of names of classifications, to which the element belongs.
+   *  * contenteditable:  Specifies that element represents a control whose value is not meant to be edited.
+   *  * contextmenu:      The value of the id attribute on the menu with which to associate the element as a context menu.
+   *  * dir:              Specifies the element’s text directionality.
+   *  * draggable:        Specifies whether the element is draggable.
+   *  * dropzone:         Specifies what types of content can be dropped on the element, and instructs the UA about which actions to take
+   *                      with content when it is dropped on the element.
+   *  * hidden:           Specifies that the element represents an element that is not yet, or is no longer, relevant.
+   *  * lang:             Specifies the primary language for the contents of the element and for any of the element’s attributes that
+   *                      contain text.
+   *  * spellcheck:       Specifies whether the element represents an element whose contents are subject to spell checking and grammar
+   *                      checking.
+   *  * style:            Specifies zero or more CSS declarations that apply to the element.
+   *  * tabindex:         Specifies whether the element represents an element that is is focusable (that is, an element which is part of the
+   *                      sequence of focusable elements in the document), and the relative order of the element in the sequence of
+   *                      focusable elements in the document.
+   *  * title:            Advisory information associated with the element.
    *
    * @param array $options     An array of options
    * @param array $attributes  An array of default HTML attributes
@@ -43,18 +76,19 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
   {
     parent::configure($options, $attributes);
 
-    $this->addOption('disabled', false);
-    $this->addOption('form', null);
-    $this->addOption('maxlength', null);
-    $this->addOption('readonly', false);
-    $this->addOption('size', null);
-    $this->addOption('autocomplete', false);
-    $this->addOption('autofocus', false);
-    $this->addOption('list', null);
-    $this->addOption('pattern', null);
-    $this->addOption('required', false);
-    $this->addOption('placeholder', null);
-    
+    $this->addAttribute('accesskey');
+    $this->addAttribute('class');
+    $this->addAttribute('contenteditable', false);
+    $this->addAttribute('contextmenu');
+    $this->addAttribute('dir');
+    $this->addAttribute('draggable', false);
+    $this->addAttribute('dropzone');
+    $this->addAttribute('hidden', false);
+    $this->addAttribute('lang');
+    $this->addAttribute('spellcheck', false);
+    $this->addAttribute('style');
+    $this->addAttribute('tabindex');
+    $this->addAttribute('title');
   }
 
 
@@ -79,94 +113,95 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
+    $attributes['contenteditable'] = $this->getAttribute('contenteditable') ? $this->checkBooleanAttribute('contenteditable') : false;
+    $attributes['draggable'] = $this->getAttribute('draggable') ? $this->checkBooleanAttribute('draggable') : false;
+    $attributes['spellcheck'] = $this->getAttribute('spellcheck') ? $this->checkBooleanAttribute('spellcheck') : false;
+    $attributes['hidden'] = $this->getAttribute('hidden') ? $this->checkBooleanAttribute('hidden', 'hidden') : false;
 
-    // disabled option
-    if($this->getOption('disabled') === true)
+    if($this->getAttribute('accesskey'))
     {
-      $attributes['disabled'] = 'disabled';
-    }
-    elseif($this->getOption('disabled') !== false)
-    {
-      throw new sfRenderException('disabled must be true or false');
-    }
-
-    // form option
-    if(is_string($this->getOption('form')))
-    {
-      $attributes['form'] = $this->getOption('form');
+      $attributes['accesskey'] = $this->getAttribute('accesskey');
     }
 
-    // maxlength option
-    if(is_string($this->getOption('maxlength')))
+    if($this->getAttribute('dir'))
     {
-      $attributes['maxlength'] = $this->getOption('maxlength');
+      $attributes['dir'] = $this->getAttribute('dir');
     }
 
-    // readonly option
-    if($this->getOption('readonly') === true)
+    if($this->getAttribute('dropzone'))
     {
-      $attributes['readonly'] = 'readonly';
-    }
-    elseif($this->getOption('readonly') !== false)
-    {
-      throw new sfRenderException('readonly must be true or false');
+      $attributes['dropzone'] = $this->getAttribute('dropzone');
     }
 
-    // size option
-    if(is_string($this->getOption('size')))
+    if(null === $this->getAttribute('tabindex') || is_int($this->getAttribute('tabindex')))
     {
-      $attributes['size'] = $this->getOption('size');
+      $attributes['tabindex'] = $this->getAttribute('tabindex');
     }
-
-    // autocomplete option
-    if($this->getOption('autocomplete') === true)
+    else
     {
-      $attributes['autocomplete'] = 'on';
-    }
-    elseif($this->getOption('autocomplete') !== false)
-    {
-      throw new sfRenderException('autocomplete must be true or false');
-    }
-
-    // autofocus option
-    if($this->getOption('autofocus') === true)
-    {
-      $attributes['autofocus'] = 'autofocus';
-    }
-    elseif($this->getOption('autofocus') !== false)
-    {
-      throw new sfRenderException('autofocus must be true or false');
-    }
-
-    // list option
-    if(is_string($this->getOption('list')))
-    {
-      $attributes['list'] = $this->getOption('list');
-    }
-    
-    // pattern option
-    if(is_string($this->getOption('pattern')))
-    {
-      $attributes['pattern'] = $this->getOption('pattern');
-    }
-
-    // required option
-    if($this->getOption('required') === true)
-    {
-      $attributes['required'] = 'required';
-    }
-    elseif($this->getOption('required') !== false)
-    {
-      throw new sfRenderException('required must be true or false');
-    }
-
-    // placeholder option
-    if(is_string($this->getOption('placeholder')))
-    {
-      $attributes['placeholder'] = $this->getOption('placeholder');
+      throw new sfRenderException(' tabindex must be an integer');
     }
 
     return parent::render($name, $value, $attributes, $errors);
   }
 
+
+  /**
+   * Adds a new attribute name with a default value.
+   *
+   * @param string $name   The attribute name
+   * @param mixed  $value  The default value
+   *
+   * @return sfWidget The current widget instance
+   */
+  public function addAttribute($name, $value = null)
+  {
+    $this->attributes[$name] = $value;
+    return $this;
+  }
+
+  /**
+   * Returns true if the attribute exists.
+   *
+   * @param  string $name  The attribute name
+   *
+   * @return bool true if the option exists, false otherwise
+   */
+  public function hasAttribute($name)
+  {
+    return array_key_exists($name, $this->attributes);
+  }
+
+  /**
+   * Unset an attribute if exist.
+   *
+   * @param  string $name  The attribute name
+   *
+   */
+  public function disableAttribute($name)
+  {
+    if($this->hasAttribute($name))
+    {
+      unset($this->attributes[$name]);
+    }
+  }
+
+  /**
+   * Check if the attribute value is a boolean.
+   *
+   * @param  string $name  The attribute name
+   * @param  string $value The default return value
+   *
+   * @return $value
+   *
+   */
+  protected function checkBooleanAttribute($name, $value = 'true')
+  {
+    if(is_bool($this->getAttribute($name)) && $this->getAttribute($name) == true)
+    {
+      return $value;
+    }
+
+    throw new sfRenderException($name . ' must be a boolean');
+  }
 }

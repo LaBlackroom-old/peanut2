@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -31,13 +31,13 @@ class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5Input
     $this->setOption('type', 'file');
     $this->setOption('needs_multipart', true);
 
-    $this->setAttribute('maxlength', null);
-    $this->setAttribute('readonly', false);
-    $this->setAttribute('size', null);
-    $this->setAttribute('autocomplete', false);
-    $this->setAttribute('list', null);
-    $this->setAttribute('pattern', null);
-    $this->setAttribute('placeholder', null);
+    $this->disableAttribute('maxlength');
+    $this->disableAttribute('readonly');
+    $this->disableAttribute('size');
+    $this->disableAttribute('autocomplete');
+    $this->disableAttribute('list');
+    $this->disableAttribute('pattern');
+    $this->disableAttribute('placeholder');
   }
 
 }

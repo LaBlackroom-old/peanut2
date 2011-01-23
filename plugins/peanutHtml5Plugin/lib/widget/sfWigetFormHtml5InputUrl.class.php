@@ -10,7 +10,7 @@
  */
 
 
-class sfWidgetFormHtml5InputUrl extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputUrl extends sfWidgetFormHtml5InputText
 {
 
   /**

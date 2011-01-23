@@ -10,7 +10,7 @@
  */
 
 
-class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -27,13 +27,6 @@ class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5Input
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'color');
-    
-    $this->setAttribute('maxlength', null);
-    $this->setAttribute('readonly', false);
-    $this->setAttribute('size', null);
-    $this->setAttribute('pattern', null);
-    $this->setOption('required', false);
-    $this->setAttribute('placeholder', null);
   }
 
   /**

@@ -10,7 +10,7 @@
  */
 
 
-class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
+class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5InputText
 {
 
   /**
@@ -34,9 +34,9 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
     
     $this->setOption('type', 'number');
     
-    $this->addOption('min', null);
-    $this->addOption('max', null);
-    $this->addOption('step', false);
+    $this->addAttribute('min');
+    $this->addAttribute('max');
+    $this->addAttribute('step', false);
   }
   
   /**
@@ -51,34 +51,34 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    if(!is_null($this->getOption('min')) && !is_null($this->getOption('max')))
+    if(!is_null($this->getAttribute('min')) && !is_null($this->getAttribute('max')))
     {
-      if($this->getOption('min') < $this->getOption('max'))
+      if($this->getAttribute('min') < $this->getAttribute('max'))
       {
-        $attributes['min'] = $this->getOption('min');
-        $attributes['max'] = $this->getOption('max');
+        $attributes['min'] = $this->getAttribute('min');
+        $attributes['max'] = $this->getAttribute('max');
       }
       
-      if($this->getOption('step'))
+      if($this->getAttribute('step'))
       {
-        $attributes['step'] = $this->_checkStep($this->getOption('step'));
+        $attributes['step'] = $this->_checkStep($this->getAttribute('step'));
       }
     }
     else
     {
-      if(!is_null($this->getOption('min')))
+      if(!is_null($this->getAttribute('min')))
       {
-        $attributes['min'] = $this->getOption('min');
+        $attributes['min'] = $this->getAttribute('min');
       }
       
-      if(!is_null($this->getOption('max')))
+      if(!is_null($this->getAttribute('max')))
       {
-        $attributes['max'] = $this->getOption('max');
+        $attributes['max'] = $this->getAttribute('max');
       }
       
-      if($this->getOption('step'))
+      if($this->getAttribute('step'))
       {
-        $attributes['step'] = $this->_checkStep($this->getOption('step'));
+        $attributes['step'] = $this->_checkStep($this->getAttribute('step'));
       }
     }
     
@@ -112,20 +112,20 @@ class sfWidgetFormHtml5InputNumber extends sfWidgetFormHtml5Input
     
     if(is_numeric($step))
     {
-      if(!is_null($this->getOption('max')) && $step <= $this->getOption('max'))
+      if(!is_null($this->getAttribute('max')) && $step <= $this->getAttribute('max'))
       {
         return (string) $step;
       }
-      elseif(is_null($this->getOption('max')))
+      elseif(is_null($this->getAttribute('max')))
       {
         return (string) $step;
       }
       else
       {
-        throw new sfRenderException('step option must be inferior or equal of max option');
+        throw new sfRenderException('step attribute must be inferior or equal of max attribute');
       }
     }
     
-    throw new sfRenderException('step option must be a numeric value or "any"');
+    throw new sfRenderException('step attribute must be a numeric value or "any"');
   }
 }

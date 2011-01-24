@@ -9,7 +9,7 @@
  */
 
 
-class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5InputText
+class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5InputEmail
 {
 
   /**
@@ -31,6 +31,8 @@ class sfWidgetFormHtml5InputFile extends sfWidgetFormHtml5InputText
     $this->setOption('type', 'file');
     $this->setOption('needs_multipart', true);
 
+    $this->addAttribute('accept');
+    
     $this->disableAttribute('maxlength');
     $this->disableAttribute('readonly');
     $this->disableAttribute('size');

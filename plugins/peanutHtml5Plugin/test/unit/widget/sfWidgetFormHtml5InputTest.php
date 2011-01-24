@@ -13,13 +13,13 @@ $t->is($w->render('test'), '<input type="text" name="test" id="test" />', 'rende
 
 $t->comment('simple test with html5 attributes');
 
-$w->setAttribute('accesskey', 'test');
-$t->like($w->render('test'), '/accesskey="test"/', 'render accesskey');
+$w->setAttribute('accesskey', array('a', 'b', 'c'));
+$t->like($w->render('test'), '/accesskey="a b c"/', 'render accesskey');
 
 $w->setAttribute('class', 'myClass');
 $t->like($w->render('test'), '/class="myClass"/', 'render class');
 
-$w->setAttribute('contenteditable', true);
+$w->setAttribute('contenteditable', 'true');
 $t->like($w->render('test'), '/contenteditable="true"/', 'render contenteditable');
 
 $w->setAttribute('contextmenu', 'myContext');
@@ -28,19 +28,19 @@ $t->like($w->render('test'), '/contextmenu="myContext"/', 'render contextmenu');
 $w->setAttribute('dir', 'ltr');
 $t->like($w->render('test'), '/dir="ltr"/', 'render dir');
 
-$w->setAttribute('draggable', true);
+$w->setAttribute('draggable', 'true');
 $t->like($w->render('test'), '/draggable="true"/', 'render draggable');
 
 $w->setAttribute('dropzone', 'copy');
 $t->like($w->render('test'), '/dropzone="copy"/', 'render dropzone');
 
-$w->setAttribute('hidden', true);
+$w->setAttribute('hidden', 'hidden');
 $t->like($w->render('test'), '/hidden="hidden"/', 'render hidden');
 
 $w->setAttribute('lang', 'fr_FR');
 $t->like($w->render('test'), '/lang="fr_FR"/', 'render lang');
 
-$w->setAttribute('spellcheck', true);
+$w->setAttribute('spellcheck', 'true');
 $t->like($w->render('test'), '/spellcheck="true"/', 'render spellcheck');
 
 $w->setAttribute('style', 'myStyle');

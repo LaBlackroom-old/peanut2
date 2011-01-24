@@ -76,7 +76,7 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
   {
     parent::configure($options, $attributes);
 
-    $this->addAttribute('accesskey');
+    $this->addAttribute('accesskey', array());
     $this->addAttribute('class');
     $this->addAttribute('contenteditable', false);
     $this->addAttribute('contextmenu');
@@ -113,19 +113,27 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $attributes['contenteditable'] = $this->getAttribute('contenteditable') ? $this->checkBooleanAttribute('contenteditable') : false;
-    $attributes['draggable'] = $this->getAttribute('draggable') ? $this->checkBooleanAttribute('draggable') : false;
-    $attributes['spellcheck'] = $this->getAttribute('spellcheck') ? $this->checkBooleanAttribute('spellcheck') : false;
-    $attributes['hidden'] = $this->getAttribute('hidden') ? $this->checkBooleanAttribute('hidden', 'hidden') : false;
+    $attributes['contenteditable'] = $this->getAttribute('contenteditable') ? $this->_authorizedValues('contenteditable', array('true', 'false')) : false;
+    $attributes['draggable'] = $this->getAttribute('draggable') ? $this->_authorizedValues('draggable', array('true', 'false')) : false;
+    $attributes['spellcheck'] = $this->getAttribute('spellcheck') ? $this->_authorizedValues('spellcheck', array('true', 'false')) : false;
+    $attributes['hidden'] = $this->getAttribute('hidden') ? $this->_authorizedValues('hidden', array('hidden')) : false;
+    $attributes['dir'] = $this->getAttribute('dir') ? $this->_authorizedValues('dir', array('ltr', 'rtl', 'auto')) : null;
 
-    if($this->getAttribute('accesskey'))
+    if(is_array($this->getAttribute('accesskey')))
     {
-      $attributes['accesskey'] = $this->getAttribute('accesskey');
+      foreach($this->getAttribute('accesskey') as $char)
+      {
+        if(strlen($char) > 1)
+        {
+          throw new sfRenderException($char . ' is wrong value : must be single character');
+        }
+      }
+      
+      $attributes['accesskey'] = implode(' ', $this->getAttribute('accesskey'));
     }
-
-    if($this->getAttribute('dir'))
+    else
     {
-      $attributes['dir'] = $this->getAttribute('dir');
+      throw new sfRenderException('accesskey must be an array');
     }
 
     if($this->getAttribute('dropzone'))
@@ -133,13 +141,16 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
       $attributes['dropzone'] = $this->getAttribute('dropzone');
     }
 
-    if(null === $this->getAttribute('tabindex') || is_int($this->getAttribute('tabindex')))
+    if(null !== $this->getAttribute('tabindex'))
     {
+      if(is_int($this->getAttribute('tabindex')))
+      {
       $attributes['tabindex'] = $this->getAttribute('tabindex');
-    }
-    else
-    {
-      throw new sfRenderException(' tabindex must be an integer');
+      }
+      else
+      {
+        throw new sfRenderException('tabindex must be an integer');
+      }
     }
 
     return parent::render($name, $value, $attributes, $errors);
@@ -187,21 +198,21 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
   }
 
   /**
-   * Check if the attribute value is a boolean.
+   * Check if the attribute value is an authorized value.
    *
    * @param  string $name  The attribute name
-   * @param  string $value The default return value
+   * @param  array $value  An array of authorized values
    *
-   * @return $value
+   * @return attribute
    *
    */
-  protected function checkBooleanAttribute($name, $value = 'true')
+  protected function _authorizedValues($name, $value = array())
   {
-    if(is_bool($this->getAttribute($name)) && $this->getAttribute($name) == true)
+    if(in_array($this->getAttribute($name), $value))
     {
-      return $value;
+      return $this->getAttribute($name);
     }
 
-    throw new sfRenderException($name . ' must be a boolean');
+    throw new sfRenderException($this->getAttribute($name) . ' is not a valid value for ' . $name . ' attribute');
   }
 }

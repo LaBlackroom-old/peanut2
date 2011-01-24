@@ -69,12 +69,11 @@ class sfWidgetFormHtml5InputText extends sfWidgetFormHtml5Input
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-
-    $attributes['disabled'] = $this->getAttribute('disabled') ? $this->checkBooleanAttribute('disabled', 'disabled') : false;
-    $attributes['readonly'] = $this->getAttribute('readonly') ? $this->checkBooleanAttribute('readonly', 'readonly') : false;
-    $attributes['autocomplete'] = $this->getAttribute('autocomplete') ? $this->checkBooleanAttribute('autocomplete', 'on') : false;
-    $attributes['autofocus'] = $this->getAttribute('autofocus') ? $this->checkBooleanAttribute('autofocus', 'autofocus') : false;
-    $attributes['required'] = $this->getAttribute('required') ? $this->checkBooleanAttribute('required', 'required') : false;
+    $attributes['disabled'] = $this->getAttribute('disabled') ? $this->_authorizedValues('disabled', array('disabled')) : false;
+    $attributes['readonly'] = $this->getAttribute('readonly') ? $this->_authorizedValues('readonly', array('readonly')) : false;
+    $attributes['autocomplete'] = $this->getAttribute('autocomplete') ? $this->_authorizedValues('autocomplete', array('on', 'off')) : false;
+    $attributes['autofocus'] = $this->getAttribute('autofocus') ? $this->_authorizedValues('autofocus', array('autofocus')) : false;
+    $attributes['required'] = $this->getAttribute('required') ? $this->_authorizedValues('required', array('required')) : false;
 
 
     if(is_string($this->getOption('form')))

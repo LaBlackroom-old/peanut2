@@ -12,7 +12,7 @@ $t->comment('Simple render tests');
 $w->setAttribute('pattern', '[0-9]*');
 $t->is($w->render('test'), '<input pattern="[0-9]*" type="text" name="test" id="test" />', 'render pattern [0-9]*');
 
-$w->setAttribute('disabled', true);
+$w->setAttribute('disabled', 'disabled');
 $t->like($w->render('test'), '/disabled="disabled"/', 'render disabled');
 
 $w->setAttribute('form', 'testForm');
@@ -21,22 +21,22 @@ $t->like($w->render('test'), '/form="testForm"/', 'render form');
 $w->setAttribute('maxlength', '12');
 $t->like($w->render('test'), '/maxlength="12"/', 'render maxlength');
 
-$w->setAttribute('readonly', true);
+$w->setAttribute('readonly', 'readonly');
 $t->like($w->render('test'), '/readonly="readonly"/', 'render readonly');
 
 $w->setAttribute('size', '12');
 $t->like($w->render('test'), '/size="12"/', 'render maxlength');
 
-$w->setAttribute('autocomplete', true);
+$w->setAttribute('autocomplete', 'on');
 $t->like($w->render('test'), '/autocomplete="on"/', 'render autocomplete');
 
-$w->setAttribute('autofocus', true);
+$w->setAttribute('autofocus', 'autofocus');
 $t->like($w->render('test'), '/autofocus="autofocus"/', 'render autofocus');
 
 $w->setAttribute('list', 'myList');
 $t->like($w->render('test'), '/list="myList"/', 'render list');
 
-$w->setAttribute('required', true);
+$w->setAttribute('required', 'required');
 $t->like($w->render('test'), '/required="required"/', 'render required');
 
 $w->setAttribute('placeholder', 'salut');

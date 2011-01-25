@@ -27,6 +27,21 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
     parent::configure($options, $attributes);
     
     $this->setOption('type', 'date');
+
+    $this->addOption('template.javascript', '
+      <script>
+        $(document).ready(function() {
+          if(!Modernizr.inputtypes.date)
+          {
+            $("input[type=date]").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: new Date("{min}"),
+                maxDate: new Date("{max}")
+            });
+          }
+        });
+      </script>
+    ');
   }
   
   
@@ -44,10 +59,17 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
   {
     $this->setAttribute('min', $this->_convertDate($this->getAttribute('min')));
     $this->setAttribute('max', $this->_convertDate($this->getAttribute('max')));
+
+    $template_vars = array(
+      '{min}'   => $this->getAttribute('min'),
+      '{max}'   => $this->getAttribute('max')
+    );
+
+    $render = parent::render($name, $value, $attributes, $errors);
+    $render .= strtr($this->getOption('template.javascript'), $template_vars) ;
     
-    return parent::render($name, $value, $attributes, $errors);
+    return $render;
   }
-  
   
   /**
    * Get the date format to render a valid string

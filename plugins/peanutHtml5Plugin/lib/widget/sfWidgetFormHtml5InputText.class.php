@@ -75,37 +75,59 @@ class sfWidgetFormHtml5InputText extends sfWidgetFormHtml5Input
     $attributes['autofocus'] = $this->getAttribute('autofocus') ? $this->_authorizedValues('autofocus', array('autofocus')) : false;
     $attributes['required'] = $this->getAttribute('required') ? $this->_authorizedValues('required', array('required')) : false;
 
-
-    if(is_string($this->getOption('form')))
+    if(null !== $this->getOption('maxlength') && is_int($this->getOption('maxlength')))
     {
-      $attributes['form'] = $this->getOption('form');
+      if(is_int($this->getOption('size')))
+      {
+        $attributes['maxlength'] = $this->getOption('maxlength');
+      }
+      else
+      {
+        throw new sfRenderException('size must be a positive integer');
+      }
     }
 
-    if(is_string($this->getOption('maxlength')))
+    if(null !== $this->getOption('maxlength'))
     {
-      $attributes['maxlength'] = $this->getOption('maxlength');
+      if(is_int($this->getOption('size')))
+      {
+        $attributes['size'] = $this->getOption('size');
+      }
+      else
+      {
+        throw new sfRenderException('size must be a positive integer');
+      }
     }
-
-    if(is_string($this->getOption('size')))
-    {
-      $attributes['size'] = $this->getOption('size');
-    }
-
-    if(is_string($this->getOption('list')))
-    {
-      $attributes['list'] = $this->getOption('list');
-    }
-
-    if(is_string($this->getOption('pattern')))
-    {
-      $attributes['pattern'] = $this->getOption('pattern');
-    }
-
-    if(is_string($this->getOption('placeholder')))
-    {
-      $attributes['placeholder'] = $this->getOption('placeholder');
-    }
+    
 
     return parent::render($name, $value, $attributes, $errors);
+  }
+
+  /**
+   * Gets the JavaScript paths associated with the widget.
+   *
+   * @return array An array of JavaScript paths
+   */
+  public function getJavaScripts()
+  {
+    return array(
+      '/js/widget/jquery-ui-1.8.9.custom.min.js'
+    );
+  }
+
+  /**
+   * Gets the stylesheet paths associated with the widget.
+   *
+   * The array keys are files and values are the media names (separated by a ,):
+   *
+   *   array('/path/to/file.css' => 'all', '/another/file.css' => 'screen,print')
+   *
+   * @return array An array of stylesheet paths
+   */
+  public function getStylesheets()
+  {
+    return array(
+      '/css/widget/ui-lightness/jquery-ui-1.8.9.custom.css' => 'screen'
+    );
   }
 }

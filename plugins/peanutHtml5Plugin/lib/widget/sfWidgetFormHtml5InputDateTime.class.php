@@ -26,6 +26,21 @@ class sfWidgetFormHtml5InputDateTime extends sfWidgetFormHtml5InputDate
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'datetime');
+
+    $this->setOption('template.javascript', '
+      <script>
+        $(document).ready(function() {
+          if(!Modernizr.inputtypes.datetime)
+          {
+            $("input[type=datetime]").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: new Date("{min}"),
+                maxDate: new Date("{max}")
+            });
+          }
+        });
+      </script>
+    ');
   }
 
   /**

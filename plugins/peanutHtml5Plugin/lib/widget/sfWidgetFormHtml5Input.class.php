@@ -91,16 +91,6 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
     $this->addAttribute('title');
   }
 
-
-  public function getJavaScripts()
-  {
-    return array(
-      '/js/widget/input.js',
-      '/js/widget/jquery.html5support.min.js'
-    );
-
-  }
-
   /**
    * @param  string $name        The element name
    * @param  string $value       The value displayed in this widget
@@ -214,5 +204,18 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
     }
 
     throw new sfRenderException($this->getAttribute($name) . ' is not a valid value for ' . $name . ' attribute');
+  }
+
+  /**
+   * Gets the JavaScript paths associated with the widget.
+   *
+   * @return array An array of JavaScript paths
+   */
+  public function getJavaScripts()
+  {
+    return array(
+      '/js/widget/input.js',
+      '/js/widget/jquery.html5support.min.js'
+    );
   }
 }

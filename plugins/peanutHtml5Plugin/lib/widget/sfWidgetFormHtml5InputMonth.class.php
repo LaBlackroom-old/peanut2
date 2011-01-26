@@ -26,6 +26,24 @@ class sfWidgetFormHtml5InputMonth extends sfWidgetFormHtml5InputDate
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'month');
+
+    $this->setOption('template.javascript', '
+      <script>
+        jQuery(document).ready(function() {
+          if(!Modernizr.inputtypes.month)
+          {
+            jQuery("input[type=month]").datepicker({
+              minDate: new Date("{min}"),
+              maxDate: new Date("{max}"),
+              dateFormat: "yy-mm",
+              showOn: "button",
+              buttonImage: "/images/widget/calendar.png",
+              buttonImageOnly: true
+            });
+          }
+        });
+      </script>
+    ');
   }
 
   /**

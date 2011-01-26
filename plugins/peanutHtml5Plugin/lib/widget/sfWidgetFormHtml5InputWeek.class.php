@@ -27,6 +27,25 @@ class sfWidgetFormHtml5InputWeek extends sfWidgetFormHtml5InputDate
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'week');
+
+
+//    $this->setOption('template.javascript', '
+//      <script>
+//        jQuery(document).ready(function() {
+//          if(!Modernizr.inputtypes.week)
+//          {
+//            jQuery("input[type=week]").datepicker({
+//              dateFormat: "yy-Wmm",
+//              minDate: new Date("{min}"),
+//              maxDate: new Date("{max}"),
+//              showOn: "button",
+//              buttonImage: "/images/widget/calendar.png",
+//              buttonImageOnly: true
+//            });
+//          }
+//        });
+//      </script>
+//    ');
   }
 
   /**

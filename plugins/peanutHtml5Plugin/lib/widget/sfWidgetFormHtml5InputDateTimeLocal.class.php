@@ -27,6 +27,27 @@ class sfWidgetFormHtml5InputDateTimeLocal extends sfWidgetFormHtml5InputDate
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'datetime-local');
+
+    $this->setOption('template.javascript', '
+      <script>
+        jQuery(document).ready(function() {
+          if(!Modernizr.inputtypes.datetimelocal)
+          {
+            jQuery("input[type=datetime-local]").datetimepicker({
+              minDateTime: new Date("{min}"),
+              maxDateTime: new Date("{max}"),
+              dateFormat: "yy-mm-dd",
+              timeFormat: "hh:mm:ss",
+              showSecond: true,
+              separator: "T",
+              showOn: "button",
+              buttonImage: "/images/widget/calendar.png",
+              buttonImageOnly: true
+            });
+          }
+        });
+      </script>
+    ');
   }
 
   /**

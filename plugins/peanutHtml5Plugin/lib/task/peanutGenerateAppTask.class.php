@@ -20,6 +20,8 @@ class peanutGenerateAppTask extends peanutBaseTask
     ));
 
     $this->addOptions(array(
+      new sfCommandOption('override', null, sfCommandOption::PARAMETER_OPTIONAL, 'Override existing files', false),
+      new sfCommandOption('recursive', null, sfCommandOption::PARAMETER_OPTIONAL, 'Copy subdirectories', false),
       new sfCommandOption('escaping-strategy', null, sfCommandOption::PARAMETER_REQUIRED, 'Output escaping strategy', true),
       new sfCommandOption('csrf-secret', null, sfCommandOption::PARAMETER_REQUIRED, 'Secret to use for CSRF protection', true),
     ));
@@ -147,21 +149,28 @@ EOF;
     $this->getFilesystem()->replaceTokens($appDir.'/config/'.$app.'Configuration.class.php', '##', '##', array('APP_NAME' => $app));
 
     // copy javascripts files
-    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/js/', sfConfig::get('sf_web_dir') . '/js/');
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/js/', sfConfig::get('sf_web_dir') . '/js/',
+            $options = array('recursive' => $options['recursive'], 'override' => $options['override']));
 
     // copy stylesheets files
-    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/css/', sfConfig::get('sf_web_dir') . '/css/');
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/css/', sfConfig::get('sf_web_dir') . '/css/',
+            $options = array('recursive' => $options['recursive'], 'override' => $options['override']));
 
     // copy images files
-    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/images/', sfConfig::get('sf_web_dir') . '/images/');
+    $this->getPeanutFilesystem()->copyAllFilesInDir($skeletonDir . '/web/images/', sfConfig::get('sf_web_dir') . '/images/',
+            $options = array('recursive' => $options['recursive'], 'override' => $options['override']));
 
     // copy favicon files
-    $this->getFilesystem()->copy($skeletonDir.'/web/favicon.ico', sfConfig::get('sf_web_dir').'/favicon.ico');
-    $this->getFilesystem()->copy($skeletonDir.'/web/apple-touch-icon.png', sfConfig::get('sf_web_dir').'/apple-touch-icon.png');
+    $this->getFilesystem()->copy($skeletonDir.'/web/favicon.ico', sfConfig::get('sf_web_dir').'/favicon.ico',
+            $options = array('override' => $options['override']));
+    $this->getFilesystem()->copy($skeletonDir.'/web/apple-touch-icon.png', sfConfig::get('sf_web_dir').'/apple-touch-icon.png',
+            $options = array('override' => $options['override']));
 
     // copy robots and htaccess
-    $this->getFilesystem()->copy($skeletonDir.'/web/robots.txt', sfConfig::get('sf_web_dir').'/robots.txt');
-    $this->getFilesystem()->copy($skeletonDir.'/web/.htaccess', sfConfig::get('sf_web_dir').'/.htaccess');
+    $this->getFilesystem()->copy($skeletonDir.'/web/robots.txt', sfConfig::get('sf_web_dir').'/robots.txt',
+            $options = array('override' => $options['override']));
+    $this->getFilesystem()->copy($skeletonDir.'/web/.htaccess', sfConfig::get('sf_web_dir').'/.htaccess',
+            $options = array('override' => $options['override']));
 
     $fixPerms = new sfProjectPermissionsTask($this->dispatcher, $this->formatter);
     $fixPerms->setCommandApplication($this->commandApplication);

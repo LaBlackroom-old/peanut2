@@ -27,8 +27,32 @@ class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5InputText
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'color');
+
+    $this->addOption('template.html','
+      <img src="/images/widget/color_wheel.png" alt="colorPicker" class="colorSelector" />
+    ');
   }
 
+
+  /**
+   * @param  string $name        The element name
+   * @param  string $value       The value displayed in this widget
+   * @param  array  $attributes  An array of HTML attributes to be merged with the default HTML attributes
+   * @param  array  $errors      An array of errors for the field
+   *
+   * @return string An HTML tag string
+   *
+   * @see sfWidgetForm
+   */
+  public function render($name, $value = null, $attributes = array(), $errors = array())
+  {
+
+    $render = parent::render($name, $value, $attributes, $errors);
+    $render .= $this->getOption('template.html');
+
+    return $render;
+  }
+  
   /**
    *
    * @see www.eyecon.ro/colorpicker/
@@ -44,7 +68,7 @@ class sfWidgetFormHtml5InputColor extends sfWidgetFormHtml5InputText
   public function getStylesheets()
   {
     return array(
-      '/css/widget/colorpicker.css' => 'all'
+      '/css/widget/colorpicker.css' => 'screen, projection'
     );
   }
 

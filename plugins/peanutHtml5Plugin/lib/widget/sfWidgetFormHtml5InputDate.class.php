@@ -30,13 +30,16 @@ class sfWidgetFormHtml5InputDate extends sfWidgetFormHtml5InputNumber
 
     $this->addOption('template.javascript', '
       <script>
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
           if(!Modernizr.inputtypes.date)
           {
-            $("input[type=date]").datepicker({
-                dateFormat: "yy-mm-dd",
-                minDate: new Date("{min}"),
-                maxDate: new Date("{max}")
+            jQuery("input[type=date]").datepicker({
+              minDate: new Date("{min}"),
+              maxDate: new Date("{max}"),
+              dateFormat: "yy-mm-dd",
+              showOn: "button",
+              buttonImage: "/images/widget/calendar.png",
+              buttonImageOnly: true
             });
           }
         });

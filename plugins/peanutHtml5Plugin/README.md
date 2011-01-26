@@ -3,10 +3,17 @@ Ce plugin à pour but de permettre l'utilisation de html5 dans symfony.
 
 ## Todo ##
 - Ajouter tous les validateurs pour les widgets actuels (au 18 Janvier 2011)
-- Ajouter les alternatives JS (calendriers par exemple) afin d'offrir un support le plus large possible
-- Faire un check des options qui ne pourraient pas être utilisées pour un type de widget et les désactiver.
 - Refacto de la partie helper/task
+- Ajouter un support JS pour input week
 - S'éclater un peu avec les nouvelles API html5
+
+## Warning ##
+Le support des html5forms est encore aléatoire : Chrome/Chromium, Safari, Firefox 4 et Opéra 10.x ne rendent pas les formulaires de la même
+façon alors pensez à tester le tout (validation comprise).
+
+Il y a un parti pris avec ce plugin, faire en sorte que le developpeur ne puisse pas générer un formulaire avec des attributs html invalide.
+Le mécanisme des options de symfony a donc été transposé aux attributs et une méthode pour désactiver un attribut. Le tout est visible dans
+sfWidgetFormHtml5Input
 
 ## Création d'une application html5 ##
 L'opération pour créer une application html5 n'est pas complexe, il suffit d'activer le plugin puis d'utiliser la tache dédiée,

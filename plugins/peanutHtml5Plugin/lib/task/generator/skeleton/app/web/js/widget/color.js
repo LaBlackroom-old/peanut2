@@ -1,9 +1,17 @@
 if(!Modernizr.inputtypes.color)
 {
-  $('input[type=color]').ColorPicker({
-	onSubmit: function(hsb, hex, rgb, el) {
-		$(el).val('#' + hex);
-		$(el).ColorPickerHide();
+  jQuery('.colorSelector').ColorPicker({
+	onShow: function (colpkr) {
+      jQuery(colpkr).fadeIn(500);
+      return false;
+	},
+	onHide: function (colpkr) {
+      jQuery(colpkr).fadeOut(500);
+      return false;
+	},
+	onChange: function(hsb, hex, rgb, el) {
+      jQuery('input[type=color]').val('#' + hex);
+      jQuery(el).ColorPickerHide();
 	}
   })
 }

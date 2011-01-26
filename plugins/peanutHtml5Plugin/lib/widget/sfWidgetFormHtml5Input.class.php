@@ -89,6 +89,41 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
     $this->addAttribute('style');
     $this->addAttribute('tabindex');
     $this->addAttribute('title');
+
+    $this->addAttribute('onabort');
+    $this->addAttribute('onblur');
+    $this->addAttribute('onchange');
+    $this->addAttribute('onclick');
+    $this->addAttribute('oncontextmenu');
+    $this->addAttribute('ondblclick');
+    $this->addAttribute('ondrag');
+    $this->addAttribute('ondragend');
+    $this->addAttribute('ondragcenter');
+    $this->addAttribute('ondragleave');
+    $this->addAttribute('ondragover');
+    $this->addAttribute('ondragstart');
+    $this->addAttribute('ondrop');
+    $this->addAttribute('onerror');
+    $this->addAttribute('onfocus');
+    $this->addAttribute('onformchange');
+    $this->addAttribute('onforminput');
+    $this->addAttribute('oninput');
+    $this->addAttribute('oninvalid');
+    $this->addAttribute('onkeydown');
+    $this->addAttribute('onkeypress');
+    $this->addAttribute('onkeyup');
+    $this->addAttribute('onload');
+    $this->addAttribute('onmousedown');
+    $this->addAttribute('onmousemove');
+    $this->addAttribute('onmouseout');
+    $this->addAttribute('onmouseover');
+    $this->addAttribute('onmouseup');
+    $this->addAttribute('onmousewheel');
+    $this->addAttribute('onreadystatechange');
+    $this->addAttribute('onreset');
+    $this->addAttribute('onscroll');
+    $this->addAttribute('onselect');
+    $this->addAttribute('onsubmit');
   }
 
   /**
@@ -214,8 +249,7 @@ class sfWidgetFormHtml5Input extends sfWidgetFormInput
   public function getJavaScripts()
   {
     return array(
-      '/js/widget/input.js',
-      '/js/widget/jquery.html5support.min.js'
+      '/js/widget/h5f.js'
     );
   }
 }

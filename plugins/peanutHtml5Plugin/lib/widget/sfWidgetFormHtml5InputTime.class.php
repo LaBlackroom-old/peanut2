@@ -26,6 +26,25 @@ class sfWidgetFormHtml5InputTime extends sfWidgetFormHtml5InputDate
     parent::configure($options, $attributes);
 
     $this->setOption('type', 'time');
+
+    $this->setOption('template.javascript', '
+      <script>
+        jQuery(document).ready(function() {
+          if(!Modernizr.inputtypes.time)
+          {
+            jQuery("input[type=time]").timepicker({
+              minDateTime: new Date("{min}"),
+              maxDateTime: new Date("{max}"),
+              timeFormat: "hh:mm:ss",
+              showSecond: true,
+              showOn: "button",
+              buttonImage: "/images/widget/calendar.png",
+              buttonImageOnly: true
+            });
+          }
+        });
+      </script>
+    ');
   }
 
   /**

@@ -29,13 +29,20 @@ class sfWidgetFormHtml5InputDateTime extends sfWidgetFormHtml5InputDate
 
     $this->setOption('template.javascript', '
       <script>
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
           if(!Modernizr.inputtypes.datetime)
           {
-            $("input[type=datetime]").datepicker({
-                dateFormat: "yy-mm-dd",
-                minDate: new Date("{min}"),
-                maxDate: new Date("{max}")
+            jQuery("input[type=datetime]").datetimepicker({
+              minDateTime: new Date("{min}"),
+              maxDateTime: new Date("{max}"),
+              dateFormat: "yy-mm-dd",
+              timeFormat: "hh:mm:ss",
+              showSecond: true,
+              separator: "T",
+              lastSeparator: "Z",
+              showOn: "button",
+              buttonImage: "/images/widget/calendar.png",
+              buttonImageOnly: true
             });
           }
         });
@@ -52,6 +59,18 @@ class sfWidgetFormHtml5InputDateTime extends sfWidgetFormHtml5InputDate
   {
     date_default_timezone_set('UTC');
     return 'Y-m-d\TH:i:s\Z';
+  }
+
+  /**
+   * Gets the JavaScript paths associated with the widget.
+   *
+   * @return array An array of JavaScript paths
+   */
+  public function getJavaScripts()
+  {
+    return array(
+      '/js/widget/jquery-ui-timepicker-addon.js'
+    );
   }
   
 }

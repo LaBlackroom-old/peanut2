@@ -33,3 +33,6 @@ all:
 
     # Enable the database manager
     use_database:           ##USE_DATABASE##
+
+    # Enable html5 helper
+    standard_helpers:       [html5]

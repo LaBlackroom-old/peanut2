@@ -5,7 +5,7 @@
  *
  * @see http://www.w3.org/TR/html-markup/input.color.html
  *
- * @package peanut5plugin
+ * @package peanutHtml55plugin
  * @subpackage validator
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */
@@ -22,7 +22,7 @@ class sfValidatorHtml5Color extends sfValidatorBase
    */
   public function configure($options = array(), $messages = array())
   {
-    $this->setMessage('invalid', 'The color is not valid because she not use the #rrggbb format');
+    $this->setMessage('invalid', 'The date is not valid');
   }
 
   public function doClean($value)

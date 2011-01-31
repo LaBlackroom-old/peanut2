@@ -6,7 +6,7 @@ $t = new lime_test();
 $w = new sfWidgetFormHtml5InputDateTimeLocal();
 
 $t->info('->render()');
-$t->is($w->render('datetimelocal'), '<input type="datetime-local" name="datetimelocal" id="datetimelocal" />', 'render tag ok');
+$t->like($w->render('datetimelocal'), '/type="datetime-local" name="datetimelocal" id="datetimelocal"/', 'render widget');
 
 
 $t->info('Using a string');

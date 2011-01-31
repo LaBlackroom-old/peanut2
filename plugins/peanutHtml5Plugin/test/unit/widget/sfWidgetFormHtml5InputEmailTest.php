@@ -5,7 +5,7 @@ include(dirname(__FILE__).'/../../bootstrap/unit.php');
 $t = new lime_test(3);
 $w = new sfWidgetFormHtml5InputEmail();
 
-$t->is($w->render('email'), '<input type="email" name="email" id="email" />', 'render tag ok');
+$t->like($w->render('email'), '/type="email" name="email" id="email"/', 'render widget');
 
 $w->setAttribute('multiple', true);
 $t->like($w->render('email'), '/multiple="multiple"/', 'render multiple');

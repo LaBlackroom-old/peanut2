@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Validates an #rrggbb color value
+ * Validates emails.
  *
  * @see http://www.w3.org/TR/html-markup/input.color.html
  *
- * @package peanut5plugin
+ * @package peanutHtml5plugin
  * @subpackage validator
  * @author Alexandre 'pocky' Balmes <albalmes@gmail.com>
  */

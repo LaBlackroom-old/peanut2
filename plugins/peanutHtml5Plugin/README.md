@@ -2,16 +2,15 @@
 Ce plugin à pour but de permettre l'utilisation de html5 dans symfony.
 
 ## Todo ##
-- Ajouter tous les validateurs pour les widgets actuels (au 18 Janvier 2011)
-- Refacto de la partie helper/task
 - Ajouter un support JS pour input week
 - S'éclater un peu avec les nouvelles API html5
+- Ajouter un widget pour datalist
 
 ## Warning ##
 Le support des html5forms est encore aléatoire : Chrome/Chromium, Safari, Firefox 4 et Opéra 10.x ne rendent pas les formulaires de la même
 façon alors pensez à tester le tout (validation comprise).
 
-Il y a un parti pris avec ce plugin, faire en sorte que le developpeur ne puisse pas générer un formulaire avec des attributs html invalide.
+Il y a également un parti pris avec ce plugin, faire en sorte que le developpeur ne puisse pas générer un formulaire avec des attributs html invalide.
 Le mécanisme des options de symfony a donc été transposé aux attributs et une méthode pour désactiver un attribut. Le tout est visible dans
 sfWidgetFormHtml5Input
 
@@ -57,4 +56,27 @@ Voici la liste des widgets :
 
 - sfValidatorHtml5Color
 - sfValidatorHtml5Email
+- sfValidatorHtml5Date
+- sfValidatorHtml5DateTime
+- sfValidatorHtml5DateTimeLocal
+- sfValidatorHtml5Month
+- sfValidatorHtml5Time
+- sfValidatorHtml5Week
 
+
+## Liste des helpers html5 ##
+
+- html5_javascript_include_tag()
+- html5_stylesheet_tag()
+- use_html5_stylesheet()
+- use_html5_javascript()
+- get_html5_javascripts()
+- include_html5_javascripts()
+- get_html5_stylesheets()
+- include_html5_stylesheets()
+- get_html5_javascripts_for_form()
+- include_html5_javascripts_for_form()
+- use_html5_javascripts_for_form()
+- get_html5_stylesheets_for_form()
+- include_html5_stylesheets_for_form()
+- use_html5_stylesheets_for_form()

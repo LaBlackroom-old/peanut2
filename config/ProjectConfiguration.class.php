@@ -10,7 +10,9 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins(array(
         'sfDoctrinePlugin',
         'sfTaskExtraPlugin',
-        'peanutHtml5Plugin'
+        'peanutHtml5Plugin',
+        'sfLESSPlugin',
+        'sfDoctrineGuardPlugin'
     ));
   }
 

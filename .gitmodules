@@ -1,3 +1,6 @@
 [submodule "lib/vendor/symfony"]
 	path = lib/vendor/symfony
 	url = http://github.com/symfony/symfony1.git
+[submodule "plugins/peanutHtml5Plugin"]
+	path = plugins/peanutHtml5Plugin
+	url = git://github.com/pocky/peanutHtml5Plugin.git

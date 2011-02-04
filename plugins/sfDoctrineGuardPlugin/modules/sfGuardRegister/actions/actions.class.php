@@ -12,14 +12,17 @@ require_once dirname(__FILE__).'/../lib/BasesfGuardRegisterActions.class.php';
  */
 class sfGuardRegisterActions extends BasesfGuardRegisterActions
 {
-  public function executeIndex(sfWebRequest $request)
+  public function preExecute()
   {
     if($this->getUser()->isAuthenticated())
     {
       $this->getUser()->setFlash('notice', 'You are already registered and signed in!');
       $this->redirect('@homepage');
     }
-
+  }
+  
+  public function executeIndex(sfWebRequest $request)
+  {
     $this->form = new sfGuardRegisterForm();
 
     if($request->isMethod('post'))
@@ -31,7 +34,7 @@ class sfGuardRegisterActions extends BasesfGuardRegisterActions
         $user->save();
 
         $token = sfConfig::get('app_sf_guard_plugin_token', 'sfToken');
-        $salt = sha1($user->getValue('username') . $csrf . $user->getValue('email_address'));
+        $salt = sha1($user->getValue('username') . $token . $user->getValue('email_address'));
 
         try
         {
@@ -76,7 +79,7 @@ class sfGuardRegisterActions extends BasesfGuardRegisterActions
 
     if($user && $request->isMethod('get'))
     {
-      if($this->_isValidUser($user))
+      if($this->_checkToken($user))
       {
         if($this->_checkRegisterDate($user))
         {
@@ -97,10 +100,10 @@ class sfGuardRegisterActions extends BasesfGuardRegisterActions
 
   }
 
-  protected function _isValidUser($user, $token)
+  protected function _checkToken($user, $token)
   {
     $token = sfConfig::get('app_sf_guard_plugin_token', 'sfToken');
-    $salt = sha1($user->getUsername() . $csrf . $user->getEmailAddress());
+    $salt = sha1($user->getUsername() . $token . $user->getEmailAddress());
 
     if($token === $salt)
     {

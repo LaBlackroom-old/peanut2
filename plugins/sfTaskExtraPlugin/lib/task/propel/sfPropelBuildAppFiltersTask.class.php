@@ -13,7 +13,7 @@ require_once dirname(__FILE__).'/sfTaskExtraPropelBaseTask.class.php';
  * @package    sfTaskExtraPlugin
  * @subpackage task
  * @author     Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version    SVN: $Id: sfPropelBuildAppFiltersTask.class.php 28187 2010-02-22 16:53:57Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 class sfPropelBuildAppFiltersTask extends sfTaskExtraPropelBaseTask
 {

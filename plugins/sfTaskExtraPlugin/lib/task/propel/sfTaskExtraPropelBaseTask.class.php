@@ -11,7 +11,7 @@ if (!in_array('sfPropelPlugin', sfProjectConfiguration::getActive()->getPlugins(
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTaskExtraPropelBaseTask.class.php 28187 2010-02-22 16:53:57Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 abstract class sfTaskExtraPropelBaseTask extends sfPropelBaseTask
 {

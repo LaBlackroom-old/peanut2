@@ -6,12 +6,12 @@
  * @package     sfTaskExtraPlugin
  * @subpackage  config
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTaskExtraPluginConfiguration.class.php 28190 2010-02-22 16:59:51Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class sfTaskExtraPluginConfiguration extends sfPluginConfiguration
 {
   const
-    VERSION = '1.3.3-DEV';
+    VERSION = '1.3.4-DEV';
 
   protected
     $connectedPlugins = array();

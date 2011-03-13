@@ -8,7 +8,7 @@ require_once dirname(__FILE__).'/sfTaskExtraGeneratorBaseTask.class.php';
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfGeneratePluginTask.class.php 25032 2009-12-07 17:17:38Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class sfGeneratePluginTask extends sfTaskExtraGeneratorBaseTask
 {

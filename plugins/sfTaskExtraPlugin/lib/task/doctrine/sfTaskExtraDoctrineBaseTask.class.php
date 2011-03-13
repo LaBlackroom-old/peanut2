@@ -11,7 +11,7 @@ if (!in_array('sfDoctrinePlugin', sfProjectConfiguration::getActive()->getPlugin
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTaskExtraDoctrineBaseTask.class.php 28187 2010-02-22 16:53:57Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 abstract class sfTaskExtraDoctrineBaseTask extends sfDoctrineBaseTask
 {

@@ -6,7 +6,7 @@
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTaskExtraGeneratorBaseTask.class.php 25037 2009-12-07 19:45:39Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 abstract class sfTaskExtraGeneratorBaseTask extends sfGeneratorBaseTask
 {

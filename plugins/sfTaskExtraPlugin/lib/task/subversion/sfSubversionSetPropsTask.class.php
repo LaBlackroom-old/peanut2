@@ -8,7 +8,7 @@ require_once dirname(__FILE__).'/sfTaskExtraSubversionBaseTask.class.php';
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfSubversionSetPropsTask.class.php 26597 2010-01-13 23:33:05Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class sfSubversionSetPropsTask extends sfTaskExtraSubversionBaseTask
 {

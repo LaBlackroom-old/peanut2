@@ -6,7 +6,7 @@
  * @package    ##PROJECT##
  * @subpackage form
  * @author     ##AUTHOR##
- * @version    SVN: $Id: form.class.php 28152 2010-02-20 15:57:55Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 class ##APPLICATION####MODEL##Form extends ##MODEL##Form
 {

@@ -8,7 +8,7 @@ require_once dirname(__FILE__).'/sfTaskExtraTestBaseTask.class.php';
  * @package     sfTaskExtraPlugin
  * @subpackage  task
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTestPluginTask.class.php 25047 2009-12-07 20:58:07Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class sfTestPluginTask extends sfTaskExtraTestBaseTask
 {

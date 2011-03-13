@@ -6,7 +6,7 @@
  * @package     ##PLUGIN_NAME##
  * @subpackage  config
  * @author      ##AUTHOR_NAME##
- * @version     SVN: $Id: PluginConfiguration.class.php 17207 2009-04-10 15:36:26Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class ##PLUGIN_NAME##Configuration extends sfPluginConfiguration
 {

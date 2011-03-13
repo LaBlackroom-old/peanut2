@@ -6,7 +6,7 @@
  * @package     sfTaskExtraPlugin
  * @subpackage  test
  * @author      Kris Wallsmith <kris.wallsmith@symfony-project.com>
- * @version     SVN: $Id: sfTaskExtraLimeTest.class.php 25032 2009-12-07 17:17:38Z Kris.Wallsmith $
+ * @version     SVN: $Id$
  */
 class sfTaskExtraLimeTest extends lime_test
 {

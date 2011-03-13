@@ -8,12 +8,11 @@ PLUGINS=$DIR/plugins
 if [ "$1" = "--reinstall" ]; then
     rm -rf $VENDOR
     rm -rf $PLUGINS
-fi
 
-rm -rf cache/* && sudo rm -Rf log/*
-mkdir cache && mkdir log
-chmod 777 cache && chmod 777 log
-touch cache/.gitkeep
+    rm -rf cache/* && sudo rm -Rf log/*
+    mkdir cache && mkdir log
+    chmod 777 cache && chmod 777 log
+fi
 
 
 ##

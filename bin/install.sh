@@ -57,9 +57,6 @@ mkdir -p $PLUGINS && cd $PLUGINS
 # peanutHtml5Plugin
 install_git peanutHtml5Plugin git://github.com/pocky/peanutHtml5Plugin.git
 
-# sfLessPlugin
-install_git sfLESSPlugin git://github.com/everzet/sfLESSPlugin.git
-
 # sfDoctrineGuardPlugin
 install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.git
 

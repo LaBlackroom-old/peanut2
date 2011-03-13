@@ -1,4 +1,4 @@
 [symfony]
-  name=peanut
-  author=Your name here
+  name=
+  author=
   orm=Doctrine

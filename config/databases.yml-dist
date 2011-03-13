@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=peanut
-      username: root
+      dsn:      mysql:host=;dbname=
+      username: 
       password: 

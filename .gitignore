@@ -37,3 +37,4 @@ cache/*
 log/*
 config/databases.yml
 config/properties.ini
+web/less/*

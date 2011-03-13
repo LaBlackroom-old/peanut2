@@ -23,7 +23,6 @@ class ProjectConfiguration extends sfProjectConfiguration
         'sfDoctrinePlugin',
         'sfTaskExtraPlugin',
         'peanutHtml5Plugin',
-        'sfLESSPlugin',
         'sfDoctrineGuardPlugin'
     ));
   }

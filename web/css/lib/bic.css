@@ -1,0 +1,36 @@
+.displayBlock{display:block;}
+.displayNone{display:none;}
+.displayInline{display:inline;}
+.listInline li{display:inline;}
+.floatRight{float:right;}
+.floatLeft{float:left;}
+.center{margin:0 auto;}
+.arial{font-family:Arial,Helvetica,sans-serif;}
+.courierNew{font-family:'Courier New',Courier,monospace;}
+.georgia{font-family:Georgia,'Times New Roman',Times,serif;}
+.lucidaConsole{font-family:'Lucida Console',Monaco,monospace;}
+.lucidaSansUnicode{font-family:'Lucida Sans Unicode','Lucida Grande',sans-serif;}
+.tahoma{font-family:Tahoma,Geneva,sans-serif;}
+.times{font-family:'Times New Roman',Times,serif;}
+.trebuchet{font-family:'Trebuchet MS',Helvetica,sans-serif;}
+.verdana{font-family:Verdana,Geneva,sans-serif;}
+.msSans{font-family:'MS Sans Serif',Geneva,sans-serif;}
+.msSerif{font-family:'MS Serif','New York',serif;}
+.helvetica{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}
+.impact{font-family:Impact,Charcoal,sans-serif;}
+.century{font-family:'Century Gothic','Lucida Grande','Lucida Sans Unicode',sans-serif;}
+.underline{text-decoration:underline;}
+.strike{text-decoration:line-through;}
+.alignLeft{text-align:left;}
+.alignRight{text-align:right;}
+.alignCenter{text-align:center;}
+.alignJustify{text-align:justify;}
+.bold{font-weight:900;}
+.light{font-weight:100;}
+.italic{font-style:italic;}
+.smallcaps{font-variant:small-caps;}
+.expanded{letter-spacing:.5em;}
+.condensed{letter-spacing:-0.1em;}
+.uppercase{text-transform:uppercase;}
+.lowercase{text-transform:lowercase;}
+.capitalize{text-transform:capitalize;}

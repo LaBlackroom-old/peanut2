@@ -7,3 +7,6 @@
 [submodule "plugins/sfLESSPlugin"]
 	path = plugins/sfLESSPlugin
 	url = http://github.com/everzet/sfLESSPlugin.git
+[submodule "plugins/sfDoctrineGuardPlugin"]
+	path = plugins/sfDoctrineGuardPlugin
+	url = https://pocky@github.com/pocky/sfDoctrineGuardPlugin.git

@@ -4,6 +4,7 @@ h2{font-size:1.375em;line-height:1.0909em;}
 h3{font-size:1.25em;line-height:1.2em;}
 h4{font-size:1.125em;line-height:1.333em;}
 h5,h6{font-size:1em;line-height:1.5em;}
+p{line-height: 1.5em;}
 p,ul,ol,pre,section{margin-bottom:24px;}
 p,blockquote{text-align:justify;}
 li{list-style-position:outside;}

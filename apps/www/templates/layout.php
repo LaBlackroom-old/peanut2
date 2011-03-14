@@ -23,8 +23,12 @@
   </head>
 
   <body>
-    <div id="container">
+    <div id="container" class="alignCenter center container">
+      
+      <section id="main" class="alignLeft" role="main">
         <?php echo $sf_content ?>
+      </section>
+      
     </div>
 
     <!--[if lt IE 7 ]>

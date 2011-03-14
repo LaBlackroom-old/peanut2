@@ -74,7 +74,3 @@
 .container .suffix_21{pading-right:830px;}
 .container .suffix_22{pading-right:870px;}
 .container .suffix_23{pading-right:910px;}
-.container:after,.clearfix:after{clear:both;content:'.';display:block;height:0;visibility:hidden;}
-.container,.clearfix{display:inline-block;}
-* html .container,* html .clearfix{height:1%;}
-.container,.clearfix{display:block;}

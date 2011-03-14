@@ -25,11 +25,18 @@ class ProjectConfiguration extends sfProjectConfiguration
         'peanutHtml5Plugin',
         'sfDoctrineGuardPlugin'
     ));
+    
+    $this->dispatcher->connect('context.load_factories', array($this, 'listenToLoadFactoriesEvent'));
   }
 
   public function setupPlugins()
   {
     $this->pluginConfigurations['peanutHtml5Plugin']->connectTests();
     $this->pluginConfigurations['sfDoctrineGuardPlugin']->connectTests();
+  }
+  
+  public function listenToLoadFactoriesEvent(sfEvent $event)
+  {
+    BaseForm::setUser($event->getSubject()->getUser());
   }
 }

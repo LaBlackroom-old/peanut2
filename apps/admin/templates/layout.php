@@ -24,7 +24,9 @@
 
   <body>
     <div id="container">
+      <section id="main" role="main">
         <?php echo $sf_content ?>
+      </section>
     </div>
 
     <!--[if lt IE 7 ]>

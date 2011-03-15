@@ -15,7 +15,6 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
    */
   public function configure()
   {
-    
     $user = self::getValidUser();
     
     $this->widgetSchema['username'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(

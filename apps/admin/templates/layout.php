@@ -22,7 +22,7 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
   </head>
 
-  <body>
+  <body <?php echo !$sf_user->isAuthenticated() ? 'id="login"' : null ?> >
     <div id="container">
       <section id="main" role="main">
         <?php echo $sf_content ?>

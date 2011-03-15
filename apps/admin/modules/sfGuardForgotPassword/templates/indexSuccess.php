@@ -7,9 +7,7 @@
 
 <?php if($form['email_address']->hasError()): ?>
 <section class="notification error">
-  <ul>
-    <li><?php echo $form['email_address']->getError() ?></li>
-  </ul>
+  <p><?php echo $form['email_address']->getError() ?></p>
 </section>
 <?php endif; ?>
 

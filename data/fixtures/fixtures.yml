@@ -1,17 +1,38 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: Administrateur
+    description: 'Le groupe des administrateurs'
+    created_at: '2011-03-15 12:05:45'
+    updated_at: '2011-03-15 12:05:45'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2011-03-15 12:05:45'
+    updated_at: '2011-03-15 12:05:45'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: admin
+    description: 'La permissions permettant d''accéder au backoffice'
+    created_at: '2011-03-15 12:04:12'
+    updated_at: '2011-03-15 12:04:12'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: admin
+    last_name: admin
+    email_address: admin@peanut.local
+    username: admin
+    algorithm: sha1
+    salt: baba31155ff078e4a869d7e2c88c8cca
+    password: admin
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2011-03-15 12:06:22'
+    updated_at: '2011-03-15 12:06:22'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2011-03-15 12:06:22'
+    updated_at: '2011-03-15 12:06:22'

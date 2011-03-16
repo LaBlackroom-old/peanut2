@@ -63,4 +63,7 @@ install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.g
 # sfTaskExtraPlugin
 install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git
 
+# csDoctrineActAsSortablePlugin
+install_git csDoctrineActAsSortablePlugin git://github.com/bshaffer/csDoctrineActAsSortablePlugin.git
+
 cd ../..

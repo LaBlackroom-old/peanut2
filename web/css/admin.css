@@ -117,7 +117,348 @@ body {
   float: right;
 }
 
+.container {
+  width: 100%;
+}
 
+body#authenticated {
+  background-color: #fefefe;
+  color: #666;
+}
+
+body#authenticated a,
+body#authenticated a:visited {
+  color: #5c94cb;
+}
+
+body#authenticated a:hover {
+  color: #4183c4;
+}
+
+header#top {
+  border-bottom: 1px solid #dfdfdf;
+  color: #5c94cb;
+  margin-bottom: 10px;
+  height: 76px;
+  
+  background: url('/images/login/button-overlay.png') #fcfcfc repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f7f7f7));
+  background: -moz-linear-gradient(top, #fcfcfc,  #f7f7f7);
+}
+
+header#top h1 {
+  color: #ff8f00;
+  font-size: 42px;
+  font-family: 'Lobster', arial, serif;
+  padding-top: 10px;
+}
+
+header#top h1 span {
+  color: #444;
+}
+
+header#top h1 a {
+  color: #fdb04f;
+  text-decoration: none;
+}
+
+header#top h1 a:visited,
+header#top h1 a:hover {
+  color: #ff8f00;
+}
+
+section#adminBar {
+  font-weight: bold;
+
+  margin: 0 30px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -moz-border-top-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  
+  -moz-border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  
+  background: url('/images/login/button-overlay.png') #e8e8e8 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eaeaea));
+  background: -moz-linear-gradient(top, #fafafa,  #eaeaea);
+  
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+section#adminBar ul {
+  margin: 0 10px 0 0;
+  padding: 10px;
+}
+
+section#adminBar li {
+  padding: 5px;
+  border-right: 1px solid #d4d4d4;
+  border-left: 1px solid #fcfcfc;
+}
+
+section#adminBar li.first {
+  border-left: none;
+}
+
+section#adminBar li.last {
+  border-right: none;
+  padding-right: 0;
+}
+
+nav {
+  min-height: 100%;
+}
+
+nav ul {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+nav ul ul {
+  border-bottom: 0;
+}
+
+footer#footer {
+  border-top: 10px solid #7e7e7e;
+}
+
+#sf_admin_container {
+  padding-left: 270px;
+  position: relative;
+  z-index: 10;
+}
+
+#sf_admin_container h1 {
+  color: #4183c4;
+}
+
+.sf_admin_list table {
+  border: 1px solid #d8d8d8;
+  vertical-align: middle;
+  width: 95%;
+  font-family: Monaco, 'Courier New', 'Deja Vu Sans Mono', 'monospace';
+  font-size: 90%;
+  line-height: 16px;
+  color: #484848;
+  margin-bottom: 20px;
+  
+}
+
+.sf_admin_list table a {
+  text-decoration: none;
+}
+
+.sf_admin_list table a:hover {
+  text-decoration: underline;
+}
+
+.sf_admin_list table ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.sf_admin_list table ul li {
+  display: inline;
+}
+
+.sf_admin_list thead,
+.sf_admin_list tfoot {
+  background-color: #e9e9e9;
+}
+
+.sf_admin_list thead a {
+  font-weight: normal;
+}
+
+.sf_admin_list tr {
+  height: 30px;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.sf_admin_list th,
+.sf_admin_list td {
+  text-align: left;
+  padding: .5em .3em;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+.sf_admin_list td {
+  background: url('/images/login/button-overlay.png') #e8e8e8 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eaeaea));
+  background: -moz-linear-gradient(top, #fafafa,  #eaeaea);
+}
+
+.sf_admin_list tfoot {
+  border-top: 1px solid #d8d8d8;
+}
+
+ul.sf_admin_actions {
+  list-style-type: none;
+}
+
+#sf_admin_bar table {
+  width: 400px;
+}
+
+.sf_admin_form fieldset {
+  border: 1px solid #e5e5e5;
+  margin: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.content_box_header {
+  height: 40px;
+  
+  background: url('/images/login/button-overlay.png') #e8e8e8 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eaeaea));
+  background: -moz-linear-gradient(top, #fafafa,  #eaeaea);
+}
+
+.content_box_header h2 {
+  padding: 10px;
+}
+
+.content_box_content {
+  padding: 10px;
+}
+
+.content_box_content label {
+  font-weight: bold;
+  margin: 20px 0 10px; ;
+  display: block;
+}
+
+.content_box_content input {
+  border: 1px solid #e5e5e5;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 6px;
+  width: 99%;
+  height: 20px;
+  
+  background: url('/images/login/button-overlay.png') #f9f9f9 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#fafafa));
+  background: -moz-linear-gradient(top, #f9f9f9, #fafafa);
+}
+
+.sf_admin_actions li {
+  float: left;
+  display: block;
+  padding: 0;
+}
+
+.sf_admin_actions a {
+  padding-top: 15px;
+  display: block;
+}
+
+.sf_admin_actions input {
+  height: 34px;
+  min-width: 40px;
+  color: #333;
+  margin: 10px;
+  border: 1px solid #ebebeb;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #fefefe;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  background: url('/images/login/button-overlay.png') #e8e8e8 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eaeaea));
+  background: -moz-linear-gradient(top, #fafafa,  #eaeaea);
+  
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sf_admin_actions input:hover {
+  color: #fefefe;
+  text-shadow: 1px 1px 0 #0770A0;
+  border: 1px solid #0770A0;
+  
+  background: url('/images/login/button-overlay.png') #000 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0CA6DD), to(#0770A0));
+  background: -moz-linear-gradient(top, #0CA6DD, #0770A0);
+}
+
+.sf_admin_actions input:active {
+  color: #fefefe;
+  text-shadow: 1px 1px 0 #0770A0;
+  border: 1px solid #0770A0;
+  
+  background: url('/images/login/button-overlay.png') #0770A0 repeat-x;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0770A0), to(#0CA6DD));
+  background: -moz-linear-gradient(top, #0770A0, #0CA6DD);
+}
+
+#sf_admin_bar {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  z-index: 1;
+
+}
+
+#sf_admin_bar h1 {
+  position: absolute;
+  top: 30px;
+  left: -38px;
+  z-index: 3;
+  font-weight: normal;
+  font-size: 16px;
+  cursor: pointer;
+  
+  -moz-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  transform:rotate(-90deg);
+  
+  background-color: #fefefe;
+  border: 1px solid #ebebeb;
+  padding: 5px;
+  
+  border-bottom: 0;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.sf_admin_filter {
+  /*
+    display: none;
+  */
+  
+  background-color: #fefefe;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -moz-border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  
+  -moz-border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
 /*
  * media queries for responsive design
  * these follow after primary styles so they will successfully override.

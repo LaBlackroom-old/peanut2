@@ -46,8 +46,10 @@ AddType application/octet-stream       safariextz
 <IfModule mod_deflate.c>
   
   <IfModule mod_setenvif.c>
-    SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s,?\s(gzip|deflate)?|X{4,13}|~{4,13}|-{4,13})$ HAVE_Accept-Encoding
-    RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s,?\s(gzip|deflate)?|X{4,13}|~{4,13}|-{4,13})$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
   </IfModule>
 
   # html, txt, css, js, json, xml, htc:
@@ -72,9 +74,13 @@ AddType application/octet-stream       safariextz
   </FilesMatch>
 </IfModule>
 
+FileETag None
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+</IfModule>
+
+<IfModule mod_rewrite.c>
 
   # uncomment the following line, if you are having trouble
   # getting no_script_name to work

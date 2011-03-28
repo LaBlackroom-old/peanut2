@@ -23,9 +23,9 @@
   </head>
 
   <body>
-    <div id="container" class="alignCenter center container">
+    <div id="container" class="alignCenter center container clearfix">
       
-      <section id="main" class="alignLeft" role="main">
+      <section id="main" class="alignLeft grid_24" role="main">
         <?php echo $sf_content ?>
       </section>
       

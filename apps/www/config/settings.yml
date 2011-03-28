@@ -35,4 +35,4 @@ all:
     use_database:           true
 
     # Enable html5 helper
-    standard_helpers:       [html5]
+    standard_helpers:       [Partial, I18N, html5]

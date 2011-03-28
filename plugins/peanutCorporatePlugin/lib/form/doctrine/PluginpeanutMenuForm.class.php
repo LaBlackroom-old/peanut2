@@ -12,5 +12,82 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
 {
   public function setup()
   {
+    parent::setup();
+   
+    $this->useFields(array(
+      'name',
+      'slug'
+    ));
+    
+    $this->widgetSchema['name'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+      'required'    => true,
+      'placeholder' => 'My menu'
+    ));
+    
+    $this->widgetSchema['slug'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+      'placeholder' => 'my-menu'
+    ));
+    
+    /**
+     *
+     * Le code qui suit permet de gérer le nestedSet du formulaire
+     */
+     
+    $this->widgetSchema['parent'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
+      'model'     => 'peanutMenu',
+      'add_empty' => 'This is a first level category',
+    ));
+    
+    $this->validatorSchema['parent'] = new sfValidatorDoctrineChoiceNestedSet(array(
+      'required' => false,
+      'model'    => 'peanutMenu',
+      'node'     => $this->getObject(),
+    ));
+    
+    if($this->getObject()->getNode()->hasParent())
+    {
+      $this->setDefault('parent', $this->getObject()->getNode()->getParent()->getId());
+    }
+    
+    $this->setValidator('parent', new sfValidatorDoctrineChoiceNestedSet(array(
+      'required'    => false,
+      'model'       => 'peanutMenu',
+      'node'        => $this->getObject(),
+    )));
+    
+    $this->getValidator('parent')->setMessage('node', 'A page cannot be made a descend of itself!');
+    
+  }
+  
+  protected function doSave($con = null)
+  {
+    parent::doSave($con);
+    
+    $node = $this->object->getNode();
+
+    if($this->getValue('parent'))
+    {
+      $parent = Doctrine::getTable('peanutMenu')->findOneById($this->getValue('parent'));
+      if($this->isNew() || $this->getObject()->getNode()->hasParent())
+      {
+        $this->getObject()->getNode()->insertAsLastChildOf($parent);
+      }
+      else
+      {
+        return parent::doSave($con);
+      }
+    }
+    else
+    {
+      $categoryTree = Doctrine::getTable('peanutMenu')->getTree();
+      if($this->isNew())
+      {
+        $categoryTree->createRoot($this->getObject());
+      }
+      else
+      {
+        $this->getObject()->getNode()->makeRoot($this->getObject()->getId());
+      }
+    }
   }
 }

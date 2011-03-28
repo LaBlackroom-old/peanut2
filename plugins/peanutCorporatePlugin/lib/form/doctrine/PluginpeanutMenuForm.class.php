@@ -28,9 +28,14 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
       'placeholder' => 'my-menu'
     ));
     
+    $this->widgetSchema->setHelps(array(
+      'name' => 'The menu name (required)',
+      'slug' => 'Not required but maybe useful for your SEO'
+    ));
+    
     /**
      *
-     * Le code qui suit permet de gérer le nestedSet du formulaire
+     * NestedSet Menu
      */
      
     $this->widgetSchema['parent'] = new sfWidgetFormDoctrineChoiceNestedSet(array(

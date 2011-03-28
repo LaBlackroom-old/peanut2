@@ -25,6 +25,7 @@ class ProjectConfiguration extends sfProjectConfiguration
         'peanutHtml5Plugin',
         'sfDoctrineGuardPlugin',
         'csDoctrineActAsSortablePlugin',
+        'sfCKEditorPlugin',
         'peanutCorporatePlugin'
     ));
     

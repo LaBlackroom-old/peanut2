@@ -1,0 +1,82 @@
+peanutItem:
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [title]
+    Sortable:
+      name:        position      
+      uniqueBy:    [peanutMenuId]  
+      uniqueIndex: true          
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    type:
+      type: string(255)  
+      notnull: true     
+    title:
+      type: string(255)
+      notnull: true
+    peanutMenuId:
+      type: integer
+      notnull: true
+    author:
+      type: integer
+      notnull: true
+  relations:
+    sfGuardUser:
+      foreignAlias: pageAuthor
+      local: author
+      foreign: id
+    peanutMenu:
+      foreignAlias: peanutMenu
+      local: peanutMenuId
+      foreign: id 
+
+peanutPage:
+  inheritance:
+    type: column_aggregation
+    extends: peanutItem
+    keyField: type
+    keyValue: 'page'
+  columns:
+    content:
+      type: clob
+    excerpt:
+      type: clob
+    status:
+      type: enum
+      values: [draft, publish]
+      default: draft
+
+peanutLink:
+  inheritance:
+    type: column_aggregation
+    extends: peanutItem
+    keyField: type
+    keyValue: 'link'
+  columns:
+    url:
+      type: string(255)
+    rel:
+      type: enum
+      values: [none, me, friend]
+      default: none
+      
+peanutMenu:
+  actAs:
+    Sluggable:
+      fields: [name]
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: root_id
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
+    

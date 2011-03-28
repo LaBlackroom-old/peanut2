@@ -1,0 +1,40 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutItem
+    theme:                 peanut
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_item
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      action:
+        
+      fields:  ~
+      
+      list:
+        title:   "Items"
+        
+        display: [=title, sfGuardUser, type, peanutMenu]
+        
+        sort:    [position, asc]
+        actions:
+          "Create new page":
+            action: newPage 
+          "Create new link":
+            action: newLink
+        
+      filter:
+        display: [title, type, peanutMenuId]
+        
+      form:    ~
+      
+      edit:
+        title:   "Modify this item"
+        
+      new:
+        title:   "Add new item"

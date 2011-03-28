@@ -66,4 +66,7 @@ install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.g
 # csDoctrineActAsSortablePlugin
 install_git csDoctrineActAsSortablePlugin git://github.com/bshaffer/csDoctrineActAsSortablePlugin.git
 
+# sfCKEditorPlugin
+install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git
+
 cd ../..

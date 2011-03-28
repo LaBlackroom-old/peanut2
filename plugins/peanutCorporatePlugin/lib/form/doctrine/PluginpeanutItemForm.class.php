@@ -13,5 +13,42 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
   protected function setupInheritance()
   {
     parent::setupInheritance();
-  }
+    
+    $user = self::getValidUser();
+    
+    $this->useFields(array(
+     'title',
+     'slug',
+     'content',
+     'excerpt',
+     'status',
+     'author',
+     'peanutMenuId',
+     'url',
+     'rel',
+     'created_at'
+    ));
+    
+    $this->widgetSchema['title'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'required'    => true,
+        'placeholder' => 'My Title'
+    ));
+    
+    $this->widgetSchema['slug'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'My Title'
+    ));
+    
+    $this->widgetSchema->setHelps(array(
+      'title'         => 'The item title (required)',
+      'slug'          => 'Not required but useful for your SEO',
+      'content'       => 'The item content (required)',
+      'excerpt'       => 'The item excerpt (not required)',
+      'status'        => 'If you want to hide this entry for visitors',
+      'peanutMenuId'  => 'The menu where will appear this iteam',
+      'url'           => 'The item url (must be an http or https url)',
+      'rel'           => 'Your relation with the website',
+      'created_at'    => 'Useful is you want to modify the date of the entry publication'
+    ));
+    
+   }
 }

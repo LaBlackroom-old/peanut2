@@ -30,7 +30,7 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
     
     $this->widgetSchema->setHelps(array(
       'name' => 'The menu name (required)',
-      'slug' => 'Not required but maybe useful for your SEO'
+      'slug' => 'Not required but maybe for your SEO'
     ));
     
     /**

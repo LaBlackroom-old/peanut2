@@ -13,10 +13,11 @@ default:
     viewport:      width=device-width, initial-scale=1.0
 
   stylesheets:
-    - admin.css?v=2:    { media: 'screen, projection' }
+    - admin.css?v=2:   { media: 'screen, projection' }
+    - http://fonts.googleapis.com/css?family=Lobster: { media: 'screen, project' }
     - handled.css?v=2: { media: 'handled' }
 
-  javascripts:
+  javascripts:     [ admin.js ]
     
 
   has_layout:      true

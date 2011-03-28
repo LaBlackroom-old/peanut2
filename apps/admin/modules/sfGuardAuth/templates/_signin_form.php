@@ -1,4 +1,4 @@
-<form action="<?php echo url_for('@sf_guard_signin') ?>" method="post" novalidate>
+<form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
   
   <?php if($form['username']->hasError() || $form['password']->hasError()): ?>
   <section class="notification error">

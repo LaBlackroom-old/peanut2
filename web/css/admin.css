@@ -230,7 +230,7 @@ footer#footer {
 }
 
 #sf_admin_container {
-  padding-left: 270px;
+  margin-left: 270px;
   position: relative;
   z-index: 10;
 }
@@ -338,7 +338,8 @@ ul.sf_admin_actions {
   display: block;
 }
 
-.content_box_content input {
+.content_box_content input,
+.content_box_content textarea {
   border: 1px solid #e5e5e5;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -352,6 +353,14 @@ ul.sf_admin_actions {
   background: -moz-linear-gradient(top, #f9f9f9, #fafafa);
 }
 
+.content_box_content input.normalBox {
+  width: 50%;
+}
+
+.content_box_content textarea {
+  height: 90px;
+}
+
 .sf_admin_actions li {
   float: left;
   display: block;
@@ -359,7 +368,8 @@ ul.sf_admin_actions {
 }
 
 .sf_admin_actions a {
-  padding-top: 15px;
+  padding-top: 19px;
+  margin: 0 5px;
   display: block;
 }
 

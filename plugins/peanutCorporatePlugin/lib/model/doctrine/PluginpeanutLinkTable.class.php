@@ -16,4 +16,75 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   {
     return Doctrine_Core::getTable('peanutLink');
   }
+
+  /**
+   * Retrieves link object.
+   *
+   * @return peanutLink
+   */
+  public function getItems()
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves links object by menu.
+   *
+   * @param  string|int $menu     The id or slug of menu
+   *
+   * @return peanutLink
+   */
+  public function getItemsByMenu($menu)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('m.id = ?', $menu)
+            ->orWhere('m.slug = ?', $menu)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves links object by user.
+   *
+   * @param  string|int $user     The id or username of user
+   *
+   * @return peanutLink
+   */
+  public function getItemsByUser($user)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('s.id = ?', $user)
+            ->orWhere('s.username = ?', $user)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves links object by relation.
+   *
+   * @param  string $rel     The relation of item
+   *
+   * @return peanutLink
+   */
+  public function getItemsByRelation($rel)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('s.relation = ?', $rel)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
 }

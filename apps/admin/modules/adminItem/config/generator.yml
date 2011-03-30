@@ -21,15 +21,21 @@ generator:
         
         display: [=title, sfGuardUser, type, peanutMenu]
         
-        sort:    [position, asc]
         actions:
           "Create new page":
             action: newPage 
           "Create new link":
             action: newLink
         
+        object_actions:
+          promote:
+            action: promote
+          demote:
+            action: demote
+          _edit:        ~
+          _delete:      ~
       filter:
-        display: [title, type, peanutMenuId]
+        display: [title, type, menu]
         
       form:    ~
       

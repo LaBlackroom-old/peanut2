@@ -3,10 +3,9 @@ peanutItem:
     Timestampable:
     Sluggable:
       fields: [title]
-    Sortable:
-      name:        position      
-      uniqueBy:    [peanutMenuId]  
-      uniqueIndex: true          
+    Sortable:    
+      uniqueBy:    [menu]
+      class:       peanutItem
   columns:
     id:
       primary: true
@@ -18,7 +17,7 @@ peanutItem:
     title:
       type: string(255)
       notnull: true
-    peanutMenuId:
+    menu:
       type: integer
       notnull: true
     author:
@@ -26,12 +25,10 @@ peanutItem:
       notnull: true
   relations:
     sfGuardUser:
-      foreignAlias: pageAuthor
       local: author
       foreign: id
     peanutMenu:
-      foreignAlias: peanutMenu
-      local: peanutMenuId
+      local: menu
       foreign: id 
 
 peanutPage:
@@ -59,7 +56,7 @@ peanutLink:
   columns:
     url:
       type: string(255)
-    rel:
+    relation:
       type: enum
       values: [none, me, friend]
       default: none
@@ -79,4 +76,3 @@ peanutMenu:
     name:
       type: string(255)
       notnull: true
-    

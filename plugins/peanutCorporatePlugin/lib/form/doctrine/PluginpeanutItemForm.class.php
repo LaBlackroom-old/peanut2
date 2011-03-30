@@ -23,9 +23,9 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
      'excerpt',
      'status',
      'author',
-     'peanutMenuId',
+     'menu',
      'url',
-     'rel',
+     'relation',
      'created_at'
     ));
     
@@ -44,9 +44,9 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
       'content'       => 'The item content (required)',
       'excerpt'       => 'The item excerpt (not required)',
       'status'        => 'If you want to hide this entry for visitors',
-      'peanutMenuId'  => 'The menu where will appear this iteam',
+      'menu'          => 'The menu where will appear this iteam',
       'url'           => 'The item url (must be an http or https url)',
-      'rel'           => 'Your relation with the website',
+      'relation'      => 'Your relation with the website',
       'created_at'    => 'Useful is you want to modify the date of the entry publication'
     ));
     

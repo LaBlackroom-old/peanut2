@@ -23,7 +23,7 @@ abstract class PluginpeanutPageForm extends BasepeanutPageForm
      'excerpt',
      'status',
      'author',
-     'peanutMenuId',
+     'menu',
      'created_at'
     ));
     

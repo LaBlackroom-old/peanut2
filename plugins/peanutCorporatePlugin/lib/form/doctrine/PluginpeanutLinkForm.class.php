@@ -20,10 +20,10 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
      'title',
      'slug',
      'url',
-     'rel',
+     'relation',
      'author',
-     'created_at',
-     'peanutMenuId'
+     'menu',
+     'created_at'
     ));
     
     $this->widgetSchema['url'] = new sfWidgetFormHtml5InputUrl($options = array(), $attributes = array(

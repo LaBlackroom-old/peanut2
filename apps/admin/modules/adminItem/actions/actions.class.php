@@ -13,6 +13,28 @@ require_once dirname(__FILE__).'/../lib/adminItemGeneratorHelper.class.php';
  */
 class adminItemActions extends autoAdminItemActions
 {
+  protected function addSortQuery($query)
+  {
+    $query->addOrderBy('menu asc');
+    $query->addOrderBy('position asc');
+  }
+  
+  public function executePromote()
+  {
+    $object = Doctrine_Core::getTable('peanutItem')->findOneById($this->getRequestParameter('id'));
+    
+    $object->promote();
+    $this->redirect('@peanut_item');
+  }
+
+  public function executeDemote()
+  {
+    $object = Doctrine_Core::getTable('peanutItem')->findOneById($this->getRequestParameter('id'));
+
+    $object->demote();
+    $this->redirect('@peanut_item');
+  }
+  
   public function executeNewLink(sfWebRequest $request)
   {
     $this->form = new peanutLinkForm();

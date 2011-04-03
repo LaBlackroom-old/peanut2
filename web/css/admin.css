@@ -392,9 +392,13 @@ ul.sf_admin_actions {
 }
 
 #sf_admin_container ul li.sf_admin_action_list a,
-#sf_admin_container ul li.sf_admin_action_delete a {
+#sf_admin_container ul li.sf_admin_action_delete a,
+#sf_admin_container ul.sf_admin_actions li a,
+#sf_admin_container ul.sf_admin_td_actions li a {
   background-position: 0 bottom;
 }
+
+
 
 .sf_admin_actions a {
   padding-top: 19px;
@@ -405,6 +409,7 @@ ul.sf_admin_actions {
 #sf_admin_container .sf_admin_actions input {
   height: 34px;
   min-width: 40px;
+  width: 40px;
   color: #333;
   margin: 10px;
   border: 1px solid #ebebeb;

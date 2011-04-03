@@ -18,10 +18,11 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    *
    * @var string
    */
-  protected 
+  protected
       $_options = array(
           'name'        =>  'position',
           'alias'       =>  null,
+          'class'       =>  null,
           'type'        =>  'integer',
           'length'      =>  8,
           'unique'      =>  true,
@@ -102,7 +103,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function demote()
   {
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
     $position = $object->get($this->_options['name']);
 
     if ($position < $object->getFinalPosition())
@@ -119,7 +120,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function promote()
   {
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
     $position = $object->get($this->_options['name']);
 
     if ($position > 1)
@@ -135,7 +136,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function moveToFirst()
   {
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
     $object->moveToPosition(1);
   }
 
@@ -147,7 +148,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function moveToLast()
   {
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
     $object->moveToPosition($object->getFinalPosition());
   }
 
@@ -160,13 +161,16 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function moveToPosition($newPosition)
   {
+
     if (!is_int($newPosition))
     {
       throw new Doctrine_Exception('moveToPosition requires an Integer as the new position. Entered ' . $newPosition);
     }
 
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
+
     $position = $object->get($this->_options['name']);
+
     $conn = $object->getTable()->getConnection();
 
     //begin Transaction
@@ -178,7 +182,9 @@ class Doctrine_Template_Sortable extends Doctrine_Template
 
     if ($position > $newPosition)
     {
+
       $q = $object->getTable()->createQuery()
+                              ->from($this->_options['class'])
                               ->where($this->_options['name'] . ' < ?', $position)
                               ->andWhere($this->_options['name'] . ' >= ?', $newPosition)
                               ->orderBy($this->_options['name'] . ' DESC');
@@ -192,7 +198,8 @@ class Doctrine_Template_Sortable extends Doctrine_Template
 
       if ($this->canUpdateWithOrderBy($conn))
       {
-        $q->update(get_class($object))
+
+        $q->update($this->_options['class'])
           ->set($this->_options['name'], $this->_options['name'] . ' + 1')
           ->execute();
       }
@@ -210,6 +217,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
     {
 
       $q = $object->getTable()->createQuery()
+                              ->from($this->_options['class'])
                               ->where($this->_options['name'] . ' > ?', $position)
                               ->andWhere($this->_options['name'] . ' <= ?', $newPosition)
                               ->orderBy($this->_options['name'] . ' ASC');
@@ -223,9 +231,10 @@ class Doctrine_Template_Sortable extends Doctrine_Template
 
       if ($this->canUpdateWithOrderBy($conn))
       {
-        $q->update(get_class($object))
+        $q->update($this->_options['class'])
           ->set($this->_options['name'], $this->_options['name'] . ' - 1')
           ->execute();
+
       }
       else
       {
@@ -239,7 +248,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
     }
 
     $object->set($this->_options['name'], $newPosition);
-		$object->save();
+    $object->save();
 
     // Commit Transaction
     $conn->commit();
@@ -261,14 +270,13 @@ class Doctrine_Template_Sortable extends Doctrine_Template
         - Add proper error messages.
     */
     $table = $this->getInvoker()->getTable();
-    $class  = get_class($this->getInvoker());
     $conn = $table->getConnection();
 
     $conn->beginTransaction();
 
     foreach ($order as $position => $id)
     {
-      $newObject = Doctrine::getTable($class)->findOneById($id);
+      $newObject = Doctrine::getTable($this->_options['class'])->findOneById($id);
 
       if ($newObject->get($this->_options['name']) != $position + 1)
       {
@@ -294,6 +302,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
     $object = $this->getInvoker();
 
     $query = $object->getTable()->createQuery()
+                                ->from($this->_options['class'])
                                 ->orderBy($this->_options['name'] . ' ' . $order);
 
     return $query->execute();
@@ -314,7 +323,6 @@ class Doctrine_Template_Sortable extends Doctrine_Template
     $order = $this->formatAndCheckOrder($order);
 
     $object = $this->getInvoker();
-    $class  = get_class($object);
 
     if (!$parentColumnName)
     {
@@ -337,7 +345,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
     }
 
     $query = $object->getTable()->createQuery()
-                                ->from($class . ' od')
+                                ->from($this->_options['class'] . ' od')
                                 ->where('od.' . $parentColumnName . ' = ?', $parentValue)
                                 ->orderBy($this->_options['name'] . ' ' . $order);
 
@@ -379,14 +387,16 @@ class Doctrine_Template_Sortable extends Doctrine_Template
    */
   public function getFinalPosition()
   {
+
     $object = $this->getInvoker();
 
     $q = $object->getTable()->createQuery()
-                            ->select($this->_options['name'])
-                            ->orderBy($this->_options['name'] . ' desc');
+                ->from($this->_options['class'])
+                ->select($this->_options['name'])
+                ->orderBy($this->_options['name'] . ' desc');
 
-   foreach($this->_options['uniqueBy'] as $field)
-   {
+    foreach($this->_options['uniqueBy'] as $field)
+    {
      if(is_object($object[$field]))
      {
        $q->addWhere($field . ' = ?', $object[$field]['id']);
@@ -395,17 +405,43 @@ class Doctrine_Template_Sortable extends Doctrine_Template
      {
        $q->addWhere($field . ' = ?', $object[$field]);
      }
-   }
+    }
 
-   $last = $q->limit(1)->fetchOne();
-   $finalPosition = $last ? $last->get($this->_options['name']) : 0;
+    $last = $q->limit(1)->fetchOne();
+    $finalPosition = $last ? $last->get($this->_options['name']) : 0;
 
-   return (int)$finalPosition;
+    return (int)$finalPosition;
   }
-  
+
   // sqlite/pgsql doesn't supports UPDATE with ORDER BY
   protected function canUpdateWithOrderBy(Doctrine_Connection $conn)
   {
       return $conn->getDriverName() != 'Pgsql' && $conn->getDriverName() != 'Sqlite';
+  }
+
+  protected function getSortableObject()
+  {
+    $object = $this->getInvoker();
+
+    if(!$this->_options['class'])
+    {
+      $this->setClass($this->getInvoker());
+    }
+    
+    if($this->_options['class'] && $this->getInvoker()->get('id'))
+    {
+      $object = Doctrine_Core::getTable($this->_options['class'])->findOneById($this->getInvoker()->get('id'));
+    }
+    else
+    {
+      $object = $this->getInvoker();
+    }
+
+    return $object;
+  }
+
+  protected function setClass($object)
+  {
+    return $this->_options['class'] = get_class($object);
   }
 }

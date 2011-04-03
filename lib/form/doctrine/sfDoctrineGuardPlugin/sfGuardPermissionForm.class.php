@@ -12,5 +12,13 @@ class sfGuardPermissionForm extends PluginsfGuardPermissionForm
 {
   public function configure()
   {
+    $this->widgetSchema['name'] = new sfWidgetFormHtml5InputText(array(), array(
+                                        'placeholder' => 'Insert the permission name',
+                                        'required'    => true
+    ));
+    
+    $this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array(
+                                        'placeholder' => 'A simple description'
+    ));
   }
 }

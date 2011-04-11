@@ -4,7 +4,14 @@
 # default rules
 homepage:
   url:   /
-  param: { module: test, action: index }
+  param: { module: items, action: index }
+
+item_show:
+  url:             /:slug.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  param:           { module: items, action: show }
+  requirements:    { sf_method: get, sf_format: html }
 
 # generic rules
 # please, remove them by adding more specific rules

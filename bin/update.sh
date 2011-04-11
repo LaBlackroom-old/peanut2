@@ -3,6 +3,7 @@
 DIR=`php -r "echo realpath(dirname(\\$_SERVER['argv'][0]));"`
 VENDOR=$DIR/lib/vendor
 PLUGINS=$DIR/plugins
+GENERATOR=$DIR/data/generator
 
 # initialization
 if [ "$1" = "--reinstall" ]; then
@@ -68,5 +69,13 @@ install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAs
 
 # sfCKEditorPlugin
 install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git
+
+cd ../..
+
+
+# Admin generator
+mkdir -p $GENERATOR && cd $GENERATOR
+install_git sfDoctrineModule git://github.com/pocky/peanutGenerator.git
+
 
 cd ../..

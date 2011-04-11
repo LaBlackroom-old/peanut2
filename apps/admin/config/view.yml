@@ -14,7 +14,7 @@ default:
 
   stylesheets:
     - admin.css?v=2:   { media: 'screen, projection' }
-    - http://fonts.googleapis.com/css?family=Lobster: { media: 'screen, project' }
+    - http://fonts.googleapis.com/css?family=Oswald: { media: 'screen, project' }
     - handled.css?v=2: { media: 'handled' }
 
   javascripts:     [ admin.js ]

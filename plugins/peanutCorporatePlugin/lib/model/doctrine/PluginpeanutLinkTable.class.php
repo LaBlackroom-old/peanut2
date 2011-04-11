@@ -20,6 +20,25 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   /**
    * Retrieves link object.
    *
+   * @param  string|int $item     The id or slug of item
+   *
+   * @return peanutLink
+   */
+  public function getItem($item)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('p.id = ?', $item)
+            ->orWhere('p.slug = ?', $item)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves link object.
+   *
    * @return peanutLink
    */
   public function getItems()

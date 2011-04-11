@@ -362,8 +362,8 @@ ul.sf_admin_actions {
   padding-left: 0;
 }
 
-#sf_admin_container input,
-#sf_admin_container textarea {
+#sf_admin_content .content input,
+#sf_admin_content .content textarea {
   border: 1px solid #e5e5e5;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -377,7 +377,7 @@ ul.sf_admin_actions {
   background: -moz-linear-gradient(top, #f9f9f9, #fafafa);
 }
 
-#sf_admin_container input.normalBox {
+#sf_admin_content input.normalBox {
   width: 50%;
 }
 
@@ -409,7 +409,6 @@ ul.sf_admin_actions {
 #sf_admin_container .sf_admin_actions input {
   height: 34px;
   min-width: 40px;
-  width: 40px;
   color: #333;
   margin: 10px;
   border: 1px solid #ebebeb;
@@ -428,10 +427,6 @@ ul.sf_admin_actions {
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-li.sf_admin_batch_actions_choice input {
-  width: 30px;
 }
 
 #sf_admin_container .sf_admin_actions input:hover {

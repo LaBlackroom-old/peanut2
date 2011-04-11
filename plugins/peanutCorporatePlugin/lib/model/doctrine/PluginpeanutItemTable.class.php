@@ -18,19 +18,47 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
   }
 
   /**
+   * Retrieves item object.
+   *
+   * @param  string|int $item     The id or slug of item
+   *
+   * @return peanutItem
+   */
+  public function getItem($item, $type = null)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('p.id = ?', $item)
+            ->orWhere('p.slug = ?', $item)
+            ->orderBy('p.position ASC');
+
+    if(null !== $type)
+    {
+      $p->addWhere('p.type = ?', $null);
+    }
+    
+    return $p;
+  }
+
+  /**
    * Retrieves items object.
    *
    * @param  string $type     The type of item
    *
    * @return peanutItem
    */
-  public function getItems($type = '*')
+  public function getItems($type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('p.type = ?', $type)
             ->orderBy('p.position ASC');
+
+    if(null !== $type)
+    {
+      $p->addWhere('p.type = ?', $null);
+    }
 
     return $p;
   }
@@ -43,16 +71,20 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
    *
    * @return peanutItem
    */
-  public function getItemsByMenu($menu, $type = '*')
+  public function getItemsByMenu($menu, $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('p.type = ?', $type)
-            ->andWhere('m.id = ?', $menu)
+            ->where('m.id = ?', $menu)
             ->orWhere('m.slug = ?', $menu)
             ->orderBy('p.position ASC');
 
+    if(null !== $type)
+    {
+      $p->addWhere('p.type = ?', $null);
+    }
+    
     return $p;
   }
 
@@ -60,20 +92,24 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
    * Retrieves items object by user.
    *
    * @param  string|int $user     The id or username of user
-   * @param  string $type            The type of item
+   * @param  string $type         The type of item
    *
    * @return peanutItem
    */
-  public function getItemsByUser($user, $type = '*')
+  public function getItemsByUser($user, $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('p.type = ?', $type)
-            ->andWhere('s.id = ?', $user)
+            ->where('s.id = ?', $user)
             ->orWhere('s.username = ?', $user)
             ->orderBy('p.position ASC');
 
+    if(null !== $type)
+    {
+      $p->addWhere('p.type = ?', $null);
+    }
+    
     return $p;
   }
 

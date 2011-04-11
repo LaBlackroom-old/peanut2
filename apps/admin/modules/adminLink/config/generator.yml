@@ -16,6 +16,10 @@ generator:
       fields:  ~
       list:    ~
       filter:  ~
-      form:    ~
+      form:
+        display:
+          "Title":    [title, slug]
+          "Content":  [url, relation]
+          "General":  [author, menu]
       edit:    ~
       new:     ~

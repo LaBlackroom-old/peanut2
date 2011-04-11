@@ -20,6 +20,25 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
   /**
    * Retrieves pages object.
    *
+   * @param  string|int $item     The id or slug of item
+   *
+   * @return peanutPage
+   */
+  public function getItem($item)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->where('p.id = ?', $item)
+            ->orWhere('p.slug = ?', $item)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+  
+  /**
+   * Retrieves pages object.
+   *
    * @return peanutPage
    */
   public function getItems()

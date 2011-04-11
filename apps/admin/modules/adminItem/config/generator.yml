@@ -37,7 +37,11 @@ generator:
       filter:
         display: [title, type, menu]
         
-      form:    ~
+      form:
+        display:
+          "Title":    [title, slug]
+          "Content":  [content, excerpt]
+          "General":  [status, author, menu]
       
       edit:
         title:   "Modify this item"

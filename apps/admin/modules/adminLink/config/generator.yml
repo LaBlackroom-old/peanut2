@@ -18,8 +18,8 @@ generator:
       filter:  ~
       form:
         display:
-          "Title":    [title, slug]
-          "Content":  [url, relation]
-          "General":  [author, menu]
+          "General":        [title, slug]
+          "Content":        [url, relation]
+          "Informations":   [author, menu, created_at]
       edit:    ~
       new:     ~

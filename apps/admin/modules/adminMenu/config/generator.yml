@@ -34,9 +34,13 @@ generator:
           _edit:           ~
           _delete:         ~
 
-      filter:  ~
+      filter:
+        display:          [name, slug]
+
       form:
         display: 
-          "Menu": [name, slug, parent]
+          "General":      [name, slug]
+          "Content":      [parent]
+          "Informations": []
       edit:    ~
       new:     ~

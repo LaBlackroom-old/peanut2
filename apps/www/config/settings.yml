@@ -33,6 +33,10 @@ all:
 
     # Enable the database manager
     use_database:           true
+    enabled_modules:        [items]
+
+    i18n:                   on
+    default_culture:        fr
 
     # Enable html5 helper
     standard_helpers:       [Partial, I18N, html5]

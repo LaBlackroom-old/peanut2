@@ -42,9 +42,9 @@ generator:
         
       form:
         display:
-          "Title":    [title, slug]
-          "Content":  [content, excerpt]
-          "General":  [status, author, menu]
+          "General":       [title, slug]
+          "Content":       [content, excerpt, url, relation]
+          "Informations":  [status, author, menu, created_at]
       
       edit:
         title:   "Modify this item"

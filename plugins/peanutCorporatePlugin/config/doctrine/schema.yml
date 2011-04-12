@@ -2,7 +2,7 @@ peanutItem:
   actAs:
     Timestampable:
     Sluggable:
-      fields: [title]
+      fields:      [title]
     Sortable:    
       uniqueBy:    [menu]
       class:       peanutItem
@@ -47,6 +47,7 @@ peanutPage:
       values: [draft, publish]
       default: draft
 
+
 peanutLink:
   inheritance:
     type: column_aggregation
@@ -57,10 +58,46 @@ peanutLink:
     url:
       type: string(255)
     relation:
+      type: integer
+  relations:
+    peanutLinkRelation:
+      local: relation
+      foreign: id
+
+peanutLinkRelation:
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    me:
+      type: boolean
+      default: false
+    friendship:
       type: enum
-      values: [none, me, friend]
+      values: [contact, acquaintance, friend, none]
       default: none
-      
+    physical:
+      type: enum
+      values: [met]
+      default: none
+    professional:
+      type: enum
+      values: [co-worker, colleague]
+      default: none
+    geographical:
+      type: enum
+      values: [co-resident, neighbor, none]
+      default: none
+    family:
+      type: enum
+      values: [child, parent, sibling, spouse, kin, none]
+      default: none
+    romantic:
+      type: enum
+      values: [muse, crush, date, sweetheart]
+      default: none
+
 peanutMenu:
   actAs:
     Sluggable:

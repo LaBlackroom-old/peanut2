@@ -18,7 +18,7 @@ class itemsActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $item = Doctrine_Core::getTable('peanutPage')->getItem($this->getRequestParameter('slug'));
+    $item = Doctrine_Core::getTable('peanutItem')->getItem($this->getRequestParameter('slug'));
     $this->item = $item->fetchOne(array(), Doctrine_Core::HYDRATE_ARRAY);
     
     $this->forward404Unless($this->item);

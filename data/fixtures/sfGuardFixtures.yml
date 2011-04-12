@@ -18,8 +18,8 @@ sfGuardPermission:
     updated_at: '2011-03-15 12:04:12'
 sfGuardUser:
   sfGuardUser_1:
-    first_name: admin
-    last_name: admin
+    first_name: Alexandre
+    last_name: Balmes
     email_address: admin@peanut.local
     username: admin
     algorithm: sha1

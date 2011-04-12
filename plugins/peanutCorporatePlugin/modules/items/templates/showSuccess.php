@@ -7,5 +7,10 @@
   <section>
     <?php echo htmlspecialchars_decode($item['content']) ?>
   </section>
+
+  <footer>
+    <?php include_partial('author', array('author' => $item['sfGuardUser'])) ?>
+    <?php include_partial('date', array('created' => $item['created_at'], 'updated' => $item['updated_at'])) ?>
+  </footer>
   
 </article>

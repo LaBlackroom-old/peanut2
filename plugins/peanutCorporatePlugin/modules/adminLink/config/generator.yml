@@ -19,7 +19,7 @@ generator:
       form:
         display:
           "General":        [title, slug]
-          "Content":        [url, relation]
+          "Content":        [url, peanutLinkRelation]
           "Informations":   [author, menu, created_at]
       edit:    ~
       new:     ~

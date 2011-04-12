@@ -49,9 +49,9 @@
         
         <?php if($sf_user->hasPermission('admin')): ?>
 
-        <nav>
+        <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'current'; endif; ?>" title="<?php echo __('Liens d\'accès'); ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès'); ?>">
               <?php echo __('Manage users'); ?>
             </a>
           </h3>
@@ -70,9 +70,9 @@
           </ul>
         </nav>
 
-        <nav>
+        <nav <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'current'; endif; ?>" title="<?php echo __('Liens d\'accès'); ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès'); ?>">
               <?php echo __('Manage groups'); ?>
             </a>
           </h3>
@@ -91,9 +91,9 @@
           </ul>
         </nav>
 
-        <nav>
+        <nav <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'current'; endif; ?>" title="<?php echo __('Liens d\'accès') ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès') ?>">
               <?php echo __('Manage permissions'); ?>
             </a>
           </h3>
@@ -127,10 +127,6 @@
         
       <section id="main" role="main">
         <?php echo $sf_content ?>
-
-        <footer id="footer" class="prefix_1">
-          &copy; Alexandre Balmes 2009 - <?php echo date('Y') ?> - gist edition
-        </footer>
       </section>
 
     </div>

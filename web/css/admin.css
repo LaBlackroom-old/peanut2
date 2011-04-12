@@ -1,6 +1,7 @@
 @import 'lib/boilerplate.css';
 @import 'lib/grid.css';
 @import 'lib/bic.css';
+@import 'lib/tipTip.css';
 
 
 /*
@@ -11,6 +12,7 @@
 
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -31,6 +33,7 @@ body {
 
 .container {
   width: 100%;
+  
 }
 
 /*
@@ -43,6 +46,7 @@ body {
    background-color: rgb(209, 213, 216);
    color: rgb(0, 0, 0);
    height: 100%;
+   
 }
 
 #authenticated header#top {
@@ -58,8 +62,8 @@ body {
 }
 
 #authenticated header#top h1 a {
-  color: rgb(0, 0, 70);
-  text-shadow: rgba(0, 0, 0, 0.5) -1px 0, rgba(62, 61, 61,0.5) 0 1px, rgba(224, 224, 225,0.3) -1px -2px;
+  color: rgb(54, 54, 54);
+  text-shadow: rgba(0, 0, 0, 0.5) -1px 0, rgba(62, 61, 61, 0.5) 0 1px, rgba(224, 224, 225, 0.5) 1px 0;
   font-size: 30px;
   line-height: 30px;
   text-decoration: none;
@@ -99,8 +103,8 @@ body {
   border-right: 1px solid rgb(165, 165, 165);
   font-size: 11px;
   text-transform: uppercase;
-  width: 220px;
-  padding: 10px 0;
+  width: 180px;
+  padding: 0 0 10px 0;
   position: relative;
   float: left;
 }
@@ -108,10 +112,14 @@ body {
 #authenticated sidebar h2 {
   height: 20px;
   font-size: 11px;
-  color: rgb(116, 125, 132);
-  margin-bottom: 0;
-  padding: 0 10px;
+  color: rgb(125, 125, 125);
+  padding: 5px 10px 0;
   border-bottom: 1px solid rgb(211, 217, 225);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eff3fa), to(#d4dbe5));
+  background: -moz-linear-gradient(top, #eff3fa, #d4dbe5);
+  background: -o-linear-gradient(#eff3fa, #d4dbe5);
+  border-bottom: 1px solid rgb(182, 187, 196);
+  margin: 0;
 }
 
 #authenticated sidebar nav {
@@ -184,9 +192,11 @@ body {
    position: absolute;
    top: 0;
    right: 0;
-   background-color: rgb(240, 240, 240);
-   border-left: 6px solid rgb(234, 234, 234);
+   background-color: rgb(182, 187, 196);
+   border-left: 1px solid #8c8c8c;
+   padding-left: 13px;
    overflow: hidden;
+   z-index: 1;
 }
 
 #authenticated span.toggle {
@@ -194,9 +204,23 @@ body {
   font-size: 8px;
   font-weight: bold;
   position: absolute;
+  left: -2px;
+  cursor: pointer;
+  background: url('/images/admin/Media-Player.png') transparent no-repeat top left;
+  text-indent: -1984px;
+  display: block;
+  width: 16px;
+  height: 16px
+}
+
+#authenticated span.closed {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+}
+
+#authenticated span.open {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
-  left: -2px;
 }
 
 #authenticated aside h1 {
@@ -211,6 +235,24 @@ body {
   background: -o-linear-gradient(#d1d5d8, #b8bec2);
 }
 
+#authenticated aside section.filters {
+  background-color: rgb(240, 240, 240);
+  height: 100%;
+}
+
+#authenticated aside section.filters form {
+  padding: 10px;
+}
+
+#authenticated aside section.filters form tr,
+#authenticated aside section.filters form td {
+  border: 0;
+  background-color: inherit;
+}
+
+#authenticated aside section.filters form td {
+  padding: 5px 0;
+}
 
 /*
  *
@@ -221,19 +263,26 @@ body {
 #authenticated #main {
    float: left;
    position: relative;
+   overflow-y: auto;
+   background-color: rgb(217, 223, 232);
 }
 
 #authenticated #main #sf_admin_container header {
-  background-color: rgb(205, 205, 205);
-  height: 50px;
-  padding-top: 10px;
-  text-align: center;
   color: rgb(0, 0, 0);
 }
 
-#authenticated #main #sf_admin_container header ul {
-  text-align: left;
-  margin: -15px 0 0 35px;
+#authenticated #main #sf_admin_container header h1 {
+  height: 20px;
+  font-size: 11px;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px 0;
+  border-bottom: 1px solid rgb(211, 217, 225);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#d9d9d9));
+  background: -moz-linear-gradient(top, #f3f3f3, #d9d9d9);
+  background: -o-linear-gradient(#f3f3f3, #d9d9d9);
+  border-bottom: 1px solid rgb(183, 183, 183);
+  margin: 0;
+  text-transform: uppercase;
 }
 
 #authenticated #main #sf_admin_content table {
@@ -274,6 +323,7 @@ body {
   background-color: rgb(95, 131, 185);
   color: rgb(255, 255, 255);
 }
+
 #authenticated #main #sf_admin_content tbody tr:hover a {
   color: rgb(255, 255, 255);
 }
@@ -285,6 +335,161 @@ body {
   border-top: 0;
 }
 
+#authenticated section#sf_admin_content ul.sf_admin_actions {
+  margin: 10px 0 0 35px;
+}
+
+/*
+ *
+ * 5- Content edit
+ *
+ */
+
+#authenticated section#sf_admin_content {
+  margin-top: 0;
+}
+
+#authenticated div.sf_admin_form {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+#authenticated div.sf_admin_form .sf_admin_form_row {
+  border-bottom: 0;
+}
+
+#authenticated div.sf_admin_form fieldset h2 {
+  background-color: inherit;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_general {
+  margin: 20px 0;
+  border: 1px solid rgb(204, 204, 204);
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+
+  -moz-box-shadow: 1px 1px 1px 1px rgb(240, 240, 240);
+  -webkit-box-shadow: 1px 1px 1px 1px rgb(240, 240, 240);
+  box-shadow: 1px 1px 1px 1px rgb(240, 240, 240);
+}
+
+#authenticated div.sf_admin_form input[type=text],
+#authenticated div.sf_admin_form input[type=url],
+#authenticated div.sf_admin_form input[type=password],
+#authenticated div.sf_admin_form textarea {
+  padding: 5px;
+  border: 1px solid rgb(204, 204, 204);
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#authenticated div.sf_admin_form label {
+  width: auto;
+  padding: 5px 1em 3px 0;
+  font-weight: bold !important;
+}
+
+#authenticated div.sf_admin_form .content {
+  padding-left: 0;
+  float: left;
+}
+
+#authenticated div.sf_admin_form .help {
+  float: left;
+  padding: 5px 0 0 20px;
+}
+
+#authenticated div.sf_admin_form .help br {
+  display: none;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_general .content_box_header {
+  padding: 15px 20px;
+  height: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fefefe, #f2f2f2);
+  background: -o-linear-gradient(#fefefe, #f2f2f2);
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_general h2 {
+  font-size: 16px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_general .content_box_content {
+  border-top: 1px solid rgb(204, 204, 204);
+  margin-bottom: 10px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content,
+#authenticated div.sf_admin_form #sf_fieldset_informations {
+  border: 0;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content h2,
+#authenticated div.sf_admin_form #sf_fieldset_informations h2 {
+  border-bottom: 1px solid rgb(231, 231, 231);
+  text-transform: uppercase;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content .content {
+  width: 100%;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content input,
+#authenticated div.sf_admin_form #sf_fieldset_content textarea {
+  width: 99%;
+}
+
+#authenticated #main #sf_admin_content #sf_fieldset_content tbody tr {
+  background-color: inherit;
+}
+
+#authenticated #main #sf_admin_content #sf_fieldset_content tbody tr:hover {
+  background-color: inherit;
+  color: inherit;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content,
+#authenticated div.sf_admin_form #sf_fieldset_informations {
+  float: left;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content label {
+  float: none;
+  width: 100px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content .help,
+#authenticated div.sf_admin_form #sf_fieldset_informations .help {
+  display: none;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations {
+  margin-left: 20px;
+  width: 300px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations:after {
+  clear: both;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations .help {
+  padding-left: 0;
+}
+
+#authenticated div.sf_admin_form ul.sf_admin_actions {
+  text-align: right;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations label {
+  width: 65px;
+}
 
 /*
  * media queries for responsive design

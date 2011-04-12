@@ -16,6 +16,11 @@ generator:
       fields:  ~
       list:    ~
       filter:  ~
-      form:    ~
+      form:
+        display:
+          "General":        [title, slug]
+          "Content":        [content, excerpt]
+          "Informations":   [status, author, menu, created_at]
+
       edit:    ~
       new:     ~

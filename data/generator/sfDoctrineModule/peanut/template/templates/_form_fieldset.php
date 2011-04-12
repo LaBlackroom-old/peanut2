@@ -5,7 +5,7 @@
   </div>
   [?php endif; ?]
   
-  <div class="content_box_content">
+  <div class="content_box_content clearfix">
     [?php foreach ($fields as $name => $field): ?]
       [?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?]
       [?php include_partial('<?php echo $this->getModuleName() ?>/form_field', array(

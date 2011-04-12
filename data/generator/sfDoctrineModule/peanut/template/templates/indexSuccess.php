@@ -8,11 +8,6 @@
   <header id="sf_admin_header">
     <h1>[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h1>
     [?php include_partial('<?php echo $this->getModuleName() ?>/list_header', array('pager' => $pager)) ?]
-
-    <ul class="sf_admin_actions">
-      [?php include_partial('<?php echo $this->getModuleName() ?>/list_batch_actions', array('helper' => $helper)) ?]
-      [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
-    </ul>
   </header>
 
   <section id="sf_admin_content">
@@ -26,12 +21,17 @@
     <?php if ($this->configuration->getValue('list.batch_actions')): ?>
     </form>
     <?php endif; ?>
+
+    <ul class="sf_admin_actions">
+      [?php include_partial('<?php echo $this->getModuleName() ?>/list_batch_actions', array('helper' => $helper)) ?]
+      [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
+    </ul>
   </section>
   
   <?php if ($this->configuration->hasFilterForm()): ?>
   
   <aside id="sf_admin_bar">
-    <span class="toggle">&dagger;</span>
+    <span class="toggle">toggle</span>
     <section class="filters">
       [?php include_partial('<?php echo $this->getModuleName() ?>/filters', array('form' => $filters, 'configuration' => $configuration)) ?]
     </section>

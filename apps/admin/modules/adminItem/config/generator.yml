@@ -34,6 +34,9 @@ generator:
             action: demote
           _edit:        ~
           _delete:      ~
+
+        max_per_page:   15
+
       filter:
         display: [title, type, menu]
         

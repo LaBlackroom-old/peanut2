@@ -15,10 +15,16 @@ generator:
         title: Group list
         display: [=name, description, created_at, updated_at]
 
+      filter:
+        display:              [name, users_list, permissions_list]
+
       form:
         class:   sfGuardGroupAdminForm
-        display: [name, description, users_list, permissions_list]
-
+        display:
+          "General":      [name]
+          "Content":      [description]
+          "Informations": [users_list, permissions_list]
+          
       edit:
         title: Editing Group "%%name%%"
 

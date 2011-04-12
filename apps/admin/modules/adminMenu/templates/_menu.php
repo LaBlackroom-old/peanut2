@@ -1,6 +1,6 @@
-<nav>
+<nav <?php if($sf_context->getModuleName() == 'adminMenu'): echo 'class="selected"'; endif; ?>>
   <h3>
-    <a href="#" class="nav-top-item <?php if($sf_context->getModuleName() == 'adminMenu'): echo 'current'; endif; ?>" title="<?php echo __('Liens d\'accès'); ?>">
+    <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès'); ?>">
       <?php echo __('Manage menu'); ?>
     </a>
   </h3>

@@ -63,6 +63,7 @@ peanutLink:
       type: integer
   relations:
     peanutXFN:
+      type: one
       local: relation
       foreign: id
 

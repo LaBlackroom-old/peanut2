@@ -1,21 +1,22 @@
 <?php
 
 /**
- * PluginpeanutLinkRelation form.
+ * PluginpeanutXFN form.
  *
  * @package    ##PROJECT_NAME##
  * @subpackage form
  * @author     ##AUTHOR_NAME##
  * @version    SVN: $Id: sfDoctrineFormPluginTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-abstract class PluginpeanutLinkRelationForm extends BasepeanutLinkRelationForm
+abstract class PluginpeanutXFNForm extends BasepeanutXFNForm
 {
   public function setup()
   {
     parent::setup();
 
+
     $this->widgetSchema['friendship'] = new sfWidgetFormSelectRadio(array(
-        'choices' => array('contact' => 'contact', 'acquaintance' => 'acquaintance', 'friend' => 'friend', 'none' => 'none')
+        'choices' => array('contact' => 'contact', 'acquaintance' => 'acquaintance', 'friend' => 'friend')
     ));
 
     $this->widgetSchema['physical'] = new sfWidgetFormSelectCheckbox(array(
@@ -27,16 +28,17 @@ abstract class PluginpeanutLinkRelationForm extends BasepeanutLinkRelationForm
     ));
 
     $this->widgetSchema['geographical'] = new sfWidgetFormSelectRadio(array(
-        'choices' => array('co-resident' => 'co-resident', 'neighbor' => 'neighbor', 'none' => 'none')
+        'choices' => array('co-resident' => 'co-resident', 'neighbor' => 'neighbor')
     ));
 
     $this->widgetSchema['family'] = new sfWidgetFormSelectRadio(array(
-        'choices' => array('child' => 'child', 'parent' => 'parent', 'sibling' => 'sibling', 'spouse' => 'spouse', 'kin' => 'kin', 'none' => 'none')
+        'choices' => array('child' => 'child', 'parent' => 'parent', 'sibling' => 'sibling', 'spouse' => 'spouse', 'kin' => 'kin')
     ));
 
-    $this->widgetSchema['romantic'] = new sfWidgetFormSelectRadio(array(
+    $this->widgetSchema['romantic'] = new sfWidgetFormSelectCheckbox(array(
         'choices' => array('muse' => 'muse', 'crush' => 'crush', 'date' => 'date', 'sweetheart' => 'sweetheart')
     ));
-    
+
+    $this->widgetSchema->setFormFormatterName('div');
   }
 }

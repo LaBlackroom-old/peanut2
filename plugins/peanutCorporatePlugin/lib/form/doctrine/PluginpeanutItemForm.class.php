@@ -25,6 +25,7 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
      'author',
      'menu',
      'url',
+     'description',
      'relation',
      'created_at'
     ));

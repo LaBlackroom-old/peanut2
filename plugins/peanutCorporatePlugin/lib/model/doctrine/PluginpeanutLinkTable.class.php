@@ -29,6 +29,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('p.id = ?', $item)
             ->orWhere('p.slug = ?', $item)
             ->orderBy('p.position ASC');
@@ -46,6 +47,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->orderBy('p.position ASC');
 
     return $p;
@@ -63,6 +65,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('m.id = ?', $menu)
             ->orWhere('m.slug = ?', $menu)
             ->orderBy('p.position ASC');
@@ -82,6 +85,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('s.id = ?', $user)
             ->orWhere('s.username = ?', $user)
             ->orderBy('p.position ASC');
@@ -101,6 +105,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('s.relation = ?', $rel)
             ->orderBy('p.position ASC');
 

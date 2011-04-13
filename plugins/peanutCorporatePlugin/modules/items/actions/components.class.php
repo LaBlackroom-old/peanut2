@@ -18,7 +18,7 @@ class itemsComponents extends sfComponents
 
   public function executeFooterMenu(sfWebRequest $request)
   {
-    $items = Doctrine_Core::getTable('peanutItem')->getItemsByMenu(2);
+    $items = Doctrine_Core::getTable('peanutLink')->getItemsByMenu(2);
     $this->items = $items->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
   }
 }

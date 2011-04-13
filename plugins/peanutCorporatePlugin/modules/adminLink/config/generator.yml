@@ -18,8 +18,8 @@ generator:
       filter:  ~
       form:
         display:
-          "General":        [title, slug]
-          "Content":        [url, peanutLinkRelation]
+          "General":        [title, slug, url]
+          "Content":        [description, peanutXFN]
           "Informations":   [author, menu, created_at]
       edit:    ~
       new:     ~

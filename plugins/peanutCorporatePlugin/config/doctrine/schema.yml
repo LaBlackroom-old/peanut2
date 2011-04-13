@@ -57,14 +57,16 @@ peanutLink:
   columns:
     url:
       type: string(255)
+    description:
+      type: clob
     relation:
       type: integer
   relations:
-    peanutLinkRelation:
+    peanutXFN:
       local: relation
       foreign: id
 
-peanutLinkRelation:
+peanutXFN:
   columns:
     id:
       primary: true
@@ -74,29 +76,17 @@ peanutLinkRelation:
       type: boolean
       default: false
     friendship:
-      type: enum
-      values: [contact, acquaintance, friend, none]
-      default: none
+      type: array
     physical:
-      type: enum
-      values: [met]
-      default: none
+      type: array
     professional:
-      type: enum
-      values: [co-worker, colleague]
-      default: none
+      type: array
     geographical:
-      type: enum
-      values: [co-resident, neighbor, none]
-      default: none
+      type: array
     family:
-      type: enum
-      values: [child, parent, sibling, spouse, kin, none]
-      default: none
+      type: array
     romantic:
-      type: enum
-      values: [muse, crush, date, sweetheart]
-      default: none
+      type: array
 
 peanutMenu:
   actAs:

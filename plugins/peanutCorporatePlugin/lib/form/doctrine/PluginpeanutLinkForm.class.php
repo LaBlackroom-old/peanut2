@@ -20,6 +20,7 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
      'title',
      'slug',
      'url',
+     'description',
      'relation',
      'author',
      'menu',
@@ -31,6 +32,13 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
         'placeholder' => 'http://www.mywebsite.com',
         'pattern'     => 'https?://.+'
     ));
+
+    $this->widgetSchema['description'] = new sfWidgetFormTextarea($options = array(), $attributes = array(
+        'placeholder' => 'Simple description about my link'
+    ));
+
+    $this->embedRelation('peanutXFN');
+    $this->widgetSchema['peanutXFN']->setLabel('XFN');
     
     if(!$this->isNew()) {
       $this->widgetSchema['created_at'] = new sfWidgetFormI18nDate(array(

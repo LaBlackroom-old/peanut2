@@ -48,7 +48,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
-            ->orderBy('p.position ASC');
+            ->orderBy('p.created_at DESC');
 
     return $p;
   }

@@ -3,9 +3,16 @@ item_show:
   url:             /:slug.:sf_format
   class:           sfDoctrineRoute
   options:         { model: peanutItem, type: object }
-  param:           { module: items, action: show }
+  params:          { module: items, action: show }
   requirements:    { sf_method: get, sf_format: html }
-  
+
+item_list:
+  url:             /items/list.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: list }
+  requirements:    { sf_method: get, sf_format: html|xml|json }
+
 # Admin-Generator
 peanut_link:
   class: sfDoctrineRouteCollection

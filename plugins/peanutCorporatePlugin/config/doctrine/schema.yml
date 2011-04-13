@@ -17,6 +17,8 @@ peanutItem:
     title:
       type: string(255)
       notnull: true
+    content:
+      type: clob
     menu:
       type: integer
       notnull: true
@@ -38,8 +40,6 @@ peanutPage:
     keyField: type
     keyValue: 'page'
   columns:
-    content:
-      type: clob
     excerpt:
       type: clob
     status:
@@ -57,8 +57,6 @@ peanutLink:
   columns:
     url:
       type: string(255)
-    description:
-      type: clob
     relation:
       type: integer
   relations:

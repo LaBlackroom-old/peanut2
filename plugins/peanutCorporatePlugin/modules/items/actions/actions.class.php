@@ -24,5 +24,13 @@ class itemsActions extends sfActions
     $this->forward404Unless($this->item);
   }
 
+  public function executeList(sfWebRequest $request)
+  {
+    $items = Doctrine_Core::getTable('peanutItem')->getItems();
+    $this->items = $items->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+    $this->forward404Unless($this->items);
+  }
+
 
 }

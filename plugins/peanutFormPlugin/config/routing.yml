@@ -1,0 +1,4 @@
+contact:
+  url:             /contact/:action.:sf_format
+  param:           { module: contact }
+  requirements:    { sf_method: post|get, sf_format: html }

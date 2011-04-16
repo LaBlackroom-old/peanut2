@@ -1,0 +1,6 @@
+all:
+  contact:
+    form:           noreply@peanut2.local
+    webmasterName:  webmaster
+    webmasterMail:  www.peanut2.local
+    subject:        New message from your contact form

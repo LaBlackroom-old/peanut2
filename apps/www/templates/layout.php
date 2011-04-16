@@ -23,36 +23,10 @@
   </head>
 
   <body>
-    <div id="container" class="alignCenter center container">
-
-      <section id="top" class="alignLeft">
-
-        <header>
-          <h1>
-            <a href="<?php echo url_for('@homepage') ?>" title="<?php __('Back to homepage') ?>">
-              <?php echo sfConfig::get('app_site_name', 'myWebsite') ?>
-            </a>
-          </h1>
-        </header>
-
-        <nav>
-         <?php include_component('items', 'mainMenu') ?>
-        </nav>
-
-      </section>
+    <div id="container" class="alignCenter center container clearfix">
       
-      <section id="main" class="alignLeft" role="main">
+      <section id="main" class="alignLeft grid_24" role="main">
         <?php echo $sf_content ?>
-      </section>
-
-      <section id="footer">
-
-        <footer>
-          <nav>
-           <?php include_component('items', 'footerMenu') ?>
-          </nav>
-        </footer>
-        
       </section>
       
     </div>

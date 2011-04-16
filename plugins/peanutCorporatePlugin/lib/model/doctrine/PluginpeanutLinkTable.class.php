@@ -20,6 +20,26 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   /**
    * Retrieves link object.
    *
+   * @param  string|int $item     The id or slug of item
+   *
+   * @return peanutLink
+   */
+  public function getItem($item)
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.sfGuardUser s')
+            ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
+            ->where('p.id = ?', $item)
+            ->orWhere('p.slug = ?', $item)
+            ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves link object.
+   *
    * @return peanutLink
    */
   public function getItems()
@@ -27,7 +47,8 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->orderBy('p.position ASC');
+            ->leftJoin('p.peanutXFN x')
+            ->orderBy('p.created_at DESC');
 
     return $p;
   }
@@ -44,6 +65,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('m.id = ?', $menu)
             ->orWhere('m.slug = ?', $menu)
             ->orderBy('p.position ASC');
@@ -63,6 +85,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('s.id = ?', $user)
             ->orWhere('s.username = ?', $user)
             ->orderBy('p.position ASC');
@@ -82,6 +105,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->leftJoin('p.peanutXFN x')
             ->where('s.relation = ?', $rel)
             ->orderBy('p.position ASC');
 

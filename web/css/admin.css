@@ -426,6 +426,14 @@ body {
   margin-bottom: 10px;
 }
 
+#authenticated div.sf_admin_form #sf_fieldset_general .content_box_content label {
+  width: 70px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_general .content_box_content input {
+  width: 200px;
+}
+
 #authenticated div.sf_admin_form #sf_fieldset_content,
 #authenticated div.sf_admin_form #sf_fieldset_informations {
   border: 0;
@@ -491,6 +499,49 @@ body {
   width: 65px;
 }
 
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXFN {
+  margin-left: -10px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXFN label {
+  border-bottom: 1px solid rgb(231, 231, 231);
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 11px;
+  color: rgb(51, 51, 51);
+  padding-left: 3px;
+}
+
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXFN div.embedForm {
+  margin-left: 10px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXFN div.embedForm label {
+  border-bottom: 0;
+  text-transform: capitalize;
+  width: 100px;
+  padding-left: 0;
+}
+
+#authenticated div.sf_admin_form div.embedForm div.form-row{
+  margin: 10px 0;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXFN div.form-row label {
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content div.embedForm li input {
+  width: auto;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content div.embedForm li label {
+  font-weight: normal !important;
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+  padding: 3px 10px 0 0;
+}
 /*
  * media queries for responsive design
  * these follow after primary styles so they will successfully override.

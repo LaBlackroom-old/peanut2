@@ -1,5 +1,5 @@
 autoload:
   ckeditor:
     name:       ckeditor
-    path:       %SF_WEB_DIR%/ckeditor
+    path:       %SF_WEB_DIR%/lib/ckeditor
     recursive:  on

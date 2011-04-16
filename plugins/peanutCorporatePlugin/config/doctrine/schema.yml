@@ -2,7 +2,7 @@ peanutItem:
   actAs:
     Timestampable:
     Sluggable:
-      fields: [title]
+      fields:      [title]
     Sortable:    
       uniqueBy:    [menu]
       class:       peanutItem
@@ -17,6 +17,8 @@ peanutItem:
     title:
       type: string(255)
       notnull: true
+    content:
+      type: clob
     menu:
       type: integer
       notnull: true
@@ -38,14 +40,13 @@ peanutPage:
     keyField: type
     keyValue: 'page'
   columns:
-    content:
-      type: clob
     excerpt:
       type: clob
     status:
       type: enum
       values: [draft, publish]
       default: draft
+
 
 peanutLink:
   inheritance:
@@ -57,10 +58,35 @@ peanutLink:
     url:
       type: string(255)
     relation:
-      type: enum
-      values: [none, me, friend]
-      default: none
-      
+      type: integer
+  relations:
+    peanutXFN:
+      type: one
+      local: relation
+      foreign: id
+
+peanutXFN:
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    me:
+      type: boolean
+      default: false
+    friendship:
+      type: array
+    physical:
+      type: array
+    professional:
+      type: array
+    geographical:
+      type: array
+    family:
+      type: array
+    romantic:
+      type: array
+
 peanutMenu:
   actAs:
     Sluggable:

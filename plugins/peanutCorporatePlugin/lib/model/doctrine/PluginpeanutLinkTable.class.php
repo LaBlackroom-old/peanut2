@@ -74,20 +74,20 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   }
 
   /**
-   * Retrieves links object by user.
+   * Retrieves links object by author.
    *
-   * @param  string|int $user     The id or username of user
+   * @param  string|int $author     The id or username of author
    *
    * @return peanutLink
    */
-  public function getItemsByUser($user)
+  public function getItemsByAuthor($author)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
-            ->where('s.id = ?', $user)
-            ->orWhere('s.username = ?', $user)
+            ->where('s.id = ?', $author)
+            ->orWhere('s.username = ?', $author)
             ->orderBy('p.position ASC');
 
     return $p;
@@ -96,7 +96,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   /**
    * Retrieves links object by relation.
    *
-   * @param  string $rel     The relation of item
+   * @param  string     $rel     The relation of item
    *
    * @return peanutLink
    */
@@ -106,7 +106,13 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
-            ->where('s.relation = ?', $rel)
+            ->where('x.me LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.friendship LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.physical LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.professional LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.geographical LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.family LIKE ?', '%' . $rel . '%')
+            ->orWhere('x.romantic LIKE ?', '%' . $rel . '%')
             ->orderBy('p.position ASC');
 
     return $p;

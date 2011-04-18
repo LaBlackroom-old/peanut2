@@ -89,14 +89,14 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
   }
 
   /**
-   * Retrieves items object by user.
+   * Retrieves items object by author.
    *
-   * @param  string|int $user     The id or username of user
+   * @param  string|int $user     The id or username of author
    * @param  string $type         The type of item
    *
    * @return peanutItem
    */
-  public function getItemsByUser($user, $type = null)
+  public function getItemsByAuthor($user, $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')

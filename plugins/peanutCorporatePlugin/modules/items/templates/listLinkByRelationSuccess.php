@@ -2,14 +2,21 @@
 
 <section>
 
-  <h1><?php echo __('Last entries') ?></h1>
-  
+  <h1><?php echo __('Last entries for relation:') . ' ' . $sf_context->getInstance()->getRequest()->getParameter('relation') ?></h1>
+
   <?php foreach($items as $item): ?>
 
   <article id="page-<?php echo $item['id'] ?>">
-
+    
     <header>
-      <h1><?php echo htmlentities($item['title']) ?></h1>
+      <h1>
+        <a
+          href="<?php echo url_for('item_show', array('slug' => $item['slug'], 'sf_format' => 'html')) ?>"
+          rel=""
+        >
+          <?php echo htmlentities($item['title']) ?>
+        </a>
+      </h1>
     </header>
 
     <section>
@@ -30,5 +37,5 @@
   </article>
 
   <?php endforeach; ?>
-  
+
 </section>

@@ -32,5 +32,28 @@ class itemsActions extends sfActions
     $this->forward404Unless($this->items);
   }
 
+  public function executeListByAuthor(sfWebRequest $request)
+  {
+    $items = Doctrine_Core::getTable('peanutPage')->getItemsByAuthorAndStatus($this->getRequestParameter('author'));
+    $this->items = $items->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+    $this->forward404Unless($this->items);
+  }
+
+  public function executeListByMenu(sfWebRequest $request)
+  {
+    $items = Doctrine_Core::getTable('peanutItem')->getItemsByMenu($this->getRequestParameter('menu'));
+    $this->items = $items->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+    $this->forward404Unless($this->items);
+  }
+
+  public function executeListLinkByRelation(sfWebRequest $request)
+  {
+    $links = Doctrine_core::getTable('peanutLink')->getItemsByRelation($this->getRequestParameter('relation'));
+    $this->items = $links->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+
+    $this->forward404Unless($this->items);
+  }
 
 }

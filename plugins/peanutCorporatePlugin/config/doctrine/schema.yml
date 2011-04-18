@@ -25,6 +25,10 @@ peanutItem:
     author:
       type: integer
       notnull: true
+    status:
+      type: enum
+      values: [draft, publish]
+      default: draft
   relations:
     sfGuardUser:
       local: author
@@ -42,11 +46,6 @@ peanutPage:
   columns:
     excerpt:
       type: clob
-    status:
-      type: enum
-      values: [draft, publish]
-      default: draft
-
 
 peanutLink:
   inheritance:

@@ -39,9 +39,11 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
   /**
    * Retrieves pages object.
    *
+   * @param  string     $status   The status of items
+   *
    * @return peanutPage
    */
-  public function getItems()
+  public function getItems($status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
@@ -58,13 +60,13 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    *
    * @return peanutPage
    */
-  public function getItemsByMenu($menu)
+  public function getItemsByMenu($menu, $status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('m.id = ?', $menu)
-            ->orWhere('m.slug = ?', $menu)
+            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     return $p;
@@ -83,8 +85,7 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('m.id = ?', $menu)
-            ->orWhere('m.slug = ?', $menu)
+            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
             ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
@@ -95,16 +96,17 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    * Retrieves pages object by author.
    *
    * @param  string|int $author   The id or username of author
+   * @param  string     $status   The status of page
    *
    * @return peanutPage
    */
-  public function getItemsByAuthor($author)
+  public function getItemsByAuthor($author, $status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('s.id = ?', $author)
-            ->orWhere('s.username = ?', $author)
+            ->where('s.id = ? OR s.username = ?', array($author, $author))
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     return $p;
@@ -123,8 +125,7 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('s.id = ?', $author)
-            ->orWhere('s.username = ?', $author)
+            ->where('s.id = ? OR s.username = ?', array($author, $author))
             ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 

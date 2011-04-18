@@ -23,6 +23,7 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
      'excerpt',
      'status',
      'author',
+     'status',
      'menu',
      'url',
      'relation',

@@ -20,6 +20,6 @@ generator:
         display:
           "General":        [title, slug, url]
           "Content":        [content, peanutXFN]
-          "Informations":   [author, menu, created_at]
+          "Informations":   [author, status, menu, created_at]
       edit:    ~
       new:     ~

@@ -23,6 +23,7 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
      'content',
      'relation',
      'author',
+     'status',
      'menu',
      'created_at'
     ));

@@ -40,14 +40,17 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   /**
    * Retrieves link object.
    *
+   * @param  string     $status   The status of items
+   *
    * @return peanutLink
    */
-  public function getItems()
+  public function getItems($status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
+            ->where('p.status = ?', $status)
             ->orderBy('p.created_at DESC');
 
     return $p;
@@ -57,17 +60,18 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
    * Retrieves links object by menu.
    *
    * @param  string|int $menu     The id or slug of menu
+   * @param  string     $status   The status of items
    *
    * @return peanutLink
    */
-  public function getItemsByMenu($menu)
+  public function getItemsByMenu($menu, $status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
-            ->where('m.id = ?', $menu)
-            ->orWhere('m.slug = ?', $menu)
+            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     return $p;
@@ -77,17 +81,18 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
    * Retrieves links object by user.
    *
    * @param  string|int $user     The id or username of user
+   * @param  string     $status   The status of items
    *
    * @return peanutLink
    */
-  public function getItemsByUser($user)
+  public function getItemsByUser($user, $status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
-            ->where('s.id = ?', $user)
-            ->orWhere('s.username = ?', $user)
+            ->where('s.id = ? OR s.username = ?', array($user, $user))
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     return $p;
@@ -96,17 +101,19 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   /**
    * Retrieves links object by relation.
    *
-   * @param  string $rel     The relation of item
+   * @param  string     $rel      The relation of item
+   * @param  string     $status   The status of items
    *
    * @return peanutLink
    */
-  public function getItemsByRelation($rel)
+  public function getItemsByRelation($rel, $status = 'publish')
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXFN x')
             ->where('s.relation = ?', $rel)
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     return $p;

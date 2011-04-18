@@ -21,6 +21,7 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
    * Retrieves item object.
    *
    * @param  string|int $item     The id or slug of item
+   * @param  string     $type     The type of item
    *
    * @return peanutItem
    */
@@ -35,7 +36,7 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
 
     if(null !== $type)
     {
-      $p->addWhere('p.type = ?', $null);
+      $p->addWhere('p.type = ?', $type);
     }
     
     return $p;
@@ -44,20 +45,22 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
   /**
    * Retrieves items object.
    *
-   * @param  string $type     The type of item
+   * @param  string     $status   The status of the item
+   * @param  string     $type     The type of item
    *
    * @return peanutItem
    */
-  public function getItems($type = null)
+  public function getItems($status = 'publish', $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
+            ->where('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     if(null !== $type)
     {
-      $p->addWhere('p.type = ?', $null);
+      $p->andWhere('p.type = ?', $type);
     }
 
     return $p;
@@ -67,22 +70,23 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
    * Retrieves items object by menu.
    *
    * @param  string|int $menu     The id or slug of menu
-   * @param  string $type            The type of item
+   * @param  string     $status   The status of items
+   * @param  string     $type     The type of item
    *
    * @return peanutItem
    */
-  public function getItemsByMenu($menu, $type = null)
+  public function getItemsByMenu($menu, $status = 'publish', $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('m.id = ?', $menu)
-            ->orWhere('m.slug = ?', $menu)
+            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
+            ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
 
     if(null !== $type)
     {
-      $p->addWhere('p.type = ?', $null);
+      $p->andWhere('p.type = ?', $type);
     }
     
     return $p;
@@ -92,22 +96,22 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
    * Retrieves items object by user.
    *
    * @param  string|int $user     The id or username of user
-   * @param  string $type         The type of item
+   * @param  string     $status   The status of items
+   * @param  string     $type     The type of item
    *
    * @return peanutItem
    */
-  public function getItemsByUser($user, $type = null)
+  public function getItemsByUser($user, $status = 'publish', $type = null)
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->where('s.id = ?', $user)
-            ->orWhere('s.username = ?', $user)
+            ->where('s.id = ? OR s.username = ?', array($user, $user))
             ->orderBy('p.position ASC');
 
     if(null !== $type)
     {
-      $p->addWhere('p.type = ?', $null);
+      $p->andWhere('p.type = ?', $type);
     }
     
     return $p;

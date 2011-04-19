@@ -59,12 +59,12 @@ peanutLink:
     relation:
       type: integer
   relations:
-    peanutXFN:
+    peanutXfn:
       type: one
       local: relation
       foreign: id
 
-peanutXFN:
+peanutXfn:
   columns:
     id:
       primary: true

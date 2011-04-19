@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display:  [id, name, slug]
+        display:  [id, =name, slug]
         
         batch_actions:
           order:
@@ -34,13 +34,14 @@ generator:
           _edit:           ~
           _delete:         ~
 
-      filter:
-        display:          [name, slug]
+      filters:             ~
 
       form:
         display: 
-          "General":      [name, slug]
-          "Content":      [parent]
-          "Informations": []
-      edit:    ~
-      new:     ~
+          "General":       [name, slug]
+          "Content":       [parent]
+          "Informations":  []
+
+      edit:                ~
+
+      new:                 ~

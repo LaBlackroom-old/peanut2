@@ -29,7 +29,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->leftJoin('p.peanutXFN x')
+            ->leftJoin('p.peanutXfn x')
             ->where('p.id = ?', $item)
             ->orWhere('p.slug = ?', $item)
             ->orderBy('p.position ASC');
@@ -49,7 +49,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->leftJoin('p.peanutXFN x')
+            ->leftJoin('p.peanutXfn x')
             ->where('p.status = ?', $status)
             ->orderBy('p.created_at DESC');
 
@@ -69,7 +69,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->leftJoin('p.peanutXFN x')
+            ->leftJoin('p.peanutXfn x')
             ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
             ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
@@ -90,7 +90,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
-            ->leftJoin('p.peanutXFN x')
+            ->leftJoin('p.peanutXfn x')
             ->where('s.id = ? OR s.username = ?', array($user, $user))
             ->andWhere('p.status = ?', $status)
             ->orderBy('p.position ASC');
@@ -106,16 +106,21 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
    *
    * @return peanutLink
    */
-  public function getItemsByRelation($rel, $status = 'publish')
-  {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
-            ->leftJoin('p.peanutXFN x')
-            ->where('s.relation = ?', $rel)
-            ->andWhere('p.status = ?', $status)
-            ->orderBy('p.position ASC');
+   public function getItemsByRelation($rel, $status = 'publish')
+   {
+     $p = $this->createQuery('p')
+             ->leftJoin('p.sfGuardUser s')
+             ->leftJoin('p.peanutMenu m')
+             ->leftJoin('p.peanutXfn x')
+             ->where('x.me LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.friendship LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.physical LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.professional LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.geographical LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.family LIKE ?', '%' . $rel . '%')
+             ->orWhere('x.romantic LIKE ?', '%' . $rel . '%')
+             ->orderBy('p.position ASC');
 
-    return $p;
-  }
+     return $p;
+   }
 }

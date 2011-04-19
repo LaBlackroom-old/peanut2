@@ -16,7 +16,7 @@
   </header>
 
   <section id="sf_admin_content">
-        <form action="<?php echo url_for('peanut_menu_collection', array('action' => 'batch')) ?>" method="post">
+    <form action="<?php echo url_for('peanut_menu_collection', array('action' => 'batch')) ?>" method="post">
           
     <?php include_partial('adminMenu/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?>
     <ul class="sf_admin_actions">
@@ -24,12 +24,8 @@
       <?php include_partial('adminMenu/list_actions', array('helper' => $helper)) ?>
     </ul>
     
-        </form>
-      </section>
-  
-    <aside id="sf_admin_bar">
-    <?php include_partial('adminMenu/filters', array('form' => $filters, 'configuration' => $configuration)) ?>
-  </aside>
+    </form>
+  </section>
     
   <footer id="sf_admin_footer">
     <?php include_partial('adminMenu/list_footer', array('pager' => $pager)) ?>

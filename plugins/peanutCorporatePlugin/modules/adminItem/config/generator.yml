@@ -38,7 +38,7 @@ generator:
         max_per_page:   15
 
       filter:
-        display: [title, type, menu]
+        display:           [title, type, menu]
         
       form:
         display:

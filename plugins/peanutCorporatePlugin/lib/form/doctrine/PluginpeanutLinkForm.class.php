@@ -38,8 +38,8 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
         'placeholder' => 'Simple description about my link'
     ));
 
-    $this->embedRelation('peanutXFN');
-    $this->widgetSchema['peanutXFN']->setLabel('XFN');
+    $this->embedRelation('peanutXfn');
+    $this->widgetSchema['peanutXfn']->setLabel('XFN');
     
     if(!$this->isNew()) {
       $this->widgetSchema['created_at'] = new sfWidgetFormI18nDate(array(

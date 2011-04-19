@@ -2,8 +2,8 @@
 
 <section>
 
-  <h1><?php echo __('Last entries') ?></h1>
-  
+  <h1><?php echo __('Last entries for') . ' ' . $items[0]['sfGuardUser']['username'] ?></h1>
+
   <?php foreach($items as $item): ?>
 
   <article id="page-<?php echo $item['id'] ?>">
@@ -30,5 +30,5 @@
   </article>
 
   <?php endforeach; ?>
-  
+
 </section>

@@ -26,7 +26,8 @@ class ProjectConfiguration extends sfProjectConfiguration
         'sfDoctrineGuardPlugin',
         'csDoctrineActAsSortablePlugin',
         'sfCKEditorPlugin',
-        'peanutCorporatePlugin'
+        'peanutCorporatePlugin',
+        'peanutFormPlugin'
     ));
     
     $this->dispatcher->connect('context.load_factories', array($this, 'listenToLoadFactoriesEvent'));

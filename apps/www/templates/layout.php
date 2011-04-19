@@ -40,7 +40,7 @@
         </nav>
 
       </section>
-      
+
       <section id="main" class="alignLeft" role="main">
         <?php echo $sf_content ?>
       </section>
@@ -52,9 +52,9 @@
            <?php include_component('items', 'footerMenu') ?>
           </nav>
         </footer>
-        
+
       </section>
-      
+
     </div>
 
     <!--[if lt IE 7 ]>

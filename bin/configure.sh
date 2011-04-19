@@ -20,10 +20,7 @@ read DBPASS
 if [ -e config/databases.yml-dist ]
 then
     cp config/databases.yml-dist config/databases.yml
-    sed -i '' "s/host=/host=$DB/g" config/databases.yml
-    sed -i '' "s/dbname=/dbname=$PROJECT/g" config/databases.yml
-    sed -i '' "s/username: /username: $DBUSER/g" config/databases.yml
-    sed -i '' "s/password: /password: $DBPASS/g" config/databases.yml
+    DIR=`php symfony configure:database "mysql:host=$DB;dbname=$PROJECT" "$DBUSER" "$DBPASS"`
 fi
 
 if [ -e config/properties.ini-dist ]

@@ -2,7 +2,7 @@
 
 <section>
 
-  <h1><?php echo __('Last entries') ?></h1>
+  <h1><?php echo __('Last entries for') . ' ' . $items[0]['peanutMenu']['name'] ?></h1>
   
   <?php foreach($items as $item): ?>
 
@@ -30,5 +30,5 @@
   </article>
 
   <?php endforeach; ?>
-  
+
 </section>

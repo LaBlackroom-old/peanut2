@@ -71,7 +71,10 @@ install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAs
 install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git
 
 # peanutFormPlugin
-install_git peanutFormPlugin git@github.com:pocky/peanutFormPlugin.git
+install_git peanutFormPlugin git://github.com:pocky/peanutFormPlugin.git
+
+# peanutSeoPlugin
+install_git peanutSeoPlugin git://github.com/pocky/peanutSeoPlugin.git
 
 cd ../..
 

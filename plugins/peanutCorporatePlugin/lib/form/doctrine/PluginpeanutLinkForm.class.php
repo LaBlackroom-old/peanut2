@@ -40,6 +40,9 @@ abstract class PluginpeanutLinkForm extends BasepeanutLinkForm
 
     $this->embedRelation('peanutXfn');
     $this->widgetSchema['peanutXfn']->setLabel('XFN');
+
+    $this->embedRelation('peanutSeo');
+    $this->widgetSchema['peanutSeo']->setLabel('SEO');
     
     if(!$this->isNew()) {
       $this->widgetSchema['created_at'] = new sfWidgetFormI18nDate(array(

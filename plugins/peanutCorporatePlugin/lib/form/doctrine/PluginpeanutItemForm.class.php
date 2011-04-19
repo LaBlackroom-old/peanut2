@@ -50,6 +50,9 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
       'relation'      => 'Your relation with the website',
       'created_at'    => 'Useful is you want to modify the date of the entry publication'
     ));
+
+    $this->embedRelation('peanutSeo');
+    $this->widgetSchema['peanutSeo']->setLabel('SEO');
     
    }
 }

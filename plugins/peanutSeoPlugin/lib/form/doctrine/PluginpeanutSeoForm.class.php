@@ -45,8 +45,9 @@ abstract class PluginpeanutSeoForm extends BasepeanutSeoForm
     	'max_length' => 'Le texte est trop long. Il faut %max_length% caractères maximums.'
     ));
     
-    
     unset($this['id']);
+
+    $this->widgetSchema->setFormFormatterName('div');
   }
 
 }

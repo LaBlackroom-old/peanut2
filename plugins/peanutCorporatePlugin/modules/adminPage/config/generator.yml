@@ -19,7 +19,7 @@ generator:
       form:
         display:
           "General":        [title, slug]
-          "Content":        [content, excerpt]
+          "Content":        [content, excerpt, peanutSeo]
           "Informations":   [status, author, menu, created_at]
 
       edit:    ~

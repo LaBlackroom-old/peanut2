@@ -499,11 +499,13 @@ body {
   width: 65px;
 }
 
-#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXfn {
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXfn,
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutSeo {
   margin-left: -10px;
 }
 
-#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn label {
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn label,
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutSeo label {
   border-bottom: 1px solid rgb(231, 231, 231);
   text-transform: uppercase;
   width: 100%;
@@ -512,11 +514,13 @@ body {
   padding-left: 3px;
 }
 
-#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXfn div.embedForm {
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutXfn div.embedForm,
+#authenticated div.sf_admin_form div.sf_admin_form_field_peanutSeo div.embedForm {
   margin-left: 10px;
 }
 
-#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn div.embedForm label {
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn div.embedForm label,
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutSeo div.embedForm label {
   border-bottom: 0;
   text-transform: capitalize;
   width: 100px;
@@ -527,7 +531,8 @@ body {
   margin: 10px 0;
 }
 
-#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn div.form-row label {
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutXfn div.form-row label,
+#authenticated div.sf_admin_form #sf_fieldset_content div.sf_admin_form_field_peanutSeo div.form-row label {
   color: rgb(102, 102, 102);
   font-size: 13px;
 }

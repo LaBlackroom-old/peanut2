@@ -36,6 +36,9 @@ abstract class PluginpeanutPageForm extends BasepeanutPageForm
     $this->widgetSchema['excerpt'] = new sfWidgetFormTextarea($options = array(), $attributes = array(
         'placeholder' => 'Excerpt or aside for my content'
     ));
+
+    $this->embedRelation('peanutSeo');
+    $this->widgetSchema['peanutSeo']->setLabel('SEO');
     
     if(!$this->isNew()) {
       $this->widgetSchema['created_at'] = new sfWidgetFormI18nDate(array(

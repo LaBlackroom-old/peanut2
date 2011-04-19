@@ -1,11 +1,12 @@
 peanutItem:
   actAs:
-    Timestampable:
+    Timestampable: ~
     Sluggable:
       fields:      [title]
     Sortable:    
       uniqueBy:    [menu]
       class:       peanutItem
+    Seoable:       ~
   columns:
     id:
       primary: true

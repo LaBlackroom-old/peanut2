@@ -27,7 +27,8 @@ class ProjectConfiguration extends sfProjectConfiguration
         'csDoctrineActAsSortablePlugin',
         'sfCKEditorPlugin',
         'peanutCorporatePlugin',
-        'peanutFormPlugin'
+        'peanutFormPlugin',
+        'peanutSeoPlugin'
     ));
     
     $this->dispatcher->connect('context.load_factories', array($this, 'listenToLoadFactoriesEvent'));
@@ -37,6 +38,7 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->pluginConfigurations['peanutHtml5Plugin']->connectTests();
     $this->pluginConfigurations['sfDoctrineGuardPlugin']->connectTests();
+    $this->pluginConfigurations['peanutSeoPlugin']->connectTests();
   }
   
   public function listenToLoadFactoriesEvent(sfEvent $event)

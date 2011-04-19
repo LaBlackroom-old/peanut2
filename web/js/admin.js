@@ -34,10 +34,10 @@ function resizeAside()
 function resizeContent()
 {
   var screenWidth = parseInt(jQuery(window).width()) - parseInt('181');
-  jQuery('section#main').css('width', screenWidth);
+  jQuery('body#authenticated section#main').css('width', screenWidth);
 
   var screenHeight = parseInt(jQuery(window).height()) - parseInt('61') ;
-  jQuery('section#main').css('height', screenHeight);
+  jQuery('body#authenticated section#main').css('height', screenHeight);
 }
 
 function resizeFieldsetContent()

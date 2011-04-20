@@ -24,15 +24,29 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    *
    * @return peanutPage
    */
-  public function getItem($item)
+  public function getItem()
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutSeo o')
-            ->where('p.id = ?', $item)
-            ->orWhere('p.slug = ?', $item)
             ->orderBy('p.position ASC');
+
+    return $p;
+  }
+
+  /**
+   * Retrieves pages object.
+   *
+   * @param  string|int $item     The id or slug of item
+   *
+   * @return peanutPage
+   */
+  public function showItem($item)
+  {
+    $p = $this->getItem()
+            ->where('p.id = ?', $item)
+            ->orWhere('p.slug = ?', $item);
 
     return $p;
   }
@@ -46,10 +60,8 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItems($status = 'publish')
   {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
-            ->orderBy('p.position ASC');
+    $p = $this->getItem()
+            ->where('p.status = ?', $status);;
 
     return $p;
   }
@@ -63,12 +75,9 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByMenu($menu, $status = 'publish')
   {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
+    $p = $this->getItem()
             ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
-            ->andWhere('p.status = ?', $status)
-            ->orderBy('p.position ASC');
+            ->andWhere('p.status = ?', $status);
 
     return $p;
   }
@@ -83,12 +92,9 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByMenuAndStatus($menu, $status = 'publish')
   {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
+    $p = $this->getItem()
             ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
-            ->andWhere('p.status = ?', $status)
-            ->orderBy('p.position ASC');
+            ->andWhere('p.status = ?', $status);
 
     return $p;
   }
@@ -103,12 +109,9 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByAuthor($author, $status = 'publish')
   {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
+    $p = $this->getItem()
             ->where('s.id = ? OR s.username = ?', array($author, $author))
-            ->andWhere('p.status = ?', $status)
-            ->orderBy('p.position ASC');
+            ->andWhere('p.status = ?', $status);
 
     return $p;
   }
@@ -123,12 +126,9 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByAuthorAndStatus($author, $status = 'publish')
   {
-    $p = $this->createQuery('p')
-            ->leftJoin('p.sfGuardUser s')
-            ->leftJoin('p.peanutMenu m')
+    $p = $this->getItem()
             ->where('s.id = ? OR s.username = ?', array($author, $author))
-            ->andWhere('p.status = ?', $status)
-            ->orderBy('p.position ASC');
+            ->andWhere('p.status = ?', $status);
 
     return $p;
   }

@@ -30,6 +30,7 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
             ->leftJoin('p.sfGuardUser s')
             ->leftJoin('p.peanutMenu m')
             ->leftJoin('p.peanutXfn x')
+            ->leftJoin('p.peanutSeo o')
             ->where('p.id = ?', $item)
             ->orWhere('p.slug = ?', $item)
             ->orderBy('p.position ASC');

@@ -16,18 +16,12 @@ abstract class PluginpeanutSeoTable extends Doctrine_Table
       ->where('p.status = ?', $status)
       ->orderBy('updated_at');
       
-      if(Doctrine_Core::getTable($model)->getRelations())
+      if(Doctrine_Core::getTable($model)->hasRelation('peanutSeo'))
       {
-        $i = 1;
-        $relations = Doctrine_Core::getTable($model)->getRelations();
-        
-        foreach($relations as $relation)
-        {
-          $p->leftJoin('p.' . $relation['alias'] . ' ' . $i++);
-        }
+        $p->leftJoin('p.peanutSeo z');
       }
     
-    return $p->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+    return $p;
   }
   
 }

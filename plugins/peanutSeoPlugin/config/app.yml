@@ -3,6 +3,12 @@
 
 # default values
 all:
+  meta:
+    title:                    "peanut :: another CMS on symfony"
+    description:              "The demo site for peanut"
+    keywords:                 "peanut, symfony, cms"
+    robots:                   "index, follow"
+    language:                 "fr_FR"
   seo:
     homepage:
       changefreq:             daily
@@ -10,6 +16,6 @@ all:
     page:
       changefreq:             monthly
       priority:               0.5
-    post:
-      changefreq:             weekly
-      priority:               0.9
+    link:
+      changefreq:             monthly
+      priority:               0.2

@@ -110,7 +110,6 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
    public function getItemsByRelation($rel, $status = 'publish')
    {
      $p = $this->getItem()
-             ->leftJoin('p.peanutXfn x')
              ->where('x.me LIKE ?', '%' . $rel . '%')
              ->orWhere('x.friendship LIKE ?', '%' . $rel . '%')
              ->orWhere('x.physical LIKE ?', '%' . $rel . '%')

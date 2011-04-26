@@ -83,17 +83,17 @@ abstract class PluginpeanutLinkTable extends Doctrine_Table
   }
 
   /**
-   * Retrieves links object by user.
+   * Retrieves links object by author.
    *
-   * @param  string|int $user     The id or username of user
+   * @param  string|int $author     The id or username of user
    * @param  string     $status   The status of items
    *
    * @return peanutLink
    */
-  public function getItemsByUser($user, $status = 'publish')
+  public function getItemsByAuthor($author, $status = 'publish')
   {
     $p = $this->getItem()
-            ->where('s.id = ? OR s.username = ?', array($user, $user))
+            ->where('s.id = ? OR s.username = ?', array($author, $author))
             ->andWhere('p.status = ?', $status);
 
     return $p;

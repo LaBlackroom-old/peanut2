@@ -92,18 +92,18 @@ abstract class PluginpeanutItemTable extends Doctrine_Table
   }
 
   /**
-   * Retrieves items object by user.
+   * Retrieves items object by author.
    *
-   * @param  string|int $user     The id or username of user
+   * @param  string|int $author   The id or username of author
    * @param  string     $status   The status of items
    * @param  string     $type     The type of item
    *
    * @return peanutItem
    */
-  public function getItemsByUser($user, $status = 'publish', $type = null)
+  public function getItemsByAuthor($author, $status = 'publish', $type = null)
   {
     $p = $this->getItem($type)
-            ->where('s.id = ? OR s.username = ?', array($user, $user));
+            ->where('s.id = ? OR s.username = ?', array($author, $author));
     
     return $p;
   }

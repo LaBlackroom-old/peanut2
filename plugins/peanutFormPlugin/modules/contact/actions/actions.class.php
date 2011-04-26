@@ -39,7 +39,7 @@ class contactActions extends sfActions
           $message = Swift_Message::newInstance()
             ->setFrom(array(sfConfig::get('app_contact_form', 'noreply@mywebsite.com')))
             ->setTo(array(sfConfig::get('app_contact_webmasterMail', 'me@mywebsite.com') => sfConfig::get('app_contact_webmasterName', 'webmaster')))
-            ->setSubject(sfConfig::get('New message from your contact form', 'New form'))
+            ->setSubject(sfConfig::get('app_contact_subject', 'New message from your contact form'))
             ->setBody($body, 'text/html')
             ->addPart($altbody, 'text/plain');
 

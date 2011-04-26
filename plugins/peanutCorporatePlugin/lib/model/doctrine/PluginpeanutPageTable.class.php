@@ -73,11 +73,10 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    *
    * @return peanutPage
    */
-  public function getItemsByMenu($menu, $status = 'publish')
+  public function getItemsByMenu($menu)
   {
     $p = $this->getItem()
-            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
-            ->andWhere('p.status = ?', $status);
+            ->where('m.id = ? OR m.slug = ?', array($menu, $menu));
 
     return $p;
   }
@@ -92,9 +91,8 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByMenuAndStatus($menu, $status = 'publish')
   {
-    $p = $this->getItem()
-            ->where('m.id = ? OR m.slug = ?', array($menu, $menu))
-            ->andWhere('p.status = ?', $status);
+    $p = $this->getItemsByMenu($menu)
+            ->where('p.status = ?', $status);
 
     return $p;
   }
@@ -107,11 +105,10 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    *
    * @return peanutPage
    */
-  public function getItemsByAuthor($author, $status = 'publish')
+  public function getItemsByAuthor($author)
   {
     $p = $this->getItem()
-            ->where('s.id = ? OR s.username = ?', array($author, $author))
-            ->andWhere('p.status = ?', $status);
+            ->where('s.id = ? OR s.username = ?', array($author, $author));
 
     return $p;
   }
@@ -126,9 +123,8 @@ abstract class PluginpeanutPageTable extends Doctrine_Table
    */
   public function getItemsByAuthorAndStatus($author, $status = 'publish')
   {
-    $p = $this->getItem()
-            ->where('s.id = ? OR s.username = ?', array($author, $author))
-            ->andWhere('p.status = ?', $status);
+    $p = $this->getItemsByAuthor($author)
+            ->where('p.status = ?', $status);
 
     return $p;
   }

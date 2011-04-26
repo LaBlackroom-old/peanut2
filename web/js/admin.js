@@ -9,6 +9,8 @@ jQuery(document).ready(function() {
   displayFilters();
   displayTooltip();
   
+  displaySubforms();
+  
   jQuery(window).resize(function() {
     resizeSidebar();
     resizeContent();
@@ -98,8 +100,6 @@ function displayFilters()
 
 function displayTooltip()
 {
-  
-
   jQuery('.sf_admin_form form .sf_admin_form_row label').mouseover(function() {
     var content = jQuery(this).siblings('div.help').html();
 
@@ -111,5 +111,13 @@ function displayTooltip()
     }
 
   });
+}
 
+function displaySubforms()
+{
+  jQuery('.sf_admin_form_row div.content div.embedForm').hide();
+  
+  jQuery('.sf_admin_form_row label').click(function() {
+    jQuery(this).siblings('div.content').children('div.embedForm').toggle('slow');
+  });
 }

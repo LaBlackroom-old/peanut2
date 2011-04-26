@@ -38,6 +38,7 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->pluginConfigurations['peanutHtml5Plugin']->connectTests();
     $this->pluginConfigurations['sfDoctrineGuardPlugin']->connectTests();
+    $this->pluginConfigurations['peanutCorporatePlugin']->connectTests();
     $this->pluginConfigurations['peanutSeoPlugin']->connectTests();
   }
   

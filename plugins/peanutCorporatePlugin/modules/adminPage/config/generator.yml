@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutPage
+    theme:                 peanut
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_page
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:
+        display:
+          "General":        [title, slug]
+          "Content":        [content, excerpt, peanutSeo]
+          "Informations":   [status, author, menu, created_at]
+
+      edit:    ~
+      new:     ~

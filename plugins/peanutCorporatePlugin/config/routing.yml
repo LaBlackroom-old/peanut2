@@ -1,0 +1,72 @@
+# www
+item_show:
+  url:             /:slug.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: show }
+  requirements:    { sf_method: get, sf_format: html }
+
+item_list:
+  url:             /items/list.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: list }
+  requirements:    { sf_method: get, sf_format: html|xml|json }
+
+item_author:
+  url:             /items/author/:author.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: listByAuthor }
+  requirements:    { sf_method: get, sf_format: html|xml|json }
+
+item_menu:
+  url:             /items/menu/:menu.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: listByMenu }
+  requirements:    { sf_method: get, sf_format: html|xml|json }
+
+item_relation:
+  url:             /items/relation/:relation.:sf_format
+  class:           sfDoctrineRoute
+  options:         { model: peanutItem, type: object }
+  params:          { module: items, action: listLinkByRelation }
+  requirements:    { sf_method: get, sf_format: html|xml|json }
+
+# Admin-Generator
+peanut_link:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                peanutLink
+    module:               adminLink
+    prefix_path:          /adminLink
+    column:               id
+    with_wildcard_routes: true
+
+peanut_item:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                peanutItem
+    module:               adminItem
+    prefix_path:          /adminItem
+    column:               id
+    with_wildcard_routes: true
+
+peanut_page:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                peanutPage
+    module:               adminPage
+    prefix_path:          /adminPage
+    column:               id
+    with_wildcard_routes: true
+
+peanut_menu:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                peanutMenu
+    module:               adminMenu
+    prefix_path:          /adminMenu
+    column:               id
+    with_wildcard_routes: true

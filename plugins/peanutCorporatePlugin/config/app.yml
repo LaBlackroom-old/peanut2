@@ -1,0 +1,9 @@
+all:
+  site:
+    name:       peanut
+    url:        www.peanut2.local
+    language:   fr_FR
+    adminMail:  albalmes@gmail.com
+    
+  items:
+    maxPerPage: 10

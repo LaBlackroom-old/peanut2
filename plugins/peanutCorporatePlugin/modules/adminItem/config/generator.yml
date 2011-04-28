@@ -1,0 +1,53 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutItem
+    theme:                 peanut
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_item
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      action:
+        
+      fields:  ~
+      
+      list:
+        title:   "Items"
+        
+        display: [=title, sfGuardUser, type, peanutMenu]
+        
+        actions:
+          "Create new page":
+            action: newPage 
+          "Create new link":
+            action: newLink
+        
+        object_actions:
+          promote:
+            action: promote
+          demote:
+            action: demote
+          _edit:        ~
+          _delete:      ~
+
+        max_per_page:   15
+
+      filter:
+        display:           [title, type, menu]
+        
+      form:
+        display:
+          "General":       [title, slug]
+          "Content":       [content, excerpt, url, relation]
+          "Informations":  [status, author, menu, created_at]
+      
+      edit:
+        title:   "Modify this item"
+        
+      new:
+        title:   "Add new item"

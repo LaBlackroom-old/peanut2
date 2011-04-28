@@ -4,7 +4,7 @@
  * sfWidgetFormSimple renders a simple captcha widget.
  *
  *
- * @package    peanut
+ * @package    peanutCorporatePlugin
  * @subpackage widget
  * @author     Alexandre "pocky" Balmes <albalmes@gmail.com>
  */

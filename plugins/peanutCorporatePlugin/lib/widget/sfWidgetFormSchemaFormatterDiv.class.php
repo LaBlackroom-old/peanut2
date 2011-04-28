@@ -3,9 +3,9 @@
 /**
  *
  *
- * @package    peanutCorporate
+ * @package    peanutCorporatePlugin
  * @subpackage widget
- * @author     Alexandre 'pocky' Balmes <albalmes@gmail.com>
+ * @author     Alexandre "pocky" Balmes <albalmes@gmail.com> <albalmes@gmail.com>
  */
 class sfWidgetFormSchemaFormatterDiv extends sfWidgetFormSchemaFormatter
 {

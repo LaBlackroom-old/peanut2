@@ -4,9 +4,9 @@
    *
    * sitemap actions
    *
-   * @package Peanut
+   * @package peanutSeoPlugin
    * @subpackage seo
-   * @author Alexandre pocky Balmes
+   * @author Alexandre "pocky" Balmes <albalmes@gmail.com>
    *
    */
   

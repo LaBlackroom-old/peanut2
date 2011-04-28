@@ -3,9 +3,9 @@
 /**
  * PluginpeanutXFN form.
  *
- * @package    ##PROJECT_NAME##
+ * @package    peanutCorporatePlugin
  * @subpackage form
- * @author     ##AUTHOR_NAME##
+ * @author     Alexandre "pocky" Balmes <albalmes@gmail.com> <albalmes@gmail.com>
  * @version    SVN: $Id: sfDoctrineFormPluginTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 abstract class PluginpeanutXfnForm extends BasepeanutXfnForm

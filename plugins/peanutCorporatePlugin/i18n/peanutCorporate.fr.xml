@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Link to</source>
+        <target>Liens vers</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Link to %title%</source>
+        <target>Liens vers %title%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Manage menu</source>
+        <target>Gérer le menu</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Show menu</source>
+        <target>Voir les menus</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Add new menu</source>
+        <target>Ajouter un menu</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Manage items</source>
+        <target>Gérer les contenus</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Show items</source>
+        <target>Voir les contenus</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Add new page</source>
+        <target>Ajouter une page</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Add new link</source>
+        <target>Ajouter un lien</target>
+      </trans-unit>
+      <trans-unit>
+        <source>View this entry: %title%</source>
+        <target>Voir cette page : %title%</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

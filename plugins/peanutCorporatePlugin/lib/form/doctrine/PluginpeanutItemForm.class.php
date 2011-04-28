@@ -41,7 +41,7 @@ abstract class PluginpeanutItemForm extends BasepeanutItemForm
     
     $this->widgetSchema->setHelps(array(
       'title'         => 'The item title (required)',
-      'slug'          => 'Not required but useful for your SEO',
+      'slug'          => 'Not required but maybe usefull for your SEO',
       'content'       => 'The item content (required)',
       'excerpt'       => 'The item excerpt (not required)',
       'status'        => 'If you want to hide this entry for visitors',

@@ -30,7 +30,7 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
     
     $this->widgetSchema->setHelps(array(
       'name' => 'The menu name (required)',
-      'slug' => 'Not required but maybe for your SEO'
+      'slug' => 'Not required but maybe usefull for your SEO'
     ));
     
     /**
@@ -40,7 +40,7 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
      
     $this->widgetSchema['parent'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
       'model'     => 'peanutMenu',
-      'add_empty' => 'This is a first level category',
+      'add_empty' => 'This is a first level menu',
     ));
     
     $this->validatorSchema['parent'] = new sfValidatorDoctrineChoiceNestedSet(array(
@@ -60,7 +60,7 @@ abstract class PluginpeanutMenuForm extends BasepeanutMenuForm
       'node'        => $this->getObject(),
     )));
     
-    $this->getValidator('parent')->setMessage('node', 'A page cannot be made a descend of itself!');
+    $this->getValidator('parent')->setMessage('node', 'A menu cannot be made a descend of itself!');
     
   }
   

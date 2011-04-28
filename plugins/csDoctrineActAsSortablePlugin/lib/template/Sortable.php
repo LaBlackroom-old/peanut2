@@ -322,7 +322,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
   {
     $order = $this->formatAndCheckOrder($order);
 
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
 
     if (!$parentColumnName)
     {
@@ -388,7 +388,7 @@ class Doctrine_Template_Sortable extends Doctrine_Template
   public function getFinalPosition()
   {
 
-    $object = $this->getInvoker();
+    $object = $this->getSortableObject();
 
     $q = $object->getTable()->createQuery()
                 ->from($this->_options['class'])

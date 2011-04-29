@@ -285,6 +285,10 @@ body {
   text-transform: uppercase;
 }
 
+#authenticated #main #sf_admin_container .notice {
+  background-color: rgb(0, 127, 11);
+}
+
 #authenticated #main #sf_admin_content table {
   width: 100%;
 }
@@ -547,6 +551,26 @@ body {
   font-size: 13px;
   padding: 3px 10px 0 0;
 }
+
+
+/*
+ * icons
+ *
+ */
+
+#sf_admin_container ul li.sf_admin_action_up a {
+  background: url(../images/admin/arrow_up.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul li.sf_admin_action_down a {
+  background: url(../images/admin/arrow_down.png) no-repeat 0 0;
+}
+
+#sf_admin_container ul li.sf_admin_action_create.new.page a,
+#sf_admin_container ul li.sf_admin_action_create.new.link a {
+  background: url(/sfDoctrinePlugin/images/new.png) no-repeat 0 0;
+}
+
 /*
  * media queries for responsive design
  * these follow after primary styles so they will successfully override.

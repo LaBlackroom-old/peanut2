@@ -76,7 +76,7 @@ body {
 }
 
 #authenticated section#adminBar a.picto {
-  width: 45px;
+  width: auto;
   display: block;
   text-align: center;
   color: rgb(0, 0, 0);
@@ -136,7 +136,11 @@ body {
 }
 
 #authenticated sidebar nav ul {
-  margin: 10px;
+  margin: 10px 5px;
+}
+
+#authenticated sidebar nav ul li {
+  margin: 5px 0;
 }
 
 #authenticated sidebar nav a {
@@ -151,8 +155,16 @@ body {
   background: -o-linear-gradient(#a8b9d5, #7890bd);
 }
 
+#authenticated sidebar nav.selected h3 a {
+  text-decoration: none;
+}
+
 #authenticated sidebar nav.selected a {
   color: #fefefe;
+}
+
+#authenticated sidebar nav.selected a:hover {
+  text-decoration: none;
 }
 
 #authenticated sidebar .user-profile {

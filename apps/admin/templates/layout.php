@@ -34,9 +34,9 @@
         </h1>
 
         <section id="adminBar" class="floatRight listInline">
-          <a href="<?php echo url_for('@sf_guard_signout') ?>" title="<?php echo __('Signout') ?>" class="picto exit">
+          <a href="<?php echo url_for('@sf_guard_signout') ?>" title="<?php echo __('Logout') ?>" class="picto exit">
             <img src="/images/admin/Power.png" width="24" height="24" />
-            <p><?php echo __('Signout') ?></p>
+            <p><?php echo __('Logout') ?></p>
           </a>
         </section>
 
@@ -51,19 +51,19 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès'); ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to'); ?>">
               <?php echo __('Manage users'); ?>
             </a>
           </h3>
           
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Liens d\'accès') ?>">
+              <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Link to') ?>">
                 <?php echo __('Show users'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Liens d\'accès') ?>">
+              <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Link to') ?>">
                 <?php echo __('Add user'); ?>
               </a>
             </li>
@@ -72,19 +72,19 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès'); ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to'); ?>">
               <?php echo __('Manage groups'); ?>
             </a>
           </h3>
 
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Liens d\'accès'); ?>">
+              <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Link to'); ?>">
                 <?php echo __('Show groups'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Liens d\'accès'); ?>">
+              <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Link to'); ?>">
                 <?php echo __('Add group'); ?>
               </a>
             </li>
@@ -93,19 +93,19 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Liens d\'accès') ?>">
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to') ?>">
               <?php echo __('Manage permissions'); ?>
             </a>
           </h3>
 
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Liens d\'accès'); ?>">
+              <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Link to'); ?>">
                 <?php echo __('Show permissions'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Liens d\'accès'); ?>">
+              <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Link to'); ?>">
                 <?php echo __('Add permission'); ?>
               </a>
             </li>

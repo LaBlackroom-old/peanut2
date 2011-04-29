@@ -6,7 +6,7 @@ PLUGINS=$DIR/plugins
 GENERATOR=$DIR/data/generator
 
 # initialization
-if [ "$1" = "--reinstall" ]; then
+if [ "$1" = "--install" ]; then
     rm -rf $VENDOR
     rm -rf $PLUGINS
 

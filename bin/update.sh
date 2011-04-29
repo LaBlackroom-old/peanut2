@@ -10,7 +10,7 @@ if [ "$1" = "--reinstall" ]; then
     rm -rf $VENDOR
     rm -rf $PLUGINS
 
-    rm -rf cache/* && sudo rm -Rf log/*
+    rm -rf cache && sudo rm -Rf log
     mkdir cache && mkdir log
     chmod 777 cache && chmod 777 log
 fi
@@ -74,7 +74,7 @@ install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAs
 install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git
 
 # peanutFormPlugin
-install_git peanutFormPlugin git://github.com:pocky/peanutFormPlugin.git
+install_git peanutFormPlugin git://github.com/pocky/peanutFormPlugin.git
 
 # peanutSeoPlugin
 install_git peanutSeoPlugin git://github.com/pocky/peanutSeoPlugin.git

@@ -26,7 +26,7 @@ fi
 if [ -e config/properties.ini-dist ]
 then
     cp config/properties.ini-dist config/properties.ini
-    sed -i '' "s/name=/name=$PROJECT/g" config/properties.ini
+    DIR=`php symfony configure:name "$PROJECT"`
 fi
 
 DIR=`php symfony configure:author "$NAME"`

@@ -115,7 +115,7 @@
         <?php endif; ?>
 
         <div class="user-profile">
-          <img src="http://www.gravatar.com/avatar/e46af499a1aa26dcd12c2db9755f48fe?s=22&d=identicon" class="floatLeft" width="22" height="22" />
+          <img src="http://www.gravatar.com/avatar/<?php echo md5($sf_user->getGuardUser()->getEmailAddress()) ?>?s=22&d=identicon" class="floatLeft" width="22" height="22" />
           <p>
             <a href="<?php echo url_for('@homepage').'guard/users/'.$sf_user->getGuardUser()->getId().'/edit'; ?>" title="<?php echo __('Edit your profile') ?>">
               <?php echo $sf_user->getGuardUser()->getUsername() ?>

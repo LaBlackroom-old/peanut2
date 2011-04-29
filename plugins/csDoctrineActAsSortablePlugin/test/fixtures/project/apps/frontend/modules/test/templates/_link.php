@@ -1,1 +1,0 @@
-<a href="<?php echo $blog->link_url ?>"><?php echo $blog->link_text ?></a>

@@ -1,7 +1,0 @@
-peanutSeo:
-  columns:
-     title:              { type: string(255) }
-     description:        { type: string(255) }
-     keywords:           { type: string(195) }
-     is_indexable:       { type: integer, notnull: true, default: true }
-     is_followable:      { type: integer, notnull: true, default: true }

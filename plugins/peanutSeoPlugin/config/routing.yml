@@ -1,5 +1,0 @@
-seo:
-  url:             /sitemap.:sf_format
-  class:           sfDoctrineRoute
-  options:         { model: peanutSeo, type: object }
-  param:           { module: sitemap, action: index, sf_format: xml }

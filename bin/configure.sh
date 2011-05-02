@@ -20,7 +20,8 @@ read DBPASS
 if [ -e config/databases.yml-dist ]
 then
     cp config/databases.yml-dist config/databases.yml
-    DIR=`php symfony configure:database "mysql:host=$DB;dbname=$PROJECT" "$DBUSER" "$DBPASS"`
+    DIR=`php symfony configure:database --name=doctrine --class=sfDoctrineDatabase --env=all  "mysql:host=$DB;dbname=$PROJECT" "$DBUSER" "$DBPASS"`
+    DIR=`php symfony configure:database --name=doctrine --class=sfDoctrineDatabase --env=test "mysql:host=$DB;dbname=$PROJECT-test" "$DBUSER" "$DBPASS"`
 fi
 
 if [ -e config/properties.ini-dist ]

@@ -19,13 +19,16 @@
     
     
     <?php if ($this->configuration->getValue('list.batch_actions')): ?>
-    </form>
-    <?php endif; ?>
-
+    
     <ul class="sf_admin_actions">
       [?php include_partial('<?php echo $this->getModuleName() ?>/list_batch_actions', array('helper' => $helper)) ?]
       [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
     </ul>
+    
+    </form>
+    <?php endif; ?>
+
+    
   </section>
   
   <?php if ($this->configuration->hasFilterForm()): ?>

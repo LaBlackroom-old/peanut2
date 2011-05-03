@@ -5,16 +5,8 @@
     <header/>
     <body>
       <trans-unit>
-        <source>Homepage</source>
-        <target>Page d'accueil</target>
-      </trans-unit>
-      <trans-unit>
-        <source>Logout</source>
-        <target>Se déconnecter</target>
-      </trans-unit>
-      <trans-unit>
-        <source>functionnalities</source>
-        <target>fonctionnalités</target>
+        <source>Link to</source>
+        <target>Lien vers</target>
       </trans-unit>
       <trans-unit>
         <source>Manage users</source>
@@ -33,12 +25,12 @@
         <target>Gérer les groupes</target>
       </trans-unit>
       <trans-unit>
-        <source>Show groups</source>
-        <target>Voir les groupes</target>
-      </trans-unit>
-      <trans-unit>
         <source>Add group</source>
         <target>Ajouter un groupe</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Show groups</source>
+        <target>Voir les groupes</target>
       </trans-unit>
       <trans-unit>
         <source>Manage permissions</source>
@@ -54,11 +46,7 @@
       </trans-unit>
       <trans-unit>
         <source>Edit your profile</source>
-        <target>Mettre à jour votre profil</target>
-      </trans-unit>
-      <trans-unit>
-        <source>Is active</source>
-        <target>Utilisateur actif ?</target>
+        <target>Editer votre profil</target>
       </trans-unit>
     </body>
   </file>

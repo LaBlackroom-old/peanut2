@@ -51,20 +51,20 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to'); ?>">
-              <?php echo __('Manage users'); ?>
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+              <?php echo __('Manage users', null, 'sfGuard'); ?>
             </a>
           </h3>
           
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Link to') ?>">
-                <?php echo __('Show users'); ?>
+              <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+                <?php echo __('Show users', null, 'sfGuard'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Link to') ?>">
-                <?php echo __('Add user'); ?>
+              <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+                <?php echo __('Add user', null, 'sfGuard'); ?>
               </a>
             </li>
           </ul>
@@ -72,20 +72,20 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to'); ?>">
-              <?php echo __('Manage groups'); ?>
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+              <?php echo __('Manage groups', null, 'sfGuard'); ?>
             </a>
           </h3>
 
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Link to'); ?>">
-                <?php echo __('Show groups'); ?>
+              <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Show groups', null, 'sfGuard'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Link to'); ?>">
-                <?php echo __('Add group'); ?>
+              <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Add group', null, 'sfGuard'); ?>
               </a>
             </li>
           </ul>
@@ -93,20 +93,20 @@
 
         <nav <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'class="selected"'; endif; ?>>
           <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to') ?>">
-              <?php echo __('Manage permissions'); ?>
+            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+              <?php echo __('Manage permissions', null, 'sfGuard'); ?>
             </a>
           </h3>
 
           <ul>
             <li>
-              <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Link to'); ?>">
-                <?php echo __('Show permissions'); ?>
+              <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Show permissions', null, 'sfGuard'); ?>
               </a>
             </li>
             <li>
-              <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Link to'); ?>">
-                <?php echo __('Add permission'); ?>
+              <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Add permission', null, 'sfGuard'); ?>
               </a>
             </li>
           </ul>
@@ -117,7 +117,7 @@
         <div class="user-profile">
           <img src="http://www.gravatar.com/avatar/<?php echo md5($sf_user->getGuardUser()->getEmailAddress()) ?>?s=22&d=identicon" class="floatLeft" width="22" height="22" />
           <p>
-            <a href="<?php echo url_for('@homepage').'guard/users/'.$sf_user->getGuardUser()->getId().'/edit'; ?>" title="<?php echo __('Edit your profile') ?>">
+            <a href="<?php echo url_for('@homepage').'guard/users/'.$sf_user->getGuardUser()->getId().'/edit'; ?>" title="<?php echo __('Edit your profile', null, 'sfGuard') ?>">
               <?php echo $sf_user->getGuardUser()->getUsername() ?>
             </a>
           </p>

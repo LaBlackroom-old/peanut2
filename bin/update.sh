@@ -11,8 +11,8 @@ if [ "$1" = "--install" ]; then
     rm -rf $PLUGINS
 
     rm -rf cache && sudo rm -Rf log
-    mkdir cache && mkdir log
-    chmod 777 cache && chmod 777 log
+    mkdir cache && mkdir log && mkdir web/uploads
+    chmod 777 cache && chmod 777 log && chmod 777 web/uploads
 fi
 
 

@@ -443,7 +443,7 @@ body {
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_general .content_box_content label {
-  width: 70px;
+  width: 140px;
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_general .content_box_content input {
@@ -512,7 +512,7 @@ body {
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_informations label {
-  width: 65px;
+  width: 75px;
 }
 
 #authenticated div.sf_admin_form div.sf_admin_form_field_peanutXfn,

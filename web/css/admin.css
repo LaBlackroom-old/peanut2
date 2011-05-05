@@ -564,6 +564,10 @@ body {
   padding: 3px 10px 0 0;
 }
 
+.sf_admin_pagination {
+  margin-right: 20px;
+}
+
 
 /*
  * icons

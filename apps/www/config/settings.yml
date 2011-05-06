@@ -40,3 +40,9 @@ all:
 
     # Enable html5 helper
     standard_helpers:       [Partial, I18N, html5, seo]
+    
+
+default:
+  .actions:
+    error_404_module:       error
+    error_404_action:       404

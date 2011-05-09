@@ -50,7 +50,7 @@
 
       </section>
 
-      <section id="main" class="alignLeft" role="main">
+      <section id="main" class="alignLeft clearfix" role="main">
         <?php echo $sf_content ?>
       </section>
 

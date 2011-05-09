@@ -275,7 +275,7 @@ body {
 #authenticated #main {
    float: left;
    position: relative;
-   overflow-y: auto;
+   overflow-y: none;
    background-color: rgb(217, 223, 232);
 }
 

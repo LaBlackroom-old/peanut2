@@ -60,6 +60,66 @@
         <source>Is active</source>
         <target>Utilisateur actif ?</target>
       </trans-unit>
+      <trans-unit>
+        <source>Hi </source>
+        <target>Bonjour </target>
+      </trans-unit>
+      <trans-unit>
+        <source>!</source>
+        <target> !</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Active users</source>
+        <target>Utilisateurs actifs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Published items</source>
+        <target>Articles publiés</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last registered users</source>
+        <target>Les derniers utilisateurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last items</source>
+        <target>Les derniers articles</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit</source>
+        <target>Editer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>we are the</source>
+        <target>nous sommes le</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Today</source>
+        <target>Aurjourd'hui</target>
+      </trans-unit>
+      <trans-unit>
+        <source>It make</source>
+        <target>Il fait</target>
+      </trans-unit>
+      <trans-unit>
+        <source>and a</source>
+        <target>et un</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last day statistics</source>
+        <target>Statistiques de la veille</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Visits</source>
+        <target>Visites</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Visitors</source>
+        <target>Visiteurs</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Page views</source>
+        <target>Pages vues</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

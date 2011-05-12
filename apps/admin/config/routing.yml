@@ -4,7 +4,7 @@
 # default rules
 homepage:
   url:   /
-  param: { module: adminItem, action: index }
+  param: { module: dashboard, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

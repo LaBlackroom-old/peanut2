@@ -7,13 +7,49 @@
  */
 class sfGuardUserTable extends PluginsfGuardUserTable
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object sfGuardUserTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('sfGuardUser');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object sfGuardUserTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('sfGuardUser');
+  }
+  
+  /*
+   * 
+   */
+  public function getUser()
+  {
+    $p = $this->createQuery('p')
+            ->leftJoin('p.Groups g')
+            ->leftJoin('p.Permissions s');
+    
+    return $p;
+  }
+  
+  /*
+   * 
+   */
+  public function getUsers($active = true)
+  {
+    $p = $this->getUser()
+            ->andWhere('p.is_active = ?', $active);
+    
+    return $p;
+  }
+  
+  /*
+   * 
+   */
+  public function getLastUsers($limit = 5, $active = true)
+  {
+    $p = $this->getUsers($active)
+            ->limit($limit);
+    
+    return $p;
+  }
+  
+  
 }

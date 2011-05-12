@@ -570,6 +570,102 @@ body {
 
 
 /*
+ * Dashboard
+ *
+ */
+ 
+ #authenticated #dashboard {
+   padding: 10px;
+   color: rgb(102, 102, 102);
+   background-color: rgb(255, 255, 255);
+   min-height: 100%;
+ }
+ 
+ #authenticated #dashboard h1 {
+   margin: 10px 0 10px 0;
+   padding-bottom: 10px;
+   text-shadow: 0 1px 1px #b3b3b3;
+   border-bottom: 3px solid rgb(230, 230, 230);
+ }
+ 
+ #authenticated #dashboard header p {
+   margin-bottom: 30px
+ }
+ 
+ #authenticated #dashboard #content .box {
+   width: 250px;
+   float: left;
+   margin: 5px;
+   margin-top: 0;
+ }
+ 
+ #authenticated #dashboard #content .box header {
+   padding-bottom: 8px;
+   padding-left: 5px;
+   height: 20px;
+   
+   text-shadow: 0 1px 1px #b3b3b3;
+ }
+ 
+ #authenticated #dashboard #content .boxContent {
+   padding: 5px;
+   border-top: 3px solid rgb(230, 230, 230);
+ }
+ 
+ #authenticated #dashboard #content .boxContent p,
+ #authenticated #dashboard #content .boxContent ul {
+   margin-top: 0;
+   margin-bottom: 0;
+ }
+ 
+ #authenticated #dashboard #content .boxContent table {
+   width: 100%;
+ }
+ 
+ #authenticated #dashboard #content .boxContent tr {
+   border-bottom: 1px solid rgb(230, 230, 230);
+ }
+ 
+ #authenticated #dashboard #content .boxContent td {
+   padding: 5px;
+ }
+ 
+ #authenticated #dashboard #content .boxContent td.item {
+   width: 75%;
+ }
+ 
+ #authenticated #dashboard #content .boxContent td.action {
+   text-align: right;
+   width: 15%;
+ }
+ 
+ #authenticated #dashboard #content #count {
+   margin-bottom: 20px; 
+ }
+ 
+ #authenticated #dashboard #content #count .box {
+   background-color: rgb(242, 242, 242);
+   height: 50px;
+   border: 1px solid rgb(230, 230, 230);
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+ 
+ #authenticated #dashboard #content #count .box p {
+   padding: 15px 10px;
+   margin: 0;
+ }
+ 
+ #authenticated #dashboard #content #count .box p span {
+   font-size: 30px;
+   font-weight: bold;
+   display: block;
+   float: left;
+   padding-right: 20px;
+ }
+ 
+/*
  * icons
  *
  */

@@ -3,3 +3,7 @@ autoload:
     name:       ckeditor
     path:       %SF_WEB_DIR%/lib/ckeditor
     recursive:  on
+  google:
+    name:       google
+    path:       %SF_LIB_DIR%/vendor/google
+    recursive:  on

@@ -5,3 +5,8 @@
 all:
   ckeditor:
     basePath:         '/lib/ckeditor/'
+  google:
+    mail:             ~
+    password:         ~
+    tracking:         ~
+    city:             arras

@@ -94,7 +94,7 @@
       </trans-unit>
       <trans-unit>
         <source>Today</source>
-        <target>Aurjourd'hui</target>
+        <target>Aujourd'hui</target>
       </trans-unit>
       <trans-unit>
         <source>It make</source>
@@ -115,6 +115,10 @@
       <trans-unit>
         <source>Page views</source>
         <target>Pages vues</target>
+      </trans-unit>
+      <trans-unit>
+        <source>at</source>
+        <target>à</target>
       </trans-unit>
     </body>
   </file>

@@ -275,7 +275,7 @@ body {
 #authenticated #main {
    float: left;
    position: relative;
-   overflow-y: none;
+   overflow-y: auto;
    background-color: rgb(217, 223, 232);
 }
 
@@ -578,7 +578,6 @@ body {
    padding: 10px;
    color: rgb(102, 102, 102);
    background-color: rgb(255, 255, 255);
-   min-height: 100%;
  }
  
  #authenticated #dashboard h1 {
@@ -597,6 +596,7 @@ body {
    float: left;
    margin: 5px;
    margin-top: 0;
+   height: 176px;
  }
  
  #authenticated #dashboard #content .box header {

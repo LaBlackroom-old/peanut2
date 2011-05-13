@@ -5,7 +5,7 @@
     <h1><?php echo __('Hi ') . $sf_user->getGuardUser() . __('!') ?></h1>
     <p>
       <?php echo __('Today') ?>, <?php echo __('we are the') ?> <?php echo format_date(date('D'), 'dddd dd MMMM yyyy') ?>. 
-        <?php echo __('It make') ?> <?php echo $weather['temp_c'] ?>°C <?php echo __('and a') ?> <?php echo $weather['condition'] ?>.
+        <?php echo __('It make') ?> <?php echo $weather['temp_c'] ?>°C (<?php echo $weather['condition'] ?>).
     </p>
   </header>
   

@@ -101,10 +101,6 @@
         <target>Il fait</target>
       </trans-unit>
       <trans-unit>
-        <source>and a</source>
-        <target>et un</target>
-      </trans-unit>
-      <trans-unit>
         <source>Last day statistics</source>
         <target>Statistiques de la veille</target>
       </trans-unit>

@@ -120,6 +120,14 @@
         <source>at</source>
         <target>à</target>
       </trans-unit>
+      <trans-unit>
+        <source>Updated at</source>
+        <target>Mise à jour le</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last login</source>
+        <target>Dernière connection</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

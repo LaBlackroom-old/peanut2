@@ -54,3 +54,5 @@ article footer p{margin-bottom:0;}
 .next:after{content:"\00A0\000BB";}
 .previous:before{content:"\000AB\00A0";}
 .picture{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border:1px solid #ccc;padding:5px;}
+::-moz-selection{background:#becfe9;color:#fff;text-shadow: none;}
+::selection {background:#becfe9;color:#fff;text-shadow: none;}

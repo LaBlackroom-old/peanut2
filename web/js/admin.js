@@ -24,7 +24,7 @@ jQuery(document).ready(function() {
 function resizeSidebar()
 {
   var screenHeight = parseInt(jQuery(window).height()) - parseInt('71') ;
-  jQuery('sidebar').css('height', screenHeight);
+  jQuery('section#sidebar').css('height', screenHeight);
 }
 
 function resizeAside()
@@ -44,7 +44,13 @@ function resizeContent()
 
 function resizeFieldsetContent()
 {
-  var mainWidth = parseInt(jQuery('section#main').width()) - parseInt('390');
+  if(jQuery('html').hasClass('ie8')) {
+    var mainWidth = parseInt(jQuery('section#main').width()) - parseInt('590');
+  }
+  else {
+    var mainWidth = parseInt(jQuery('section#main').width()) - parseInt('390');
+  }
+  
   jQuery('#authenticated div.sf_admin_form #sf_fieldset_content').css('width', mainWidth);
 }
 

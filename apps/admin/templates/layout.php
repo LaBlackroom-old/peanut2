@@ -42,7 +42,7 @@
 
       </header>
         
-      <sidebar role=“complementary”>
+      <section id="sidebar" role="sidebar">
         <h2><?php echo __('functionnalities') ?></h2>
         <?php include_component('adminMenu', 'menu') ?>
         <?php include_component('adminItem', 'menu') ?>
@@ -123,7 +123,7 @@
           </p>
           <p><?php echo $sf_user->getGuardUser()->getEmailAddress() ?></p>
         </div>
-      </sidebar>
+      </section>
         
       <section id="main" role="main">
         <?php echo $sf_content ?>

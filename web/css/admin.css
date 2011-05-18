@@ -50,9 +50,14 @@ body {
 }
 
 #authenticated header#top {
+  background-color: #d1d5d8;
   background: -webkit-gradient(linear, left top, left bottom, from(#d1d5d8), to(#b8bec2));
   background: -moz-linear-gradient(top, #d1d5d8, #b8bec2);
   background: -o-linear-gradient(#d1d5d8, #b8bec2);
+  backgroung: -ms-linear-gradient(top, #d1d5d8, #b8bec2);
+  background: -webkit-linear-gradient(top, #d1d5d8, #b8bec2);
+  background: linear-gradient(top, #d1d5d8, #b8bec2);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#d1d5d8, endColorstr=#b8bec2);
   height: 60px;
   border-bottom: 1px solid #8c8c8c;
 }
@@ -98,7 +103,7 @@ body {
  *
  */
 
-#authenticated sidebar {
+#authenticated section#sidebar {
   background-color: rgb(224, 236, 250);
   border-right: 1px solid rgb(165, 165, 165);
   font-size: 11px;
@@ -109,65 +114,70 @@ body {
   float: left;
 }
 
-#authenticated sidebar h2 {
+#authenticated section#sidebar h2 {
   height: 20px;
   font-size: 11px;
   color: rgb(125, 125, 125);
   padding: 5px 10px 0;
   border-bottom: 1px solid rgb(211, 217, 225);
+  background-color: #eff3fa;
   background: -webkit-gradient(linear, left top, left bottom, from(#eff3fa), to(#d4dbe5));
   background: -moz-linear-gradient(top, #eff3fa, #d4dbe5);
   background: -o-linear-gradient(#eff3fa, #d4dbe5);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#eff3fa, endColorstr=#d4dbe5);
+  
   border-bottom: 1px solid rgb(182, 187, 196);
   margin: 0;
 }
 
-#authenticated sidebar nav {
+#authenticated section#sidebar nav {
   font-size: 11px;
   min-height: 20px;
   padding: 8px 10px 3px;
   border-bottom: 1px solid rgb(211, 217, 225);
 }
 
-#authenticated sidebar nav h3 {
+#authenticated section#sidebar nav h3 {
   font-size: 11px;
   line-height: 11px;
   margin-bottom: 0;
 }
 
-#authenticated sidebar nav ul {
+#authenticated section#sidebar nav ul {
   margin: 10px 5px;
 }
 
-#authenticated sidebar nav ul li {
+#authenticated section#sidebar nav ul li {
   margin: 5px 0;
 }
 
-#authenticated sidebar nav a {
+#authenticated section#sidebar nav a {
   color: rgb(0, 0, 0);
 }
 
-#authenticated sidebar nav.selected {
+#authenticated section#sidebar nav.selected {
   border-top: 1px solid rgb(180, 198, 228);
   border-bottom: 1px solid rgb(108, 123, 152);
+  background-color: #a8b9d5;
   background: -webkit-gradient(linear, left top, left bottom, from(#a8b9d5), to(#7890bd));
   background: -moz-linear-gradient(top, #a8b9d5, #7890bd);
   background: -o-linear-gradient(#a8b9d5, #7890bd);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#a8b9d5, endColorstr=#7890bd);
 }
 
-#authenticated sidebar nav.selected h3 a {
+#authenticated section#sidebar nav.selected h3 a {
   text-decoration: none;
 }
 
-#authenticated sidebar nav.selected a {
+#authenticated section#sidebar nav.selected a {
   color: #fefefe;
 }
 
-#authenticated sidebar nav.selected a:hover {
+#authenticated section#sidebar nav.selected a:hover {
   text-decoration: none;
 }
 
-#authenticated sidebar .user-profile {
+#authenticated section#sidebar .user-profile {
   position: absolute;
   bottom: 0;
   height: 43px;
@@ -179,17 +189,17 @@ body {
   padding-top: 10px;
 }
 
-#authenticated sidebar .user-profile img {
+#authenticated section#sidebar .user-profile img {
   margin: 0 10px;
   border: 4px solid rgb(255, 255, 255);
 }
 
-#authenticated sidebar .user-profile p {
+#authenticated section#sidebar .user-profile p {
   margin: 0;
   color: rgb(102, 109, 122);
 }
 
-#authenticated sidebar .user-profile a {
+#authenticated section#sidebar .user-profile a {
   color: rgb(0, 0, 0);
 }
 
@@ -277,6 +287,7 @@ body {
    position: relative;
    overflow-y: auto;
    background-color: rgb(217, 223, 232);
+   margin-top: 0;
 }
 
 #authenticated #main #sf_admin_container header {
@@ -289,9 +300,11 @@ body {
   color: rgb(0, 0, 0);
   padding: 5px 10px 0;
   border-bottom: 1px solid rgb(211, 217, 225);
+  background-color: #f3f3f3;
   background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#d9d9d9));
   background: -moz-linear-gradient(top, #f3f3f3, #d9d9d9);
   background: -o-linear-gradient(#f3f3f3, #d9d9d9);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#f3f3f3, endColorstr=#d9d9d9);
   border-bottom: 1px solid rgb(183, 183, 183);
   margin: 0;
   text-transform: uppercase;
@@ -311,10 +324,12 @@ body {
 }
 
 #authenticated #main #sf_admin_content thead tr th,
-#authenticated #main #sf_admin_content tfoot tr th{
+#authenticated #main #sf_admin_content tfoot tr th {
+  background-color: #ffffff;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f1f1f1));
   background: -moz-linear-gradient(top, #ffffff, #f1f1f1);
   background: -o-linear-gradient(#ffffff, #f1f1f1);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#ffffff, endColorstr=#f1f1f1);
   border-right: 1px solid rgb(220, 224, 226);
   padding-top: 5px;
   padding-left: 10px;
@@ -363,6 +378,10 @@ body {
 
 #authenticated section#sf_admin_content {
   margin-top: 0;
+}
+
+#authenticated div.sf_admin_content {
+  background-color: rgb(255, 255, 255);
 }
 
 #authenticated div.sf_admin_form {
@@ -425,16 +444,22 @@ body {
   display: none;
 }
 
+#authenticated .content_box_header h2 {
+  background-color: transparent;
+}
 #authenticated div.sf_admin_form #sf_fieldset_general .content_box_header {
   padding: 15px 20px;
   height: 20px;
+  background-color: #fefefe;
   background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f2f2f2));
   background: -moz-linear-gradient(top, #fefefe, #f2f2f2);
   background: -o-linear-gradient(#fefefe, #f2f2f2);
+  filter:     progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#fefefe, endColorstr=#f2f2f2);
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_general h2 {
   font-size: 16px;
+  background: transparent;
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_general .content_box_content {
@@ -681,6 +706,10 @@ body {
 #sf_admin_container ul li.sf_admin_action_create.new.page a,
 #sf_admin_container ul li.sf_admin_action_create.new.link a {
   background: url(/sfDoctrinePlugin/images/new.png) no-repeat 0 0;
+}
+
+#sf_admin_container .sf_admin_pagination a:hover {
+  text-decoration: none;
 }
 
 /*

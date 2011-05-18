@@ -32,6 +32,8 @@ publish
 build/buildinfo.properties
 
 # symfony files and folders
+lib/*/doctrine/base/*
+lib/*/doctrine/*/base/*
 web/uploads/*
 cache/*
 log/*

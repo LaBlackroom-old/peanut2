@@ -29,7 +29,7 @@
 
         <h1 class="prefix_1 grid_8">
           <a href="<?php echo url_for('@homepage', true); ?>" title="<?php echo __('Homepage'); ?>" />
-            <?php echo sfConfig::get('app_site_name', 'myWebsite') ?>
+            <?php echo peanutConfig::get('site_name') ?>
           </a>
         </h1>
 

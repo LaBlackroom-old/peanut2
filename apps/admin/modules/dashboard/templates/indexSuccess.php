@@ -6,7 +6,7 @@
     <p>
       <?php echo __('Today') ?>, <?php echo __('we are the') ?> <?php echo format_date(date('D'), 'dddd dd MMMM yyyy') ?>. 
         <?php echo __('It make') ?> <?php echo $weather['temp_c'] ?>°C (<?php echo $weather['condition'] ?>) <?php echo __('at') ?> 
-        <?php echo sfConfig::get('app_google_city') ?>.
+        <?php echo peanutConfig::get('meteo') ?>.
     </p>
   </header>
   

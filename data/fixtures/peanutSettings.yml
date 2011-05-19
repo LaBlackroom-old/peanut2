@@ -1,0 +1,8 @@
+peanutSettings:
+  peanutSettings_1:
+    name: site_name
+    value: 'my website'
+  peanutSettings_2:
+    name: meteo
+    value: 'Arras, France'
+  

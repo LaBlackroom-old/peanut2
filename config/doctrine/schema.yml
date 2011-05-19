@@ -1,0 +1,12 @@
+peanutSettings:
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
+    value:
+      type: clob
+      notnull: true

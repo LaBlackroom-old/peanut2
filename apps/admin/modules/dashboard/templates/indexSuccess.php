@@ -17,6 +17,7 @@
     <?php include_component('dashboard', 'users') ?>
     <?php include_component('dashboard', 'items') ?>
     <?php include_component('dashboard', 'analytics') ?>
+    <?php include_component('dashboard', 'feed') ?>
     
   </section>
   

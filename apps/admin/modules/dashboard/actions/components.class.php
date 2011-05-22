@@ -60,5 +60,11 @@ class dashboardComponents extends sfComponents
     
   }
   
+  public function executeFeed(sfWebRequest $request)
+  {
+    $items = simplexml_load_file(peanutConfig::get('news_feed'));
+    $this->items = $items;
+  }
+  
   
 }

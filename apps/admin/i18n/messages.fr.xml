@@ -149,8 +149,8 @@
         <target>Voici les paramètres généraux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
       </trans-unit>
       <trans-unit>
-        <source>About your society</source>
-        <target>A propos de votre société</target>
+        <source>Your society</source>
+        <target>Votre société</target>
       </trans-unit>
       <trans-unit>
         <source>Society</source>
@@ -215,6 +215,14 @@
       <trans-unit>
         <source>The google information are used for manage your google account and follow your analytics.</source>
         <target>Vos informations sont utilisées pour monitorer votre compte Google et suivre vos statistiques.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last news</source>
+        <target>Les dernières infos</target>
+      </trans-unit>
+      <trans-unit>
+        <source>View</source>
+        <target>Voir</target>
       </trans-unit>
     </body>
   </file>

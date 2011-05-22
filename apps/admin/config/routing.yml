@@ -1,6 +1,13 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+settings:
+  url:             /settings/:action
+  class:           sfDoctrineRoute
+  options:         { model: peanutSettings, type: object }
+  params:          { module: settings }
+  requirements:    { sf_method: post|get}
+  
 # default rules
 homepage:
   url:   /

@@ -128,6 +128,94 @@
         <source>Last login</source>
         <target>Dernière connection</target>
       </trans-unit>
+      <trans-unit>
+        <source>Submit</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>General settings</source>
+        <target>Paramètres généraux</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Site name</source>
+        <target>Nom du site</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Meteo</source>
+        <target>Météo</target>
+      </trans-unit>
+      <trans-unit>
+        <source>This is your general settings, they are used for amin panel and/or the frontend application.</source>
+        <target>Voici les paramètres généraux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>About your society</source>
+        <target>A propos de votre société</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Society</source>
+        <target>Société</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Street-address</source>
+        <target>Numéro et Rue</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Locality</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Region</source>
+        <target>Région</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Postal-code</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Country-name</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Tel</source>
+        <target>Téléphone</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The organization information can help Google and peanut understand location information about your company.</source>
+        <target>Les informations de votre organisation peuvent aider Google et peanut à localiser votre société.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>It can also used for your contact page.</source>
+        <target>Elle peuvents également être utilisée pour votre page de contact.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google mail</source>
+        <target>Votre mail google</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google password</source>
+        <target>Votre mot de passe Google</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google tracking</source>
+        <target>Le numéro de tracking Google</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your Google account</source>
+        <target>Votre compte Google</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your GUID (google analytics)</source>
+        <target>Votre GUID (Google analytics)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The id of the site you want to track (webmaster tools)</source>
+        <target>L'identifiant du site que vous voulez monitorer (webmaster tools)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The google information are used for manage your google account and follow your analytics.</source>
+        <target>Vos informations sont utilisées pour monitorer votre compte Google et suivre vos statistiques.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

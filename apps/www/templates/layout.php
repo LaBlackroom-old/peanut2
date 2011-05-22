@@ -39,7 +39,7 @@
         <header>
           <h1>
             <a href="<?php echo url_for('@homepage') ?>" title="<?php __('Back to homepage') ?>">
-              <?php echo sfConfig::get('app_site_name', 'myWebsite') ?>
+              <?php echo peanutConfig::get('site_name') ?>
             </a>
           </h1>
         </header>
@@ -73,5 +73,15 @@
 
 
     <?php include_html5_javascripts() ?>
+    
+    <?php if(peanutConfig::get('google_guid')): ?>
+    <script>
+      var _gaq=[['_setAccount','<?php echo peanutConfig::get('google_guid') ?>'],['_trackPageview'],['_trackPageLoadTime']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <?php endif; ?>
+    
   </body>
 </html>

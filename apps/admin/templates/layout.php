@@ -111,7 +111,9 @@
             </li>
           </ul>
         </nav>
-
+        
+        <?php include_component('settings', 'menu') ?>
+        
         <?php endif; ?>
 
         <div class="user-profile">

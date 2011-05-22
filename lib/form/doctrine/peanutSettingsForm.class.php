@@ -10,7 +10,15 @@
  */
 class peanutSettingsForm extends BasepeanutSettingsForm
 {
-  public function configure()
+  public function setup()
   {
+    parent::setup();
+    
+    $this->useFields();
+    unset($this['id']);
+    
+    $this->widgetSchema->setNameFormat('settings[%s]');
+    $this->validatorSchema->setOption('allow_extra_fields', true);
+    $this->validatorSchema->setOption('filter_extra_fields', false);
   }
 }

@@ -38,7 +38,7 @@ class dashboardComponents extends sfComponents
   
   public function executeAnalytics(sfWebRequest $request)
   {
-    if(!sfConfig::get('app_google_mail'))
+    if(!peanutConfig::get('google_tracking'))
     {
       $this->visits = '0';
       $this->visitors = '0';
@@ -47,9 +47,9 @@ class dashboardComponents extends sfComponents
     else
     {
       $ga = new GoogleAnalyticsAPI(
-            sfConfig::get('app_google_mail'),
-            sfConfig::get('app_google_password'),
-            sfConfig::get('app_google_tracking'),
+            peanutConfig::get('google_mail'),
+            peanutConfig::get('google_password'),
+            peanutConfig::get('google_tracking'),
             date('Y-m-d', strtotime('-1 day'))
       );
 

@@ -9,6 +9,5 @@
  */
 
  class contactForm extends PluginpeanutContactForm
- {
-   
+ { 
  }

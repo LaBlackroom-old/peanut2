@@ -5,4 +5,19 @@ peanutSettings:
   peanutSettings_2:
     name: meteo
     value: 'Arras, France'
+  peanutSettings_3:
+    name: society
+    value: 'ActivCompany'
+  peanutSettings_4:
+    name: url
+    value: 'http://www.activcompany.com'
+  peanutSettings_5:
+    name: adr
+    value: ''
+  peanutSettings_6:
+    name: tel
+    value: '+33176747560'
+  peanutSettings_7:
+    name: geo
+    value: ''
   

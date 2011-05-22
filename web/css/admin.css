@@ -613,6 +613,7 @@ body {
    padding: 10px;
    color: rgb(102, 102, 102);
    background-color: rgb(255, 255, 255);
+
  }
  
  #authenticated #dashboard h1 {
@@ -626,12 +627,20 @@ body {
    margin-bottom: 30px
  }
  
+ #authenticated #dashboard #content {
+   min-height: 100%;
+ }
+ 
  #authenticated #dashboard #content .box {
    width: 250px;
    float: left;
    margin: 5px;
    margin-top: 0;
    height: 176px;
+ }
+ 
+ #authenticated #dashboard #content #feed {
+   width: 500px;
  }
  
  #authenticated #dashboard #content .box header {

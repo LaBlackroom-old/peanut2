@@ -1,23 +1,53 @@
 peanutSettings:
   peanutSettings_1:
     name: site_name
-    value: 'my website'
+    value: 'peanut'
   peanutSettings_2:
     name: meteo
-    value: 'Arras, France'
+    value: 'Paris, France'
   peanutSettings_3:
     name: society
-    value: 'ActivCompany'
+    value: 'La blackroom'
   peanutSettings_4:
     name: url
-    value: 'http://www.activcompany.com'
+    value: 'http://www.lablackroom.com'
   peanutSettings_5:
     name: adr
     value: ''
   peanutSettings_6:
     name: tel
-    value: '+33176747560'
+    value: ''
   peanutSettings_7:
     name: geo
     value: ''
+  peanutSettings_8:
+    name: google_mail
+    value: ''
+  peanutSettings_9:
+    name: google_password
+    value: ''
+  peanutSettings_10:
+    name: google_tracking
+    value: ''
+  peanutSettings_11:
+    name: google_guid
+    value: ''
+  peanutSettings_12:
+    name: news_feed
+    value: 'https://github.com/pocky/peanut2/commits/master.atom'
+  peanutSettings_13:
+    name: meta_title
+    value: ''
+  peanutSettings_14:
+    name: meta_description
+    value: ''
+  peanutSettings_15:
+    name: meta_keywords
+    value: ''
+  peanutSettings_16:
+    name: meta_language
+    value: 'fr_FR'
+  peanutSettings_17:
+    name: meta_robots
+    value: 'index, follow'
   

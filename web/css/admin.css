@@ -509,6 +509,10 @@ body {
   background-color: inherit;
 }
 
+#authenticated #main #sf_admin_content tbody tr.expanded {
+  letter-spacing: 0;
+}
+
 #authenticated #main #sf_admin_content #sf_fieldset_content tbody tr:hover {
   background-color: inherit;
   color: inherit;

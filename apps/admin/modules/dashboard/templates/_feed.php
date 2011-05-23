@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <section id="feed" class="box">
   <header>
     <h2><?php echo __('Last news') ?></h2>

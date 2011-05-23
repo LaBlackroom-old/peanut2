@@ -1,7 +1,7 @@
 <section id="sf_admin_container">
   
   <header>
-    <h1><?php echo __('About your society') ?></h1>
+    <h1><?php echo __('Your SEO') ?></h1>
   </header>
   
   <section id="sf_admin_header"></section>
@@ -22,9 +22,6 @@
                 <div class="content">
                   <?php echo $form['meta_title']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-                  
-                </div>
               </div>
             </div>
 
@@ -33,9 +30,6 @@
                 <?php echo $form['meta_description']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['meta_description']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>
@@ -46,9 +40,6 @@
                 <div class="content">
                   <?php echo $form['meta_keywords']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-
-                </div>
               </div>
             </div>
 
@@ -57,9 +48,6 @@
                 <?php echo $form['meta_robots']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['meta_robots']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>
@@ -70,9 +58,6 @@
                 <div class="content">
                   <?php echo $form['meta_language']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-
-                </div>
               </div>
             </div>
 
@@ -82,8 +67,7 @@
         
         <fieldset id="sf_fieldset_informations">
           
-          <p><?php echo __('The organization information can help Google and peanut understand location information about your company.') ?></p>
-          <p><?php echo __('It can also used for your contact page.') ?></p>
+          <p><?php echo __('Your SEO informations are used for display default meta in your head.') ?></p>
           
           <input name="Send" type="submit" value="<?php echo __('Submit') ?>" class="button" id="send" size="16"/>
         </fieldset>

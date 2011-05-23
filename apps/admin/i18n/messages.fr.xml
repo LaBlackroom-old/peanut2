@@ -224,6 +224,34 @@
         <source>View</source>
         <target>Voir</target>
       </trans-unit>
+      <trans-unit>
+        <source>Your SEO</source>
+        <target>Votre SEO</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your SEO informations are used for display default meta in your head.</source>
+        <target>Vos informations SEO sont utilisés pour ajouter des meta pas défault dans votre balise head.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your meta title</source>
+        <target>Le titre de la page</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your meta description</source>
+        <target>La description de la page</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your meta keywords</source>
+        <target>Les mots clés de la page</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your meta robots</source>
+        <target>L'indexation de la page</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your meta language</source>
+        <target>La langue de votre site</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

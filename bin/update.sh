@@ -7,10 +7,10 @@ GENERATOR=$DIR/data/generator
 
 # initialization
 if [ "$1" = "--install" ]; then
-    rm -rf $VENDOR
+    rm -rf $VENDOR/symfony
     rm -rf $PLUGINS
 
-    rm -rf cache && sudo rm -Rf log
+    rm -rf cache && sudo rm -Rf log && rm -Rf web/uploads
     mkdir cache && mkdir log && mkdir web/uploads
     chmod 777 cache && chmod 777 log && chmod 777 web/uploads
 fi
@@ -25,19 +25,22 @@ install_git()
 {
     INSTALL_DIR=$1
     SOURCE_URL=$2
-    REV=$3
+    BRANCH=$3
+    REV=$4
 
     if [ -z $REV ]; then
         REV=origin/HEAD
     fi
 
     if [ ! -d $INSTALL_DIR ]; then
-        git clone $SOURCE_URL $INSTALL_DIR
+        git clone $SOURCE_URL $INSTALL_DIR 
     fi
 
     cd $INSTALL_DIR
     git fetch origin
     git reset --hard $REV
+    git checkout -b $BRANCH
+    git pull origin $BRANCH
     cd ..
 }
 
@@ -46,7 +49,7 @@ mkdir -p $VENDOR && cd $VENDOR
 
 
 # symfony
-install_git symfony git://github.com/vjousse/symfony-1.4.git
+install_git symfony git://github.com/vjousse/symfony-1.4.git master
 
 
 cd ../..
@@ -56,35 +59,35 @@ cd ../..
 mkdir -p $PLUGINS && cd $PLUGINS
 
 # peanutHtml5Plugin
-install_git peanutHtml5Plugin git://github.com/pocky/peanutHtml5Plugin.git
+install_git peanutHtml5Plugin git://github.com/pocky/peanutHtml5Plugin.git master
 
 # sfDoctrineGuardPlugin
-install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.git
+install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.git master
 
 # sfTaskExtraPlugin
-install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git
+install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git master
 
 # peanutCorporatePlugin
-install_git peanutCorporatePlugin git://github.com/pocky/peanutCorporatePlugin.git
+install_git peanutCorporatePlugin git://github.com/pocky/peanutCorporatePlugin.git master
 
 # csDoctrineActAsSortablePlugin
-install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAsSortablePlugin.git
+install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAsSortablePlugin.git master
 
 # sfCKEditorPlugin
-install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git
+install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git master
 
 # peanutFormPlugin
-install_git peanutFormPlugin git://github.com/pocky/peanutFormPlugin.git
+install_git peanutFormPlugin git://github.com/pocky/peanutFormPlugin.git master
 
 # peanutSeoPlugin
-install_git peanutSeoPlugin git://github.com/pocky/peanutSeoPlugin.git
+install_git peanutSeoPlugin git://github.com/pocky/peanutSeoPlugin.git master
 
 cd ../..
 
 
 # Admin generator
 mkdir -p $GENERATOR && cd $GENERATOR
-install_git sfDoctrineModule git://github.com/pocky/peanutGenerator.git
+install_git sfDoctrineModule git://github.com/pocky/peanutGenerator.git master
 
 
 cd ../..

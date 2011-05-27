@@ -32,11 +32,12 @@ publish
 build/buildinfo.properties
 
 # symfony files and folders
-lib/*/doctrine/base/*
-lib/*/doctrine/*/base/*
 web/uploads/*
 cache/*
 log/*
 config/databases.yml
 config/properties.ini
 web/less/*
+
+lib/*/doctrine/base
+lib/*/doctrine/*/base

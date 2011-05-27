@@ -9,6 +9,7 @@ GENERATOR=$DIR/data/generator
 if [ "$1" = "--install" ]; then
     rm -rf $VENDOR/symfony
     rm -rf $PLUGINS
+    rm -rf $GENERATOR
 
     rm -rf cache && sudo rm -Rf log && rm -Rf web/uploads
     mkdir cache && mkdir log && mkdir web/uploads

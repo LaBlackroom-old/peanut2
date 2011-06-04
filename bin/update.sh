@@ -3,13 +3,13 @@
 DIR=`php -r "echo realpath(dirname(\\$_SERVER['argv'][0]));"`
 VENDOR=$DIR/lib/vendor
 PLUGINS=$DIR/plugins
-GENERATOR=$DIR/data/generator
+GENERATOR=$DIR/data
 
 # initialization
 if [ "$1" = "--install" ]; then
     rm -rf $VENDOR/symfony
     rm -rf $PLUGINS
-    rm -rf $GENERATOR
+    rm -rf $GENERATOR/generator
 
     rm -rf cache && sudo rm -Rf log && rm -Rf web/uploads
     mkdir cache && mkdir log && mkdir web/uploads
@@ -88,7 +88,7 @@ cd ../..
 
 # Admin generator
 mkdir -p $GENERATOR && cd $GENERATOR
-install_git sfDoctrineModule git://github.com/pocky/peanutGenerator.git master
+install_git generator git://github.com/pocky/peanutGenerator.git master
 
 
 cd ../..

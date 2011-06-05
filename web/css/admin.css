@@ -607,6 +607,22 @@ body {
   margin-right: 20px;
 }
 
+#authenticated .sf_admin_form_field_peanutSeo .count {
+  color: rgb(102, 102, 102);
+  margin-top: 10px;
+}
+
+#authenticated .sf_admin_form_field_peanutSeo span.counter {
+  padding: 0 2px;
+  margin-right: 5px;
+  
+  background-color: rgb(242, 242, 242);
+   border: 1px solid rgb(230, 230, 230);
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
 
 /*
  * Dashboard

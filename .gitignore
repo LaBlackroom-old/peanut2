@@ -41,3 +41,5 @@ web/less/*
 
 lib/*/doctrine/base
 lib/*/doctrine/*/base
+
+/data/generator/

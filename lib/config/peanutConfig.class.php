@@ -32,7 +32,14 @@ class peanutConfig
       self::load();
     }
     
-    return self::$config[$name];
+    $property = self::$config[$name];
+    
+    if(null === $property)
+    {
+      throw new sfException(sprintf('%s is not a valid property. peanutConfig luv u.', $name));
+    }
+    
+    return $property ;
   }
   
   /**

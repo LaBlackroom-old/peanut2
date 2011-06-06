@@ -94,7 +94,7 @@ class GoogleWeatherAPI {
 			}
 			
 		} else {
-			trigger_error('Google results parse problem : http error '.$getContentCode,E_USER_WARNING);
+            $this->is_found = false;
 			return null;
 		}
 	}

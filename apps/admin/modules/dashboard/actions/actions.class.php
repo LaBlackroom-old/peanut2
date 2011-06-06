@@ -15,7 +15,13 @@ class dashboardActions extends sfActions
     $weather = new GoogleWeatherAPI(peanutConfig::get('meteo'), substr($this->getUser()->getCulture(), 0, 2));
     if($weather->isFound())
     {
-      $this->weather = $weather->getCurrent();
+      $weather = $weather->getCurrent();
     }
+    else
+    {
+      $weather = null;
+    }
+    
+    $this->weather = $weather;
   }
 }

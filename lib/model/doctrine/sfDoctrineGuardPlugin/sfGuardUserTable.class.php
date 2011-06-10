@@ -24,7 +24,8 @@ class sfGuardUserTable extends PluginsfGuardUserTable
   {
     $p = $this->createQuery('p')
             ->leftJoin('p.Groups g')
-            ->leftJoin('p.Permissions s');
+            ->leftJoin('p.Permissions s')
+            ->orderBy('p.id DESC');
     
     return $p;
   }

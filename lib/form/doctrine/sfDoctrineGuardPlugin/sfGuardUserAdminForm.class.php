@@ -27,8 +27,8 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
     ));
     
     $this->widgetSchema['email_address'] = new sfWidgetFormHtml5InputText(array(), array(
-                                            'placeholder' => 'Insert the email address',
-                                            'required'    => true
+                                        'placeholder' => 'Insert the email address',
+                                        'required'    => true
     ));
     
     $this->widgetSchema['username'] = new sfWidgetFormHtml5InputText(array(), array(
@@ -37,11 +37,13 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
     ));
     
     $this->widgetSchema['password'] = new sfWidgetFormHtml5InputPassword(array(), array(
-                                        'placeholder' => 'Insert the password'
+                                        'placeholder' => 'Insert the password',
+                                        'required'    => true
     ));
     
     $this->widgetSchema['password_again'] = new sfWidgetFormHtml5InputPassword(array(), array(
-                                              'placeholder' => 'Repeat the password'
+                                        'placeholder' => 'Repeat the password',
+                                        'required'    => true
     ));
     
   }

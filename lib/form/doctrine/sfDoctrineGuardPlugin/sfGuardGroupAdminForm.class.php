@@ -15,6 +15,8 @@ class sfGuardGroupAdminForm extends BasesfGuardGroupForm
    */
   public function configure()
   {
+    unset($this['created_at'], $this['updated_at']);
+    
     $this->widgetSchema['name'] = new sfWidgetFormHtml5InputText(array(), array(
                                         'placeholder' => 'Insert the group name',
                                         'required'    => true

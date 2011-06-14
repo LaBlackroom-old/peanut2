@@ -2,10 +2,15 @@
 
 require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
 
-// get the domain parts as an array
-list($tld, $domain, $subdomain) = array_reverse(explode('.', $_SERVER['HTTP_HOST']));
+@list($tld, $domain, $subdomain) = array_reverse(explode('.', $_SERVER['HTTP_HOST']));
 
-// determine which subdomain we're looking at
+if(!$subdomain)
+{
+  header('Status: 301 Moved Permanently', false, 301);   
+  header('Location: http://www.' . $domain . '.' . $tld);
+  exit();
+}
+
 $app = $subdomain;
 $app = (empty($app) || $app == 'www' ) ? 'www' : $app;
 

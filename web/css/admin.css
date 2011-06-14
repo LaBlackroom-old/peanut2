@@ -529,7 +529,8 @@ body {
 }
 
 #authenticated div.sf_admin_form #sf_fieldset_content .help,
-#authenticated div.sf_admin_form #sf_fieldset_informations .help {
+#authenticated div.sf_admin_form #sf_fieldset_informations .help,
+#authenticated div.sf_admin_form .form-help {
   display: none;
 }
 

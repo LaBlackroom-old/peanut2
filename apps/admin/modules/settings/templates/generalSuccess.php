@@ -22,9 +22,6 @@
                 <div class="content">
                   <?php echo $form['site_name']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-                  
-                </div>
               </div>
             </div>
 
@@ -33,9 +30,6 @@
                 <?php echo $form['meteo']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['meteo']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>

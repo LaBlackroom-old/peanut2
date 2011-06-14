@@ -22,9 +22,6 @@
                 <div class="content">
                   <?php echo $form['society']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-                  
-                </div>
               </div>
             </div>
 
@@ -33,9 +30,6 @@
                 <?php echo $form['url']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['url']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>
@@ -46,9 +40,6 @@
                 <div class="content">
                   <?php echo $form['street-address']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-
-                </div>
               </div>
             </div>
 
@@ -57,9 +48,6 @@
                 <?php echo $form['locality']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['locality']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>
@@ -70,9 +58,6 @@
                 <div class="content">
                   <?php echo $form['region']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-
-                </div>
               </div>
             </div>
 
@@ -81,9 +66,6 @@
                 <?php echo $form['postal-code']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['postal-code']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>
@@ -94,9 +76,6 @@
                 <div class="content">
                   <?php echo $form['country-name']->render(array('class' => 'text-input')) ?>
                 </div>
-                <div class="help">
-
-                </div>
               </div>
             </div>
 
@@ -105,9 +84,6 @@
                 <?php echo $form['tel']->renderLabel() ?>
                 <div class="content">
                   <?php echo $form['tel']->render(array('class' => 'text-input')) ?>
-                </div>
-                <div class="help">
-
                 </div>
               </div>
             </div>

@@ -213,6 +213,10 @@
         <target>L'identifiant du site que vous voulez monitorer (webmaster tools)</target>
       </trans-unit>
       <trans-unit>
+        <source>The guid of your site (Google Analytics)</source>
+        <target>L'identifiant guid de votre site (Google Analytics)</target>
+      </trans-unit>
+      <trans-unit>
         <source>The google information are used for manage your google account and follow your analytics.</source>
         <target>Vos informations sont utilisées pour monitorer votre compte Google et suivre vos statistiques.</target>
       </trans-unit>

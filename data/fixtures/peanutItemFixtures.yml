@@ -3,53 +3,111 @@ peanutPage:
   peanutPage_1:
     type: page
     title: Accueil
+    content: "<p>\r\n	Bonjour à tous,</p>\r\n<p>\r\n	Vous trouverez ici une démonstration des différents modules de peanut à travers leurs fonctionnalités. Le moteur est actuellement à considérer en version 4.1.1 et subit un refactoring complet. peanut est proposé sous la license MIT permettant à tous de modifier le code, exploiter le code et même changer de license sans contraintes.</p>\r\n<p>\r\n	peanut possède un backoffice complet, accessible avec identifiant et mot de passe permettant à tous, même néophyte, de pouvoir exploiter un site Internet. Chacun des modules est également présenté, documenté et testé afin de garantir un bon fonctionnement.</p>\r\n<p>\r\n	L&#39;ensemble du code est accessible en libre téléchargement sur le repository GIT du projet. Vous pouvez également suivre l&#39;évolution de peanut à travers le blog de l&#39;auteur. Enfin, peanut est livré en l&#39;état, sans garantie de fonctionnement et/ou de fiabilité. Cela n&#39;empêche cependant pas de faire de mon mieux pour ne pas livrer quelque chose d&#39;inutilisable.</p>\r\n<p>\r\n	Bien entendu, cette démonstration s&#39;agrémentera de fonctionnalités avec le temps alors en attendant, n&#39;hésitez pas à explorer le code !</p>\r\n"
     peanutMenu: peanutMenu_1
     sfGuardUser: sfGuardUser_1
-    content: "<p>\r\n	Bonjour &agrave; tous,</p>\r\n<p>\r\n	Vous trouverez ici une d&eacute;monstration des diff&eacute;rents modules de peanut &agrave; travers leurs fonctionnalit&eacute;s. Le moteur est actuellement &agrave; consid&eacute;rer en version 4.1.1 et subit un refactoring complet. peanut est propos&eacute; sous la license MIT permettant &agrave; tous de modifier le code, exploiter le code et m&ecirc;me changer de license sans contraintes.</p>\r\n<p>\r\n	peanut poss&egrave;de un backoffice complet, accessible avec identifiant et mot de passe permettant &agrave; tous, m&ecirc;me n&eacute;ophyte, de pouvoir exploiter un site Internet. Chacun des modules est &eacute;galement pr&eacute;sent&eacute;, document&eacute; et test&eacute; afin de garantir un bon fonctionnement.</p>\r\n<p>\r\n	L&#39;ensemble du code est accessible en libre t&eacute;l&eacute;chargement sur le repository GIT du projet. Vous pouvez &eacute;galement suivre l&#39;&eacute;volution de peanut &agrave; travers le blog de l&#39;auteur. Enfin, peanut est livr&eacute; en l&#39;&eacute;tat, sans garantie de fonctionnement et/ou de fiabilit&eacute;. Cela n&#39;emp&ecirc;che cependant pas de faire de mon mieux pour ne pas livrer quelque chose d&#39;inutilisable.</p>\r\n<p>\r\n	Bien entendu, cette d&eacute;monstration s&#39;agr&eacute;mentera de fonctionnalit&eacute;s avec le temps alors en attendant, n&#39;h&eacute;sitez pas &agrave; explorer le code !</p>\r\n"
-    excerpt: ''
     status: publish
+    excerpt: ''
     url: null
+    relation: null
     created_at: '2011-04-04 00:00:00'
-    updated_at: '2011-04-12 23:57:29'
+    updated_at: '2011-06-15 23:18:22'
     slug: accueil
     position: '1'
+    peanutSeo: peanutSeo_1
 peanutLink:
   peanutLink_2:
     type: link
     title: contact
+    content: ''
     peanutMenu: peanutMenu_1
     sfGuardUser: sfGuardUser_1
-    content: null
-    excerpt: null
     status: draft
+    excerpt: null
     url: 'http://www.google.com'
-    created_at: '2011-04-04 22:44:16'
-    updated_at: '2011-04-12 23:44:40'
+    peanutXfn: peanutXfn_1
+    created_at: '2011-04-04 00:00:00'
+    updated_at: '2011-06-15 23:18:29'
     slug: contact
     position: '2'
+    peanutSeo: peanutSeo_2
   peanutLink_3:
     type: link
     title: peanut.fr
+    content: ''
     peanutMenu: peanutMenu_2
     sfGuardUser: sfGuardUser_1
-    content: null
-    excerpt: null
     status: draft
+    excerpt: null
     url: 'http://www.peanut.fr'
+    peanutXfn: peanutXfn_2
     created_at: '2011-04-04 00:00:00'
-    updated_at: '2011-04-12 23:55:26'
+    updated_at: '2011-06-15 23:18:37'
     slug: peanut
     position: '1'
-  peanutLink_5:
+    peanutSeo: peanutSeo_3
+  peanutLink_4:
     type: link
     title: github
+    content: ''
     peanutMenu: peanutMenu_2
     sfGuardUser: sfGuardUser_1
-    content: null
-    excerpt: null
     status: draft
+    excerpt: null
     url: 'http://www.github.com/pocky'
-    created_at: '2011-04-12 23:56:00'
-    updated_at: '2011-04-12 23:56:00'
+    peanutXfn: peanutXfn_3
+    created_at: '2011-04-12 00:00:00'
+    updated_at: '2011-06-15 23:18:40'
     slug: github
     position: '2'
+    peanutSeo: peanutSeo_4
+peanutXfn:
+  peanutXfn_1:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''
+  peanutXfn_2:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''
+  peanutXfn_3:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''
+peanutSeo:
+  peanutSeo_1:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_2:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_3:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_4:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'

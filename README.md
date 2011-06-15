@@ -26,8 +26,38 @@ le databases.yml et le properties.ini).
 
 Pour mettre à jour les dépendances, refaites un `sh bin/update.sh`.
 
-La suite de l'installation est identique à un développement symfony classique.
 
+__Configuration du fichier hosts et des vhosts__
+
+Editez votre fichier `/etc/hosts` et ajouter la ligne suivante :
+
+    127.0.0.1   domain.tld www.domain.tld admin.domain.tld
+
+Editez votre fichier contenant vos vhosts pour ajouter un vhost sur le schema suivant :
+
+    <VirtualHost *:80>
+      DocumentRoot "/var/www/domain.tld/web"
+
+      ServerName domain.tld
+      ServerAlias www.domain.tld admin.domain.tld
+
+      ServerAdmin me@domain.tld
+
+      DirectoryIndex index.php
+      <Directory "/var/www/domain.tld/web">
+        AllowOverride All
+        Allow from All
+      </Directory>
+
+      Alias /sf /var/www/domain.tld/lib/vendor/symfony/data/web/sf
+      <Directory "/var/www/domain.tld/lib/vendor/symfony/data/web/sf">
+        AllowOverride All
+        Allow from All
+      </Directory>
+    </VirtualHost>
+
+__Accès au backoffice__
+Pour accéder au backoffice, rendez-vous sur http://admin.domain.tld et utilisez les identifiants et mots de passe suivants : admin / admin
 
 __Support__
 

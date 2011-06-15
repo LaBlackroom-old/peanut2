@@ -37,13 +37,11 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
     ));
     
     $this->widgetSchema['password'] = new sfWidgetFormHtml5InputPassword(array(), array(
-                                        'placeholder' => 'Insert the password',
-                                        'required'    => true
+                                        'placeholder' => 'Insert the password'
     ));
     
     $this->widgetSchema['password_again'] = new sfWidgetFormHtml5InputPassword(array(), array(
-                                        'placeholder' => 'Repeat the password',
-                                        'required'    => true
+                                        'placeholder' => 'Repeat the password'
     ));
     
   }

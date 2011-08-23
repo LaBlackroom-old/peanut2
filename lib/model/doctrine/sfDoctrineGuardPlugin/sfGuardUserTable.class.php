@@ -52,5 +52,12 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     return $p;
   }
   
+  public function getUsersWhereGroupIs($group, $active = true)
+  {
+    $p = $this->getUsers($active)
+            ->where('g.name = ? OR g.id = ?', array($group, $group));
+    
+    return $p;
+  }
   
 }

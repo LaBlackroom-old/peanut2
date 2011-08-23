@@ -50,4 +50,30 @@ peanutSettings:
   peanutSettings_17:
     name: meta_robots
     value: 'index, follow'
-  
+  peanutSettings_18:
+    name: contact_from
+    value: 'noreply@peanut2.local'
+  peanutSettings_19:
+    name: webmaster_name
+    value: 'webmaster'
+  peanutSettings_20:
+    name: webmaster_mail
+    value: 'www.peanut2.local'
+  peanutSettings_21:
+    name: subject
+    value: 'New message from your contact form'
+  peanutSettings_22:
+    name: map_name
+    value: 'lablackroom'
+  peanutSettings_23:
+    name: map_center
+    value: 'Arras'
+  peanutSettings_24:
+    name: map_address
+    value: '72 rue d amiens, 62000 Arras'
+  peanutSettings_25:
+    name: map_zoom
+    value: '13'
+  peanutSettings_26:
+    name: map_size
+    value: '512x288'   

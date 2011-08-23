@@ -80,4 +80,22 @@ class BaseSettingsActions extends sfActions
 
     }
   }
+  
+  public function executeContact(sfWebRequest $request)
+  {
+    $this->form = new contactSettingsForm();
+    
+    if($request->isMethod('post'))
+    { 
+      $this->form->bind($request->getParameter('settings'));
+      
+      if($this->form->isValid())
+      {
+        foreach($this->form->getValues() as $name => $value)
+        {
+          peanutConfig::set($name, $value);
+        }
+      }
+    }
+  }
 }

@@ -377,9 +377,14 @@ body {
 }
 
 #authenticated section#sf_admin_content ul.sf_admin_actions {
-  margin: 10px 0 0 35px;
+  margin: 10px 0 0 25px;
 }
 
+#sf_admin_container ul.sf_admin_actions li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 0;
+}
 /*
  *
  * 5- Content edit
@@ -424,6 +429,7 @@ body {
 #authenticated div.sf_admin_form input[type=text],
 #authenticated div.sf_admin_form input[type=url],
 #authenticated div.sf_admin_form input[type=password],
+#authenticated div.sf_admin_form input[type=color],
 #authenticated div.sf_admin_form textarea {
   padding: 5px;
   border: 1px solid rgb(204, 204, 204);
@@ -432,6 +438,64 @@ body {
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+}
+
+#authenticated div.sf_admin_form ul.sf_admin_actions input,
+#authenticated div.sf_admin_form .button {
+  margin: 17px;
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#F2F2F2));
+  background: -moz-linear-gradient(top, #FEFEFE, #F2F2F2);
+  background: -o-linear-gradient(#FEFEFE, #F2F2F2);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#FEFEFE, endColorstr=#F2F2F2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-box-shadow: 1px 1px 1px 1px #F0F0F0;
+  -webkit-box-shadow: 1px 1px 1px 1px #F0F0F0;
+  box-shadow: 1px 1px 1px 1px #F0F0F0;
+  border-radius: 5px;
+  border: #CCC solid 1px;
+  text-shadow: 0 1px 1px #B3B3B3;
+  margin-top: 0px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+
+#authenticated div.sf_admin_form select,
+#authenticated div.sf_admin_form select.type {
+  padding-left: 5px;
+  color: black;
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#F2F2F2));
+  background: -moz-linear-gradient(top, #FEFEFE, #F2F2F2);
+  background: -o-linear-gradient(#FEFEFE, #F2F2F2);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#FEFEFE, endColorstr=#F2F2F2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-box-shadow: 1px 1px 1px 1px #F0F0F0;
+  -webkit-box-shadow: 1px 1px 1px 1px #F0F0F0;
+  box-shadow: 1px 1px 1px 1px #F0F0F0;
+  border-radius: 5px;
+  border: #CCC solid 1px;
+  text-shadow: 0 1px 1px #B3B3B3;
+  margin-top: 12px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  height: 28px;
+}
+
+#authenticated div.sf_admin_form select[multiple=multiple] {
+  height: auto;
+}
+
+#authenticated div.sf_admin_form .sf_admin_date select {
+  width: 80px;
 }
 
 #authenticated div.sf_admin_form label {
@@ -457,6 +521,31 @@ body {
 #authenticated .content_box_header h2 {
   background-color: transparent;
 }
+
+#authenticated div.sf_admin_form #sf_fieldset_informations {
+  margin-bottom: 50px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations .content {
+  position : relative;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations .content img {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 17px;
+  right: -20px;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_informations .inputColor img {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 #authenticated div.sf_admin_form #sf_fieldset_general .content_box_header {
   padding: 15px 20px;
   height: 20px;
@@ -503,6 +592,10 @@ body {
 #authenticated div.sf_admin_form #sf_fieldset_content input,
 #authenticated div.sf_admin_form #sf_fieldset_content textarea {
   width: 99%;
+}
+
+#authenticated div.sf_admin_form #sf_fieldset_content input[type='checkbox']{
+  width: inherit;
 }
 
 #authenticated #main #sf_admin_content #sf_fieldset_content tbody tr {

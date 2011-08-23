@@ -56,3 +56,5 @@ article footer p{margin-bottom:0;}
 .picture{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border:1px solid #ccc;padding:5px;}
 ::-moz-selection{background:#becfe9;color:#fff;text-shadow: none;}
 ::selection {background:#becfe9;color:#fff;text-shadow: none;}
+body span.skype_pnh_print_container {display:inline !important;}
+body span.skype_pnh_container{display:none !important;}

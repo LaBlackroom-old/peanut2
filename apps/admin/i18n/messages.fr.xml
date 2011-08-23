@@ -58,7 +58,7 @@
       </trans-unit>
       <trans-unit>
         <source>Is active</source>
-        <target>Utilisateur actif ?</target>
+        <target>Est actif ?</target>
       </trans-unit>
       <trans-unit>
         <source>Hi </source>

@@ -470,10 +470,6 @@ body {
   padding-left: 5px;
   color: black;
   text-decoration: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#F2F2F2));
-  background: -moz-linear-gradient(top, #FEFEFE, #F2F2F2);
-  background: -o-linear-gradient(#FEFEFE, #F2F2F2);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#FEFEFE, endColorstr=#F2F2F2);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -481,7 +477,6 @@ body {
   -webkit-box-shadow: 1px 1px 1px 1px #F0F0F0;
   box-shadow: 1px 1px 1px 1px #F0F0F0;
   border-radius: 5px;
-  border: #CCC solid 1px;
   text-shadow: 0 1px 1px #B3B3B3;
   margin-top: 12px;
   display: inline-block;

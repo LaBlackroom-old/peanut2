@@ -63,7 +63,12 @@ class dashboardComponents extends sfComponents
   {
     if(peanutConfig::get('news_feed'))
     {
-      $items = simplexml_load_file(peanutConfig::get('news_feed'));
+      if(FALSE != simplexml_load_file(peanutConfig::get('news_feed'))){
+        $items = simplexml_load_file(peanutConfig::get('news_feed'));
+      }else{
+        $items = null;
+      }
+
       $this->items = $items;
     }
     else

@@ -7,6 +7,9 @@
     <table>
       <tbody>
         <?php
+        if(null != $items)
+        {
+
           $i = 0;
           foreach($items->entry as $item):
             $i++;
@@ -21,6 +24,11 @@
           endif;
           
           endforeach;
+        }
+        else
+        {
+          echo __("We are sorry but we were unable to recover the data") . '.';
+        }
         ?>
       </tbody>
     </table>

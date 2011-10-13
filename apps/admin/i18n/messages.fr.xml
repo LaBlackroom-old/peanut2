@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>We are sorry but we were unable to recover the data</source>
+        <target>Nous sommes désolé mais nous n'avons pas réussi à récupérer les données</target>
+      </trans-unit>
+      <trans-unit>
         <source>Homepage</source>
         <target>Page d'accueil</target>
       </trans-unit>

@@ -256,6 +256,11 @@
         <source>Your meta language</source>
         <target>La langue de votre site</target>
       </trans-unit>
+      <trans-unit>
+        <source>Username and / or password unknown</source>
+        <target>Nom d'utilisateur et/ou mot de passe inconnus</target>
+      </trans-unit>
+      
     </body>
   </file>
 </xliff>

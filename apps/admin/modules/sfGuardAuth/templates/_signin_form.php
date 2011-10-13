@@ -7,7 +7,7 @@
         <?php echo __('Username') ?>: <?php echo $error ?><br />
       <?php endforeach; ?>
       
-      <?php echo __('Password') ?>: <?php echo $form['password']->getError() ?><br />
+      <?php echo __('Username and / or password unknown') ?> <?php echo $form['password']->getError() ?><br />
     </p>
   </section>
   <?php endif; ?>

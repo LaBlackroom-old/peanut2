@@ -180,7 +180,7 @@ body {
 #authenticated section#sidebar .user-profile {
   position: absolute;
   bottom: 0;
-  height: 43px;
+  min-height: 43px;
   width: 100%;
   background-color: rgb(239, 243, 248);
   color: rgb(0, 0, 0);
@@ -197,6 +197,10 @@ body {
 #authenticated section#sidebar .user-profile p {
   margin: 0;
   color: rgb(102, 109, 122);
+  word-wrap: break-word;
+  margin-left: 50px; 
+  margin-right: 5px; 
+  margin-bottom: 1px;
 }
 
 #authenticated section#sidebar .user-profile a {

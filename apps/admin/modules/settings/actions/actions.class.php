@@ -31,4 +31,5 @@ class settingsActions extends BaseSettingsActions
 
     }
   }
+  
 }

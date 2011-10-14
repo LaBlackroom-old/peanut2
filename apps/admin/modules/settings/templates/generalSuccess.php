@@ -33,7 +33,18 @@
                 </div>
               </div>
             </div>
-
+            
+            <?php if($sf_user->hasPermission('4')): ?>
+              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_news_feed">
+                <div>
+                  <?php echo $form['news_feed']->renderLabel() ?>
+                  <div class="content">
+                    <?php echo $form['news_feed']->render(array('class' => 'text-input')) ?>
+                  </div>
+                </div>
+              </div>
+            <?php endif; ?>
+            
           </div>
 
         </fieldset>

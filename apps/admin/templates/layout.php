@@ -46,73 +46,73 @@
         <h2><?php echo __('functionnalities') ?></h2>
         <?php include_component('adminMenu', 'menu') ?>
         <?php include_component('adminItem', 'menu') ?>
-        
-        <?php if($sf_user->hasPermission('admin')): ?>
+        <?php
+               
+             if($sf_user->hasPermission('4') ||
+                $sf_user->hasPermission('5') || 
+                $sf_user->hasPermission('6') ||
+                $sf_user->hasPermission('7')
+                ): 
+        ?>
+          <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
+            <h3>
+              <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Manage users', null, 'sfGuard'); ?>
+              </a>
+            </h3>
+            <ul>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+                  <?php echo __('Show users', null, 'sfGuard'); ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+                  <?php echo __('Add user', null, 'sfGuard'); ?>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'class="selected"'; endif; ?>>
+            <h3>
+              <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                <?php echo __('Manage groups', null, 'sfGuard'); ?>
+              </a>
+            </h3>
+            <ul>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                  <?php echo __('Show groups', null, 'sfGuard'); ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                  <?php echo __('Add group', null, 'sfGuard'); ?>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'class="selected"'; endif; ?>>
+            <h3>
+              <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard') ?>">
+                <?php echo __('Manage permissions', null, 'sfGuard'); ?>
+              </a>
+            </h3>
+            <ul>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                  <?php echo __('Show permissions', null, 'sfGuard'); ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
+                  <?php echo __('Add permission', null, 'sfGuard'); ?>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-        <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
-          <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-              <?php echo __('Manage users', null, 'sfGuard'); ?>
-            </a>
-          </h3>
-          
-          <ul>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_user'); ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
-                <?php echo __('Show users', null, 'sfGuard'); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_user_new') ?>" title="<?php echo __('Link to', null, 'sfGuard') ?>">
-                <?php echo __('Add user', null, 'sfGuard'); ?>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav <?php if($sf_context->getModuleName() == 'sfGuardGroup'): echo 'class="selected"'; endif; ?>>
-          <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-              <?php echo __('Manage groups', null, 'sfGuard'); ?>
-            </a>
-          </h3>
-
-          <ul>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_group'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-                <?php echo __('Show groups', null, 'sfGuard'); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_group_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-                <?php echo __('Add group', null, 'sfGuard'); ?>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav <?php if($sf_context->getModuleName() == 'sfGuardPermission'): echo 'class="selected"'; endif; ?>>
-          <h3>
-            <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard') ?>">
-              <?php echo __('Manage permissions', null, 'sfGuard'); ?>
-            </a>
-          </h3>
-
-          <ul>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_permission'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-                <?php echo __('Show permissions', null, 'sfGuard'); ?>
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo url_for('@sf_guard_permission_new'); ?>" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
-                <?php echo __('Add permission', null, 'sfGuard'); ?>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        
-        <?php include_component('settings', 'menu') ?>
+          <?php include_component('settings', 'menu') ?>
         
         <?php endif; ?>
 
@@ -133,8 +133,6 @@
 
     </div>
 
-    
-  
     <!--[if lt IE 7 ]>
       <script src="js/dd_belatedpng.js"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>

@@ -149,6 +149,10 @@
         <target>Météo</target>
       </trans-unit>
       <trans-unit>
+        <source>News feed</source>
+        <target>Flux d'actualités</target>
+      </trans-unit>
+      <trans-unit>
         <source>This is your general settings, they are used for amin panel and/or the frontend application.</source>
         <target>Voici les paramètres généraux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
       </trans-unit>

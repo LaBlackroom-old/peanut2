@@ -93,6 +93,10 @@
         <target>Editer</target>
       </trans-unit>
       <trans-unit>
+        <source>Read</source>
+        <target>Lire</target>
+      </trans-unit>
+      <trans-unit>
         <source>we are the</source>
         <target>nous sommes le</target>
       </trans-unit>

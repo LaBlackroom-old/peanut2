@@ -11,7 +11,17 @@
         <?php foreach($users as $user): ?>
         <tr>
           <td class="item"><?php echo $user ?></td>
-          <td class="action"><a href="<?php echo url_for('sf_guard_user_edit', array('id' => $user->getId())) ?>"><?php echo __('Edit') ?></a></td>
+          <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>
+            <td class="action">
+              <a href="<?php echo url_for('sf_guard_user_edit', array('id' => $user->getId())) ?>">
+                <?php echo __('Edit') ?>
+              </a>
+            </td>
+          <?php else: ?>
+            <td class="action">
+                <span class="blocked"><?php echo __('Edit') ?></span>
+            </td>
+          <?php endif; ?>
         </tr>
         <?php endforeach; ?>
       </tbody>

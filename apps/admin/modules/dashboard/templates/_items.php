@@ -9,7 +9,15 @@
         <?php foreach($items as $item): ?>
         <tr>
           <td class="item"><?php echo $item->getTitle() ?></td>
-          <td class="action"><a href="<?php echo url_for('peanut_item_edit', array('id' => $item->getId())) ?>"><?php echo __('Edit') ?></td>
+          <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>
+            <td class="action">
+              <a href="<?php echo url_for('peanut_item_edit', array('id' => $item->getId())) ?>"><?php echo __('Edit') ?>
+            </td>
+          <?php elseif($sf_user->hasPermission('1')): ?>
+            <td class="action">
+              <a href="<?php echo url_for('peanut_item_edit', array('id' => $item->getId())) ?>"><?php echo __('Read') ?>
+            </td>
+          <?php endif; ?>
         </tr>
         <?php endforeach; ?>
       </tbody>

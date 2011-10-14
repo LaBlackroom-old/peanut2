@@ -15,8 +15,7 @@
   
   <section id="content" class="clearfix">
     
-    <?php include_component('dashboard', 'count') ?>
-    
+    <?php include_component('dashboard', 'count') ?> 
     <?php include_component('dashboard', 'users') ?>
     <?php include_component('dashboard', 'items') ?>
     <?php include_component('dashboard', 'analytics') ?>

@@ -775,6 +775,10 @@ body {
    margin-bottom: 0;
  }
  
+ #authenticated #dashboard #content .boxContent .blocked{
+   color: #cccccc;
+ }
+ 
  #authenticated #dashboard #content .boxContent table {
    width: 100%;
  }

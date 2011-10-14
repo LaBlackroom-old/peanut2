@@ -27,6 +27,10 @@ jQuery(document).ready(function() {
   })
   
   xfn();
+  
+  showModalCorporate();
+   
+  
 
 });
 
@@ -159,5 +163,23 @@ function xfn()
     } else {
       jQuery('.sf_admin_form_field_peanutXfn :input').removeAttr('disabled');
     }
+  });
+}
+
+function showModalCorporate()
+{
+  jQuery('a.ajax').click(function() {          
+    var url = this.href;
+    var dialog = jQuery('div#dialog');           
+    // load remote content
+   dialog.load(
+        url, 
+        {},
+        function (responseText, textStatus, XMLHttpRequest) {
+              dialog.dialog( { modal: true , title : "New menu"} );                        
+        }
+    );
+    //prevent the browser to follow the link
+    return false;
   });
 }

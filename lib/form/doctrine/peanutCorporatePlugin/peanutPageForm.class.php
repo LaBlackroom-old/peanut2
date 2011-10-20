@@ -17,4 +17,20 @@ class peanutPageForm extends PluginpeanutPageForm
   {
     parent::configure();
   }
+  
+  protected function _getUsers()
+  {
+    $users = array();
+    //$choices = Doctrine::getTable('sfGuardUser')->getUsersWhereGroupIs('2')->execute();
+
+    $permission = array('2', '3');
+    $choices = Doctrine::getTable('sfGuardUser')->getUsersWherePermissionIs($permission)->execute();
+
+    foreach($choices as $user)
+    {
+      $users[$user->getId()] = $user->getName();
+    }
+
+    return $users;
+  }
 }

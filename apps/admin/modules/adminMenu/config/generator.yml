@@ -1,0 +1,47 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutMenu
+    theme:                 peanut
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_menu
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display:  [=name, slug]
+        
+        batch_actions:
+          order:
+            label:         Update tree
+          _delete:         ~
+          
+        object_actions:
+          new:
+            label:         Add children
+          up:
+            action:        up
+          down:
+            action:        down
+          make_root:
+            action:        makeRoot
+          _edit:           ~
+          _delete:         ~
+
+      filters:             ~
+
+      form:
+        display: 
+          "General":       [name, slug]
+          "Content":       [parent]
+          "Informations":  []
+
+      edit:                ~
+
+      new:                 ~

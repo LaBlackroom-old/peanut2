@@ -62,7 +62,6 @@ class sfGuardUserTable extends PluginsfGuardUserTable
   
   public function getUsersWherePermissionIs($permission, $active = true)
   {
-    print_r($permission);
     $p = $this->getUsers($active)
               ->where('s.id = ? OR s.id = ?', $permission);
     

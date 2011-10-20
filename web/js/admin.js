@@ -168,12 +168,12 @@ function xfn()
 
 function showModalCorporate()
 {
-  jQuery('a.ajax').click(function() {          
+  jQuery('a.ajax').click(function() {
     var url = this.href;
-    var dialog = jQuery('div#dialog');           
+    var dialog = jQuery('div#dialog');
     // load remote content
    dialog.load(
-        url, 
+        url,
         {},
         function (responseText, textStatus, XMLHttpRequest) {
               dialog.dialog( { modal: true , title : "New menu"} );                        

@@ -41,6 +41,10 @@ body {
  * 2- Header
  *
  */
+ 
+ .sorry{
+   color: black;
+ }
 
 #authenticated body {
    background-color: rgb(209, 213, 216);

@@ -44,14 +44,14 @@
         
       <section id="sidebar" role="sidebar">
         <h2><?php echo __('functionnalities') ?></h2>
+
         <?php include_component('adminMenu', 'menu') ?>
         <?php include_component('adminItem', 'menu') ?>
         <?php
-               
-         if($sf_user->hasPermission('4') || $sf_user->hasPermission('5') || 
-            $sf_user->hasPermission('6') || $sf_user->hasPermission('7')
-           ): 
+  
+        if($sf_user->hasPermission('4') || $sf_user->hasPermission('5')): 
         ?>
+        
           <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
             <h3>
               <a href="#" class="nav-top-item" title="<?php echo __('Link to', null, 'sfGuard'); ?>">
@@ -109,15 +109,18 @@
               </li>
             </ul>
           </nav>
-
-          <?php include_component('settings', 'menu') ?>
         
+          <?php
+          if($sf_user->hasPermission('5')):
+            include_component('settings', 'menu');
+          endif;
+          ?>
         <?php endif; ?>
-
+        
         <div class="user-profile">
           <img src="http://www.gravatar.com/avatar/<?php echo md5($sf_user->getGuardUser()->getEmailAddress()) ?>?s=22&d=identicon" class="floatLeft" width="22" height="22" />
           <p>
-            <a href="<?php echo url_for('@homepage').'guard/users/'.$sf_user->getGuardUser()->getId().'/edit'; ?>" title="<?php echo __('Edit your profile', null, 'sfGuard') ?>">
+            <a href="<?php echo url_for('sf_guard_user_edit', array('id' => $sf_user->getGuardUser()->getId())); ?>" title="<?php echo __('Edit your profile', null, 'sfGuard') ?>">
               <?php echo $sf_user->getGuardUser()->getUsername() ?>
             </a>
           </p>

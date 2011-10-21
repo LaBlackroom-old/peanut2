@@ -11,7 +11,7 @@
     </li>
     
     
-    <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>
+    <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
     <li>
       <a href="<?php echo url_for('@peanut_menu_new') ?>" title="<?php echo __('Link to', null, 'peanutCorporate') ?>"><?php echo __('Add new menu', null, 'peanutCorporate'); ?></a>
     </li>

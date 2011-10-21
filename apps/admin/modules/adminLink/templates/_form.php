@@ -1,3 +1,16 @@
+<?php 
+if($form->isNew() && (!$sf_user->hasPermission('2') && !$sf_user->hasPermission('3')
+   && !$sf_user->hasPermission('4') && !$sf_user->hasPermission('5')))
+{
+  echo '<div class="sorry sf_admin_form">';
+    echo __('Sorry but you can not create link.', null, 'sfGuard');
+  echo '.. Cheater!</div>';
+}
+else
+{
+?>
+
+
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
 
@@ -214,7 +227,7 @@
           <div class="content" id="selectmenu">
             <?php echo $form['menu']->render() ?>
             
-            <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>
+            <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
               <a class="ajax" href="<?php echo url_for('adminMenu/newx') ?>">
                 <img title="<?php echo __("Add new menu") ?>" src="/images/admin/add.png" />
               </a>
@@ -249,3 +262,4 @@
     <?php include_partial('adminLink/form_actions', array('peanut_link' => $peanut_link, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?>
   </form>
 </div>
+<?php } ?>

@@ -19,14 +19,14 @@ generator:
         display:              [=username, created_at, updated_at, last_login]
 
       filter:
-        display:              [username, groups_list, permissions_list, is_super_admin, is_active]
+        display:              [username, groups_list, permissions_list, is_active]
 
       form:
         class: sfGuardUserAdminForm
         display:
           "General":          [username, email_address]
           "Content":          [first_name, last_name, password, password_again]
-          "Informations":     [is_active, is_super_admin, groups_list, permissions_list]
+          "Informations":     [is_active, groups_list, permissions_list]
 
       edit:
         title: Editing User "%%username%%"

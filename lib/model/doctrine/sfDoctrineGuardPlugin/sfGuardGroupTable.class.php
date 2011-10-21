@@ -16,4 +16,26 @@ class sfGuardGroupTable extends PluginsfGuardGroupTable
     {
         return Doctrine_Core::getTable('sfGuardGroup');
     }
+    
+    /*
+     * Get a permission
+     * 
+     * @return  object  $p
+     */
+    public function getGroup()
+    {
+      $p = $this->createQuery('p');
+      return $p;
+    }
+    
+    /*
+     * Get all permissions
+     * 
+     * @return   object  $p
+     */
+    public function getGroups()
+    {
+      $p = $this->getGroup();        
+      return $p;
+    }
 }

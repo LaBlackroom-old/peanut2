@@ -1,10 +1,10 @@
 <ul class="sf_admin_actions clearfix">
   
-  <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>   
+  <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>   
 
     <?php if ($form->isNew()): ?>
 
-      <?php if($sf_user->hasPermission('3')): ?>   
+      <?php if($sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>   
         <?php echo $helper->linkToDelete($form->getObject(), array(  'params' =>   array(  ),  'confirm' => 'Are you sure?',  'class_suffix' => 'delete',  'label' => 'Delete',)) ?>
       <?php endif; ?>
 
@@ -14,7 +14,7 @@
 
     <?php else: ?>
 
-      <?php if($sf_user->hasPermission('3')): ?>
+      <?php if($sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
         <?php echo $helper->linkToDelete($form->getObject(), array(  'params' =>   array(  ),  'confirm' => 'Are you sure?',  'class_suffix' => 'delete',  'label' => 'Delete',)) ?>
       <?php endif; ?>
 

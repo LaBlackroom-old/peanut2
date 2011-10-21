@@ -1,10 +1,10 @@
 peanutSettings:
   peanutSettings_1:
     name: site_name
-    value: 'peanut'
+    value: peanut
   peanutSettings_2:
     name: meteo
-    value: 'Paris, France'
+    value: 'Lille, France'
   peanutSettings_3:
     name: society
     value: 'La blackroom'
@@ -46,28 +46,28 @@ peanutSettings:
     value: ''
   peanutSettings_16:
     name: meta_language
-    value: 'fr_FR'
+    value: fr_FR
   peanutSettings_17:
     name: meta_robots
     value: 'index, follow'
   peanutSettings_18:
     name: contact_from
-    value: 'noreply@peanut2.local'
+    value: noreply@peanut2.local
   peanutSettings_19:
     name: webmaster_name
-    value: 'webmaster'
+    value: webmaster
   peanutSettings_20:
     name: webmaster_mail
-    value: 'www.peanut2.local'
+    value: www.peanut2.local
   peanutSettings_21:
     name: subject
     value: 'New message from your contact form'
   peanutSettings_22:
     name: map_name
-    value: 'lablackroom'
+    value: lablackroom
   peanutSettings_23:
     name: map_center
-    value: 'Arras'
+    value: Arras
   peanutSettings_24:
     name: map_address
     value: '72 rue d amiens, 62000 Arras'
@@ -76,4 +76,4 @@ peanutSettings:
     value: '13'
   peanutSettings_26:
     name: map_size
-    value: '512x288'   
+    value: 512x288

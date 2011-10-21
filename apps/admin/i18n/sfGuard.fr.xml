@@ -48,6 +48,46 @@
         <source>Edit your profile</source>
         <target>Editer votre profil</target>
       </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not edit this user profile.</source>
+        <target>Désolé mais vous ne pouvez pas éditer ce profil utilisateur.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create menu.</source>
+        <target>Désolé mais vous ne pouvez pas créer de menu.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create page.</source>
+        <target>Désolé mais vous ne pouvez pas créer de page.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create link.</source>
+        <target>Désolé mais vous ne pouvez pas créer de lien.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create user profile.</source>
+        <target>Désolé mais vous ne pouvez pas créer de profil utilisateur.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry, but you do not have access rights to this part.</source>
+        <target>Désolé mais vous n'avez pas les droits d'accès à cette partie.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create group.</source>
+        <target>Désolé mais vous ne pouvez pas créer de groupe.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not edit this group.</source>
+        <target>Désolé mais vous ne pouvez pas éditer ce group.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not create permission.</source>
+        <target>Désolé mais vous ne pouvez pas créer de permission.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Sorry but you can not edit this permission.</source>
+        <target>Désolé mais vous ne pouvez pas éditer cette permission.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

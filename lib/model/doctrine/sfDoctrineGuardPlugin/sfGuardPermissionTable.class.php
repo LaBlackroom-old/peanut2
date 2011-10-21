@@ -16,4 +16,26 @@ class sfGuardPermissionTable extends PluginsfGuardPermissionTable
     {
         return Doctrine_Core::getTable('sfGuardPermission');
     }
+    
+    /*
+     * Get a permission
+     * 
+     * @return  object  $p
+     */
+    public function getPermission()
+    {
+      $p = $this->createQuery('p');
+      return $p;
+    }
+    
+    /*
+     * Get all permissions
+     * 
+     * @return   object  $p
+     */
+    public function getPermissions()
+    {
+      $p = $this->getPermission();        
+      return $p;
+    }
 }

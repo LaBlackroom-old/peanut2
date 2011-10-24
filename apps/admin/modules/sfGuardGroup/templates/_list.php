@@ -30,11 +30,18 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
         </tfoot>
         <tbody>
           <?php foreach ($pager->getResults() as $i => $sf_guard_group): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+
+          
+  <?php if( ( $sf_user->hasPermission('5') ) ||
+            ( $sf_user->hasPermission('4') && !in_array('5', $groupPermissions->getRaw($sf_guard_group->getId())) )
+          ): ?>
             <tr class="sf_admin_row <?php echo $odd ?>">
               <?php include_partial('sfGuardGroup/list_td_batch_actions', array('sf_guard_group' => $sf_guard_group, 'helper' => $helper)) ?>
               <?php include_partial('sfGuardGroup/list_td_tabular', array('sf_guard_group' => $sf_guard_group)) ?>
               <?php include_partial('sfGuardGroup/list_td_actions', array('sf_guard_group' => $sf_guard_group, 'helper' => $helper)) ?>
             </tr>
+          <?php endif; ?>  
+
           <?php endforeach; ?>
         </tbody>
       </table>

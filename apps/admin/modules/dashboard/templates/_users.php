@@ -11,7 +11,8 @@
         <?php foreach($users as $user): ?>
         <tr>
           <td class="item"><?php echo $user ?></td>
-          <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3')): ?>
+          <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3') || 
+                   $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
             <td class="action">
               <a href="<?php echo url_for('sf_guard_user_edit', array('id' => $user->getId())) ?>">
                 <?php echo __('Edit') ?>

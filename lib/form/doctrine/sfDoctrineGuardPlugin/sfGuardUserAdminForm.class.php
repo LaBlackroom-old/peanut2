@@ -66,10 +66,19 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
     $choices = Doctrine::getTable('sfGuardPermission')->getPermissions()->execute();
     
     foreach($choices as $permission){
-      if($user->hasPermission('4')){  
+      if($user->hasPermission('5')){ /* Super-Admin */
         $permissions[$permission->getId()] = $permission->getName();
       }
-      else if($user->hasPermission('5') && '4' != $permission->getId()){
+      else if($user->hasPermission('4') && '5' != $permission->getId()){ /* Admin */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('3') && '5' != $permission->getId() && '4' != $permission->getId()){ /*  */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('2') && '5' != $permission->getId() && '4' != $permission->getId() && '3' != $permission->getId()){ /*  */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('1') && '5' != $permission->getId() && '4' != $permission->getId() && '3' != $permission->getId() && '2' != $permission->getId()){ /*  */
         $permissions[$permission->getId()] = $permission->getName();
       }
     } 
@@ -83,28 +92,29 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
     $choices = Doctrine::getTable('sfGuardGroup')->getGroups()->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
     
     foreach($choices as $group){
-     
+      
       $permissions = Doctrine::getTable('sfGuardGroupPermission')->getGroupPermissions($group['id']);
       $groupPermissions = $permissions->addSelect('permission_id')->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+    
       $grp = array();
-      
+    
       foreach($groupPermissions as $perm){
         $grp[] = $perm['permission_id'];
-      }  
+      }
       
-      if($user->hasPermission('4')){ /* Super-Admin */
+      if($user->hasPermission('5')){ /* Super-Admin */
         $groups[$group['id']] = $group['name'];
       }
-      elseif($user->hasPermission('5') && !in_array('4', $grp)){ /* Admin */
+      elseif($user->hasPermission('4') && !in_array('5', $grp)){ /* Admin */
         $groups[$group['id']] = $group['name'];
       }
-      elseif($user->hasPermission('3') && !in_array('4', $grp) && !in_array('5', $grp)){ /* Deleter */
+      elseif($user->hasPermission('3') && !in_array('5', $grp) && !in_array('4', $grp)){ /* Deleter */
         $groups[$group['id']] = $group['name'];
       }
-      elseif($user->hasPermission('2') && !in_array('4', $grp) && !in_array('5', $grp) && !in_array('3', $grp)){ /* Writer */
+      elseif($user->hasPermission('2') && !in_array('5', $grp) && !in_array('4', $grp) && !in_array('3', $grp)){ /* Writer */
         $groups[$group['id']] = $group['name'];
       }
-      elseif($user->hasPermission('1') && !in_array('4', $grp) && !in_array('5', $grp) && !in_array('3', $grp) && !in_array('2', $grp)){ /* Reader */
+      elseif($user->hasPermission('1') && !in_array('5', $grp) && !in_array('4', $grp) && !in_array('3', $grp) && !in_array('2', $grp)){ /* Reader */
         $groups[$group['id']] = $group['name'];
       }
     }

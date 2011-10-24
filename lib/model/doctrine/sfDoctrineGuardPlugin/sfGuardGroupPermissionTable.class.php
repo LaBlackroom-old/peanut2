@@ -29,7 +29,9 @@ class sfGuardGroupPermissionTable extends PluginsfGuardGroupPermissionTable
     }
     
     /*
-     * Get all permissions
+     * Get all permissions with the group
+     * 
+     * @param    group id   $id     
      * 
      * @return   object  $p
      */
@@ -39,6 +41,19 @@ class sfGuardGroupPermissionTable extends PluginsfGuardGroupPermissionTable
                 ->leftJoin('p.Group g')
                 ->leftJoin('p.Permission x')
                 ->addWhere('g.id = ?', $id);        
+      return $p;
+    }
+    
+    /*
+     * Get all group permissions
+     * 
+     * @return   object  $p
+     */
+    public function getGroupsPermissions()
+    {
+      $p = $this->getAllPermissions()
+                ->leftJoin('p.Group g')
+                ->leftJoin('p.Permission x');
       return $p;
     }
 }

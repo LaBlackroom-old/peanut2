@@ -44,6 +44,17 @@ class sfGuardUserTable extends PluginsfGuardUserTable
   /*
    * 
    */
+  public function getFullUsers($active = true)
+  {
+    $p = $this->getUsers()
+            ->leftJoin('g.Permissions gs');
+    
+    return $p;
+  }
+  
+  /*
+   * 
+   */
   public function getLastUsers($limit = 5, $active = true)
   {
     $p = $this->getUsers($active)

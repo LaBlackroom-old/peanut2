@@ -29,12 +29,30 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
           </tr>
         </tfoot>
         <tbody>
-          <?php foreach ($pager->getResults() as $i => $sf_guard_permission): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
-            <tr class="sf_admin_row <?php echo $odd ?>">
-              <?php include_partial('sfGuardPermission/list_td_batch_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
-              <?php include_partial('sfGuardPermission/list_td_tabular', array('sf_guard_permission' => $sf_guard_permission)) ?>
-              <?php include_partial('sfGuardPermission/list_td_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
-            </tr>
+          
+          <?php $min = min($permission->getRaw($sf_user->getGuardUser()->getId()));  ?>
+
+          <?php foreach ($pager->getResults() as $i => $sf_guard_permission): ?>
+          
+            <?php $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+            
+            <?php if($sf_guard_permission->getId() > $min && !$sf_user->hasPermission('5')) : ?>
+              <?php if( in_array($sf_guard_permission->getId(), $permission->getRaw($sf_user->getGuardUser()->getId())) ): ?>
+                <tr class="sf_admin_row <?php echo $odd ?>">
+                  <?php include_partial('sfGuardPermission/list_td_batch_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
+                  <?php include_partial('sfGuardPermission/list_td_tabular', array('sf_guard_permission' => $sf_guard_permission)) ?>
+                  <?php include_partial('sfGuardPermission/list_td_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
+                </tr>
+              <?php endif; ?>
+                
+            <?php else: ?> 
+              <tr class="sf_admin_row <?php echo $odd ?>">
+                <?php include_partial('sfGuardPermission/list_td_batch_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
+                <?php include_partial('sfGuardPermission/list_td_tabular', array('sf_guard_permission' => $sf_guard_permission)) ?>
+                <?php include_partial('sfGuardPermission/list_td_actions', array('sf_guard_permission' => $sf_guard_permission, 'helper' => $helper)) ?>
+              </tr>
+            <?php endif; ?>
+
           <?php endforeach; ?>
         </tbody>
       </table>

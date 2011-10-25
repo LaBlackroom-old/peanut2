@@ -18,7 +18,7 @@ class sfGuardGroupPermissionTable extends PluginsfGuardGroupPermissionTable
     }
     
     /*
-     * Get a permission
+     * Get all permission
      * 
      * @return  object  $p
      */

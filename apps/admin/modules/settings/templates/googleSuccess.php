@@ -48,14 +48,38 @@
                 </div>
               </div>
 
-              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_guid">
+              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_guid_wt">
                 <div>
-                  <?php echo $form['google_guid']->renderLabel() ?>
+                  <?php echo $form['google_guid_wt']->renderLabel() ?>
                   <div class="content">
-                    <?php echo $form['google_guid']->render(array('class' => 'text-input')) ?>
+                    <?php echo $form['google_guid_wt']->render(array('class' => 'text-input')) ?>
                   </div>
                   <div class="help">
-                    <?php echo $form['google_guid']->renderHelp(); ?>
+                    <?php echo $form['google_guid_wt']->renderHelp(); ?>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_guid_ga">
+                <div>
+                  <?php echo $form['google_guid_ga']->renderLabel() ?>
+                  <div class="content">
+                    <?php echo $form['google_guid_ga']->render(array('class' => 'text-input')) ?>
+                  </div>
+                  <div class="help">
+                    <?php echo $form['google_guid_ga']->renderHelp(); ?>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_domain_name">
+                <div>
+                  <?php echo $form['domain_name']->renderLabel() ?>
+                  <div class="content">
+                    <?php echo $form['domain_name']->render(array('class' => 'text-input')) ?>
+                  </div>
+                  <div class="help">
+                    <?php echo $form['domain_name']->renderHelp(); ?>
                   </div>
                 </div>
               </div>

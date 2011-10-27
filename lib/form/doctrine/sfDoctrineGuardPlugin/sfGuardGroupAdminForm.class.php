@@ -25,5 +25,37 @@ class sfGuardGroupAdminForm extends BasesfGuardGroupForm
     $this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array(
                                         'placeholder' => 'A simple description'
     ));
+    
+    $this->widgetSchema['permissions_list']  = new sfWidgetFormChoice(array(
+      'choices' => $this->_getUsersPermissions(),
+      'multiple' => true
+    ));
+
+  }
+  
+  protected function _getUsersPermissions()
+  {
+    $user = self::getValidUser();
+    $permissions = array();
+    $choices = Doctrine::getTable('sfGuardPermission')->getPermissions()->execute();
+    
+    foreach($choices as $permission){
+      if($user->hasPermission('5')){ /* Super-Admin */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('4') && '5' != $permission->getId()){ /* Admin */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('3') && '5' != $permission->getId() && '4' != $permission->getId()){ /*  */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('2') && '5' != $permission->getId() && '4' != $permission->getId() && '3' != $permission->getId()){ /*  */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+      else if($user->hasPermission('1') && '5' != $permission->getId() && '4' != $permission->getId() && '3' != $permission->getId() && '2' != $permission->getId()){ /*  */
+        $permissions[$permission->getId()] = $permission->getName();
+      }
+    } 
+    return $permissions;
   }
 }

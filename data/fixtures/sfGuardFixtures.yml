@@ -1,3 +1,29 @@
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_4:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_4
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_1_5:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_5
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_1_6:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_2_2:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_2
+    created_at: '2011-10-24 16:01:35'
+    updated_at: '2011-10-24 16:01:35'
+  sfGuardGroupPermission_3_2:
+    Group: sfGuardGroup_3
+    Permission: sfGuardPermission_2
+    created_at: '2011-10-25 10:23:22'
+    updated_at: '2011-10-25 10:23:22'
 sfGuardGroup:
   sfGuardGroup_1:
     name: Administrateur
@@ -9,6 +35,11 @@ sfGuardGroup:
     description: 'Le groupe des éditeurs'
     created_at: '2011-08-17 15:36:57'
     updated_at: '2011-08-17 15:37:43'
+  sfGuardGroup_3:
+    name: 'Writer de base'
+    description: ''
+    created_at: '2011-10-25 10:23:22'
+    updated_at: '2011-10-25 10:23:22'
 sfGuardPermission:
   sfGuardPermission_1:
     name: Reader
@@ -35,15 +66,31 @@ sfGuardPermission:
     description: 'Cette permission définit un compte utilisateur comme "Super-Admin"'
     created_at: '2011-10-14 11:17:32'
     updated_at: '2011-10-20 16:12:18'
-  sfGuardPermission_8:
+  sfGuardPermission_6:
     name: 'Accès à l''interface Admin'
     description: 'Cette permission permet d''autoriser l''accès au back office.'
     created_at: '2011-10-14 15:17:33'
     updated_at: '2011-10-14 16:01:13'
-sfGuardUserPermission:
-  sfGuardUserPermission_1_8:
+sfGuardUserGroup:
+  sfGuardUserGroup_1_2:
     User: sfGuardUser_1
-    Permission: sfGuardPermission_8
+    Group: sfGuardGroup_2
+    created_at: '2011-10-25 10:08:12'
+    updated_at: '2011-10-25 10:08:12'
+  sfGuardUserGroup_1_3:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_3
+    created_at: '2011-10-25 10:23:36'
+    updated_at: '2011-10-25 10:23:36'
+sfGuardUserPermission:
+  sfGuardUserPermission_1_4:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_4
+    created_at: '2011-10-24 16:03:00'
+    updated_at: '2011-10-24 16:03:03'
+  sfGuardUserPermission_1_6:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:05:00'
     updated_at: '2011-10-21 17:05:00'
   sfGuardUserPermission_3_2:
@@ -51,9 +98,9 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_2
     created_at: '2011-10-21 17:02:09'
     updated_at: '2011-10-21 17:02:09'
-  sfGuardUserPermission_3_8:
+  sfGuardUserPermission_3_6:
     User: sfGuardUser_3
-    Permission: sfGuardPermission_8
+    Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:01:15'
     updated_at: '2011-10-21 17:01:15'
   sfGuardUserPermission_4_1:
@@ -61,9 +108,9 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_1
     created_at: '2011-10-21 17:05:30'
     updated_at: '2011-10-21 17:05:30'
-  sfGuardUserPermission_4_8:
+  sfGuardUserPermission_4_6:
     User: sfGuardUser_4
-    Permission: sfGuardPermission_8
+    Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:05:30'
     updated_at: '2011-10-21 17:05:30'
   sfGuardUserPermission_5_5:
@@ -71,9 +118,9 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_5
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
-  sfGuardUserPermission_5_8:
+  sfGuardUserPermission_5_6:
     User: sfGuardUser_5
-    Permission: sfGuardPermission_8
+    Permission: sfGuardPermission_6
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   sfGuardUserPermission_6_3:
@@ -81,9 +128,9 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_3
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-21 17:02:56'
-  sfGuardUserPermission_6_8:
+  sfGuardUserPermission_6_6:
     User: sfGuardUser_6
-    Permission: sfGuardPermission_8
+    Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-21 17:02:56'
 sfGuardUser:
@@ -94,12 +141,12 @@ sfGuardUser:
     username: admin
     algorithm: sha1
     salt: baba31155ff078e4a869d7e2c88c8cca
-    password: 5cf270d479fe4ab2cc747e704e68e572850caee7
+    password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-21 14:53:50'
+    last_login: '2011-10-27 14:39:36'
     created_at: '2011-03-15 12:06:22'
-    updated_at: '2011-10-21 14:53:50'
+    updated_at: '2011-10-27 14:39:36'
   sfGuardUser_3:
     first_name: James
     last_name: Bwriter
@@ -107,12 +154,12 @@ sfGuardUser:
     username: bwriter
     algorithm: sha1
     salt: 4056ee6a94dffbbe0cff6963ffd86a44
-    password: f6da741bd02efb83b03f72f567f78a8e745afa3b
+    password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-21 17:06:19'
+    last_login: '2011-10-24 15:39:17'
     created_at: '2011-10-14 16:18:08'
-    updated_at: '2011-10-21 17:06:19'
+    updated_at: '2011-10-24 15:39:17'
   sfGuardUser_4:
     first_name: Johnny
     last_name: Reader
@@ -120,12 +167,12 @@ sfGuardUser:
     username: reader
     algorithm: sha1
     salt: b4143a36257f02de0252d98fb80dd54e
-    password: 0208a7cb949cf1260c6405e4df3dd2d802975781
+    password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-21 17:06:42'
+    last_login: '2011-10-27 15:58:06'
     created_at: '2011-10-14 16:20:35'
-    updated_at: '2011-10-21 17:06:42'
+    updated_at: '2011-10-27 15:58:06'
   sfGuardUser_5:
     first_name: John
     last_name: Super
@@ -133,12 +180,12 @@ sfGuardUser:
     username: superadmin
     algorithm: sha1
     salt: 7d22f96830eacd936bc942e4a5724001
-    password: 6314298282b62d6f6b8b128096cf302d58a5380d
+    password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-21 14:14:06'
+    last_login: '2011-10-27 14:39:46'
     created_at: '2011-10-14 16:22:08'
-    updated_at: '2011-10-21 14:14:06'
+    updated_at: '2011-10-27 14:39:46'
   sfGuardUser_6:
     first_name: Jules
     last_name: Awriter
@@ -149,10 +196,8 @@ sfGuardUser:
     password: 622b362d967397596490c9ffe301afabb167fa6d
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-21 17:06:05'
+    last_login: '2011-10-24 18:35:51'
     created_at: '2011-10-21 17:02:56'
-    updated_at: '2011-10-21 17:06:05'
-
-
+    updated_at: '2011-10-24 18:35:51'
 
 

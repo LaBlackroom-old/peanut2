@@ -30,7 +30,7 @@ peanutSettings:
     name: google_tracking
     value: ''
   peanutSettings_11:
-    name: google_guid
+    name: google_guid_wt
     value: ''
   peanutSettings_12:
     name: news_feed
@@ -77,3 +77,9 @@ peanutSettings:
   peanutSettings_26:
     name: map_size
     value: 512x288
+  peanutSettings_27:
+    name: google_guid_ga
+    value: ''
+  peanutSettings_28:
+    name: domain_name
+    value: 'peanut.local'

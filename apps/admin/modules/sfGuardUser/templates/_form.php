@@ -1,7 +1,9 @@
-<?php if($sf_request->getParameter('id') == $sf_user->getGuardUser()->getId() ||
-         $sf_user->hasPermission('4') || $sf_user->hasPermission('5')){ 
+<?php 
+if($sf_request->getParameter('id') == $sf_user->getGuardUser()->getId()
+   || $sf_user->hasPermission('5') || $sf_user->hasPermission('4')
+  ){
+ 
 ?>
-
   <?php use_stylesheets_for_form($form) ?>
   <?php use_javascripts_for_form($form) ?>
 

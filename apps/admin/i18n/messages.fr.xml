@@ -217,6 +217,14 @@
         <target>Votre compte Google</target>
       </trans-unit>
       <trans-unit>
+        <source>Your GUID (Google Analytics)</source>
+        <target>Votre GUID (Google Analytics)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your domain name (without www)</source>
+        <target>Votre domain name (sans le www)</target>
+      </trans-unit>
+      <trans-unit>
         <source>Your GUID (google analytics)</source>
         <target>Votre GUID (Google analytics)</target>
       </trans-unit>
@@ -228,6 +236,17 @@
         <source>The guid of your site (Google Analytics)</source>
         <target>L'identifiant guid de votre site (Google Analytics)</target>
       </trans-unit>
+      <trans-unit>
+        <source>The guid of your site (Google Webmaster Tools)</source>
+        <target>L'identifiant guid de votre site (Google Webmaster Tools)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The name of your domain without the www</source>
+        <target>Le nom de votre domaine sans le www</target>
+      </trans-unit>
+      
+      
+      
       <trans-unit>
         <source>The google information are used for manage your google account and follow your analytics.</source>
         <target>Vos informations sont utilisées pour monitorer votre compte Google et suivre vos statistiques.</target>

@@ -29,12 +29,24 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
           </tr>
         </tfoot>
         <tbody>
-          <?php foreach ($pager->getResults() as $i => $sf_guard_user): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
-            <tr class="sf_admin_row <?php echo $odd ?>">
-              <?php include_partial('sfGuardUser/list_td_batch_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
-              <?php include_partial('sfGuardUser/list_td_tabular', array('sf_guard_user' => $sf_guard_user)) ?>
-              <?php include_partial('sfGuardUser/list_td_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
-            </tr>
+          <?php foreach ($pager->getResults() as $i => $sf_guard_user): 
+            $odd = fmod(++$i, 2) ? 'odd' : 'even' 
+          ?>
+            <?php if($sf_user->hasPermission('4') && !$sf_user->hasPermission('5')) : ?>
+              <?php if(!$sf_guard_user->hasPermission('5')): ?>
+                <tr class="sf_admin_row <?php echo $odd ?>">
+                  <?php include_partial('sfGuardUser/list_td_batch_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
+                  <?php include_partial('sfGuardUser/list_td_tabular', array('sf_guard_user' => $sf_guard_user)) ?>
+                  <?php include_partial('sfGuardUser/list_td_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
+                </tr>
+              <?php endif; ?>
+            <?php else: ?>
+              <tr class="sf_admin_row <?php echo $odd ?>">
+                <?php include_partial('sfGuardUser/list_td_batch_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
+                <?php include_partial('sfGuardUser/list_td_tabular', array('sf_guard_user' => $sf_guard_user)) ?>
+                <?php include_partial('sfGuardUser/list_td_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
+              </tr>
+            <?php endif; ?>
           <?php endforeach; ?>
         </tbody>
       </table>

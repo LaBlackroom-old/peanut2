@@ -11,23 +11,8 @@ class SfGuardPermissionActions extends autoSfGuardPermissionActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $userPermissions = Doctrine::getTable('sfGuardUser')->getFullUsers();
-    $userPerm = $userPermissions->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
-
-    foreach ($userPerm as $value){  
-      foreach ($value['Permissions'] as $val_perm){  
-          $permission[$value['id']][] = $val_perm['id'];
-      }
-      if($value['Groups']){
-        foreach ($value['Groups'] as $val_group){ 
-          foreach ($val_group['Permissions'] as $val_group_perm){ 
-            $permission[$value['id']][] = $val_group_perm['id'];
-          } 
-        }
-      } 
-    }
- 
-    $this->permission = $permission;
+    
+    
     
     // sorting
     if ($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))

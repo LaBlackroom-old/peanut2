@@ -13,7 +13,7 @@
   <section id="sf_admin_content">
         <form action="<?php echo url_for('sf_guard_permission_collection', array('action' => 'batch')) ?>" method="post">
           
-    <?php include_partial('sfGuardPermission/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper, 'permission' => $permission)) ?>
+    <?php include_partial('sfGuardPermission/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?>
     
     
         

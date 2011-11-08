@@ -71,12 +71,31 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     return $p;
   }
   
-  public function getUsersWherePermissionIs($permission, $active = true)
+  public function getUsersWherePermissionIs($permissions, $excludes = null, $active = true)
+  {
+    $or = 's.id = ?';  
+    for($i = 0; $i < count($permissions)-1; $i++){
+      $or .= ' OR s.id = ?';
+    }
+
+    $p = $this->getUsers($active)
+              ->addWhere($or, $permissions);
+  
+    if(null != $excludes){
+      foreach ($excludes as $exclude){
+        $p->addWhere('s.id <> ?', $exclude);
+      }
+    }
+    return $p;
+  }
+  
+  public function getUsersWithId($id, $active = true)
   {
     $p = $this->getUsers($active)
-              ->where('s.id = ? OR s.id = ?', $permission);
+              ->where('p.id = ?', $id);
     
     return $p;
   }
+  
   
 }

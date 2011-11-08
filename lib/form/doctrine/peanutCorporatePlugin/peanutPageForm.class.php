@@ -20,12 +20,30 @@ class peanutPageForm extends PluginpeanutPageForm
   
   protected function _getUsers()
   {
-    $users = array();
-    //$choices = Doctrine::getTable('sfGuardUser')->getUsersWhereGroupIs('2')->execute();
-
-    $permission = array('2', '3');
-    $choices = Doctrine::getTable('sfGuardUser')->getUsersWherePermissionIs($permission)->execute();
-
+    /* Advanced Writer OR Basic Writer */
+    if( ($this->getUser()->hasPermission('2') || $this->getUser()->hasPermission('3')) 
+         && !$this->getUser()->hasPermission('4') 
+         && !$this->getUser()->hasPermission('5')
+      )
+    { 
+      $choices = Doctrine::getTable('sfGuardUser')->getUsersWithId($this->getUser()->getGuardUser()->getId())->execute();
+    }
+    else{
+      
+      if($this->getUser()->hasPermission('5')) /* Cas du Super Admin */
+      { 
+        $permissions = array('2', '3', '4', '5');
+        $excludes = null;
+      }
+      elseif($this->getUser()->hasPermission('4')) /* Cas de l'Admin */
+      { 
+        $permissions = array('2', '3', '4');
+        $excludes = array('5');
+      }
+      $choices = Doctrine::getTable('sfGuardUser')->getUsersWherePermissionIs($permissions, $excludes)->execute();
+     
+    }
+    
     foreach($choices as $user)
     {
       $users[$user->getId()] = $user->getName();

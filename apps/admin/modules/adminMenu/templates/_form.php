@@ -1,4 +1,5 @@
 <?php 
+
 if($form->isNew() && (!$sf_user->hasPermission('2') && !$sf_user->hasPermission('3')
    && !$sf_user->hasPermission('4') && !$sf_user->hasPermission('5')))
 {

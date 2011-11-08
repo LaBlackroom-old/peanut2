@@ -1,6 +1,7 @@
 <?php 
 if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
 {
+  $results = 0;
 ?>
   <div class="sf_admin_list">
     <?php if (!$pager->getNbResults()): ?>
@@ -14,20 +15,7 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
             <th id="sf_admin_list_th_actions"><?php echo __('Actions', array(), 'sf_admin') ?></th>
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th colspan="6">
-              <?php if ($pager->haveToPaginate()): ?>
-                <?php include_partial('sfGuardUser/pagination', array('pager' => $pager)) ?>
-              <?php endif; ?>
-
-              <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?>
-              <?php if ($pager->haveToPaginate()): ?>
-                <?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?>
-              <?php endif; ?>
-            </th>
-          </tr>
-        </tfoot>
+        
         <tbody>
           <?php foreach ($pager->getResults() as $i => $sf_guard_user): 
             $odd = fmod(++$i, 2) ? 'odd' : 'even' 
@@ -39,6 +27,7 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
                   <?php include_partial('sfGuardUser/list_td_tabular', array('sf_guard_user' => $sf_guard_user)) ?>
                   <?php include_partial('sfGuardUser/list_td_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
                 </tr>
+                <?php $results++ ?>
               <?php endif; ?>
             <?php else: ?>
               <tr class="sf_admin_row <?php echo $odd ?>">
@@ -46,9 +35,26 @@ if($sf_user->hasPermission('4') || $sf_user->hasPermission('5'))
                 <?php include_partial('sfGuardUser/list_td_tabular', array('sf_guard_user' => $sf_guard_user)) ?>
                 <?php include_partial('sfGuardUser/list_td_actions', array('sf_guard_user' => $sf_guard_user, 'helper' => $helper)) ?>
               </tr>
+              <?php $results++ ?>
             <?php endif; ?>
           <?php endforeach; ?>
         </tbody>
+        
+        <tfoot>
+          <tr>
+            <th colspan="6">
+              <?php if ($pager->haveToPaginate()): ?>
+                <?php include_partial('sfGuardUser/pagination', array('pager' => $pager)) ?>
+              <?php endif; ?>
+
+              <?php //echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?>
+              <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $results), $results, 'sf_admin') ?>
+              <?php if ($pager->haveToPaginate()): ?>
+                <?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?>
+              <?php endif; ?>
+            </th>
+          </tr>
+        </tfoot>
       </table>
     <?php endif; ?>
   </div>

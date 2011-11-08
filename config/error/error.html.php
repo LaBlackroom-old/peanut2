@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/css/main.css?v=2" media="screen, projection" /> 
     <link rel="stylesheet" href="/css/handled.css?v=2" media="handled" /> 
  
-    <script src="/js/modernizr-1.7.min.js"></script> 
+    <script src="/peanutAssetPlugin/js/modernizr-1.7.min.js"></script> 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script> 
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script> 
   </head> 
@@ -52,7 +52,7 @@
     </div> 
  
     <!--[if lt IE 7 ]>
-      <script src="js/libs/dd_belatedpng.js"></script>
+      <script src="/peanutAssetPlugin/js/libs/dd_belatedpng.js"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>
     <![endif]--> 
  

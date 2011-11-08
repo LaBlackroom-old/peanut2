@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-
+    
     <?php include_http_metas() ?>
     <?php include_metas() ?>
 
@@ -17,9 +17,9 @@
 
     <?php include_html5_stylesheets() ?>
 
-    <?php echo html5_javascript_include_tag('/js/modernizr-1.7.min.js') ?>
+    <?php echo html5_javascript_include_tag('/peanutAssetPlugin/js/modernizr-1.7.min.js') ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/peanutAssetPlugin/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
   </head>
 
   <body id="authenticated" >
@@ -35,7 +35,7 @@
 
         <section id="adminBar" class="floatRight listInline">
           <a href="<?php echo url_for('@sf_guard_signout') ?>" title="<?php echo __('Logout') ?>" class="picto exit">
-            <img src="/images/admin/Power.png" width="24" height="24" />
+            <img src="/peanutAssetPlugin/images/admin/Power.png" width="24" height="24" />
             <p><?php echo __('Logout') ?></p>
           </a>
         </section>

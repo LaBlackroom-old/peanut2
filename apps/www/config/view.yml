@@ -13,10 +13,10 @@ default:
     viewport:      width=device-width, initial-scale=1.0
 
   stylesheets:
-    - main.css?v=2:     { media: 'screen, projection' }
-    - handheld.css?v=2: { media: 'handheld' }
+    - main.css?v=2:                            { media: 'screen, projection' }
+    - /peanutAssetPlugin/css/handheld.css?v=2: { media: 'handheld' }
 
-  javascripts:
+  javascripts: 
     
 
   has_layout:      true

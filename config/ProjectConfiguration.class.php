@@ -28,7 +28,8 @@ class ProjectConfiguration extends sfProjectConfiguration
         'sfCKEditorPlugin',
         'peanutCorporatePlugin',
         'peanutFormPlugin',
-        'peanutSeoPlugin'
+        'peanutSeoPlugin',
+        'peanutAssetPlugin',
     ));
     
     $this->dispatcher->connect('context.load_factories', array($this, 'listenToLoadFactoriesEvent'));

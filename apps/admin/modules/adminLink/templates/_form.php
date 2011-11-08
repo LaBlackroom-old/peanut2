@@ -229,7 +229,7 @@ else
             
             <?php if($sf_user->hasPermission('2') || $sf_user->hasPermission('3') || $sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
               <a class="ajax" href="<?php echo url_for('adminMenu/newx') ?>">
-                <img title="<?php echo __("Add new menu") ?>" src="/images/admin/add.png" />
+                <img title="<?php echo __("Add new menu") ?>" src="/peanutAssetPlugin/images/admin/add.png" />
               </a>
             <?php endif; ?>
           </div>

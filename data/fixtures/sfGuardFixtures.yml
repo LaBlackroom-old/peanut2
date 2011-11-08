@@ -93,43 +93,43 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:05:00'
     updated_at: '2011-10-21 17:05:00'
-  sfGuardUserPermission_3_2:
-    User: sfGuardUser_3
+  sfGuardUserPermission_2_2:
+    User: sfGuardUser_2
     Permission: sfGuardPermission_2
     created_at: '2011-10-21 17:02:09'
     updated_at: '2011-10-21 17:02:09'
-  sfGuardUserPermission_3_6:
-    User: sfGuardUser_3
+  sfGuardUserPermission_2_6:
+    User: sfGuardUser_2
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:01:15'
     updated_at: '2011-10-21 17:01:15'
-  sfGuardUserPermission_4_1:
-    User: sfGuardUser_4
+  sfGuardUserPermission_3_1:
+    User: sfGuardUser_3
     Permission: sfGuardPermission_1
     created_at: '2011-10-21 17:05:30'
     updated_at: '2011-10-21 17:05:30'
-  sfGuardUserPermission_4_6:
-    User: sfGuardUser_4
+  sfGuardUserPermission_3_6:
+    User: sfGuardUser_3
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:05:30'
     updated_at: '2011-10-21 17:05:30'
-  sfGuardUserPermission_5_5:
-    User: sfGuardUser_5
+  sfGuardUserPermission_4_5:
+    User: sfGuardUser_4
     Permission: sfGuardPermission_5
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
-  sfGuardUserPermission_5_6:
-    User: sfGuardUser_5
+  sfGuardUserPermission_4_6:
+    User: sfGuardUser_4
     Permission: sfGuardPermission_6
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
-  sfGuardUserPermission_6_3:
-    User: sfGuardUser_6
+  sfGuardUserPermission_5_3:
+    User: sfGuardUser_5
     Permission: sfGuardPermission_3
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-21 17:02:56'
-  sfGuardUserPermission_6_6:
-    User: sfGuardUser_6
+  sfGuardUserPermission_5_6:
+    User: sfGuardUser_5
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-21 17:02:56'
@@ -144,10 +144,10 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-27 14:39:36'
+    last_login: '2011-11-08 14:55:17'
     created_at: '2011-03-15 12:06:22'
-    updated_at: '2011-10-27 14:39:36'
-  sfGuardUser_3:
+    updated_at: '2011-11-08 14:55:17'
+  sfGuardUser_2:
     first_name: James
     last_name: Bwriter
     email_address: writer@peanut.local
@@ -160,7 +160,7 @@ sfGuardUser:
     last_login: '2011-10-24 15:39:17'
     created_at: '2011-10-14 16:18:08'
     updated_at: '2011-10-24 15:39:17'
-  sfGuardUser_4:
+  sfGuardUser_3:
     first_name: Johnny
     last_name: Reader
     email_address: reader@peanut.local
@@ -170,10 +170,10 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-27 15:58:06'
+    last_login: '2011-11-08 14:56:04'
     created_at: '2011-10-14 16:20:35'
-    updated_at: '2011-10-27 15:58:06'
-  sfGuardUser_5:
+    updated_at: '2011-11-08 14:56:04'
+  sfGuardUser_4:
     first_name: John
     last_name: Super
     email_address: superadmin@peanut.local
@@ -183,21 +183,19 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-10-27 14:39:46'
+    last_login: '2011-11-08 14:53:38'
     created_at: '2011-10-14 16:22:08'
-    updated_at: '2011-10-27 14:39:46'
-  sfGuardUser_6:
+    updated_at: '2011-11-08 14:53:38'
+  sfGuardUser_5:
     first_name: Jules
     last_name: Awriter
     email_address: advancedwriter@peanut.local
     username: awriter
     algorithm: sha1
     salt: b2c277df41460c87739844b5a7b2049a
-    password: 622b362d967397596490c9ffe301afabb167fa6d
+    password: admin
     is_active: true
     is_super_admin: false
     last_login: '2011-10-24 18:35:51'
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-24 18:35:51'
-
-

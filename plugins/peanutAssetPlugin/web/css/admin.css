@@ -236,7 +236,7 @@ body {
   position: absolute;
   left: -2px;
   cursor: pointer;
-  background: url('/images/admin/Media-Player.png') transparent no-repeat top left;
+  background: url('/peanutAssetPlugin/images/admin/Media-Player.png') transparent no-repeat top left;
   text-indent: -1984px;
   display: block;
   width: 16px;
@@ -836,11 +836,11 @@ body {
  */
 
 #sf_admin_container ul li.sf_admin_action_up a {
-  background: url(../images/admin/arrow_up.png) no-repeat 0 0;
+  background: url(/peanutAssetPlugin/images/admin/arrow_up.png) no-repeat 0 0;
 }
 
 #sf_admin_container ul li.sf_admin_action_down a {
-  background: url(../images/admin/arrow_down.png) no-repeat 0 0;
+  background: url(/peanutAssetPlugin/images/admin/arrow_down.png) no-repeat 0 0;
 }
 
 #sf_admin_container ul li.sf_admin_action_create.new.page a,

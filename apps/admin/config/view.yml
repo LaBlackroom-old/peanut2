@@ -13,11 +13,11 @@ default:
     viewport:      width=device-width, initial-scale=1.0
 
   stylesheets:
-    - admin.css?v=2:                                 { media: 'screen, projection' }
-    - http://fonts.googleapis.com/css?family=Oswald: { media: 'screen, project' }
-    - handheld.css?v=2:                              { media: 'handheld' }
+    - /peanutAssetPlugin/css/admin.css?v=2:              { media: 'screen, projection' }
+    - http://fonts.googleapis.com/css?family=Oswald:     { media: 'screen, project' }
+    - /peanutAssetPlugin/css/handheld.css?v=2:           { media: 'handheld' }
 
-  javascripts:     [ admin.js, jquery.tipTip.minified.js ]
+  javascripts:     [ /peanutAssetPlugin/js/admin.js, /peanutAssetPlugin/js/jquery.tipTip.minified.js, general.js ]
     
 
   has_layout:      true

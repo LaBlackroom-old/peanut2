@@ -4,7 +4,7 @@
     <h1><?php echo __('Your SEO') ?></h1>
   </header>
   
-  <?php if($sf_user->hasPermission('5')){ ?>
+  <?php if($sf_user->hasPermission('5') || $sf_user->hasPermission('4')){ ?>
   
     <section id="sf_admin_header"></section>
 

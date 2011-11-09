@@ -44,6 +44,17 @@ class sfGuardUserTable extends PluginsfGuardUserTable
   /*
    * 
    */
+  public function getUsersWithPermission($idPerm)
+  {
+    $p = $this->getUser()->addSelect('id')
+              ->andWhere('s.id = ?', $idPerm);
+    
+    return $p;
+  }
+  
+  /*
+   * 
+   */
   public function getFullUsers($active = true)
   {
     $p = $this->getUsers()

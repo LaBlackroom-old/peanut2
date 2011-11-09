@@ -4,7 +4,7 @@
     <h1><?php echo __('General settings') ?></h1>
   </header>
   
-<?php if($sf_user->hasPermission('5')){ ?>
+<?php if($sf_user->hasPermission('4') || $sf_user->hasPermission('5')){ ?>
     
     <section id="sf_admin_header"></section>
 
@@ -35,15 +35,17 @@
                   </div>
                 </div>
               </div>
-              
-              <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_news_feed">
-                <div>
-                  <?php echo $form['news_feed']->renderLabel() ?>
-                  <div class="content">
-                    <?php echo $form['news_feed']->render(array('class' => 'text-input')) ?>
+
+              <?php if($sf_user->hasPermission('5')): ?>
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_news_feed">
+                  <div>
+                    <?php echo $form['news_feed']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['news_feed']->render(array('class' => 'text-input')) ?>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <?php endif; ?>
 
             </div>
 

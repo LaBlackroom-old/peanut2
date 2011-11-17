@@ -1,0 +1,458 @@
+peanutSettings:
+  peanutSettings_1:
+    name: site_name
+    value: peanut
+  peanutSettings_2:
+    name: meteo
+    value: 'Lille, France'
+  peanutSettings_3:
+    name: society
+    value: 'La blackroom'
+  peanutSettings_4:
+    name: url
+    value: 'http://www.lablackroom.com'
+  peanutSettings_5:
+    name: adr
+    value: ''
+  peanutSettings_6:
+    name: tel
+    value: ''
+  peanutSettings_7:
+    name: geo
+    value: ''
+  peanutSettings_8:
+    name: google_mail
+    value: ''
+  peanutSettings_9:
+    name: google_password
+    value: ''
+  peanutSettings_10:
+    name: google_tracking
+    value: ''
+  peanutSettings_11:
+    name: google_guid_wt
+    value: ''
+  peanutSettings_12:
+    name: news_feed
+    value: 'https://github.com/pocky/peanut2/commits/master.atom'
+  peanutSettings_13:
+    name: meta_title
+    value: ''
+  peanutSettings_14:
+    name: meta_description
+    value: ''
+  peanutSettings_15:
+    name: meta_keywords
+    value: ''
+  peanutSettings_16:
+    name: meta_language
+    value: fr_FR
+  peanutSettings_17:
+    name: meta_robots
+    value: 'index, follow'
+  peanutSettings_18:
+    name: contact_from
+    value: noreply@peanut2.local
+  peanutSettings_19:
+    name: webmaster_name
+    value: webmaster
+  peanutSettings_20:
+    name: webmaster_mail
+    value: www.peanut2.local
+  peanutSettings_21:
+    name: subject
+    value: 'New message from your contact form'
+  peanutSettings_22:
+    name: map_name
+    value: lablackroom
+  peanutSettings_23:
+    name: map_center
+    value: Arras
+  peanutSettings_24:
+    name: map_address
+    value: '72 rue d amiens, 62000 Arras'
+  peanutSettings_25:
+    name: map_zoom
+    value: '13'
+  peanutSettings_26:
+    name: map_size
+    value: 512x288
+  peanutSettings_27:
+    name: google_guid_ga
+    value: ''
+  peanutSettings_28:
+    name: domain_name
+    value: peanut.local
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_4:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_4
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_1_5:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_5
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_1_6:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-24 16:01:27'
+    updated_at: '2011-10-24 16:01:27'
+  sfGuardGroupPermission_2_2:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_2
+    created_at: '2011-10-24 16:01:35'
+    updated_at: '2011-10-24 16:01:35'
+  sfGuardGroupPermission_3_2:
+    Group: sfGuardGroup_3
+    Permission: sfGuardPermission_2
+    created_at: '2011-10-25 10:23:22'
+    updated_at: '2011-10-25 10:23:22'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: Administrateur
+    description: 'Le groupe des administrateurs'
+    created_at: '2011-03-15 12:05:45'
+    updated_at: '2011-03-15 12:05:45'
+  sfGuardGroup_2:
+    name: Editeur
+    description: 'Le groupe des éditeurs'
+    created_at: '2011-08-17 15:36:57'
+    updated_at: '2011-08-17 15:37:43'
+  sfGuardGroup_3:
+    name: 'Writer de base'
+    description: ''
+    created_at: '2011-10-25 10:23:22'
+    updated_at: '2011-10-25 10:23:22'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: Reader
+    description: 'Cette permission permet de lire les articles'
+    created_at: '2011-10-14 11:13:05'
+    updated_at: '2011-10-14 11:13:05'
+  sfGuardPermission_2:
+    name: 'Basic Writer'
+    description: 'Cette permission permet d''être éditeur mais ne permet pas de supprimer des articles, menu...etc. '
+    created_at: '2011-10-14 11:13:38'
+    updated_at: '2011-10-14 11:13:38'
+  sfGuardPermission_3:
+    name: 'Advanced Writer '
+    description: 'Cette permission permet d''être éditeur mais aussi de supprimer des articles, menu...etc.'
+    created_at: '2011-10-21 00:00:00'
+    updated_at: '2011-10-21 00:00:00'
+  sfGuardPermission_4:
+    name: Admin
+    description: 'Cette permission définit un compte utilisateur comme "Admin"'
+    created_at: '2011-10-14 11:19:40'
+    updated_at: '2011-10-20 16:12:28'
+  sfGuardPermission_5:
+    name: Super-Admin
+    description: 'Cette permission définit un compte utilisateur comme "Super-Admin"'
+    created_at: '2011-10-14 11:17:32'
+    updated_at: '2011-10-20 16:12:18'
+  sfGuardPermission_6:
+    name: 'Accès à l''interface Admin'
+    description: 'Cette permission permet d''autoriser l''accès au back office.'
+    created_at: '2011-10-14 15:17:33'
+    updated_at: '2011-10-14 16:01:13'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_2:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_2
+    created_at: '2011-10-25 10:08:12'
+    updated_at: '2011-10-25 10:08:12'
+  sfGuardUserGroup_1_3:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_3
+    created_at: '2011-10-25 10:23:36'
+    updated_at: '2011-10-25 10:23:36'
+sfGuardUserPermission:
+  sfGuardUserPermission_1_4:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_4
+    created_at: '2011-10-24 16:03:00'
+    updated_at: '2011-10-24 16:03:03'
+  sfGuardUserPermission_1_6:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-21 17:05:00'
+    updated_at: '2011-10-21 17:05:00'
+  sfGuardUserPermission_2_2:
+    User: sfGuardUser_2
+    Permission: sfGuardPermission_2
+    created_at: '2011-10-21 17:02:09'
+    updated_at: '2011-10-21 17:02:09'
+  sfGuardUserPermission_2_6:
+    User: sfGuardUser_2
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-21 17:01:15'
+    updated_at: '2011-10-21 17:01:15'
+  sfGuardUserPermission_3_1:
+    User: sfGuardUser_3
+    Permission: sfGuardPermission_1
+    created_at: '2011-10-21 17:05:30'
+    updated_at: '2011-10-21 17:05:30'
+  sfGuardUserPermission_3_6:
+    User: sfGuardUser_3
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-21 17:05:30'
+    updated_at: '2011-10-21 17:05:30'
+  sfGuardUserPermission_4_5:
+    User: sfGuardUser_4
+    Permission: sfGuardPermission_5
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardUserPermission_4_6:
+    User: sfGuardUser_4
+    Permission: sfGuardPermission_6
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+  sfGuardUserPermission_5_3:
+    User: sfGuardUser_5
+    Permission: sfGuardPermission_3
+    created_at: '2011-10-21 17:02:56'
+    updated_at: '2011-10-21 17:02:56'
+  sfGuardUserPermission_5_6:
+    User: sfGuardUser_5
+    Permission: sfGuardPermission_6
+    created_at: '2011-10-21 17:02:56'
+    updated_at: '2011-10-21 17:02:56'
+  sfGuardUserPermission_6_5:
+    User: sfGuardUser_6
+    Permission: sfGuardPermission_5
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:29'
+  sfGuardUserPermission_6_6:
+    User: sfGuardUser_6
+    Permission: sfGuardPermission_6
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:29'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: Alexandre
+    last_name: Balmes
+    email_address: admin@peanut.local
+    username: admin
+    algorithm: sha1
+    salt: baba31155ff078e4a869d7e2c88c8cca
+    password: 5cf270d479fe4ab2cc747e704e68e572850caee7
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-09 12:18:15'
+    created_at: '2011-03-15 12:06:22'
+    updated_at: '2011-11-09 12:18:15'
+  sfGuardUser_2:
+    first_name: James
+    last_name: Bwriter
+    email_address: writer@peanut.local
+    username: bwriter
+    algorithm: sha1
+    salt: 4056ee6a94dffbbe0cff6963ffd86a44
+    password: f6da741bd02efb83b03f72f567f78a8e745afa3b
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-10-24 15:39:17'
+    created_at: '2011-10-14 16:18:08'
+    updated_at: '2011-10-24 15:39:17'
+  sfGuardUser_3:
+    first_name: Johnny
+    last_name: Reader
+    email_address: reader@peanut.local
+    username: reader
+    algorithm: sha1
+    salt: b4143a36257f02de0252d98fb80dd54e
+    password: 0208a7cb949cf1260c6405e4df3dd2d802975781
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-08 14:56:04'
+    created_at: '2011-10-14 16:20:35'
+    updated_at: '2011-11-08 14:56:04'
+  sfGuardUser_4:
+    first_name: John
+    last_name: Super
+    email_address: superadmin@peanut.local
+    username: superadmin
+    algorithm: sha1
+    salt: 7d22f96830eacd936bc942e4a5724001
+    password: 6314298282b62d6f6b8b128096cf302d58a5380d
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-09 12:11:24'
+    created_at: '2011-10-14 16:22:08'
+    updated_at: '2011-11-09 12:11:24'
+  sfGuardUser_5:
+    first_name: Jules
+    last_name: Awriter
+    email_address: advancedwriter@peanut.local
+    username: awriter
+    algorithm: sha1
+    salt: b2c277df41460c87739844b5a7b2049a
+    password: 622b362d967397596490c9ffe301afabb167fa6d
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-10-24 18:35:51'
+    created_at: '2011-10-21 17:02:56'
+    updated_at: '2011-10-24 18:35:51'
+  sfGuardUser_6:
+    first_name: Nicolas
+    last_name: DACHEZ
+    email_address: nicko@ac.com
+    username: Nicko
+    algorithm: sha1
+    salt: 763672f9c63f1cce44f18719f2ca7ce7
+    password: 2e6d9bde8377ef029e1654d095d3a1a40dd6b794
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-09 09:33:50'
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:50'
+peanutSeo:
+  peanutSeo_1:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_2:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_3:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_4:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+  peanutSeo_5:
+    title: ''
+    description: ''
+    keywords: ''
+    is_indexable: '1'
+    is_followable: '1'
+peanutItem: {  }
+peanutPage:
+  peanutPage_1:
+    type: page
+    title: Accueil
+    content: "<p>\r\n	Bonjour à tous,</p>\r\n<p>\r\n	Vous trouverez ici une démonstration des différents modules de peanut à travers leurs fonctionnalités. Le moteur est actuellement à considérer en version 4.1.1 et subit un refactoring complet. peanut est proposé sous la license MIT permettant à tous de modifier le code, exploiter le code et même changer de license sans contraintes.</p>\r\n<p>\r\n	peanut possède un backoffice complet, accessible avec identifiant et mot de passe permettant à tous, même néophyte, de pouvoir exploiter un site Internet. Chacun des modules est également présenté, documenté et testé afin de garantir un bon fonctionnement.</p>\r\n<p>\r\n	L&#39;ensemble du code est accessible en libre téléchargement sur le repository GIT du projet. Vous pouvez également suivre l&#39;évolution de peanut à travers le blog de l&#39;auteur. Enfin, peanut est livré en l&#39;état, sans garantie de fonctionnement et/ou de fiabilité. Cela n&#39;empêche cependant pas de faire de mon mieux pour ne pas livrer quelque chose d&#39;inutilisable.</p>\r\n<p>\r\n	Bien entendu, cette démonstration s&#39;agrémentera de fonctionnalités avec le temps alors en attendant, n&#39;hésitez pas à explorer le code !</p>\r\n"
+    peanutMenu: peanutMenu_1
+    sfGuardUser: sfGuardUser_1
+    status: publish
+    excerpt: ''
+    url: null
+    relation: null
+    created_at: '2011-04-04 00:00:00'
+    updated_at: '2011-06-15 23:18:22'
+    slug: accueil
+    position: '1'
+    peanutSeo: peanutSeo_1
+  peanutPage_2:
+    type: page
+    title: test
+    content: "<p>\r\n	&nbsp;</p>\r\n<p style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\r\n	Difficile d&rsquo;imaginer<strong>&nbsp;Ben Stiller</strong>&nbsp;sortir du rôle auquel il nous a accoutumés. Personnage complètement lourdingue ou simplement poisseux avec les femmes, c&rsquo;est sous cette forme qu&rsquo;on le retrouve dans quasiment tous ses films, de&nbsp;<em>Mary à tout prix</em>&nbsp;à&nbsp;<em>Zoolander</em>, en passant par&nbsp;<em>Dodgeball</em>&nbsp;et<em>&nbsp;Mon beau-père et moi.</em>..</p>\r\n<p style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\r\n	L&rsquo;égérie de la<strong>&nbsp;comédie américaine</strong>&nbsp;va pourtant opérer un virage des plus surprenants dans sa carrière. Si notre homme s&rsquo;est déjà attelé à l&rsquo;art de la&nbsp;<strong>réalisation</strong>, en passant derrière la caméra pour&nbsp;<em>Disjoncté</em>,<em>Zoolander</em>&nbsp;ou encore<em>&nbsp;Tonnerre sous les tropiques</em>, le genre du&nbsp;<strong>film d&rsquo;horreur</strong>&nbsp;est totalement absent de sa longue filmographie. Il va pourtant réaliser&nbsp;<em>The Mountain</em>, adaptation d&rsquo;un roman d&rsquo;<a href=\"http://fr.wikipedia.org/wiki/Edith_Wharton\" style=\"text-decoration: none; color: rgb(253, 1, 24); outline-width: 0px; outline-style: initial; outline-color: initial; \" target=\"_blank\">Edith Wharton</a>&nbsp;publié en 1917 et intitulé&nbsp;<em>L&rsquo;Été</em>. Certaines rumeurs suggèrent d&rsquo;ores et déjà que ce film d&rsquo;horreur s&rsquo;inspirera de<a href=\"http://www.allocine.fr/film/fichefilm_gen_cfilm=7120.html\" style=\"text-decoration: none; color: rgb(253, 1, 24); outline-width: 0px; outline-style: initial; outline-color: initial; \" target=\"_blank\"><em>Rosemary&rsquo;s Baby</em></a>, de&nbsp;<strong>Roman Polanski</strong>&hellip;</p>\r\n<p style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\r\n	Ben Stiller saura-t-il nous faire&nbsp;<strong>frissonner</strong>&nbsp;? En attendant, on le retrouvera dans le type de rôle qui lui sied si bien, au sein du film&nbsp;<a href=\"http://www.allocine.fr/film/fichefilm_gen_cfilm=186586.html\" style=\"text-decoration: none; color: rgb(253, 1, 24); outline-width: 0px; outline-style: initial; outline-color: initial; \" target=\"_blank\"><em>Le Casse de Central Park</em></a>, qui sortira le 23 novembre et dont voici la bande-annonce :</p>\r\n<p>\r\n	<span class=\"vvqbox vvqyoutube\" style=\"display: block; max-width: 100%; visibility: visible !important; margin-top: 10px; margin-right: auto; margin-bottom: 10px; margin-left: auto; width: 640px; height: 518px; \"><object data=\"http://www.youtube.com/v/RborHE1gTbM&amp;amp;color1=0x3A3A3A&amp;amp;color2=0x999999&amp;amp;rel=0&amp;amp;fs=1&amp;amp;showsearch=0&amp;amp;showinfo=0\" height=\"518\" id=\"vvq-107074-youtube-1\" style=\"max-width: 100%; visibility: visible; \" type=\"application/x-shockwave-flash\" width=\"640\"></object></span></p>\r\n<p style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\r\n	Source:&nbsp;<a href=\"http://lescinevores.com/index.php?option=com_content&amp;view=article&amp;id=2633:ben-stiller-realisera-un-film-dhorreur-&amp;catid=1:latest-news&amp;Itemid=53\" style=\"text-decoration: none; color: rgb(253, 1, 24); outline-width: 0px; outline-style: initial; outline-color: initial; \" target=\"_blank\">Les Cinévores</a></p>\r\n<p style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\r\n	Retrouvez tous les articles de la catégorie&nbsp;<a href=\"http://www.minutebuzz.com/cinema/\" style=\"text-decoration: none; color: rgb(253, 1, 24); outline-width: 0px; outline-style: initial; outline-color: initial; \" target=\"_blank\">cinéma</a>.</p>\r\n"
+    peanutMenu: peanutMenu_1
+    sfGuardUser: sfGuardUser_5
+    status: draft
+    excerpt: ''
+    url: null
+    relation: null
+    created_at: '2011-10-24 18:22:00'
+    updated_at: '2011-10-24 18:22:00'
+    slug: test
+    position: '2'
+    peanutSeo: peanutSeo_5
+peanutLink:
+  peanutLink_3:
+    type: link
+    title: contact
+    content: ''
+    peanutMenu: peanutMenu_1
+    sfGuardUser: sfGuardUser_1
+    status: draft
+    excerpt: null
+    url: 'http://www.google.com'
+    peanutXfn: peanutXfn_1
+    created_at: '2011-04-04 00:00:00'
+    updated_at: '2011-06-15 23:18:29'
+    slug: contact
+    position: '3'
+    peanutSeo: peanutSeo_2
+  peanutLink_4:
+    type: link
+    title: peanut.fr
+    content: ''
+    peanutMenu: peanutMenu_2
+    sfGuardUser: sfGuardUser_1
+    status: draft
+    excerpt: null
+    url: 'http://www.peanut.fr'
+    peanutXfn: peanutXfn_2
+    created_at: '2011-04-04 00:00:00'
+    updated_at: '2011-06-15 23:18:37'
+    slug: peanut
+    position: '1'
+    peanutSeo: peanutSeo_3
+  peanutLink_5:
+    type: link
+    title: github
+    content: ''
+    peanutMenu: peanutMenu_2
+    sfGuardUser: sfGuardUser_1
+    status: draft
+    excerpt: null
+    url: 'http://www.github.com/pocky'
+    peanutXfn: peanutXfn_3
+    created_at: '2011-04-12 00:00:00'
+    updated_at: '2011-06-15 23:18:40'
+    slug: github
+    position: '2'
+    peanutSeo: peanutSeo_4
+peanutMenu:
+  peanutMenu_1:
+    name: TopMenu
+    slug: topmenu
+    root_id: '1'
+    lft: '1'
+    rgt: '4'
+    level: '0'
+  peanutMenu_2:
+    name: FooterMenu
+    slug: footermenu
+    root_id: '2'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+peanutXfn:
+  peanutXfn_1:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''
+  peanutXfn_2:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''
+  peanutXfn_3:
+    me: false
+    friendship: ''
+    physical: ''
+    professional: ''
+    geographical: ''
+    family: ''
+    romantic: ''

@@ -47,10 +47,8 @@
 
         <?php include_component('adminMenu', 'menu') ?>
         <?php include_component('adminItem', 'menu') ?>
-        <?php
-  
-        if($sf_user->hasPermission('4') || $sf_user->hasPermission('5')): 
-        ?>
+        
+        <?php if($sf_user->hasPermission('4') || $sf_user->hasPermission('5')): ?>
         
           <nav <?php if($sf_context->getModuleName() == 'sfGuardUser'): echo 'class="selected"'; endif; ?>>
             <h3>
@@ -110,11 +108,8 @@
             </ul>
           </nav>
         
-          <?php
-          if($sf_user->hasPermission('5')):
-            include_component('settings', 'menu');
-          endif;
-          ?>
+          <?php include_component('settings', 'menu'); ?>
+        
         <?php endif; ?>
         
         <div class="user-profile">

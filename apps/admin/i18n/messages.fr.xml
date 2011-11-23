@@ -153,6 +153,34 @@
         <target>Météo</target>
       </trans-unit>
       <trans-unit>
+        <source>Facebook url</source>
+        <target>Votre page facebook (url)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like</source>
+        <target>Bouton like de Facebook</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter url</source>
+        <target>Votre profil Twitter (url)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter follow</source>
+        <target>Bouton follow Twitter</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus url</source>
+        <target>Votre page Pro Google (url)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus 1</source>
+        <target>Bouton Google+1</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Viadeo url</source>
+        <target>Votre page Viadeo (url)</target>
+      </trans-unit>
+      <trans-unit>
         <source>News feed</source>
         <target>Flux d'actualités</target>
       </trans-unit>

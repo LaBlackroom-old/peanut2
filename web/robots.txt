@@ -3,3 +3,5 @@
 
 User-agent: *
 
+Sitemap: http://mon_site.local/sitemap.xml
+

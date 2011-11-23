@@ -29,9 +29,12 @@
     <?php echo html5_javascript_include_tag('/peanutAssetPlugin/js/modernizr-1.7.min.js') ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+    
+    <?php include_component('social', 'googlePlus1Head') ?>
   </head>
 
   <body>
+
     <div id="container" class="alignCenter center container">
 
       <section id="top" class="alignLeft">
@@ -60,6 +63,16 @@
           <nav>
            <?php include_component('items', 'footerMenu') ?>
           </nav>
+          <?php include_component('social', 'facebookUrl') ?>
+          <?php include_component('social', 'facebookLike') ?>
+          
+          <?php include_component('social', 'twitterUrl') ?>
+          <?php include_component('social', 'twitterFollow') ?>
+          
+          <?php include_component('social', 'googlePlus1') ?>
+          <?php include_component('social', 'googlePlusUrl') ?>
+          
+          <?php include_component('social', 'viadeoUrl') ?>
         </footer>
 
       </section>

@@ -35,6 +35,70 @@
                   </div>
                 </div>
               </div>
+              
+              <div class="">
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_url">
+                  <div>
+                    <?php echo $form['facebook_url']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_url']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like">
+                  <div>
+                    <?php echo $form['facebook_like']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_url">
+                  <div>
+                    <?php echo $form['twitter_url']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['twitter_url']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_follow">
+                  <div>
+                    <?php echo $form['twitter_follow']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['twitter_follow']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_url">
+                  <div>
+                    <?php echo $form['google_plus_url']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['google_plus_url']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_1">
+                  <div>
+                    <?php echo $form['google_plus_1']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['google_plus_1']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_viadeo_url">
+                  <div>
+                    <?php echo $form['viadeo_url']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['viadeo_url']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
 
               <?php if($sf_user->hasPermission('5')): ?>
                 <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_news_feed">

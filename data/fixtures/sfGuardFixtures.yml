@@ -24,6 +24,9 @@ sfGuardGroupPermission:
     Permission: sfGuardPermission_2
     created_at: '2011-10-25 10:23:22'
     updated_at: '2011-10-25 10:23:22'
+
+
+
 sfGuardGroup:
   sfGuardGroup_1:
     name: Administrateur
@@ -40,6 +43,9 @@ sfGuardGroup:
     description: ''
     created_at: '2011-10-25 10:23:22'
     updated_at: '2011-10-25 10:23:22'
+
+
+
 sfGuardPermission:
   sfGuardPermission_1:
     name: Reader
@@ -71,6 +77,9 @@ sfGuardPermission:
     description: 'Cette permission permet d''autoriser l''accès au back office.'
     created_at: '2011-10-14 15:17:33'
     updated_at: '2011-10-14 16:01:13'
+
+
+
 sfGuardUserGroup:
   sfGuardUserGroup_1_2:
     User: sfGuardUser_1
@@ -82,6 +91,9 @@ sfGuardUserGroup:
     Group: sfGuardGroup_3
     created_at: '2011-10-25 10:23:36'
     updated_at: '2011-10-25 10:23:36'
+
+
+
 sfGuardUserPermission:
   sfGuardUserPermission_1_4:
     User: sfGuardUser_1
@@ -133,6 +145,29 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-21 17:02:56'
+  sfGuardUserPermission_6_5:
+    User: sfGuardUser_6
+    Permission: sfGuardPermission_5
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:29'
+  sfGuardUserPermission_6_6:
+    User: sfGuardUser_6
+    Permission: sfGuardPermission_6
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:29'
+
+
+
+sfGuardRememberKey:
+  sfGuardRememberKey_1:
+    User: sfGuardUser_1
+    remember_key: jgvrc6b3pfk0os4ksogg4wckscoogg8
+    ip_address: 192.168.60.20
+    created_at: '2011-11-10 16:51:49'
+    updated_at: '2011-11-10 16:51:49'
+
+
+
 sfGuardUser:
   sfGuardUser_1:
     first_name: Alexandre
@@ -144,9 +179,9 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-11-08 14:55:17'
+    last_login: '2011-11-23 10:44:28'
     created_at: '2011-03-15 12:06:22'
-    updated_at: '2011-11-08 14:55:17'
+    updated_at: '2011-11-23 10:44:28'
   sfGuardUser_2:
     first_name: James
     last_name: Bwriter
@@ -183,9 +218,9 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: false
-    last_login: '2011-11-08 14:53:38'
+    last_login: '2011-11-23 15:17:24'
     created_at: '2011-10-14 16:22:08'
-    updated_at: '2011-11-08 14:53:38'
+    updated_at: '2011-11-23 15:17:24'
   sfGuardUser_5:
     first_name: Jules
     last_name: Awriter
@@ -199,3 +234,24 @@ sfGuardUser:
     last_login: '2011-10-24 18:35:51'
     created_at: '2011-10-21 17:02:56'
     updated_at: '2011-10-24 18:35:51'
+  sfGuardUser_6:
+    first_name: Nicolas
+    last_name: DACHEZ
+    email_address: nicko@ac.com
+    username: Nicko
+    algorithm: sha1
+    salt: 763672f9c63f1cce44f18719f2ca7ce7
+    password: admin
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-09 09:33:50'
+    created_at: '2011-11-09 09:33:29'
+    updated_at: '2011-11-09 09:33:50'
+
+
+
+
+
+
+
+

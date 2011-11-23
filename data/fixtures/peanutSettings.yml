@@ -83,3 +83,9 @@ peanutSettings:
   peanutSettings_28:
     name: domain_name
     value: peanut.local
+  peanutSettings_29:
+    name: facebook_like
+    value: '0'
+  peanutSettings_30:
+    name: facebook_url
+    value: ''

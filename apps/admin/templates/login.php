@@ -20,7 +20,7 @@
 
     <?php echo html5_javascript_include_tag('/peanutAssetPlugin/js/modernizr-1.7.min.js') ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/peanutAssetPlugin/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
   </head>
 
   <body id="login" >

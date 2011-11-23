@@ -1,7 +1,15 @@
-@import 'lib/boilerplate.css';
-@import 'lib/grid.css';
-@import 'lib/bic.css';
-@import 'fontface.css';
+/* --------------------------------- IMPORT --------------------------------- */
+
+@import '/peanutAssetPlugin/css/lib/boilerplate.css';
+@import '/peanutAssetPlugin/css/lib/grid.css';
+@import '/peanutAssetPlugin/lib/css/bic.css';
+
+@import '/peanutAssetPlugin/no_skype.css';
+@import '/peanutAssetPlugin/fontface.css';
+
+/* ---------------------- C'est ici que tout commence ! --------------------- */
+
+/* ---------------------------------- MAIN ---------------------------------- */
 
 
 
@@ -10,6 +18,10 @@
 
 
 
+
+
+
+/* -------------------------------------------------------------------------- */
 /*
  * media queries for responsive design
  * these follow after primary styles so they will successfully override.

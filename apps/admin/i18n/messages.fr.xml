@@ -153,6 +153,18 @@
         <target>Météo</target>
       </trans-unit>
       <trans-unit>
+        <source>News feed</source>
+        <target>Flux d'actualités</target>
+      </trans-unit>
+      <trans-unit>
+        <source>This is your general settings, they are used for amin panel and/or the frontend application.</source>
+        <target>Voici les paramètres généraux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Social settings</source>
+        <target>Paramètres sociaux</target>
+      </trans-unit>
+      <trans-unit>
         <source>Facebook url</source>
         <target>Votre page facebook (url)</target>
       </trans-unit>
@@ -181,12 +193,52 @@
         <target>Votre page Viadeo (url)</target>
       </trans-unit>
       <trans-unit>
-        <source>News feed</source>
-        <target>Flux d'actualités</target>
+        <source>This is your social settings, they are used for admin panel and/or the frontend application.</source>
+        <target>Voici les paramètres sociaux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
       </trans-unit>
       <trans-unit>
-        <source>This is your general settings, they are used for amin panel and/or the frontend application.</source>
-        <target>Voici les paramètres généraux de l'application, ils sont utilisés pour le backoffce et/ou pour la partie publique du site.</target>
+        <source>Contact settings</source>
+        <target>Paramètres de contact</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your email</source>
+        <target>Votre adresse mail</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The webmaster name</source>
+        <target>Le nom du webmaster</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The webmaster email</source>
+        <target>l'adresse mail du webmaster</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Subject</source>
+        <target>Le sujet du mail</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google map name</source>
+        <target>Le nom de la Google Map</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google map center</source>
+        <target>Le centre de la Google Map</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>Google map address</source>
+        <target>L'adresse de la Google Map</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google map zoom</source>
+        <target>Le niveau de zoom de la Google Map</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google map size</source>
+        <target>La taille de la Google Map</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Here are the parameters of contact, they are used to the contact form but also for the visibility of your company.</source>
+        <target>Voici les paramètres de contact, ils sont utilisés pour le formulaire de contact mais aussi pour la visibilité de votre société.</target>
       </trans-unit>
       <trans-unit>
         <source>Your society</source>
@@ -243,6 +295,10 @@
       <trans-unit>
         <source>Your Google account</source>
         <target>Votre compte Google</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your GUID (Google Webmaster Tools)</source>
+        <target>Votre GUID (Google Webmaster Tools)</target>
       </trans-unit>
       <trans-unit>
         <source>Your GUID (Google Analytics)</source>

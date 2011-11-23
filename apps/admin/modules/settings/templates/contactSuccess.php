@@ -138,7 +138,7 @@
 
           <fieldset id="sf_fieldset_informations">
 
-            <p><?php echo __('Configure the auto message from your contact form') ?></p>
+            <p><?php echo __('Here are the parameters of contact, they are used to the contact form but also for the visibility of your company.') ?></p>
 
 
             <input name="Send" type="submit" value="<?php echo __('Submit') ?>" class="button" id="send" size="16"/>

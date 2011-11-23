@@ -10,7 +10,10 @@
     <li>
       <a href="<?php echo url_for('settings', array('action' => 'general')); ?>" title="<?php echo __('Link to', null, 'peanutCorporate') ?>"><?php echo __('General settings'); ?></a>
     </li>
-     <li>
+    <li>
+      <a href="<?php echo url_for('settings', array('action' => 'social')); ?>" title="<?php echo __('Link to', null, 'peanutCorporate') ?>"><?php echo __('Social settings'); ?></a>
+    </li>
+    <li>
       <a href="<?php echo url_for('settings', array('action' => 'contact')); ?>" title="<?php echo __('Link to', null, 'peanutCorporate') ?>"><?php echo __('Contact settings'); ?></a>
     </li>    
     <li>

@@ -62,6 +62,9 @@ mkdir -p $PLUGINS && cd $PLUGINS
 # peanutHtml5Plugin
 install_git peanutHtml5Plugin git://github.com/pocky/peanutHtml5Plugin.git master
 
+# peanutAssetPlugin
+install_git peanutAssetPlugin git://github.com/LaBlackroom/peanutAssetPlugin.git master
+
 # sfDoctrineGuardPlugin
 install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.git master
 

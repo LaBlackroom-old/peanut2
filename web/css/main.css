@@ -2,10 +2,10 @@
 
 @import '/peanutAssetPlugin/css/lib/boilerplate.css';
 @import '/peanutAssetPlugin/css/lib/grid.css';
-@import '/peanutAssetPlugin/lib/css/bic.css';
+@import '/peanutAssetPlugin/css/lib/bic.css';
 
-@import '/peanutAssetPlugin/no_skype.css';
-@import '/peanutAssetPlugin/fontface.css';
+@import '/peanutAssetPlugin/css/no_skype.css';
+@import '/peanutAssetPlugin/css/fontface.css';
 
 /* ---------------------- C'est ici que tout commence ! --------------------- */
 

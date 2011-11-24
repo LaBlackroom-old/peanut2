@@ -17,6 +17,10 @@ class socialComponents extends sfComponents
   {
   }
   
+  public function executeFacebookOpenGraph(sfWebRequest $request)
+  {
+  }
+  
   public function executeTwitterUrl(sfWebRequest $request)
   {
   }

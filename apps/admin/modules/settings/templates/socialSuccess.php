@@ -37,6 +37,15 @@
                   </div>
                 </div>
                 
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_description">
+                  <div>
+                    <?php echo $form['facebook_description']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_description']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
                 <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_url">
                   <div>
                     <?php echo $form['twitter_url']->renderLabel() ?>
@@ -97,6 +106,25 @@
     </section>
 
   </section>
+
+<script>
+  $(document).ready(function() {
+    
+    if( '1' == $('select#settings_facebook_like').val() ){
+      $('.sf_admin_form_field_facebook_description').css('display', 'block');
+    }
+      
+    $('select#settings_facebook_like').change(function() {
+      
+      if( '1' == $('select#settings_facebook_like').val() ){
+        $('.sf_admin_form_field_facebook_description').css('display', 'block');
+      }
+      else{
+        $('.sf_admin_form_field_facebook_description').css('display', 'none');
+      }
+    });
+  });
+</script>
 
 <?php  
 }

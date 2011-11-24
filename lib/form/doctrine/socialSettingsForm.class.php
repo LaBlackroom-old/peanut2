@@ -21,6 +21,10 @@ class socialSettingsForm extends peanutSettingsForm
     ));
     $this->widgetSchema['facebook_like']->setDefault(peanutConfig::get('facebook_like'));
     
+    $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText();
+    $this->widgetSchema['facebook_description']->setDefault(peanutConfig::get('facebook_description'));
+    
+    
     $this->widgetSchema['twitter_url'] = new sfWidgetFormHtml5InputText();
     $this->widgetSchema['twitter_url']->setDefault(peanutConfig::get('twitter_url'));
     

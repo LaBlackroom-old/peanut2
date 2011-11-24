@@ -173,6 +173,10 @@
         <target>Bouton like de Facebook</target>
       </trans-unit>
       <trans-unit>
+        <source>Facebook description</source>
+        <target>Description pour Facebook</target>
+      </trans-unit>
+      <trans-unit>
         <source>Twitter url</source>
         <target>Votre profil Twitter (url)</target>
       </trans-unit>

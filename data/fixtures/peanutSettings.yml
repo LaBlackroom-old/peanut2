@@ -87,5 +87,23 @@ peanutSettings:
     name: facebook_like
     value: '0'
   peanutSettings_30:
+    name: facebook_description
+    value: 'Description de votre site pour la fonction like de Facebook !'
+  peanutSettings_31:
     name: facebook_url
+    value: ''
+  peanutSettings_32:
+    name: twitter_url
+    value: ''
+  peanutSettings_33:
+    name: twitter_follow
+    value: ''
+  peanutSettings_34:
+    name: google_plus_url
+    value: ''
+  peanutSettings_35:
+    name: google_plus_1
+    value: '0'
+  peanutSettings_36:
+    name: viadeo_url
     value: ''

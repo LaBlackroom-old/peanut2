@@ -60,13 +60,13 @@ cd ../..
 mkdir -p $PLUGINS && cd $PLUGINS
 
 # peanutHtml5Plugin
-install_git peanutHtml5Plugin git://github.com/pocky/peanutHtml5Plugin.git master
+install_git peanutHtml5Plugin git://github.com/LaBlackroom/peanutHtml5Plugin.git master
 
 # peanutAssetPlugin
 install_git peanutAssetPlugin git://github.com/LaBlackroom/peanutAssetPlugin.git master
 
 # sfDoctrineGuardPlugin
-install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.git master
+install_git sfDoctrineGuardPlugin git://github.com/LaBlackroom/sfDoctrineGuardPlugin.git master
 
 # sfTaskExtraPlugin
 install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git master
@@ -75,7 +75,7 @@ install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.g
 install_git peanutCorporatePlugin git://github.com/LaBlackroom/peanutCorporatePlugin.git master
 
 # csDoctrineActAsSortablePlugin
-install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAsSortablePlugin.git master
+install_git csDoctrineActAsSortablePlugin git://github.com/LaBlackroom/csDoctrineActAsSortablePlugin.git master
 
 # sfCKEditorPlugin
 install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git master
@@ -84,14 +84,14 @@ install_git sfCKEditorPlugin git://github.com/weaverryan/sfCKEditorPlugin.git ma
 install_git peanutFormPlugin git://github.com/LaBlackroom/peanutFormPlugin.git master
 
 # peanutSeoPlugin
-install_git peanutSeoPlugin git://github.com/pocky/peanutSeoPlugin.git master
+install_git peanutSeoPlugin git://github.com/LaBlackroom/peanutSeoPlugin.git master
 
 cd ../..
 
 
 # Admin generator
 mkdir -p $GENERATOR && cd $GENERATOR
-install_git generator git://github.com/pocky/peanutGenerator.git master
+install_git generator git://github.com/LaBlackroom/peanutGenerator.git master
 
 
 cd ../..

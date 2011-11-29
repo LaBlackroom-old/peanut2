@@ -19,7 +19,7 @@
     <meta name="description" content="<?php if(!include_slot('description', peanutConfig::get('meta_description'))) { get_slot('description'); } ?>">
     <meta name="keywords" content="<?php if(!include_slot('keywords', peanutConfig::get('meta_keywords'))) { get_slot('keywords'); } ?>">
     <meta name="robots" content="<?php if(!include_slot('robots', peanutConfig::get('meta_robots'))) { get_slot('robots'); } ?>">
-    <meta name="language" content="<?php if(!include_slot('language', peanutConfig::get('meta_language'))) { get_slot('language'); } ?>">
+    <meta http-equiv="content-language" content="<?php if(!include_slot('language', peanutConfig::get('meta_language'))) { get_slot('language'); } ?>">
     
     <?php include_component('social', 'facebookOpenGraph') ?>
     

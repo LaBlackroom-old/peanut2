@@ -7,4 +7,5 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.width = '100%';
 	config.entities_latin = false;
+  config.contentsCss = '/css/www.css';
 };

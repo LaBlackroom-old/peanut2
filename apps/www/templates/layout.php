@@ -21,7 +21,11 @@
     <meta name="robots" content="<?php if(!include_slot('robots', peanutConfig::get('meta_robots'))) { get_slot('robots'); } ?>">
     <meta http-equiv="content-language" content="<?php if(!include_slot('language', peanutConfig::get('meta_language'))) { get_slot('language'); } ?>">
     
-    <?php include_component('social', 'facebookOpenGraph') ?>
+    <?php
+      if(peanutConfig::get('facebook_like') == '1'):
+        include_component('social', 'facebookOpenGraph');
+      endif;
+    ?>
     
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +35,12 @@
     <?php echo html5_javascript_include_tag('/peanutAssetPlugin/js/modernizr-1.7.min.js') ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/peanutAssetPlugin/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
-    
-    <?php include_component('social', 'googlePlus1Head') ?>
+
+    <?php
+      if(peanutConfig::get('google_plus_1') == '1' ):
+        include_component('social', 'googlePlus1Head');
+      endif;
+    ?>
   </head>
 
   <body>
@@ -44,7 +52,7 @@
         <header>
           <h1>
             <a href="<?php echo url_for('@homepage') ?>" title="<?php __('Back to homepage') ?>">
-              <?php echo peanutConfig::get('site_name') ?>
+              <?php echo peanutConfig::get('site_name', 'La Blackroom') ?>
             </a>
           </h1>
         </header>
@@ -65,16 +73,42 @@
           <nav>
            <?php include_component('items', 'footerMenu') ?>
           </nav>
-          <?php include_component('social', 'facebookUrl') ?>
-          <?php include_component('social', 'facebookLike') ?>
+
+          <?php
+            if(peanutConfig::get('facebook_url')):
+              include_component('social', 'facebookUrl');
+            endif;
+
+            if(peanutConfig::get('facebook_like') == '1'):
+              include_component('social', 'facebookLike');
+            endif;
+          ?>
           
-          <?php include_component('social', 'twitterUrl') ?>
-          <?php include_component('social', 'twitterFollow') ?>
+          <?php
+            if(peanutConfig::get('twitter_url')):
+              include_component('social', 'twitterUrl');
+            endif;
+
+            if(peanutConfig::get('twitter_follow')):
+              include_component('social', 'twitterFollow');
+            endif;
+          ?>
           
-          <?php include_component('social', 'googlePlus1') ?>
-          <?php include_component('social', 'googlePlusUrl') ?>
+          <?php
+            if(peanutConfig::get('google_plus_1') == '1'):
+              include_component('social', 'googlePlus1');
+            endif;
+
+            if(peanutConfig::get('google_plus_url')):
+              include_component('social', 'googlePlusUrl');
+            endif;
+          ?>
           
-          <?php include_component('social', 'viadeoUrl') ?>
+          <?php
+            if(peanutConfig::get('viadeo_url')):
+              include_component('social', 'viadeoUrl');
+            endif;
+          ?>
         </footer>
 
       </section>

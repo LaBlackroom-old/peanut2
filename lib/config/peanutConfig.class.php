@@ -25,7 +25,7 @@ class peanutConfig
    * @return array()
    * 
    */
-  public static function get($name)
+  public static function get($name, $default = null)
   {
     if(!self::$loaded)
     {
@@ -36,7 +36,12 @@ class peanutConfig
     
     if(null === $property)
     {
-      throw new sfException(sprintf('%s is not a valid property. peanutConfig luv u.', $name));
+      if(null === $default)
+      {
+        throw new sfException(sprintf('%s is not a valid property. Please add a default value or create this property but... Don\'t worry little boy, I luv u. Your are the best.', $name));
+      }
+
+      $property = $default;
     }
     
     return $property ;

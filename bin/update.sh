@@ -72,7 +72,7 @@ install_git sfDoctrineGuardPlugin git://github.com/pocky/sfDoctrineGuardPlugin.g
 install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git master
 
 # peanutCorporatePlugin
-install_git peanutCorporatePlugin git://github.com/pocky/peanutCorporatePlugin.git master
+install_git peanutCorporatePlugin git://github.com/LaBlackroom/peanutCorporatePlugin.git master
 
 # csDoctrineActAsSortablePlugin
 install_git csDoctrineActAsSortablePlugin git://github.com/pocky/csDoctrineActAsSortablePlugin.git master

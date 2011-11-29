@@ -14,7 +14,7 @@ default:
 
   stylesheets:
     - www.css?v=2:                             { media: 'screen, projection' }
-    - /peanutAssetPlugin/css/handheld.css?v=2: { media: 'handheld' }
+    - www-handheld.css?v=2:                    { media: 'handheld' }
 
   javascripts: 
     

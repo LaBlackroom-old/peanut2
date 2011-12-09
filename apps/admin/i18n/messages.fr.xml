@@ -164,18 +164,46 @@
         <source>Social settings</source>
         <target>Paramètres sociaux</target>
       </trans-unit>
+      
       <trans-unit>
-        <source>Facebook url</source>
-        <target>Votre page facebook (url)</target>
+        <source>Facebook request</source>
+        <target>Avez vous une page Facebook ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook page</source>
+        <target>Url de votre page Facebook :</target>
       </trans-unit>
       <trans-unit>
         <source>Facebook like</source>
-        <target>Bouton like de Facebook</target>
+        <target>Voulez-vous ajouter le bouton "J'aime" à votre site ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook title</source>
+        <target>Le titre de votre site :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook type</source>
+        <target>Le type de votre site :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook url</source>
+        <target>L'url de votre site :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook image</source>
+        <target>L'image illustrant votre site internet (125 x 125 max.) :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook sitename</source>
+        <target>Le nom de votre site internet</target>
       </trans-unit>
       <trans-unit>
         <source>Facebook description</source>
-        <target>Description pour Facebook</target>
+        <target>Une courte description de votre site :</target>
       </trans-unit>
+    
+  
+      
       <trans-unit>
         <source>Twitter url</source>
         <target>Votre profil Twitter (url)</target>

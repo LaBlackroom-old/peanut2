@@ -1,0 +1,18 @@
+sf_admin_form_field_facebook_request div label{
+  float: left;
+}
+
+.ui-widget-content,
+.ui-widget-header,
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active,
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  border: 0;
+  background: none;
+}
+.ui-state-active img, .ui-widget-content .ui-state-active img, .ui-widget-header .ui-state-active img {
+  padding-top: 10px;
+}
+
+#tabs ul{
+  margin-bottom: 20px;
+}

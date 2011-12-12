@@ -31,6 +31,27 @@ var facebook = {
   pageUrl : function(value){
     $('input#settings_facebook_page').val(value);
   },
+  //---------------------------------------------------------------------------------------------------------------
+  likeDisabled : function(attr, opacity, type){
+    
+    if(type == 1){
+      /* On remet le champ a "Choisir" */
+      $('select#settings_facebook_like').val(0);
+      
+      /* On cache les sous-champs */
+      facebook.like('none');
+    }
+    
+    /* on desactive le SELECT */
+    $('select#settings_facebook_like').attr('disabled', attr);
+    $('select#settings_facebook_like').css({
+      'opacity' : opacity, 
+      '-moz-opacity' : opacity,
+      '-ms-filter' : 'alpha(opacity='+opacity*100+')', 
+      'filter' : 'alpha(opacity='+opacity*100+')'
+    });
+  },
+  
   
   //---------------------------------------------------------------------------------------------------------------
   // CURRENT ACTION FUNCTION
@@ -43,10 +64,12 @@ var facebook = {
   currentFacebookRequest : function(){
     if( '1' == $('select#settings_facebook_request').val() ){ /* YES */
       facebook.page('block');
+      //facebook.likeDisabled('disabled', '0.5', 1)
     }
     else { /* CHOISIR OR NO */
-     facebook.page('none');
-     facebook.pageUrl('');
+      facebook.page('none');
+      facebook.pageUrl('');
+      //facebook.likeDisabled('', '1.0', 0)
     }
   },
   //---------------------------------------------------------------------------------------------------------------
@@ -73,12 +96,13 @@ var facebook = {
     $('select#settings_facebook_request').change(function() {
       if( '1' == $('select#settings_facebook_request').val() ){ /* YES */
         facebook.page('block');
+        //facebook.likeDisabled('disabled', '0.5', 1)
       }
       else { /* CHOISIR OR NO */
-       facebook.page('none');
-       facebook.pageUrl('');
+        facebook.page('none');
+        facebook.pageUrl('');
+        //facebook.likeDisabled('', '1.0', 0)
       }
-      
     });
   },
   //---------------------------------------------------------------------------------------------------------------
@@ -146,7 +170,7 @@ var twitter = {
     twitter.select_twitter_tweet_text_request(value);
   },
   //---------------------------------------------------------------------------------------------------------------
-  select_twitter_follow_request : function(value){ $('select#settings_twitter_follow_request').val(value); },
+  select_twitter_follow_request : function(value){$('select#settings_twitter_follow_request').val(value);},
   //---------------------------------------------------------------------------------------------------------------
   select_twitter_follow : function(value){
     $('select#settings_twitter_data_show_screen_name').val(value);
@@ -154,16 +178,16 @@ var twitter = {
     $('select#settings_twitter_follow_data_size').val(value);
   },
   //---------------------------------------------------------------------------------------------------------------
-  select_twitter_tweet_request : function(value){ $('select#settings_twitter_tweet_request').val(value); },
+  select_twitter_tweet_request : function(value){$('select#settings_twitter_tweet_request').val(value);},
   //---------------------------------------------------------------------------------------------------------------
   select_twitter_tweet : function(value){
     $('select#settings_twitter_show_count').val(value);
     $('select#settings_twitter_tweet_data_size').val(value);
   },
   //---------------------------------------------------------------------------------------------------------------
-  select_twitter_tweet_url_request : function(value){ $('select#settings_twitter_tweet_url_request').val(value); },
+  select_twitter_tweet_url_request : function(value){$('select#settings_twitter_tweet_url_request').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  select_twitter_tweet_text_request : function(value){ $('select#settings_twitter_tweet_text_request').val(value); },
+  select_twitter_tweet_text_request : function(value){$('select#settings_twitter_tweet_text_request').val(value);},
   
   //---------------------------------------------------------------------------------------------------------------
   // CURRENT ACTION FUNCTION
@@ -179,16 +203,16 @@ var twitter = {
   //---------------------------------------------------------------------------------------------------------------
   currentTwitterReq : function(){
     if( '1' == $('select#settings_twitter_request').val() ){ /* YES */
-        twitter.account('block'); twitter.follow_req('block'); twitter.tweet_req('block');
+        twitter.account('block');twitter.follow_req('block');twitter.tweet_req('block');
     }
     else{ /* CHOISIR OR NO */
       
       /* On cache les champs account, follow & tweet */
-      twitter.account('none'); twitter.follow_req('none'); twitter.tweet_req('none'); 
+      twitter.account('none');twitter.follow_req('none');twitter.tweet_req('none'); 
       
       /* On cache aussi les sous-champs de chacun des champs */
-      twitter.follow('none'); twitter.tweet_url_request('none');
-      twitter.tweet('none'); twitter.tweet_text_request('none');
+      twitter.follow('none');twitter.tweet_url_request('none');
+      twitter.tweet('none');twitter.tweet_text_request('none');
       
       twitter.select_all(0);
     }
@@ -259,15 +283,15 @@ var twitter = {
   changeTwitterReq : function(){
     $('select#settings_twitter_request').change(function() {
       if( '1' == $('select#settings_twitter_request').val() ){ /* YES */
-        twitter.account('block'); twitter.follow_req('block'); twitter.tweet_req('block');
+        twitter.account('block');twitter.follow_req('block');twitter.tweet_req('block');
       }
       else{ /* CHOISIR OR NO */
         /* On cache les champs account, follow & tweet */
-        twitter.account('none'); twitter.follow_req('none'); twitter.tweet_req('none'); 
+        twitter.account('none');twitter.follow_req('none');twitter.tweet_req('none'); 
 
         /* On cache aussi les sous-champs de chacun des champs */
-        twitter.follow('none'); twitter.tweet_url_request('none');
-        twitter.tweet('none'); twitter.tweet_text_request('none');
+        twitter.follow('none');twitter.tweet_url_request('none');
+        twitter.tweet('none');twitter.tweet_text_request('none');
         
         twitter.select_all(0);
       }
@@ -391,21 +415,21 @@ var google = {
     google.textarea_google_plus_description(valueText);
   },
   //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_size : function(value){ $('select#settings_google_plus_size').val(value); },
+  select_google_plus_size : function(value){$('select#settings_google_plus_size').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_note : function(value){ $('select#settings_google_plus_note').val(value); },
+  select_google_plus_note : function(value){$('select#settings_google_plus_note').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_url : function(value){ $('input#settings_google_plus_url').val(value); },
+  input_google_plus_url : function(value){$('input#settings_google_plus_url').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_type : function(value){ $('select#settings_google_plus_type').val(value); },
+  select_google_plus_type : function(value){$('select#settings_google_plus_type').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_other_type : function(value){ $('input#settings_google_plus_other_type').val(value); },
+  input_google_plus_other_type : function(value){$('input#settings_google_plus_other_type').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_title : function(value){ $('input#settings_google_plus_title').val(value); },
+  input_google_plus_title : function(value){$('input#settings_google_plus_title').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_url_image : function(value){ $('input#settings_google_plus_url_image').val(value); },
+  input_google_plus_url_image : function(value){$('input#settings_google_plus_url_image').val(value);},
   //---------------------------------------------------------------------------------------------------------------
-  textarea_google_plus_description : function(value){ $('textarea#settings_google_plus_description').val(value); },
+  textarea_google_plus_description : function(value){$('textarea#settings_google_plus_description').val(value);},
   
   //---------------------------------------------------------------------------------------------------------------
   // CURRENT ACTION FUNCTION

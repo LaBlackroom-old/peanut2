@@ -12,6 +12,9 @@ class socialSettingsForm extends peanutSettingsForm
 {
   public function configure()
   {
+    
+    /* -- FACEBOOK -- */
+    
     $this->widgetSchema['facebook_request'] = new sfWidgetFormChoice(array(
         'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
     ));
@@ -32,7 +35,8 @@ class socialSettingsForm extends peanutSettingsForm
       $this->widgetSchema['facebook_title']->setDefault(peanutConfig::get('facebook_title'));
       
       $this->widgetSchema['facebook_type'] = new sfWidgetFormChoice(array(
-        'choices' => array( 'activity'        => 'Activity', 
+        'choices' => array( '0'               => 'Choisir...',
+                            'activity'        => 'Activity', 
                             'sport'           => 'Sport', 
                             'bar'             => 'Bar', 
                             'company'         => 'Company', 
@@ -69,7 +73,8 @@ class socialSettingsForm extends peanutSettingsForm
                             'tv_show'         => 'TV Show',
                             'blog'            => 'Blog', 
                             'website'         => 'Website',
-                            'article'         => 'Article')
+                            'article'         => 'Article'
+                          )
           
       ));
       $this->widgetSchema['facebook_type']->setDefault(peanutConfig::get('facebook_type'));
@@ -77,25 +82,8 @@ class socialSettingsForm extends peanutSettingsForm
       $this->widgetSchema['facebook_url'] = new sfWidgetFormHtml5InputText();
       $this->widgetSchema['facebook_url']->setDefault(peanutConfig::get('facebook_url'));
       
-      /*
-      $this->widgetSchema['facebook_image'] = new sfWidgetFormInputFileEditable(array(
-        'label' => 'Facebook Image',
-        'file_src' => '/uploads/fbLikeImg/',
-        'is_image' => true,
-        'edit_mode' => !$this->isNew(),
-        'template' => '%file% %input% %delete% %delete_label%'
-      ));
-
-      $this->validatorSchema['facebook_image'] = new sfValidatorFile(array(
-          'required'   => false,
-          'path'       => sfConfig::get('sf_upload_dir').'/fbLikeImg',
-          'validated_file_class' => 'peanutValidatedFile',
-      ));
-
-      $this->validatorSchema['facebook_image_delete'] = new sfValidatorPass();
-      $this->widgetSchema['facebook_image']->setDefault(peanutConfig::get('facebook_image'));
-      */
-      
+      $this->widgetSchema['facebook_image'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['facebook_image']->setDefault(peanutConfig::get('facebook_image'));      
       
       $this->widgetSchema['facebook_sitename'] = new sfWidgetFormHtml5InputText();
       $this->widgetSchema['facebook_sitename']->setDefault(peanutConfig::get('facebook_sitename'));
@@ -103,13 +91,150 @@ class socialSettingsForm extends peanutSettingsForm
       $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText();
       $this->widgetSchema['facebook_description']->setDefault(peanutConfig::get('facebook_description'));
     
-    
-    
-    
-    
-    
-    
-    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      /* -- TWITTER -- */
+      $this->widgetSchema['twitter_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['twitter_request']->setDefault(peanutConfig::get('twitter_request'));
+      
+      /* 1 - Follow */
+      $this->widgetSchema['twitter_follow_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['twitter_follow_request']->setDefault(peanutConfig::get('twitter_follow_request'));
+      
+      /* YES */
+      $this->widgetSchema['twitter_account'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_account']->setDefault(peanutConfig::get('twitter_account'));
 
+      
+      $this->widgetSchema['twitter_data_show_screen_name'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'No', '1' => 'Yes')
+      ));
+      $this->widgetSchema['twitter_data_show_screen_name']->setDefault(peanutConfig::get('twitter_data_show_screen_name'));
+
+      $this->widgetSchema['twitter_data_show_count'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'No', '1' => 'Yes')
+      ));
+      $this->widgetSchema['twitter_data_show_count']->setDefault(peanutConfig::get('twitter_data_show_count'));
+ 
+      $this->widgetSchema['twitter_follow_data_size'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Small', '1' => 'Large')
+      ));
+      $this->widgetSchema['twitter_follow_data_size']->setDefault(peanutConfig::get('twitter_follow_data_size'));
+     
+      
+      
+      /* 2 - Tweet */
+      $this->widgetSchema['twitter_tweet_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['twitter_tweet_request']->setDefault(peanutConfig::get('twitter_tweet_request'));
+    
+      $this->widgetSchema['twitter_tweet_url_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Use the page url', '1' => 'Configure...')
+      ));
+      $this->widgetSchema['twitter_tweet_url_request']->setDefault(peanutConfig::get('twitter_tweet_url_request'));
+      
+      $this->widgetSchema['twitter_tweet_url'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_url']->setDefault(peanutConfig::get('twitter_tweet_url'));
+      
+      $this->widgetSchema['twitter_tweet_text_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Use the title of the page', '1' => 'Configure...')
+      ));
+      $this->widgetSchema['twitter_tweet_text_request']->setDefault(peanutConfig::get('twitter_tweet_text_request'));
+      
+      $this->widgetSchema['twitter_tweet_text'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_text']->setDefault(peanutConfig::get('twitter_tweet_text'));
+      
+      $this->widgetSchema['twitter_show_count'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'No', '1' => 'Yes')
+      ));
+      $this->widgetSchema['twitter_show_count']->setDefault(peanutConfig::get('twitter_show_count'));
+      
+      $this->widgetSchema['twitter_tweet_data_size'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Small', '1' => 'Large')
+      ));
+      $this->widgetSchema['twitter_tweet_data_size']->setDefault(peanutConfig::get('twitter_tweet_data_size'));
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      /* -- GOOGLE -- */
+      
+      /* 1 - Page perso */
+      $this->widgetSchema['google_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['google_request']->setDefault(peanutConfig::get('google_request'));
+      
+      $this->widgetSchema['google_page_link'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_page_link']->setDefault(peanutConfig::get('google_page_link'));
+      
+      
+      /* 2 - Bouton +1 */
+      $this->widgetSchema['google_plus_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['google_plus_request']->setDefault(peanutConfig::get('google_plus_request'));
+      
+      $this->widgetSchema['google_plus_size'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Petit (15px)', '1' => 'Moyen (20px)', '2' => 'Standard (24px)', '3' => 'Grand (60px)')
+      ));
+      $this->widgetSchema['google_plus_size']->setDefault(peanutConfig::get('google_plus_size'));
+      
+      $this->widgetSchema['google_plus_note'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Info-bulle', '1' => 'Intégrée', '2' => 'Aucune')
+      ));
+      $this->widgetSchema['google_plus_note']->setDefault(peanutConfig::get('google_plus_note'));
+      
+      $this->widgetSchema['google_plus_url'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_url']->setDefault(peanutConfig::get('google_plus_url'));
+      
+      $this->widgetSchema['google_plus_type'] = new sfWidgetFormChoice(array(
+        'choices' => array( '0'             => 'Choisir...',
+                            'Article'       => 'Article', 
+                            'Bblog'         => 'Blog', 
+                            'Book'          => 'Book',
+                            'Event'         => 'Event', 
+                            'LocalBusiness' => 'Entreprise Locale', 
+                            'Organization'  => 'Organization', 
+                            'Person'        => 'Person', 
+                            'Product'       => 'Product', 
+                            'Review'        => 'Review', 
+                            'Review'        => 'Review',
+                            '1'             => 'Autres'
+                          )
+          
+      ));
+      $this->widgetSchema['google_plus_type']->setDefault(peanutConfig::get('google_plus_type'));
+      
+      $this->widgetSchema['google_plus_other_type'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_other_type']->setDefault(peanutConfig::get('google_plus_other_type'));
+      
+      $this->widgetSchema['google_plus_title'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_title']->setDefault(peanutConfig::get('google_plus_title'));
+      
+      $this->widgetSchema['google_plus_url_image'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_url_image']->setDefault(peanutConfig::get('google_plus_url_image'));
+      
+      $this->widgetSchema['google_plus_description'] = new sfWidgetFormTextarea();
+      $this->widgetSchema['google_plus_description']->setDefault(peanutConfig::get('google_plus_url'));
   }
 }

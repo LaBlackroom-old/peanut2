@@ -195,34 +195,109 @@
       </trans-unit>
       <trans-unit>
         <source>Facebook sitename</source>
-        <target>Le nom de votre site internet</target>
+        <target>Le nom de votre site internet :</target>
       </trans-unit>
       <trans-unit>
         <source>Facebook description</source>
         <target>Une courte description de votre site :</target>
       </trans-unit>
     
-  
-      
+    
+    
       <trans-unit>
-        <source>Twitter url</source>
-        <target>Votre profil Twitter (url)</target>
+        <source>Twitter request</source>
+        <target>Avez vous un compte Twitter ?</target>
       </trans-unit>
       <trans-unit>
-        <source>Twitter follow</source>
-        <target>Bouton follow Twitter</target>
+        <source>Twitter follow request</source>
+        <target>Voulez vous ajouter le bouton Follow sur votre site ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet request</source>
+        <target>Voulez vous ajouter le bouton Tweet sur votre site ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter account</source>
+        <target>Votre compte Twitter :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter data show screen name</source>
+        <target>Afficher le nom du compte :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter data show count</source>
+        <target>Afficher le nombre de follower :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter follow data size</source>
+        <target>Taille du bouton :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet url request</source>
+        <target>URL à partager :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet text request</source>
+        <target>Texte associé :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter show count</source>
+        <target>Afficher le nombre de Tweet :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet data size</source>
+        <target>Taille du bouton :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet url</source>
+        <target>Url personnalisé :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet text</source>
+        <target>Texte personnalisé :</target>
+      </trans-unit>
+
+
+
+      <trans-unit>
+        <source>Google request</source>
+        <target>Avez vous un compte Google+ ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google page link</source>
+        <target>Identifiant de votre compte G+ :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus request</source>
+        <target>Voulez-vous ajouter un bouton +1 à votre site ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus size</source>
+        <target>Taille :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus note</source>
+        <target>Annotation :</target>
       </trans-unit>
       <trans-unit>
         <source>Google plus url</source>
-        <target>Votre page Pro Google (url)</target>
+        <target>URL associée :</target>
       </trans-unit>
       <trans-unit>
-        <source>Google plus 1</source>
-        <target>Bouton Google+1</target>
+        <source>Google plus type</source>
+        <target>Type de page :</target>
       </trans-unit>
       <trans-unit>
-        <source>Viadeo url</source>
-        <target>Votre page Viadeo (url)</target>
+        <source>Google plus title</source>
+        <target>Titre :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus url image</source>
+        <target>URL de l'image :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Google plus description</source>
+        <target>Description :</target>
       </trans-unit>
       <trans-unit>
         <source>This is your social settings, they are used for admin panel and/or the frontend application.</source>

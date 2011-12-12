@@ -26,9 +26,21 @@
                   <li><a href="#tabs-3"><img src="/images/social/google.png" lat="" /></a></li>
                 </ul>
   
-  
-                <div id="tabs-1" class="facebook">
+                <!-- FACEBOOK -->
                 
+                <div id="tabs-1" class="facebook">
+
+                  <p>
+                    Le lien vers votre page Facebook ainsi que le bouton "J'aime" vous permet de partager 
+                    du contenu avec vos amis sur Facebook. Lorsqu'un utilisateur clique sur le bouton 
+                    de votre site, il partage le contenu avec l'ensemble de ces amis. Suivez le guide
+                    pour associer votre compte Facebook et créer un bouton "J'aime" sur votre site.
+                    <strong>Si vous ne disposez pas de compte Facebook, vous pouvez en créer un en cliquant 
+                    <a target="_blank" href="http://www.facebook.com/" alt="Créer un compte Twitter">ici</a></strong>.
+                    
+                    
+                  </p>
+    
                   <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_request">
                     <div>
                       <?php echo $form['facebook_request']->renderLabel() ?>
@@ -47,7 +59,7 @@
                     </div>
                   </div>
                   
-                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like">
+                  <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like">
                   <div>
                     <?php echo $form['facebook_like']->renderLabel() ?>
                     <div class="content">
@@ -82,6 +94,15 @@
                     </div>
                   </div>
                 </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_image">
+                  <div>
+                    <?php echo $form['facebook_image']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_image']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
  
                 <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_sitename">
                   <div>
@@ -100,66 +121,246 @@
                     </div>
                   </div>
                 </div>
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                </div>
-                
-                
-                
-                
-                
-                
-                
-                
-	<div id="tabs-2">
-		<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-	</div>
-	<div id="tabs-3">
-		<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-    </div>
-
-                
-                
-                
-                
-                
-                
-                
-            <br />    <br />    <br />    <br />    <br />    <br />    <br />    
-                
-                
-                
-                
-                
+              </div>
               
                 
+                <!-- TWITTER -->
                 
+                <div id="tabs-2" class="twitter">
                 
+                  <p>
+                    Ajoutez des boutons à votre site Web pour aider vos visiteurs à partager 
+                    du contenu avec vous sur Twitter. Suivez le guide pour ajouter les boutons Follow
+                    et Tweet sur votre site. <strong>Si vous ne disposez pas de compte Twitter, vous 
+                    pouvez en créer un en cliquant 
+                    <a target="_blank" href="http://twitter.com/" alt="Créer un compte Twitter">ici</a></strong>.
+                  </p>
                 
-                
-                
-                
-                
-                
-                
-                
-                
+                  <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_request">
+                    <div>
+                      <?php echo $form['twitter_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_account">
+                    <div>
+                      <?php echo $form['twitter_account']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_account']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_follow_request">
+                    <div>
+                      <?php echo $form['twitter_follow_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_follow_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_data_show_screen_name">
+                    <div>
+                      <?php echo $form['twitter_data_show_screen_name']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_data_show_screen_name']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_data_show_count">
+                    <div>
+                      <?php echo $form['twitter_data_show_count']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_data_show_count']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_follow_data_size">
+                    <div>
+                      <?php echo $form['twitter_follow_data_size']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_follow_data_size']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_request">
+                    <div>
+                      <?php echo $form['twitter_tweet_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_url_request">
+                    <div>
+                      <?php echo $form['twitter_tweet_url_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_url_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
                 
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_url">
+                    <div>
+                      <?php echo $form['twitter_tweet_url']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_url']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_text_request">
+                    <div>
+                      <?php echo $form['twitter_tweet_text_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_text_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_text">
+                    <div>
+                      <?php echo $form['twitter_tweet_text']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_text']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_show_count">
+                    <div>
+                      <?php echo $form['twitter_show_count']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_show_count']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_data_size">
+                    <div>
+                      <?php echo $form['twitter_tweet_data_size']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_data_size']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
                 
-                
-                
-                
+ 
+                <!-- GOOGLE -->
+                <div id="tabs-3" class="google">
+                  
+                  <p>
+                    Doter votre site d'un bouton +1 ! Votre site se démarque et tout le monde peut 
+                    recommander votre contenu lors d'une recherche Google. Suivez le guide en associant
+                    votre page google, en créant un bouton +1 et un extrait Google+ personnalisé.
+                    <strong>Si vous ne disposez pas de compte Google+, vous pouvez en créer un en cliquant 
+                    <a target="_blank" href="http://plus.google.com/" alt="Créer un compte Google+">ici</a></strong>.
+                  </p>
+                  
+                  <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_request">
+                    <div>
+                      <?php echo $form['google_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_page_link">
+                    <div>
+                      <?php echo $form['google_page_link']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_page_link']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_request">
+                    <div>
+                      <?php echo $form['google_plus_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_size">
+                    <div>
+                      <?php echo $form['google_plus_size']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_size']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_note">
+                    <div>
+                      <?php echo $form['google_plus_note']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_note']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_url">
+                    <div>
+                      <?php echo $form['google_plus_url']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_url']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_type">
+                    <div>
+                      <?php echo $form['google_plus_type']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_type']->render(array('class' => 'text-input')) ?>
+                        <span class="google_plus_other_type">
+                          <?php echo $form['google_plus_other_type']->render(array('class' => 'text-input')) ?>
+                          <a target="_blank" href="http://schema.org/docs/schemas.html" alt="schema.org">Plus d'infos</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_title">
+                    <div>
+                      <?php echo $form['google_plus_title']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_title']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_url_image">
+                    <div>
+                      <?php echo $form['google_plus_url_image']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_url_image']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_description">
+                    <div>
+                      <?php echo $form['google_plus_description']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_description']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
 
           </fieldset>
@@ -186,14 +387,16 @@
   $(document).ready(function() {
 
     // FACEBOOK
-    base.currentFacebook();
-    base.changeFacebookRequest();
-    base.changeFacebookLike();
+    facebook.current();
+    facebook.change();
     
     //TWITTER
- 
-    //GOOGLE
-
+    twitter.current();
+    twitter.change();
+    
+    //GOOGLE 
+    google.current();
+    google.change();
   });
 </script>
 

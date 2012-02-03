@@ -16,7 +16,7 @@ class socialSettingsForm extends peanutSettingsForm
     /* -- FACEBOOK -- */
     
     $this->widgetSchema['facebook_request'] = new sfWidgetFormChoice(array(
-        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+        'choices' => array('0' => 'Choisir...', '1' => 'Yes', '2' => 'No')
     ));
     $this->widgetSchema['facebook_request']->setDefault(peanutConfig::get('facebook_request'));
     
@@ -24,78 +24,137 @@ class socialSettingsForm extends peanutSettingsForm
     $this->widgetSchema['facebook_page'] = new sfWidgetFormHtml5InputText();
     $this->widgetSchema['facebook_page']->setDefault(peanutConfig::get('facebook_page'));
     
-    /* NO --> */
+    
+    
+    
+    
+    
     $this->widgetSchema['facebook_like'] = new sfWidgetFormChoice(array(
-        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+        'choices' => array('0' => 'Choisir...', '1' => 'Yes', '2' => 'No')
     ));
     $this->widgetSchema['facebook_like']->setDefault(peanutConfig::get('facebook_like'));
-    
-      /* YES */
-      $this->widgetSchema['facebook_title'] = new sfWidgetFormHtml5InputText();
-      $this->widgetSchema['facebook_title']->setDefault(peanutConfig::get('facebook_title'));
-      
-      $this->widgetSchema['facebook_type'] = new sfWidgetFormChoice(array(
-        'choices' => array( '0'               => 'Choisir...',
-                            'activity'        => 'Activity', 
-                            'sport'           => 'Sport', 
-                            'bar'             => 'Bar', 
-                            'company'         => 'Company', 
-                            'cafe'            => 'Cafe', 
-                            'hotel'           => 'Hotel', 
-                            'restaurant'      => 'Restaurant', 
-                            'cause'           => 'Cause', 
-                            'sports_league'   => 'Sport League', 
-                            'sports_team'     => 'Sport Team', 
-                            'band'            => 'Band', 
-                            'government'      => 'Government', 
-                            'non_profit'      => 'Non Profit', 
-                            'school'          => 'School', 
-                            'university'      => 'University',
-                            'actor'           => 'Actor', 
-                            'athlete'         => 'Athlete', 
-                            'author'          => 'Author', 
-                            'director'        => 'Director', 
-                            'musician'        => 'Musician', 
-                            'politician'      => 'Politician', 
-                            'public_figure'   => 'Public Figure', 
-                            'city'            => 'City', 
-                            'country'         => 'Country', 
-                            'landmark'        => 'Landmark', 
-                            'state_province'  => 'State Province', 
-                            'album'           => 'Album', 
-                            'book'            => 'Book', 
-                            'drink'           => 'Drink',
-                            'food'            => 'Food', 
-                            'game'            => 'Game',
-                            'product'         => 'Product', 
-                            'song'            => 'Song',
-                            'movie'           => 'Movie', 
-                            'tv_show'         => 'TV Show',
-                            'blog'            => 'Blog', 
-                            'website'         => 'Website',
-                            'article'         => 'Article'
-                          )
-          
-      ));
-      $this->widgetSchema['facebook_type']->setDefault(peanutConfig::get('facebook_type'));
 
-      $this->widgetSchema['facebook_url'] = new sfWidgetFormHtml5InputText();
-      $this->widgetSchema['facebook_url']->setDefault(peanutConfig::get('facebook_url'));
-      
-      $this->widgetSchema['facebook_image'] = new sfWidgetFormHtml5InputText();
-      $this->widgetSchema['facebook_image']->setDefault(peanutConfig::get('facebook_image'));      
-      
-      $this->widgetSchema['facebook_sitename'] = new sfWidgetFormHtml5InputText();
-      $this->widgetSchema['facebook_sitename']->setDefault(peanutConfig::get('facebook_sitename'));
+        /* Send Button */
+        $this->widgetSchema['facebook_like_send_button'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'No', '1' => 'Yes')
+        ));
+        $this->widgetSchema['facebook_like_send_button']->setDefault(peanutConfig::get('facebook_like_send_button'));
 
-      $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText();
-      $this->widgetSchema['facebook_description']->setDefault(peanutConfig::get('facebook_description'));
-    
+        /* Layout Style (standard / count / box) */
+        $this->widgetSchema['facebook_like_layout_style'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'standard', '1' => 'button_count', '2' => 'box_count')
+        ));
+        $this->widgetSchema['facebook_like_layout_style']->setDefault(peanutConfig::get('facebook_like_layout_style'));
+
+        /* width */
+        $this->widgetSchema['facebook_like_width'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_like_width']->setDefault(peanutConfig::get('facebook_like_width'));
+
+        /* Show Face */
+        $this->widgetSchema['facebook_like_show_face'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'No', '1' => 'Yes')
+        ));
+        $this->widgetSchema['facebook_like_show_face']->setDefault(peanutConfig::get('facebook_like_show_face'));
+
+        /* Verb to display */
+        $this->widgetSchema['facebook_like_verb_to_display'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'J\'aime', '1' => 'Recommander')
+        ));
+        $this->widgetSchema['facebook_like_verb_to_display']->setDefault(peanutConfig::get('facebook_like_verb_to_display'));
+        
+        /* Color Scheme */
+        $this->widgetSchema['facebook_like_color_scheme'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'light', '1' => 'dark')
+        ));
+        $this->widgetSchema['facebook_like_color_scheme']->setDefault(peanutConfig::get('facebook_like_color_scheme'));
+
+        /* Font */
+        $this->widgetSchema['facebook_like_font'] = new sfWidgetFormChoice(array(
+          'choices' => array('0' => 'Choisir...',
+                             'arial' => 'Arial', 
+                             'lucida grande' => 'Lucida Grande',
+                             'segoe ui' => 'Segoe UI',
+                             'tahoma' => 'Tahoma',
+                             'trebuchet ms' => 'Trebuchet MS',
+                             'verdana' => 'Verdana'
+                             )
+        ));
+        $this->widgetSchema['facebook_like_font']->setDefault(peanutConfig::get('facebook_like_font'));
       
       
-      
-      
-      
+    /* YES */
+    $this->widgetSchema['facebook_share'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir...', '1' => 'Yes', '2' => 'No')
+    ));
+    $this->widgetSchema['facebook_share']->setDefault(peanutConfig::get('facebook_share'));
+
+
+        /* YES */
+        $this->widgetSchema['facebook_title'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_title']->setDefault(peanutConfig::get('facebook_title'));
+
+        $this->widgetSchema['facebook_type'] = new sfWidgetFormChoice(array(
+          'choices' => array( '0'               => 'Choisir...',
+                              'activity'        => 'Activity', 
+                              'sport'           => 'Sport', 
+                              'bar'             => 'Bar', 
+                              'company'         => 'Company', 
+                              'cafe'            => 'Cafe', 
+                              'hotel'           => 'Hotel', 
+                              'restaurant'      => 'Restaurant', 
+                              'cause'           => 'Cause', 
+                              'sports_league'   => 'Sport League', 
+                              'sports_team'     => 'Sport Team', 
+                              'band'            => 'Band', 
+                              'government'      => 'Government', 
+                              'non_profit'      => 'Non Profit', 
+                              'school'          => 'School', 
+                              'university'      => 'University',
+                              'actor'           => 'Actor', 
+                              'athlete'         => 'Athlete', 
+                              'author'          => 'Author', 
+                              'director'        => 'Director', 
+                              'musician'        => 'Musician', 
+                              'politician'      => 'Politician', 
+                              'public_figure'   => 'Public Figure', 
+                              'city'            => 'City', 
+                              'country'         => 'Country', 
+                              'landmark'        => 'Landmark', 
+                              'state_province'  => 'State Province', 
+                              'album'           => 'Album', 
+                              'book'            => 'Book', 
+                              'drink'           => 'Drink',
+                              'food'            => 'Food', 
+                              'game'            => 'Game',
+                              'product'         => 'Product', 
+                              'song'            => 'Song',
+                              'movie'           => 'Movie', 
+                              'tv_show'         => 'TV Show',
+                              'blog'            => 'Blog', 
+                              'website'         => 'Website',
+                              'article'         => 'Article'
+                            )
+
+        ));
+        $this->widgetSchema['facebook_type']->setDefault(peanutConfig::get('facebook_type'));
+
+        $this->widgetSchema['facebook_url'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_url']->setDefault(peanutConfig::get('facebook_url'));
+
+        $this->widgetSchema['facebook_image'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_image']->setDefault(peanutConfig::get('facebook_image'));      
+
+        $this->widgetSchema['facebook_sitename'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_sitename']->setDefault(peanutConfig::get('facebook_sitename'));
+
+        $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_description']->setDefault(peanutConfig::get('facebook_description'));
+
+
+
+
+
+
       
       
       

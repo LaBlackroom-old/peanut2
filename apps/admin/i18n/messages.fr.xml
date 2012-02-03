@@ -178,6 +178,48 @@
         <target>Voulez-vous ajouter le bouton "J'aime" à votre site ?</target>
       </trans-unit>
       <trans-unit>
+        <source>Facebook like send button</source>
+        <target>Ajouter un bouton "Envoyer" ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like layout style</source>
+        <target>Quel style ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like width</source>
+        <target>Quelle taille (en px) ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like show face</source>
+        <target>Faut-il montrer les visages ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like verb to display</source>
+        <target>Quel verbe utiliser ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like other verb to display</source>
+        <target>Votre verbe :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like color scheme</source>
+        <target>Quelle couleur ?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Facebook like font</source>
+        <target>Quelle police ?</target>
+      </trans-unit>
+      
+      
+      
+      
+      
+      
+      <trans-unit>
+        <source>Facebook share</source>
+        <target>Voulez-vous personnaliser les options de partage de votre site ?</target>
+      </trans-unit>
+      <trans-unit>
         <source>Facebook title</source>
         <target>Le titre de votre site :</target>
       </trans-unit>

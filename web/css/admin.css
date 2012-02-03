@@ -35,6 +35,17 @@ sf_admin_form_field_facebook_request div label{
 /* FACEBOOK */
 select#settings_facebook_request{ left: 250px; }
 select#settings_facebook_like{ left: 390px; }
+
+select#settings_facebook_like_send_button{ left: 250px; }
+select#settings_facebook_like_layout_style{ left: 250px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_like_width{ left: 250px; /*width:863px;*/  width:187px;}
+select#settings_facebook_like_show_face{ left: 250px; }
+select#settings_facebook_like_verb_to_display{ left: 250px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_like_other_verb_to_display{ left: 250px; /*width:863px;*/  width:187px;}
+select#settings_facebook_like_color_scheme{ left: 250px; }
+select#settings_facebook_like_font{ left: 250px; }
+
+select#settings_facebook_share{ left: 470px; }
 #authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_title{ left: 173px; width:930px; }
 select#settings_facebook_type{ left: 173px; }
 #authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_url{ left: 173px; width:930px; }

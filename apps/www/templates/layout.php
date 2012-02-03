@@ -11,9 +11,10 @@
     <?php include_metas() ?>
 
     <title>
-    <?php if (!include_slot('title')): ?>
-      <?php echo peanutConfig::get('meta_title') ?>
-    <?php endif; ?>
+    <?php //if (!include_slot('title')): ?>
+      <?php //echo peanutConfig::get('meta_title') ?>
+    <?php //endif; ?>
+      Paye ton titre
     </title>
 
     <meta name="description" content="<?php if(!include_slot('description', peanutConfig::get('meta_description'))) { get_slot('description'); } ?>">
@@ -22,9 +23,9 @@
     <meta http-equiv="content-language" content="<?php if(!include_slot('language', peanutConfig::get('meta_language'))) { get_slot('language'); } ?>">
     
     <?php
-      if(peanutConfig::get('facebook_like') == '1'):
-        include_component('social', 'facebookOpenGraph');
-      endif;
+    
+    include_component('social', 'facebookUrl'); /* Canonical link for Facebook */  
+    include_component('social', 'facebookOpenGraph'); /* Open Graph */
     ?>
     
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -36,11 +37,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/peanutAssetPlugin/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 
-    <?php
-      if(peanutConfig::get('google_plus_1') == '1' ):
-        include_component('social', 'googlePlus1Head');
-      endif;
-    ?>
+    
   </head>
 
   <body>
@@ -75,40 +72,14 @@
           </nav>
 
           <?php
-            if(peanutConfig::get('facebook_url')):
-              include_component('social', 'facebookUrl');
-            endif;
-
-            if(peanutConfig::get('facebook_like') == '1'):
-              include_component('social', 'facebookLike');
-            endif;
+            include_component('social', 'facebookLike'); /* Like button for Facebook */
           ?>
           
-          <?php
-            if(peanutConfig::get('twitter_url')):
-              include_component('social', 'twitterUrl');
-            endif;
-
-            if(peanutConfig::get('twitter_follow')):
-              include_component('social', 'twitterFollow');
-            endif;
-          ?>
           
-          <?php
-            if(peanutConfig::get('google_plus_1') == '1'):
-              include_component('social', 'googlePlus1');
-            endif;
-
-            if(peanutConfig::get('google_plus_url')):
-              include_component('social', 'googlePlusUrl');
-            endif;
-          ?>
           
-          <?php
-            if(peanutConfig::get('viadeo_url')):
-              include_component('social', 'viadeoUrl');
-            endif;
-          ?>
+          
+          
+          
         </footer>
 
       </section>
@@ -141,4 +112,3 @@
     
   </body>
 </html>
-

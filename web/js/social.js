@@ -7,7 +7,17 @@ var facebook = {
     $('.sf_admin_form_field_facebook_page').css('display', display);
   },
   //---------------------------------------------------------------------------------------------------------------
-  like : function(display){
+  likeDisplay : function(display){
+    $('.sf_admin_form_field_facebook_like_send_button').css('display', display);
+    $('.sf_admin_form_field_facebook_like_layout_style').css('display', display);
+    $('.sf_admin_form_field_facebook_like_width').css('display', display);
+    $('.sf_admin_form_field_facebook_like_show_face').css('display', display);
+    $('.sf_admin_form_field_facebook_like_verb_to_display').css('display', display);
+    $('.sf_admin_form_field_facebook_like_color_scheme').css('display', display);
+    $('.sf_admin_form_field_facebook_like_font').css('display', display);   
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  openGraphDisplay : function(display){
     $('.sf_admin_form_field_facebook_title').css('display', display);
     $('.sf_admin_form_field_facebook_type').css('display', display);
     $('.sf_admin_form_field_facebook_url').css('display', display);
@@ -28,6 +38,16 @@ var facebook = {
     $('input#settings_facebook_description').val(valueText);
   },
   //---------------------------------------------------------------------------------------------------------------
+  like : function(valueText, valueInt){
+    $('select#settings_facebook_like_send_button').val(valueInt);
+    $('select#settings_facebook_like_layout_style').val(valueInt);
+    $('input#settings_facebook_like_width').val(valueText);
+    $('select#settings_facebook_like_show_face').val(valueInt);
+    $('select#settings_facebook_like_verb_to_display').val(valueInt);
+    $('select#settings_facebook_like_color_scheme').val(valueInt);
+    $('input#settings_facebook_like_font').val(valueText);
+  },
+  //---------------------------------------------------------------------------------------------------------------
   pageUrl : function(value){
     $('input#settings_facebook_page').val(value);
   },
@@ -39,7 +59,7 @@ var facebook = {
       $('select#settings_facebook_like').val(0);
       
       /* On cache les sous-champs */
-      facebook.like('none');
+      facebook.openGraphDisplay('none');
     }
     
     /* on desactive le SELECT */
@@ -58,7 +78,8 @@ var facebook = {
   //---------------------------------------------------------------------------------------------------------------
   current : function(){
     facebook.currentFacebookRequest();
-    facebook.currentFacebookLike();  
+    facebook.currentFacebookLike();
+    facebook.currentFacebookShare();
   },
   //---------------------------------------------------------------------------------------------------------------
   currentFacebookRequest : function(){
@@ -75,10 +96,20 @@ var facebook = {
   //---------------------------------------------------------------------------------------------------------------
   currentFacebookLike : function(){
     if( '1' == $('select#settings_facebook_like').val() ){ /* YES */
-      facebook.like('block');
+      facebook.likeDisplay('block');
     }
     else{ /* CHOISIR  OR NO */
-      facebook.like('none');
+      facebook.likeDisplay('none');
+      facebook.like("", 0);
+    }
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  currentFacebookShare : function(){
+    if( '1' == $('select#settings_facebook_share').val() ){ /* YES */
+      facebook.openGraphDisplay('block');
+    }
+    else{ /* CHOISIR  OR NO */
+      facebook.openGraphDisplay('none');
       facebook.openGraph("", 0);
     }
   },
@@ -89,6 +120,7 @@ var facebook = {
   change : function(){
     facebook.changeFacebookRequest();
     facebook.changeFacebookLike();
+    facebook.changeFacebookShare();
   },
   //---------------------------------------------------------------------------------------------------------------
   changeFacebookRequest : function(){
@@ -110,10 +142,23 @@ var facebook = {
     
     $('select#settings_facebook_like').change(function() {
       if( '1' == $('select#settings_facebook_like').val() ){ /* YES */
-        facebook.like('block');
+        facebook.likeDisplay('block');
+      }
+      else{ /* CHOISIR  OR NO */ 
+        facebook.likeDisplay('none');
+        facebook.like("", 0);
+      }
+    });
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  changeFacebookShare : function(){
+    
+    $('select#settings_facebook_share').change(function() {
+      if( '1' == $('select#settings_facebook_share').val() ){ /* YES */
+        facebook.openGraphDisplay('block');
       }
       else{ /* CHOISIR  OR NO */
-        facebook.like('none');
+        facebook.openGraphDisplay('none');
         facebook.openGraph("", 0);
       }
     });

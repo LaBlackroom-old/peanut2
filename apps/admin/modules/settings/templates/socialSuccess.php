@@ -59,11 +59,84 @@
                     </div>
                   </div>
                   
+                  <!-- OpenGraph -->
                   <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like">
                   <div>
                     <?php echo $form['facebook_like']->renderLabel() ?>
                     <div class="content">
                       <?php echo $form['facebook_like']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_send_button">
+                  <div>
+                    <?php echo $form['facebook_like_send_button']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_send_button']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_layout_style">
+                  <div>
+                    <?php echo $form['facebook_like_layout_style']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_layout_style']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_width">
+                  <div>
+                    <?php echo $form['facebook_like_width']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_width']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_show_face">
+                  <div>
+                    <?php echo $form['facebook_like_show_face']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_show_face']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_verb_to_display">
+                  <div>
+                    <?php echo $form['facebook_like_verb_to_display']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_verb_to_display']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+ 
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_color_scheme">
+                  <div>
+                    <?php echo $form['facebook_like_color_scheme']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_color_scheme']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div style="display:none" class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_like_font">
+                  <div>
+                    <?php echo $form['facebook_like_font']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_like_font']->render(array('class' => 'text-input')) ?>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_facebook_share">
+                  <div>
+                    <?php echo $form['facebook_share']->renderLabel() ?>
+                    <div class="content">
+                      <?php echo $form['facebook_share']->render(array('class' => 'text-input')) ?>
                     </div>
                   </div>
                 </div>

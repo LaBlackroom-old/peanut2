@@ -182,6 +182,7 @@ var twitter = {
     $('.sf_admin_form_field_twitter_data_show_screen_name').css('display', display);
     $('.sf_admin_form_field_twitter_data_show_count').css('display', display);
     $('.sf_admin_form_field_twitter_follow_data_size').css('display', display);
+    $('.sf_admin_form_field_twitter_follow_lang').css('display', display);
   },
   //---------------------------------------------------------------------------------------------------------------
   tweet_req : function(display){
@@ -215,12 +216,15 @@ var twitter = {
     twitter.select_twitter_tweet_text_request(value);
   },
   //---------------------------------------------------------------------------------------------------------------
+  input_twitter_account : function(value){$('input#settings_twitter_account').val(value);},
+  //---------------------------------------------------------------------------------------------------------------
   select_twitter_follow_request : function(value){$('select#settings_twitter_follow_request').val(value);},
   //---------------------------------------------------------------------------------------------------------------
   select_twitter_follow : function(value){
     $('select#settings_twitter_data_show_screen_name').val(value);
     $('select#settings_twitter_data_show_count').val(value);
     $('select#settings_twitter_follow_data_size').val(value);
+    $('select#settings_twitter_follow_lang').val(value);
   },
   //---------------------------------------------------------------------------------------------------------------
   select_twitter_tweet_request : function(value){$('select#settings_twitter_tweet_request').val(value);},
@@ -233,6 +237,29 @@ var twitter = {
   select_twitter_tweet_url_request : function(value){$('select#settings_twitter_tweet_url_request').val(value);},
   //---------------------------------------------------------------------------------------------------------------
   select_twitter_tweet_text_request : function(value){$('select#settings_twitter_tweet_text_request').val(value);},
+  //---------------------------------------------------------------------------------------------------------------
+  disabled: function(){
+    $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').attr('disabled', 'disabled');
+    $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').css({
+      'opacity' : '0.5', 
+      '-moz-opacity' : '0.5',
+      '-ms-filter' : 'alpha(opacity=50)', 
+      'filter' : 'alpha(opacity=50)'
+    });
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  enabled: function(){
+    $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').attr('disabled', '');
+    $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').css({
+      'opacity' : '1.0', 
+      '-moz-opacity' : '1.0',
+      '-ms-filter' : 'alpha(opacity=100)', 
+      'filter' : 'alpha(opacity=100)'
+    });
+  },
+  
+  
+  
   
   //---------------------------------------------------------------------------------------------------------------
   // CURRENT ACTION FUNCTION
@@ -248,18 +275,19 @@ var twitter = {
   //---------------------------------------------------------------------------------------------------------------
   currentTwitterReq : function(){
     if( '1' == $('select#settings_twitter_request').val() ){ /* YES */
-        twitter.account('block');twitter.follow_req('block');twitter.tweet_req('block');
+        twitter.account('block'); twitter.follow_req('block'); twitter.tweet_req('block');
     }
     else{ /* CHOISIR OR NO */
       
       /* On cache les champs account, follow & tweet */
-      twitter.account('none');twitter.follow_req('none');twitter.tweet_req('none'); 
+      twitter.account('none'); twitter.follow_req('none'); twitter.tweet_req('none'); 
       
       /* On cache aussi les sous-champs de chacun des champs */
-      twitter.follow('none');twitter.tweet_url_request('none');
-      twitter.tweet('none');twitter.tweet_text_request('none');
+      twitter.follow('none'); twitter.tweet_url_request('none');
+      twitter.tweet('none'); twitter.tweet_text_request('none');
       
       twitter.select_all(0);
+      twitter.input_twitter_account("");
     }
   },
   //---------------------------------------------------------------------------------------------------------------
@@ -303,13 +331,7 @@ var twitter = {
   //---------------------------------------------------------------------------------------------------------------
   currentAccount : function(){
     if( "" == $('input#settings_twitter_account').val() ){
-      $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').attr('disabled', 'disabled');
-      $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').css({
-        'opacity' : '0.5', 
-        '-moz-opacity' : '0.5',
-        '-ms-filter' : 'alpha(opacity=50)', 
-        'filter' : 'alpha(opacity=50)'
-      });
+      twitter.disabled();
     }
   },
   
@@ -329,6 +351,12 @@ var twitter = {
     $('select#settings_twitter_request').change(function() {
       if( '1' == $('select#settings_twitter_request').val() ){ /* YES */
         twitter.account('block');twitter.follow_req('block');twitter.tweet_req('block');
+        
+        /* Rend les champs disabled */
+        if($('input#settings_twitter_account').val() == 0){
+          twitter.disabled();
+        }
+        
       }
       else{ /* CHOISIR OR NO */
         /* On cache les champs account, follow & tweet */
@@ -339,6 +367,7 @@ var twitter = {
         twitter.tweet('none');twitter.tweet_text_request('none');
         
         twitter.select_all(0);
+        twitter.input_twitter_account("");
       }
     });
   },
@@ -391,23 +420,11 @@ var twitter = {
   //---------------------------------------------------------------------------------------------------------------
   changeAccount : function(){
     $('input#settings_twitter_account').live('keyup',function(){
-      if(this.value.length > 0){
-        $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').attr('disabled', '');
-        $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').css({
-          'opacity' : '1.0', 
-          '-moz-opacity' : '1.0',
-          '-ms-filter' : 'alpha(opacity=100)', 
-          'filter' : 'alpha(opacity=100)'
-      });
+      if(this.value.length > 0){ 
+        twitter.enabled(); 
       }
-      else{
-        $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').attr('disabled', 'disabled');
-        $('select#settings_twitter_tweet_request, select#settings_twitter_follow_request').css({
-          'opacity' : '0.5', 
-          '-moz-opacity' : '0.5',
-          '-ms-filter' : 'alpha(opacity=50)', 
-          'filter' : 'alpha(opacity=50)'
-        });
+      else{ 
+        twitter.disabled();
         
         /* On remet les valeurs des SELECT à "Choisir" */
         $('select#settings_twitter_follow_request, select#settings_twitter_tweet_request').val(0);

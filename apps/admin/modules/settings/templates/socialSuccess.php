@@ -262,6 +262,15 @@
                       </div>
                     </div>
                   </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_follow_lang">
+                    <div>
+                      <?php echo $form['twitter_follow_lang']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_follow_lang']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
 
                   <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_request">
                     <div>

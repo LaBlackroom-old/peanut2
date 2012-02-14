@@ -63,11 +63,13 @@ select#settings_twitter_tweet_request{ left: 388px; }
 select#settings_twitter_data_show_screen_name{ left: 250px; }
 select#settings_twitter_data_show_count{ left: 250px; }
 select#settings_twitter_follow_data_size{ left: 250px; }
+select#settings_twitter_follow_lang{ left: 250px; }
 
 select#settings_twitter_tweet_url_request{ left: 250px; }
 select#settings_twitter_tweet_text_request{ left: 250px; }
 select#settings_twitter_show_count{ left: 250px; }
 select#settings_twitter_tweet_data_size{ left: 250px; }
+
 
 #authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_url{ left: 143px; width:960px; }
 #authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_text{ left: 163px; width:940px; }

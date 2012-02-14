@@ -26,6 +26,8 @@
     
     include_component('social', 'facebookUrl'); /* Canonical link for Facebook */  
     include_component('social', 'facebookOpenGraph'); /* Open Graph */
+    
+    include_component('social', 'twitterUrl'); /* Canonical link for Twitter */
     ?>
     
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -73,6 +75,7 @@
 
           <?php
             include_component('social', 'facebookLike'); /* Like button for Facebook */
+            include_component('social', 'twitterFollow'); /* Follow for Twitter */
           ?>
           
           

@@ -275,6 +275,10 @@
         <target>Taille du bouton :</target>
       </trans-unit>
       <trans-unit>
+        <source>Twitter follow lang</source>
+        <target>Langue :</target>
+      </trans-unit>
+      <trans-unit>
         <source>Twitter tweet url request</source>
         <target>URL à partager :</target>
       </trans-unit>

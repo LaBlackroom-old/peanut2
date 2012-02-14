@@ -192,6 +192,10 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['twitter_follow_data_size']->setDefault(peanutConfig::get('twitter_follow_data_size'));
      
+      $this->widgetSchema['twitter_follow_lang'] = new sfWidgetFormChoice(array(
+        'choices' => array('en' => 'English', 'fr' => 'Francais')
+      ));
+      $this->widgetSchema['twitter_follow_lang']->setDefault(peanutConfig::get('twitter_follow_lang'));
       
       
       /* 2 - Tweet */

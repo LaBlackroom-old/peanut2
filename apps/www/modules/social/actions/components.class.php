@@ -29,6 +29,10 @@ class socialComponents extends sfComponents
   {
   }
   
+  public function executeTwitterTweet(sfWebRequest $request)
+  {
+  }
+  
   public function executeGooglePlusUrl(sfWebRequest $request)
   {
   }

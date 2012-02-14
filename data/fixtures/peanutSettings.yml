@@ -119,6 +119,9 @@ peanutSettings:
   peanutSettings_40:
     name: twitter_tweet_request
     value: '1'
+  peanutSettings_41:
+    name: twitter_follow_lang
+    value: en
   peanutSettings_42:
     name: twitter_account
     value: ''
@@ -136,13 +139,13 @@ peanutSettings:
     value: '0'
   peanutSettings_48:
     name: twitter_tweet_url
-    value: '0'
+    value: ''
   peanutSettings_49:
     name: twitter_tweet_text_request
     value: '0'
   peanutSettings_50:
     name: twitter_tweet_text
-    value: '0'
+    value: ''
   peanutSettings_51:
     name: twitter_show_count
     value: '0'
@@ -157,7 +160,7 @@ peanutSettings:
     value: ''
   peanutSettings_55:
     name: google_plus_request
-    value: '2'
+    value: '0'
   peanutSettings_56:
     name: google_plus_size
     value: '0'
@@ -200,9 +203,21 @@ peanutSettings:
   peanutSettings_69:
     name: facebook_like_verb_to_display
     value: '0'
-  peanutSettings_71:
+  peanutSettings_70:
     name: facebook_like_color_scheme
     value: '0'
-  peanutSettings_72:
+  peanutSettings_71:
     name: facebook_like_font
+    value: '0'
+  peanutSettings_73:
+    name: twitter_tweet_lang
+    value: en
+  peanutSettings_74:
+    name: twitter_tweet_recommended
+    value: ''
+  peanutSettings_75:
+    name: twitter_tweet_hashtag
+    value: ''
+  peanutSettings_76:
+    name: google_plus_perso_request
     value: '0'

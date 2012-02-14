@@ -333,7 +333,35 @@
                         <?php echo $form['twitter_tweet_data_size']->render(array('class' => 'text-input')) ?>
                       </div>
                     </div>
-                  </div>    
+                  </div> 
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_lang">
+                    <div>
+                      <?php echo $form['twitter_tweet_lang']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_lang']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_recommended">
+                    <div>
+                      <?php echo $form['twitter_tweet_recommended']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_recommended']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_twitter_tweet_hashtag">
+                    <div>
+                      <?php echo $form['twitter_tweet_hashtag']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['twitter_tweet_hashtag']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
                 
  

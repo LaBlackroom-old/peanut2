@@ -70,7 +70,7 @@ class socialSettingsForm extends peanutSettingsForm
 
         /* Font */
         $this->widgetSchema['facebook_like_font'] = new sfWidgetFormChoice(array(
-          'choices' => array('0' => 'Choisir...',
+          'choices' => array('0' => 'Par défaut',
                              'arial' => 'Arial', 
                              'lucida grande' => 'Lucida Grande',
                              'segoe ui' => 'Segoe UI',
@@ -230,7 +230,16 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['twitter_tweet_data_size']->setDefault(peanutConfig::get('twitter_tweet_data_size'));
 
+      $this->widgetSchema['twitter_tweet_lang'] = new sfWidgetFormChoice(array(
+        'choices' => array('en' => 'English', 'fr' => 'Francais')
+      ));
+      $this->widgetSchema['twitter_tweet_lang']->setDefault(peanutConfig::get('twitter_tweet_lang'));
       
+      $this->widgetSchema['twitter_tweet_recommended'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_recommended']->setDefault(peanutConfig::get('twitter_tweet_recommended'));
+      
+      $this->widgetSchema['twitter_tweet_hashtag'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_hashtag']->setDefault(peanutConfig::get('twitter_tweet_hashtag'));
       
       
       

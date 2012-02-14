@@ -46,17 +46,17 @@ select#settings_facebook_like_color_scheme{ left: 250px; }
 select#settings_facebook_like_font{ left: 250px; }
 
 select#settings_facebook_share{ left: 470px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_title{ left: 173px; width:930px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_title{ left: 173px; width:485px; }
 select#settings_facebook_type{ left: 173px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_url{ left: 173px; width:930px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_image{ left: 388px; width:715px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_sitename{ left: 230px; width:873px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_description{ left: 280px; width:823px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_page{ left: 223px; width:880px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_url{ left: 173px; width:485px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_image{ left: 388px; width:270px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_sitename{ left: 230px; width:428px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_description{ left: 280px; width:378px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_facebook_page{ left: 223px; width:188px; }
 
 /* TWITTER */
 select#settings_twitter_request{ left: 235px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_account{ left: 173px; width:930px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_account{ left: 173px; width:250px; }
 select#settings_twitter_follow_request{ left: 388px; }
 select#settings_twitter_tweet_request{ left: 388px; }
 
@@ -69,10 +69,12 @@ select#settings_twitter_tweet_url_request{ left: 250px; }
 select#settings_twitter_tweet_text_request{ left: 250px; }
 select#settings_twitter_show_count{ left: 250px; }
 select#settings_twitter_tweet_data_size{ left: 250px; }
+select#settings_twitter_tweet_lang{ left: 250px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_recommended{ left: 250px; width:188px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_hashtag{ left: 250px; width:188px; }
 
-
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_url{ left: 143px; width:960px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_text{ left: 163px; width:940px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_url{ left: 250px; width:188px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_text{ left: 250px; width:188px; }
 
 /* GOOGLE */
 select#settings_google_request{ left: 240px; }

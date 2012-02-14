@@ -76,6 +76,7 @@
           <?php
             include_component('social', 'facebookLike'); /* Like button for Facebook */
             include_component('social', 'twitterFollow'); /* Follow for Twitter */
+            include_component('social', 'twitterTweet'); /* Tweet for Twitter */
           ?>
           
           

@@ -295,6 +295,18 @@
         <target>Taille du bouton :</target>
       </trans-unit>
       <trans-unit>
+        <source>Twitter tweet lang</source>
+        <target>Langue :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet recommended</source>
+        <target>Recommandation :</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Twitter tweet hashtag</source>
+        <target>Hashtag (commence par #) :</target>
+      </trans-unit>
+      <trans-unit>
         <source>Twitter tweet url</source>
         <target>Url personnalisé :</target>
       </trans-unit>

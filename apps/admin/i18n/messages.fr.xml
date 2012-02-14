@@ -341,6 +341,12 @@
         <source>Google plus url</source>
         <target>URL associée :</target>
       </trans-unit>
+      
+      
+      <trans-unit>
+        <source>Google plus perso request</source>
+        <target>Voulez vous créer un extrait Google+ personnalisé ?</target>
+      </trans-unit>
       <trans-unit>
         <source>Google plus type</source>
         <target>Type de page :</target>

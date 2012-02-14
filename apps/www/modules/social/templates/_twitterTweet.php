@@ -37,7 +37,7 @@
     $tweet .= 'data-hashtags="' . peanutConfig::get('twitter_tweet_hashtag') . '"';
   endif;
    
-  /* twitter_tweet_lang */
+  /* Language (English [en] by default) */
   $tweet .= ' data-lang="' . peanutConfig::get('twitter_tweet_lang') . '"';
 
 ?>

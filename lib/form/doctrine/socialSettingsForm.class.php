@@ -279,6 +279,15 @@ class socialSettingsForm extends peanutSettingsForm
       $this->widgetSchema['google_plus_url'] = new sfWidgetFormHtml5InputText();
       $this->widgetSchema['google_plus_url']->setDefault(peanutConfig::get('google_plus_url'));
       
+      
+      
+      
+      
+      $this->widgetSchema['google_plus_perso_request'] = new sfWidgetFormChoice(array(
+        'choices' => array('0' => 'Choisir', '1' => 'Yes', '2' => 'No')
+      ));
+      $this->widgetSchema['google_plus_perso_request']->setDefault(peanutConfig::get('google_plus_perso_request'));
+
       $this->widgetSchema['google_plus_type'] = new sfWidgetFormChoice(array(
         'choices' => array( '0'             => 'Choisir...',
                             'Article'       => 'Article', 

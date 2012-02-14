@@ -8,24 +8,24 @@
     $follow = 'class="twitter-follow-button" ';
     $name = '';
     
-    /* twitter_data_show_count */
+    /* Show count (true by default) */
     if( "0" == peanutConfig::get('twitter_data_show_count') ):
       $follow .= ' data-show-count="false"';
     endif;
     
-    /* twitter_data_show_screen_name */
+    /* Show username (true by default) */
     if( "0" == peanutConfig::get('twitter_data_show_screen_name') ):
       $follow .= ' data-show-screen-name="false"';
     else:
       $name = peanutConfig::get('twitter_account');
     endif;
     
-    /* twitter_follow_data_size */
+    /* Large button (small by default) */
     if( "1" == peanutConfig::get('twitter_follow_data_size') ):
       $follow .= ' data-size="large"';
     endif;
     
-    /* twitter_follow_lang */
+    /* Language (English [en] by default) */
     $follow .= ' data-lang="' . peanutConfig::get('twitter_follow_lang') . '"';
 ?>
 

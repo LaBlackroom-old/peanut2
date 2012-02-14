@@ -77,21 +77,21 @@ select#settings_twitter_tweet_lang{ left: 250px; }
 #authenticated div.sf_admin_form #sf_fieldset_content input#settings_twitter_tweet_text{ left: 250px; width:188px; }
 
 /* GOOGLE */
-select#settings_google_request{ left: 240px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_page_link{ left: 240px; width:873px; }
+select#settings_google_request{ left: 250px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_page_link{ left: 250px; width:188px; }
 
 select#settings_google_plus_request{ left: 350px; }
 select#settings_google_plus_size{ left: 130px; }
 select#settings_google_plus_note{ left: 130px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_url{ left: 130px; width:993px; }
-select#settings_google_plus_type{ left: 130px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_other_type{ left: 130px; width:993px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_title{ left: 130px; width:993px; }
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_url_image{ left: 130px; width:993px; }
-#authenticated div.sf_admin_form #sf_fieldset_content textarea#settings_google_plus_description{ width:1113px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_url{ left: 130px; width:188px; }
 
-#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_other_type{ top: 5px; left: 350px; width:630px; }
-.google_plus_other_type a{ position: absolute; top:9px; left: 1030px; }
+select#settings_google_plus_perso_request{ left: 375px; }
+select#settings_google_plus_type{ left: 130px; }
+#authenticated div.sf_admin_form #sf_fieldset_content span.google_plus_other_type input#settings_google_plus_other_type{ left: 375px; width:188px; }
+.google_plus_other_type a{ position: absolute; top:10px; left: 590px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_title{ left: 130px; width:188px; }
+#authenticated div.sf_admin_form #sf_fieldset_content input#settings_google_plus_url_image{ left: 130px; width:188px; }
+#authenticated div.sf_admin_form #sf_fieldset_content textarea#settings_google_plus_description{ width:308px; resize:none; }
 
 #tabs-1 p, #tabs-2 p, #tabs-3 p{
 

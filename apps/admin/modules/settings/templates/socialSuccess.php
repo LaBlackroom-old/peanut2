@@ -36,7 +36,7 @@
                     de votre site, il partage le contenu avec l'ensemble de ces amis. Suivez le guide
                     pour associer votre compte Facebook et créer un bouton "J'aime" sur votre site.
                     <strong>Si vous ne disposez pas de compte Facebook, vous pouvez en créer un en cliquant 
-                    <a target="_blank" href="http://www.facebook.com/" alt="Créer un compte Twitter">ici</a></strong>.
+                    <a target="_blank" href="http://www.facebook.com/" alt="Créer un compte Facebook">ici</a></strong>.
                     
                     
                   </p>
@@ -429,6 +429,17 @@
                       </div>
                     </div>
                   </div>
+                  
+                  
+                  <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_perso_request">
+                    <div>
+                      <?php echo $form['google_plus_perso_request']->renderLabel() ?>
+                      <div class="content">
+                        <?php echo $form['google_plus_perso_request']->render(array('class' => 'text-input')) ?>
+                      </div>
+                    </div>
+                  </div>
+                  
                   
                   <div style="display: none;" class="sf_admin_form_row sf_admin_text sf_admin_form_field_google_plus_type">
                     <div>

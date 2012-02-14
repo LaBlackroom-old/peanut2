@@ -477,118 +477,149 @@ var google = {
   //-------------------------------------------------------------------------------------------------------------------------
   // CSS FUNCTION
   //---------------------------------------------------------------------------------------------------------------
-  pageLink : function(display){
-    $('.sf_admin_form_field_google_page_link').css('display', display);
-  },
+  google_page : function(display){ $('.sf_admin_form_field_google_page_link').css('display', display); },
   //---------------------------------------------------------------------------------------------------------------
-  plus : function(display){
+  google_plus_request : function(display){
     $('.sf_admin_form_field_google_plus_size').css('display', display);
     $('.sf_admin_form_field_google_plus_note').css('display', display);
     $('.sf_admin_form_field_google_plus_url').css('display', display);
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  google_plus_perso_request : function(display){
     $('.sf_admin_form_field_google_plus_type').css('display', display);
     $('.sf_admin_form_field_google_plus_title').css('display', display);
     $('.sf_admin_form_field_google_plus_url_image').css('display', display);
     $('.sf_admin_form_field_google_plus_description').css('display', display);
   },
   //---------------------------------------------------------------------------------------------------------------
-  otherType : function(display){
+  google_other_type_request : function(display){
     $('.google_plus_other_type').css('display', display);
   },
+
+  //###########################################################################################################################
 
   //---------------------------------------------------------------------------------------------------------------
   // VALUE SELECT FUNCTION
   //---------------------------------------------------------------------------------------------------------------
-  select_all : function(valueText, valueInt){
-    google.select_google_plus_size(valueInt);
-    google.select_google_plus_note(valueInt);
-    google.input_google_plus_url(valueText);
-    google.select_google_plus_type(valueInt);
-    google.input_google_plus_other_type(valueText);
-    google.input_google_plus_title(valueText);
-    google.input_google_plus_url_image(valueText);
-    google.textarea_google_plus_description(valueText);
+  input_google_page: function(value){$('input#settings_google_page_link').val(value);},
+  //---------------------------------------------------------------------------------------------------------------
+  selectInput_google_plus : function(valueText, valueInt){
+    $('select#settings_google_plus_size').val(valueInt);
+    $('select#settings_google_plus_note').val(valueInt);
+    $('input#settings_google_plus_url').val(valueText);
+  },
+  //-------------------------------------------------------------------------------------------------------------------------
+  selectInput_google_plus_perso : function(valueText, valueInt){
+    $('select#settings_google_plus_type').val(valueInt);
+    $('input#settings_google_plus_title').val(valueText);
+    $('input#settings_google_plus_url_image').val(valueText);
+    $('textarea#settings_google_plus_description').val(valueText);
   },
   //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_size : function(value){$('select#settings_google_plus_size').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_note : function(value){$('select#settings_google_plus_note').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_url : function(value){$('input#settings_google_plus_url').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  select_google_plus_type : function(value){$('select#settings_google_plus_type').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
   input_google_plus_other_type : function(value){$('input#settings_google_plus_other_type').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_title : function(value){$('input#settings_google_plus_title').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  input_google_plus_url_image : function(value){$('input#settings_google_plus_url_image').val(value);},
-  //---------------------------------------------------------------------------------------------------------------
-  textarea_google_plus_description : function(value){$('textarea#settings_google_plus_description').val(value);},
+  
+  //###########################################################################################################################
   
   //---------------------------------------------------------------------------------------------------------------
   // CURRENT ACTION FUNCTION
   //---------------------------------------------------------------------------------------------------------------
   current : function(){
-    google.currentGoogleReq();
-    google.currentGooglePlusReq();
+    google.currentGoogleRequest();
+    google.currentGooglePlusRequest();
+    google.currentGooglePlusPersoRequest();
       google.currentGooglePlusOtherType();
   },
   //---------------------------------------------------------------------------------------------------------------
-  currentGoogleReq : function(){
+  currentGoogleRequest : function(){
     if( '1' == $('select#settings_google_request').val() ){ /* YES */
-      google.pageLink('block');
+      google.google_page('block');
     }
     else{ /* CHOISIR OR NO */
-      google.pageLink('none');
+      google.google_page('none');
+      google.input_google_page("");
     }
   },
   //---------------------------------------------------------------------------------------------------------------
-  currentGooglePlusReq : function(){
+  currentGooglePlusRequest : function(){
     if( '1' == $('select#settings_google_plus_request').val() ){ /* YES */
-      google.plus('block');
+      google.google_plus_request('block');
     }
     else{ /* CHOISIR OR NO */
-      google.plus('none');
+      google.google_plus_request('none');
+      google.selectInput_google_plus("", 0);
+    }
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  currentGooglePlusPersoRequest : function(){
+    if( '1' == $('select#settings_google_plus_perso_request').val() ){ /* YES */
+      google.google_plus_perso_request('block');
+    }
+    else{ /* CHOISIR OR NO */
+      google.google_plus_perso_request('none');
+      google.selectInput_google_plus_perso("", 0);
+      
+      google.google_other_type_request('none');
+      google.input_google_plus_other_type("");
     }
   },
   //---------------------------------------------------------------------------------------------------------------
   currentGooglePlusOtherType : function(){
     if( '1' == $('select#settings_google_plus_type').val() ){ /* Autres */
-      google.otherType('block');
+      google.google_other_type_request('block');
     }
     else{ /* Tous sauf "Autres" */
-      google.otherType('none');
+      google.google_other_type_request('none');
+      google.input_google_plus_other_type("");
     }
   },
+  
+  //###########################################################################################################################
   
   //---------------------------------------------------------------------------------------------------------------
   // CHANGE FUNCTION
   //---------------------------------------------------------------------------------------------------------------
   change : function(){
-    google.changeGoogleReq();
-    google.changeGooglePlusReq();
-    google.changeGooglePlusOtherType();
+    google.changeGoogleRequest();
+    google.changeGooglePlusRequest();
+    google.changeGooglePlusPersoRequest();
+      google.changeGooglePlusOtherType();
   },
   //---------------------------------------------------------------------------------------------------------------
-  changeGoogleReq : function(){
+  changeGoogleRequest : function(){
     $('select#settings_google_request').change(function() {
       if( '1' == $('select#settings_google_request').val() ){ /* YES */
-        google.pageLink('block');
+        google.google_page('block');
       }
       else{ /* CHOISIR OR NO */
-        google.pageLink('none');
+        google.google_page('none');
+        google.input_google_page("");
       }
     });
   },
   //---------------------------------------------------------------------------------------------------------------
-  changeGooglePlusReq : function(){
+  changeGooglePlusRequest : function(){
     $('select#settings_google_plus_request').change(function() {
       if( '1' == $('select#settings_google_plus_request').val() ){ /* YES */
-        google.plus('block');
+        google.google_plus_request('block');
       }
       else{ /* CHOISIR OR NO */
-        google.plus('none');
-        google.select_all("", 0);
+        google.google_plus_request('none');
+        google.selectInput_google_plus("", 0);
+      }
+    });
+  },
+  //---------------------------------------------------------------------------------------------------------------
+  changeGooglePlusPersoRequest : function(){
+    $('select#settings_google_plus_perso_request').change(function() {      
+      if( '1' == $('select#settings_google_plus_perso_request').val() ){ /* YES */
+        google.google_plus_perso_request('block');        
+      }
+      else{ /* CHOISIR OR NO */
+        google.google_plus_perso_request('none');
+        google.selectInput_google_plus_perso("", 0);
+        
+        google.google_other_type_request('none');
+        google.input_google_plus_other_type("");
       }
     });
   },
@@ -596,10 +627,11 @@ var google = {
   changeGooglePlusOtherType : function(){
     $('select#settings_google_plus_type').change(function() {
       if( '1' == $('select#settings_google_plus_type').val() ){ /* Autres */
-        google.otherType('block');
+        google.google_other_type_request('block');
       }
       else{ /* Tous sauf "Autres" */
-        google.otherType('none');
+        google.google_other_type_request('none');
+        google.input_google_plus_other_type("");
       }
     });
   }

@@ -28,6 +28,11 @@
     include_component('social', 'facebookOpenGraph'); /* Open Graph */
     
     include_component('social', 'twitterUrl'); /* Canonical link for Twitter */
+    
+    include_component('social', 'googlePlusUrl'); /* Canonical link for Google+ */
+    include_component('social', 'googlePlus1Head'); /* Google +1 */
+    
+    
     ?>
     
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -77,6 +82,7 @@
             include_component('social', 'facebookLike'); /* Like button for Facebook */
             include_component('social', 'twitterFollow'); /* Follow for Twitter */
             include_component('social', 'twitterTweet'); /* Tweet for Twitter */
+            include_component('social', 'googlePlus1'); /* +1 for Google  */
           ?>
           
           

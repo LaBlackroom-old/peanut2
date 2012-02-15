@@ -11,10 +11,9 @@
     <?php include_metas() ?>
 
     <title>
-    <?php //if (!include_slot('title')): ?>
-      <?php //echo peanutConfig::get('meta_title') ?>
-    <?php //endif; ?>
-      Paye ton titre
+    <?php if (!include_slot('title')): ?>
+      <?php echo peanutConfig::get('meta_title') ?>
+    <?php endif; ?>
     </title>
 
     <meta name="description" content="<?php if(!include_slot('description', peanutConfig::get('meta_description'))) { get_slot('description'); } ?>">

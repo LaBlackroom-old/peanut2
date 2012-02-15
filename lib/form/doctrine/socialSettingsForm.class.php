@@ -21,7 +21,9 @@ class socialSettingsForm extends peanutSettingsForm
     $this->widgetSchema['facebook_request']->setDefault(peanutConfig::get('facebook_request'));
     
     /* YES */
-    $this->widgetSchema['facebook_page'] = new sfWidgetFormHtml5InputText();
+    $this->widgetSchema['facebook_page'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'http://www.facebook.com...',
+      ));
     $this->widgetSchema['facebook_page']->setDefault(peanutConfig::get('facebook_page'));
     
     
@@ -90,7 +92,9 @@ class socialSettingsForm extends peanutSettingsForm
 
 
         /* YES */
-        $this->widgetSchema['facebook_title'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_title'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon titre',
+      ));
         $this->widgetSchema['facebook_title']->setDefault(peanutConfig::get('facebook_title'));
 
         $this->widgetSchema['facebook_type'] = new sfWidgetFormChoice(array(
@@ -138,16 +142,24 @@ class socialSettingsForm extends peanutSettingsForm
         ));
         $this->widgetSchema['facebook_type']->setDefault(peanutConfig::get('facebook_type'));
 
-        $this->widgetSchema['facebook_url'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_url'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon URL',
+      ));
         $this->widgetSchema['facebook_url']->setDefault(peanutConfig::get('facebook_url'));
 
-        $this->widgetSchema['facebook_image'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_image'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Le lien de mon image',
+      ));
         $this->widgetSchema['facebook_image']->setDefault(peanutConfig::get('facebook_image'));      
 
-        $this->widgetSchema['facebook_sitename'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_sitename'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon nom',
+      ));
         $this->widgetSchema['facebook_sitename']->setDefault(peanutConfig::get('facebook_sitename'));
 
-        $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText();
+        $this->widgetSchema['facebook_description'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Ma description',
+      ));
         $this->widgetSchema['facebook_description']->setDefault(peanutConfig::get('facebook_description'));
 
 
@@ -173,7 +185,9 @@ class socialSettingsForm extends peanutSettingsForm
       $this->widgetSchema['twitter_follow_request']->setDefault(peanutConfig::get('twitter_follow_request'));
       
       /* YES */
-      $this->widgetSchema['twitter_account'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_account'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon nom sur Twitter',
+      ));
       $this->widgetSchema['twitter_account']->setDefault(peanutConfig::get('twitter_account'));
 
       
@@ -235,10 +249,14 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['twitter_tweet_lang']->setDefault(peanutConfig::get('twitter_tweet_lang'));
       
-      $this->widgetSchema['twitter_tweet_recommended'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_recommended'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => '@',
+      ));
       $this->widgetSchema['twitter_tweet_recommended']->setDefault(peanutConfig::get('twitter_tweet_recommended'));
       
-      $this->widgetSchema['twitter_tweet_hashtag'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['twitter_tweet_hashtag'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => '#',
+      ));
       $this->widgetSchema['twitter_tweet_hashtag']->setDefault(peanutConfig::get('twitter_tweet_hashtag'));
       
       
@@ -256,7 +274,9 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['google_request']->setDefault(peanutConfig::get('google_request'));
       
-      $this->widgetSchema['google_page_link'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_page_link'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon identifiant Google+',
+      ));
       $this->widgetSchema['google_page_link']->setDefault(peanutConfig::get('google_page_link'));
       
       
@@ -276,7 +296,9 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['google_plus_note']->setDefault(peanutConfig::get('google_plus_note'));
       
-      $this->widgetSchema['google_plus_url'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_url'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'URL courante par défaut',
+      ));
       $this->widgetSchema['google_plus_url']->setDefault(peanutConfig::get('google_plus_url'));
       
       
@@ -306,16 +328,24 @@ class socialSettingsForm extends peanutSettingsForm
       ));
       $this->widgetSchema['google_plus_type']->setDefault(peanutConfig::get('google_plus_type'));
       
-      $this->widgetSchema['google_plus_other_type'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_other_type'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Cliquez sur "Plus d\infos" pour en savoir plus',
+      ));
       $this->widgetSchema['google_plus_other_type']->setDefault(peanutConfig::get('google_plus_other_type'));
       
-      $this->widgetSchema['google_plus_title'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_title'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon titre',
+      ));
       $this->widgetSchema['google_plus_title']->setDefault(peanutConfig::get('google_plus_title'));
       
-      $this->widgetSchema['google_plus_url_image'] = new sfWidgetFormHtml5InputText();
+      $this->widgetSchema['google_plus_url_image'] = new sfWidgetFormHtml5InputText($options = array(), $attributes = array(
+        'placeholder' => 'Mon URL',
+      ));
       $this->widgetSchema['google_plus_url_image']->setDefault(peanutConfig::get('google_plus_url_image'));
       
-      $this->widgetSchema['google_plus_description'] = new sfWidgetFormTextarea();
+      $this->widgetSchema['google_plus_description'] = new sfWidgetFormTextarea($options = array(), $attributes = array(
+        'placeholder' => 'Ma description',
+      ));
       $this->widgetSchema['google_plus_description']->setDefault(peanutConfig::get('google_plus_url'));
   }
 }

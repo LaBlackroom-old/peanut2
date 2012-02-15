@@ -304,7 +304,7 @@
       </trans-unit>
       <trans-unit>
         <source>Twitter tweet hashtag</source>
-        <target>Hashtag (commence par #) :</target>
+        <target>Hashtag :</target>
       </trans-unit>
       <trans-unit>
         <source>Twitter tweet url</source>

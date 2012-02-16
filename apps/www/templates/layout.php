@@ -21,19 +21,6 @@
     <meta name="robots" content="<?php if(!include_slot('robots', peanutConfig::get('meta_robots'))) { get_slot('robots'); } ?>">
     <meta http-equiv="content-language" content="<?php if(!include_slot('language', peanutConfig::get('meta_language'))) { get_slot('language'); } ?>">
     
-    <?php
-    
-    include_component('social', 'facebookUrl'); /* Canonical link for Facebook */  
-    include_component('social', 'facebookOpenGraph'); /* Open Graph */
-    
-    include_component('social', 'twitterUrl'); /* Canonical link for Twitter */
-    
-    include_component('social', 'googlePlusUrl'); /* Canonical link for Google+ */
-    include_component('social', 'googlePlus1Head'); /* Google +1 */
-    
-    
-    ?>
-    
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -76,19 +63,6 @@
           <nav>
            <?php include_component('items', 'footerMenu') ?>
           </nav>
-
-          <?php
-            include_component('social', 'facebookLike'); /* Like button for Facebook */
-            include_component('social', 'twitterFollow'); /* Follow for Twitter */
-            include_component('social', 'twitterTweet'); /* Tweet for Twitter */
-            include_component('social', 'googlePlus1'); /* +1 for Google  */
-          ?>
-          
-          
-          
-          
-          
-          
         </footer>
 
       </section>

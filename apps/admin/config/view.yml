@@ -19,7 +19,7 @@ default:
     - jquery-ui-1.8.16.custom.css:                       {media: 'screen, projection' }
     - /css/admin.css:                                    {media: 'screen, projection' }
 
-  javascripts:     [ social.js, jquery-ui-1.8.16.custom.min.js, /peanutAssetPlugin/js/admin.js, /peanutAssetPlugin/js/jquery.tipTip.minified.js, general.js ]
+  javascripts:     [ jquery-ui-1.8.16.custom.min.js, /peanutAssetPlugin/js/admin.js, /peanutAssetPlugin/js/jquery.tipTip.minified.js, general.js ]
     
 
   has_layout:      true

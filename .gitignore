@@ -43,3 +43,4 @@ lib/*/doctrine/base
 lib/*/doctrine/*/base
 
 /data/generator/
+web/sf

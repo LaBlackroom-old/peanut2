@@ -34,3 +34,4 @@ DIR=`php symfony configure:author "$NAME"`
 DIR=`php symfony project:permissions`
 DIR=`php symfony plugin:publish-assets`
 DIR=`php symfony cc`
+DIR=`ln -s ../lib/vendor/symfony/data/web/sf web/sf`

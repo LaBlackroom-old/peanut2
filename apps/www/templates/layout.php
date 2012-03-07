@@ -30,7 +30,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="/peanutAssetPlugin/js/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 
-    
+    <?php
+      include_component('social', 'facebookUrl');
+      include_component('social', 'facebookOpenGraph');
+
+      include_component('social', 'twitterUrl');
+
+      include_component('social', 'googlePlusUrl');
+      include_component('social', 'googlePlus1Head');
+    ?>
   </head>
 
   <body>
@@ -63,6 +71,13 @@
           <nav>
            <?php include_component('items', 'footerMenu') ?>
           </nav>
+
+          <?php
+            include_component('social', 'facebookLike');
+            include_component('social', 'twitterFollow');
+            include_component('social', 'twitterTweet');
+            include_component('social', 'googlePlus1');
+          ?>
         </footer>
 
       </section>

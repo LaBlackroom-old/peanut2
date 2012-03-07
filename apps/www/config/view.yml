@@ -16,7 +16,7 @@ default:
     - www.css?v=2:                             { media: 'screen, projection' }
     - www-handheld.css?v=2:                    { media: 'handheld' }
 
-  javascripts: 
+  javascripts:     [ ]
     
 
   has_layout:      true

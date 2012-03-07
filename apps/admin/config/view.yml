@@ -16,10 +16,11 @@ default:
     - /peanutAssetPlugin/css/admin.css?v=2:              { media: 'screen, projection' }
     - http://fonts.googleapis.com/css?family=Oswald:     { media: 'screen, project' }
     - /peanutAssetPlugin/css/handheld.css?v=2:           { media: 'handheld' } 
-    - jquery-ui-1.8.16.custom.css:                       {media: 'screen, projection' }
-    - /css/admin.css:                                    {media: 'screen, projection' }
+    - jquery-ui-1.8.16.custom.css:                       { media: 'screen, projection' }
+    - /css/admin.css:                                    { media: 'screen, projection' }
+    - /ndSocialPlugin/css/admin.css:                     { media: 'screen, projection' }
 
-  javascripts:     [ jquery-ui-1.8.16.custom.min.js, /peanutAssetPlugin/js/admin.js, /peanutAssetPlugin/js/jquery.tipTip.minified.js, general.js ]
+  javascripts:     [ jquery-ui-1.8.16.custom.min.js, /peanutAssetPlugin/js/admin.js, /peanutAssetPlugin/js/jquery.tipTip.minified.js, /ndSocialPlugin/js/social.js, general.js ]
     
 
   has_layout:      true

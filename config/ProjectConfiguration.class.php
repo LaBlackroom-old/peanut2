@@ -29,8 +29,8 @@ class ProjectConfiguration extends sfProjectConfiguration
         'peanutCorporatePlugin',
         'peanutFormPlugin',
         'peanutSeoPlugin',
-        'peanutAssetPlugin'
-        
+        'peanutAssetPlugin',
+        'ndSocialPlugin'
     ));
     
     $this->dispatcher->connect('context.load_factories', array($this, 'listenToLoadFactoriesEvent'));

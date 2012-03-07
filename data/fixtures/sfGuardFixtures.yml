@@ -78,8 +78,7 @@ sfGuardUser:
     email_address: admin@peanut.local
     username: admin
     algorithm: sha1
-    salt: baba31155ff078e4a869d7e2c88c8cca
-    password: 5cf270d479fe4ab2cc747e704e68e572850caee7
+    password: admin
     is_active: true
     is_super_admin: true
     last_login: '2011-11-23 10:44:28'

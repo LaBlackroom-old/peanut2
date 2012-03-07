@@ -34,7 +34,7 @@ peanutSettings:
     value: ''
   peanutSettings_12:
     name: news_feed
-    value: 'https://github.com/pocky/peanut2/commits/master.atom'
+    value: 'https://github.com/LaBlackroom/peanut2/commits/master.atom'
   peanutSettings_13:
     name: meta_title
     value: ''
@@ -58,7 +58,7 @@ peanutSettings:
     value: webmaster
   peanutSettings_20:
     name: webmaster_mail
-    value: www.peanut2.local
+    value: webmaster@peanut2.local
   peanutSettings_21:
     name: subject
     value: 'New message from your contact form'
@@ -70,7 +70,7 @@ peanutSettings:
     value: Arras
   peanutSettings_24:
     name: map_address
-    value: '72 rue d amiens, 62000 Arras'
+    value: '15 boulevard carnot, 62000 Arras'
   peanutSettings_25:
     name: map_zoom
     value: '13'

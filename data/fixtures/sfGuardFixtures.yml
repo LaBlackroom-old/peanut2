@@ -1,3 +1,19 @@
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: Administrateur
+    description: 'Le groupe des administrateurs'
+    created_at: '2011-03-15 12:05:45'
+    updated_at: '2011-03-15 12:05:45'
+  sfGuardGroup_2:
+    name: Contributeurs
+    description: 'Groupe rassemblant les différents contributeurs au site Internet'
+    created_at: '2011-08-17 15:36:57'
+    updated_at: '2012-03-07 11:47:37'
+  sfGuardGroup_3:
+    name: Rédacteurs
+    description: 'Groupe rassemblant les différents rédacteurs au site Internet'
+    created_at: '2011-10-25 10:23:22'
+    updated_at: '2012-03-07 11:48:16'
 sfGuardGroupPermission:
   sfGuardGroupPermission_1_4:
     Group: sfGuardGroup_1
@@ -19,67 +35,56 @@ sfGuardGroupPermission:
     Permission: sfGuardPermission_2
     created_at: '2011-10-24 16:01:35'
     updated_at: '2011-10-24 16:01:35'
-  sfGuardGroupPermission_3_2:
+  sfGuardGroupPermission_3_3:
     Group: sfGuardGroup_3
-    Permission: sfGuardPermission_2
-    created_at: '2011-10-25 10:23:22'
-    updated_at: '2011-10-25 10:23:22'
-
-
-
-sfGuardGroup:
-  sfGuardGroup_1:
-    name: Administrateur
-    description: 'Le groupe des administrateurs'
-    created_at: '2011-03-15 12:05:45'
-    updated_at: '2011-03-15 12:05:45'
-  sfGuardGroup_2:
-    name: Editeur
-    description: 'Le groupe des éditeurs'
-    created_at: '2011-08-17 15:36:57'
-    updated_at: '2011-08-17 15:37:43'
-  sfGuardGroup_3:
-    name: 'Writer de base'
-    description: ''
-    created_at: '2011-10-25 10:23:22'
-    updated_at: '2011-10-25 10:23:22'
-
-
-
+    Permission: sfGuardPermission_3
+    created_at: '2012-03-07 11:48:16'
+    updated_at: '2012-03-07 11:48:16'
 sfGuardPermission:
   sfGuardPermission_1:
-    name: Reader
-    description: 'Cette permission permet de lire les articles'
+    name: 'Droit de lecture'
+    description: 'Autorise l''accès aux articles en tant que lecteur'
     created_at: '2011-10-14 11:13:05'
-    updated_at: '2011-10-14 11:13:05'
+    updated_at: '2012-03-07 11:41:59'
   sfGuardPermission_2:
-    name: 'Basic Writer'
-    description: 'Cette permission permet d''être éditeur mais ne permet pas de supprimer des articles, menu...etc. '
+    name: 'Droit de contribution'
+    description: 'Cette permission permet d''écrire des articles mais n''autorise pas la suppression ou l''interaction avec l''organisation générale du site'
     created_at: '2011-10-14 11:13:38'
-    updated_at: '2011-10-14 11:13:38'
+    updated_at: '2012-03-07 11:43:53'
   sfGuardPermission_3:
-    name: 'Advanced Writer '
-    description: 'Cette permission permet d''être éditeur mais aussi de supprimer des articles, menu...etc.'
+    name: 'Droit de rédaction'
+    description: 'Cette permission autorise le rédacteur à interagir avec l''organisation éditoriale du site'
     created_at: '2011-10-21 00:00:00'
-    updated_at: '2011-10-21 00:00:00'
+    updated_at: '2012-03-07 11:44:48'
   sfGuardPermission_4:
-    name: Admin
-    description: 'Cette permission définit un compte utilisateur comme "Admin"'
+    name: 'Droit de direction'
+    description: 'Cette permission permet au dirigeant d''interagir avec certains paramètres de son site'
     created_at: '2011-10-14 11:19:40'
-    updated_at: '2011-10-20 16:12:28'
+    updated_at: '2012-03-07 11:45:27'
   sfGuardPermission_5:
-    name: Super-Admin
-    description: 'Cette permission définit un compte utilisateur comme "Super-Admin"'
+    name: 'Webmaster du site'
+    description: 'Cette permission est à destination du webmaster (interlocuteur technique)'
     created_at: '2011-10-14 11:17:32'
     updated_at: '2011-10-20 16:12:18'
   sfGuardPermission_6:
-    name: 'Accès à l''interface Admin'
-    description: 'Cette permission permet d''autoriser l''accès au back office.'
+    name: 'Accès à l''interface d''administration'
+    description: 'Cette permission permet d''autoriser l''accès à l''interface d''administration'
     created_at: '2011-10-14 15:17:33'
-    updated_at: '2011-10-14 16:01:13'
-
-
-
+    updated_at: '2012-03-07 11:45:41'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: Alexandre
+    last_name: Balmes
+    email_address: admin@peanut.local
+    username: admin
+    algorithm: sha1
+    salt: baba31155ff078e4a869d7e2c88c8cca
+    password: 5cf270d479fe4ab2cc747e704e68e572850caee7
+    is_active: true
+    is_super_admin: true
+    last_login: '2011-11-23 10:44:28'
+    created_at: '2011-03-15 12:06:22'
+    updated_at: '2011-11-23 10:44:28'
 sfGuardUserGroup:
   sfGuardUserGroup_1_2:
     User: sfGuardUser_1
@@ -91,10 +96,22 @@ sfGuardUserGroup:
     Group: sfGuardGroup_3
     created_at: '2011-10-25 10:23:36'
     updated_at: '2011-10-25 10:23:36'
-
-
-
 sfGuardUserPermission:
+  sfGuardUserPermission_1_1:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_1
+    created_at: '2012-03-07 11:49:36'
+    updated_at: '2012-03-07 11:49:36'
+  sfGuardUserPermission_1_2:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_2
+    created_at: '2012-03-07 11:49:36'
+    updated_at: '2012-03-07 11:49:36'
+  sfGuardUserPermission_1_3:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_3
+    created_at: '2012-03-07 11:49:36'
+    updated_at: '2012-03-07 11:49:36'
   sfGuardUserPermission_1_4:
     User: sfGuardUser_1
     Permission: sfGuardPermission_4
@@ -105,153 +122,3 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_6
     created_at: '2011-10-21 17:05:00'
     updated_at: '2011-10-21 17:05:00'
-  sfGuardUserPermission_2_2:
-    User: sfGuardUser_2
-    Permission: sfGuardPermission_2
-    created_at: '2011-10-21 17:02:09'
-    updated_at: '2011-10-21 17:02:09'
-  sfGuardUserPermission_2_6:
-    User: sfGuardUser_2
-    Permission: sfGuardPermission_6
-    created_at: '2011-10-21 17:01:15'
-    updated_at: '2011-10-21 17:01:15'
-  sfGuardUserPermission_3_1:
-    User: sfGuardUser_3
-    Permission: sfGuardPermission_1
-    created_at: '2011-10-21 17:05:30'
-    updated_at: '2011-10-21 17:05:30'
-  sfGuardUserPermission_3_6:
-    User: sfGuardUser_3
-    Permission: sfGuardPermission_6
-    created_at: '2011-10-21 17:05:30'
-    updated_at: '2011-10-21 17:05:30'
-  sfGuardUserPermission_4_5:
-    User: sfGuardUser_4
-    Permission: sfGuardPermission_5
-    created_at: '0000-00-00 00:00:00'
-    updated_at: '0000-00-00 00:00:00'
-  sfGuardUserPermission_4_6:
-    User: sfGuardUser_4
-    Permission: sfGuardPermission_6
-    created_at: '0000-00-00 00:00:00'
-    updated_at: '0000-00-00 00:00:00'
-  sfGuardUserPermission_5_3:
-    User: sfGuardUser_5
-    Permission: sfGuardPermission_3
-    created_at: '2011-10-21 17:02:56'
-    updated_at: '2011-10-21 17:02:56'
-  sfGuardUserPermission_5_6:
-    User: sfGuardUser_5
-    Permission: sfGuardPermission_6
-    created_at: '2011-10-21 17:02:56'
-    updated_at: '2011-10-21 17:02:56'
-  sfGuardUserPermission_6_5:
-    User: sfGuardUser_6
-    Permission: sfGuardPermission_5
-    created_at: '2011-11-09 09:33:29'
-    updated_at: '2011-11-09 09:33:29'
-  sfGuardUserPermission_6_6:
-    User: sfGuardUser_6
-    Permission: sfGuardPermission_6
-    created_at: '2011-11-09 09:33:29'
-    updated_at: '2011-11-09 09:33:29'
-
-
-
-sfGuardRememberKey:
-  sfGuardRememberKey_1:
-    User: sfGuardUser_1
-    remember_key: jgvrc6b3pfk0os4ksogg4wckscoogg8
-    ip_address: 192.168.60.20
-    created_at: '2011-11-10 16:51:49'
-    updated_at: '2011-11-10 16:51:49'
-
-
-
-sfGuardUser:
-  sfGuardUser_1:
-    first_name: Alexandre
-    last_name: Balmes
-    email_address: admin@peanut.local
-    username: admin
-    algorithm: sha1
-    salt: baba31155ff078e4a869d7e2c88c8cca
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-11-23 10:44:28'
-    created_at: '2011-03-15 12:06:22'
-    updated_at: '2011-11-23 10:44:28'
-  sfGuardUser_2:
-    first_name: James
-    last_name: Bwriter
-    email_address: writer@peanut.local
-    username: bwriter
-    algorithm: sha1
-    salt: 4056ee6a94dffbbe0cff6963ffd86a44
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-10-24 15:39:17'
-    created_at: '2011-10-14 16:18:08'
-    updated_at: '2011-10-24 15:39:17'
-  sfGuardUser_3:
-    first_name: Johnny
-    last_name: Reader
-    email_address: reader@peanut.local
-    username: reader
-    algorithm: sha1
-    salt: b4143a36257f02de0252d98fb80dd54e
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-11-08 14:56:04'
-    created_at: '2011-10-14 16:20:35'
-    updated_at: '2011-11-08 14:56:04'
-  sfGuardUser_4:
-    first_name: John
-    last_name: Super
-    email_address: superadmin@peanut.local
-    username: superadmin
-    algorithm: sha1
-    salt: 7d22f96830eacd936bc942e4a5724001
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-11-23 15:17:24'
-    created_at: '2011-10-14 16:22:08'
-    updated_at: '2011-11-23 15:17:24'
-  sfGuardUser_5:
-    first_name: Jules
-    last_name: Awriter
-    email_address: advancedwriter@peanut.local
-    username: awriter
-    algorithm: sha1
-    salt: b2c277df41460c87739844b5a7b2049a
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-10-24 18:35:51'
-    created_at: '2011-10-21 17:02:56'
-    updated_at: '2011-10-24 18:35:51'
-  sfGuardUser_6:
-    first_name: Nicolas
-    last_name: DACHEZ
-    email_address: nicko@ac.com
-    username: Nicko
-    algorithm: sha1
-    salt: 763672f9c63f1cce44f18719f2ca7ce7
-    password: admin
-    is_active: true
-    is_super_admin: false
-    last_login: '2011-11-09 09:33:50'
-    created_at: '2011-11-09 09:33:29'
-    updated_at: '2011-11-09 09:33:50'
-
-
-
-
-
-
-
-

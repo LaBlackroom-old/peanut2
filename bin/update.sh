@@ -87,7 +87,7 @@ install_git peanutFormPlugin git://github.com/LaBlackroom/peanutFormPlugin.git m
 install_git peanutSeoPlugin git://github.com/LaBlackroom/peanutSeoPlugin.git master
 
 # ndSocialPlugin
-install_git ndSocialPlugin git://github.com/LaBlackroom/ndSocialPlugin.git
+install_git ndSocialPlugin git://github.com/LaBlackroom/ndSocialPlugin.git master
 
 cd ../..
 

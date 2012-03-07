@@ -1,15 +1,22 @@
 peanutMenu:
   peanutMenu_1:
-    name: TopMenu
+    name: 'Menu d''entête'
     slug: topmenu
     root_id: '1'
     lft: '1'
     rgt: '4'
     level: '0'
   peanutMenu_2:
-    name: FooterMenu
+    name: 'Menu de pied de page'
     slug: footermenu
     root_id: '2'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  peanutMenu_3:
+    name: 'Menu caché'
+    slug: invisblemenu
+    root_id: '3'
     lft: '1'
     rgt: '2'
     level: '0'

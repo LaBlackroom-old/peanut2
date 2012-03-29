@@ -74,6 +74,9 @@ class SfGuardUserActions extends autoSfGuardUserActions
   {
     $this->form = $this->configuration->getForm();
     $this->sf_guard_user = $this->form->getObject();
+    
+    $users = Doctrine_Core::getTable('sfGuardUser')->getUsersWithPermission('5');
+    $this->users = $users->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
   }
 
   public function executeCreate(sfWebRequest $request)

@@ -1,4 +1,5 @@
 <?php 
+$userId[] = array();
 foreach ($users->getRawValue() as $user):
   foreach ($user as $id):
     $userId[] = $id;

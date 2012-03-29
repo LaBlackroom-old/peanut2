@@ -53,6 +53,31 @@ class SfGuardGroupActions extends autoSfGuardGroupActions
     $this->sf_guard_group = $this->getRoute()->getObject();
     $this->form = $this->configuration->getForm($this->sf_guard_group);
   }
+  
+  public function executeNew(sfWebRequest $request)
+  {
+    //Récupérer les permissions des groupes
+    $groupsPermissions = Doctrine::getTable('sfGuardGroupPermission')->getGroupsPermissions();
+    $perm = $groupsPermissions->addSelect('permission_id')->addSelect('group_id')->execute(array(), Doctrine_Core::HYDRATE_ARRAY); 
+    
+    foreach ($perm as $value){   
+      $groupPerm[$value['group_id']][] = $value['permission_id'];
+    }
+   
+    $this->groupPermissions = $groupPerm;
+    
+    $this->form = $this->configuration->getForm();
+    $this->sf_guard_group = $this->form->getObject();
+  }
 
+  public function executeCreate(sfWebRequest $request)
+  {
+    $this->form = $this->configuration->getForm();
+    $this->sf_guard_group = $this->form->getObject();
+
+    $this->processForm($request, $this->form);
+
+    $this->setTemplate('new');
+  }
   
 }

@@ -95,8 +95,11 @@
     <?php if(peanutConfig::get('google_guid_ga')): ?>
       <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<?php echo peanutConfig::get('google_guid_wt') ?>']);
-        _gaq.push(['_setDomainName', '<?php echo peanutConfig::get('domain_name') ?>']);
+        _gaq.push(['_setAccount', '<?php echo peanutConfig::get('google_guid_ga') ?>']);
+        <?php if(peanutConfig::get('domain_name')){ ?>
+          _gaq.push(['_setDomainName', '<?php echo peanutConfig::get('domain_name') ?>']);
+        <?php } ?>
+        
         _gaq.push(['_trackPageview']);
 
         (function() {

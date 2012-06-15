@@ -41,53 +41,12 @@
   </head>
 
   <body>
-
-    <div id="container" class="alignCenter center container">
-
-      <section id="top" class="alignLeft">
-
-        <header>
-          <h1>
-            <a href="<?php echo url_for('@homepage') ?>" title="<?php __('Back to homepage') ?>">
-              <?php echo peanutConfig::get('site_name', 'La Blackroom') ?>
-            </a>
-          </h1>
-        </header>
-
-        <nav>
-         <?php include_component('items', 'mainMenu') ?>
-        </nav>
-
-      </section>
-
-      <section id="main" class="alignLeft clearfix" role="main">
-        <?php echo $sf_content ?>
-      </section>
-
-      <section id="footer">
-
-        <footer>
-          <nav>
-           <?php include_component('items', 'footerMenu') ?>
-          </nav>
-
-          <?php
-            include_component('social', 'facebookLike');
-            include_component('social', 'twitterFollow');
-            include_component('social', 'twitterTweet');
-            include_component('social', 'googlePlus1');
-          ?>
-        </footer>
-
-      </section>
-
-    </div>
+    <?php echo $sf_content ?>
 
     <!--[if lt IE 7 ]>
       <script src="js/dd_belatedpng.js"></script>
       <script>DD_belatedPNG.fix('img, .png_bg');</script>
     <![endif]-->
-
 
     <?php include_html5_javascripts() ?>
     

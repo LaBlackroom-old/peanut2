@@ -1,13 +1,20 @@
 </section>
 
-<section id="footer" class="float-center center container fixed">
+      <section id="footer">
 
-    <footer class="float-right left">
-        <nav>            
-            <?php include_component('items', 'footerMenu') ?>
-        </nav>
-    </footer>
+        <footer>
+          <nav>
+           <?php include_partial('items/footerMenu', array('items' => $vars['items'])) ?>
+          </nav>
 
-</section>
+          <?php
+            include_component('social', 'facebookLike');
+            include_component('social', 'twitterFollow');
+            include_component('social', 'twitterTweet');
+            include_component('social', 'googlePlus1');
+          ?>
+        </footer>
 
-</div>
+      </section>
+
+    </div>

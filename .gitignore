@@ -44,4 +44,3 @@ lib/*/doctrine/*/base
 
 /data/generator/
 web/sf
-/plugins/sfImageTransformPlugin/

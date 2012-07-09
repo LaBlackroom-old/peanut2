@@ -25,8 +25,6 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
   public function executeSignin($request)
   {
     parent::executeSignin($request);
-    
-    sfContext::getInstance()->getResponse()->setCookie('peanutAdmin', '', time()+60*60*24*15, '/');
 
     $this->setLayout('login');
   }

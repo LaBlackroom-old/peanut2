@@ -2,7 +2,9 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
+
 all:
+  #config pour le sfImageTransformPlugin
   sfImageTransformPlugin:
     default_adapter: GD
     default_image:

@@ -2,4 +2,12 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+  sfImageTransformPlugin:
+    default_adapter: GD
+    default_image:
+      mime_type: image/png
+      filename: Untitled.png
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type

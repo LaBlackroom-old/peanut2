@@ -39,7 +39,7 @@ all:
     default_culture:        fr_FR
 
     # Enable html5 helper
-    standard_helpers:       [Partial, I18N, html5, seo]
+    standard_helpers:       [Partial, I18N, html5, seo, Text, Date, Thumb]
     
 
 default:

@@ -69,7 +69,7 @@ install_git peanutAssetPlugin git://github.com/LaBlackroom/peanutAssetPlugin.git
 install_git sfDoctrineGuardPlugin git://github.com/LaBlackroom/sfDoctrineGuardPlugin.git master
 
 # sfTaskExtraPlugin
-install_git sfTaskExtraPlugin git://github.com/annismckenzie/sfTaskExtraPlugin.git master
+install_git sfTaskExtraPlugin git://github.com/LaBlackroom/sfTaskExtraPlugin.git master
 
 # peanutCorporatePlugin
 install_git peanutCorporatePlugin git://github.com/LaBlackroom/peanutCorporatePlugin.git master

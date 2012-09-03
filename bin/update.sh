@@ -89,6 +89,10 @@ install_git peanutSeoPlugin git://github.com/LaBlackroom/peanutSeoPlugin.git mas
 # ndSocialPlugin
 install_git ndSocialPlugin git://github.com/LaBlackroom/ndSocialPlugin.git master
 
+# sfImageTransformPlugin
+install_git sfImageTransformPlugin git://github.com/ndachez/sfImageTransformPlugin.git master
+
+
 cd ../..
 
 

@@ -11,7 +11,7 @@
   <section id="sf_admin_header">
     <?php include_partial('sfGuardGroup/form_header', array('sf_guard_group' => $sf_guard_group, 'form' => $form, 'configuration' => $configuration)) ?>
   </section>
-
+  
   <section id="sf_admin_content">
     <?php include_partial('sfGuardGroup/form', array('sf_guard_group' => $sf_guard_group, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper, 'groupPermissions' => $groupPermissions)) ?>
   </section>

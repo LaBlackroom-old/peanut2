@@ -1,8 +1,8 @@
 <?php if($sf_user->hasPermission('4') || $sf_user->hasPermission('5')){ ?>
-  
+
 <?php if( ( $sf_user->hasPermission('5') ) ||
           ( $sf_user->hasPermission('4') && !in_array('5', $groupPermissions->getRaw($sf_guard_group->getId())) )
-          ){ ?>
+          ){ ?> 
 
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
@@ -39,5 +39,19 @@ else{
 <?php
 }
 
+}
+elseif($form->isNew()){
+?>
+  <div class="sorry sf_admin_form">
+    <?php echo __('Sorry but you can not create group.', null, 'sfGuard') ?>.. Cheater !
+  </div>    
+<?php  
+}
+else{
+?>
+  <div class="sorry sf_admin_form">
+    <?php echo __('Sorry but you can not edit this group.', null, 'sfGuard') ?>.. Cheater !
+  </div>    
+<?php
 }
 ?>
